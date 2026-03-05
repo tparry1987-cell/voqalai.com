@@ -22,6 +22,10 @@
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://dashboard.retellai.com">
+  <link rel="preconnect" href="https://app.cal.com">
+  <link rel="preload" href="fonts/saira-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -63,6 +67,63 @@
     "@type": "WebSite",
     "name": "Voqal AI",
     "url": "https://voqalai.com"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an AI voice agent?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An AI voice agent is an intelligent phone system that answers calls, books appointments, qualifies leads, and handles enquiries just like a trained receptionist — but available 24/7 with no sick days, holidays, or hold music. It uses natural language processing to have real conversations with your callers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can I get set up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most businesses are live within 48 hours. We handle the entire setup — from building your custom voice agent to integrating it with your existing phone system, calendar, and CRM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will callers know they're speaking to an AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our voice agents are built to sound natural and conversational. They use your business's tone of voice, know your services inside out, and handle complex queries. Many callers don't realise they're speaking to an AI."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does an AI receptionist cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our managed service plans start from £197/month for 200 minutes, with no contracts or hidden fees. We also offer one-off build & handover packages from £997."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to sign a long-term contract?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All our managed service plans are month-to-month with no lock-in contracts. You can cancel anytime."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries do you work with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve dental practices, medical clinics, law firms, estate agents, accountancy firms, veterinary clinics, trades businesses, and many more across the UK and US."
+        }
+      }
+    ]
   }
   </script>
 
@@ -124,7 +185,7 @@
     <header class="hero">
       <div class="hero-content">
         <h1 class="main-headline fade-up-3">
-          Voice AI is the
+          Voice Ai is the
           <span class="italic-serif">Algorithm.</span>
         </h1>
         <p class="hero-sub fade-up-3">The system behind every answered call.</p>
@@ -145,11 +206,12 @@
         </div>
 
         <div class="services-grid">
-          <div class="service-card reveal">
+          <a href="pricing.html" class="service-card reveal" style="text-decoration: none; color: inherit;">
             <div class="icon">I.</div>
             <h3>Voice AI Agents</h3>
             <p>Your calls answered perfectly, day or night. We build voice models that book appointments, process reschedules, handle cancellations, and route urgent calls autonomously.</p>
-          </div>
+            <span class="text-link" style="margin-top: 12px; display: inline-block; font-size: 14px;">View pricing →</span>
+          </a>
 
           <div class="service-card reveal" style="transition-delay: 0.1s;">
             <div class="icon">II.</div>
@@ -164,11 +226,12 @@
             <span class="text-link" style="margin-top: 12px; display: inline-block; font-size: 14px;">Learn more →</span>
           </a>
 
-          <div class="service-card reveal" style="transition-delay: 0.1s;">
+          <a href="about.html" class="service-card reveal" style="text-decoration: none; color: inherit; transition-delay: 0.1s;">
             <div class="icon">IV.</div>
             <h3>Process Automation</h3>
             <p>Eliminate redundant data entry. We connect your telecommunications, CRM, and calendar tools, automating the repetitive work so your team focuses on closing.</p>
-          </div>
+            <span class="text-link" style="margin-top: 12px; display: inline-block; font-size: 14px;">About our team →</span>
+          </a>
         </div>
       </section>
 
@@ -316,6 +379,76 @@
         <p class="calculator-closer reveal" style="transition-delay: 0.2s;">
           <em>Stop the leak.</em> <a href="#demo" class="text-link">Request a demonstration →</a>
         </p>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section-padding container faq-section">
+        <div class="reveal">
+          <span class="section-label">FAQ</span>
+          <h2>Frequently Asked <span class="italic-accent">Questions.</span></h2>
+        </div>
+
+        <div class="faq-list reveal" style="transition-delay: 0.1s;">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What is an AI voice agent?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>An AI voice agent is an intelligent phone system that answers calls, books appointments, qualifies leads, and handles enquiries just like a trained receptionist &mdash; but available 24/7 with no sick days, holidays, or hold music. It uses natural language processing to have real conversations with your callers.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>How quickly can I get set up?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most businesses are live within 48 hours. We handle the entire setup &mdash; from building your custom voice agent to integrating it with your existing phone system, calendar, and CRM. You just provide your business information and we do the rest.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Will callers know they're speaking to an AI?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our voice agents are built to sound natural and conversational. They use your business's tone of voice, know your services inside out, and handle complex queries. Many callers don't realise they're speaking to an AI &mdash; they just know they got a helpful, immediate response.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>How much does an AI receptionist cost?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our managed service plans start from &pound;197/month for 200 minutes, with no contracts or hidden fees. We also offer one-off build &amp; handover packages from &pound;997. <a href="pricing.html" style="color: var(--accent);">View our full pricing &rarr;</a></p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>Do I need to sign a long-term contract?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. All our managed service plans are month-to-month with no lock-in contracts. You can cancel anytime. We believe our service should earn your business every month, not trap you into a commitment.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What industries do you work with?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We serve dental practices, medical clinics, law firms, estate agents, accountancy firms, veterinary clinics, trades businesses, and many more across the UK and US. Any business that receives phone calls can benefit from an AI voice agent. <a href="about.html" style="color: var(--accent);">Learn more about us &rarr;</a></p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- DEMO FORM -->
@@ -522,6 +655,18 @@
     document.getElementById('calc-calls').addEventListener('input', updateCalculator);
     document.getElementById('calc-value').addEventListener('input', updateCalculator);
     document.getElementById('calc-rate').addEventListener('input', updateCalculator);
+
+    // FAQ Accordion
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(el) {
+        el.classList.remove('open');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+      }
+    }
 
     // Cookie Consent
     (function() {
