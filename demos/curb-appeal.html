@@ -230,10 +230,9 @@
     </div>
   </div>
 
-  <script type="module">
-    import { RetellWebClient } from "https://cdn.jsdelivr.net/npm/retell-client-js-sdk@latest/+esm";
-
-    const client = new RetellWebClient();
+  <script src="/demos/retell-bundle.js"></script>
+  <script>
+    const client = new window.RetellWebClient();
     let active = false;
     let timerInt = null;
     let secs = 0;
