@@ -1,270 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curb Appeal Photography — AI Receptionist Demo</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curb Appeal Photography — AI Receptionist</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0d0d0d;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f0a00 0%, #1a1000 50%, #110d00 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
 
-        .bg-overlay {
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(180, 120, 60, 0.12) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(120, 80, 40, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 60% 80%, rgba(200, 140, 60, 0.06) 0%, transparent 50%);
-            pointer-events: none;
-        }
+    .container {
+      text-align: center;
+      max-width: 480px;
+      padding: 40px 24px;
+    }
 
-        .container {
-            position: relative;
-            text-align: center;
-            padding: 48px 32px;
-            max-width: 580px;
-            width: 100%;
-        }
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
 
-        .logo-icon {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(135deg, #c8833a 0%, #8b5a2b 100%);
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 32px rgba(200, 131, 58, 0.3);
-        }
+    .subtitle {
+      color: #c8833a;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
 
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 6px;
-            letter-spacing: -0.02em;
-        }
+    .avatar-ring {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
 
-        .tagline {
-            font-size: 0.95rem;
-            color: #c8833a;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-        }
+    .avatar-ring::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 3px solid #c8833a;
+      opacity: 0.3;
+    }
 
-        p.description {
-            font-size: 1.05rem;
-            color: #888;
-            line-height: 1.7;
-            margin-bottom: 28px;
-        }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #c8833a 0%, #e8a040 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+    }
 
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 36px;
-        }
+    .agent-name {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
 
-        .service-tag {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 6px 14px;
-            font-size: 0.8rem;
-            color: #aaa;
-        }
+    .agent-role {
+      color: #7a6040;
+      font-size: 14px;
+      margin-bottom: 40px;
+    }
 
-        .call-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #c8833a 0%, #a0622a 100%);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 18px 40px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 24px rgba(200, 131, 58, 0.4);
-            margin-bottom: 16px;
-        }
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #c8833a 0%, #e8a040 100%);
+      color: #fff;
+      border: none;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 24px rgba(200, 131, 58, 0.4);
+    }
 
-        .call-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(200, 131, 58, 0.5);
-        }
+    .call-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 32px rgba(200, 131, 58, 0.6);
+    }
 
-        .call-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
+    .call-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
 
-        .call-btn.active {
-            background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
-            box-shadow: 0 4px 24px rgba(239, 68, 68, 0.4);
-        }
+    .call-btn svg {
+      width: 22px;
+      height: 22px;
+    }
 
-        .call-btn.active:hover {
-            box-shadow: 0 8px 32px rgba(239, 68, 68, 0.5);
-        }
+    .end-btn {
+      background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
+      box-shadow: 0 4px 24px rgba(255, 71, 87, 0.4);
+    }
 
-        .btn-icon {
-            font-size: 1.2rem;
-        }
+    .end-btn:hover:not(:disabled) {
+      box-shadow: 0 6px 32px rgba(255, 71, 87, 0.6);
+    }
 
-        .status {
-            font-size: 0.85rem;
-            color: #555;
-            min-height: 20px;
-            margin-bottom: 24px;
-        }
+    .status {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #5a4020;
+      min-height: 20px;
+    }
 
-        .status.connecting { color: #c8833a; }
-        .status.active { color: #22c55e; }
-        .status.error { color: #ef4444; }
+    .status.active { color: #c8833a; }
+    .status.connected { color: #2ed573; }
 
-        .pulse {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #22c55e;
-            border-radius: 50%;
-            margin-right: 8px;
-            animation: pulse 1.5s infinite;
-        }
+    @keyframes pulseAmber {
+      0% { box-shadow: 0 0 0 0 rgba(200, 131, 58, 0.5); }
+      70% { box-shadow: 0 0 0 20px rgba(200, 131, 58, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(200, 131, 58, 0); }
+    }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.8); }
-        }
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(46, 213, 115, 0.5); }
+      70% { box-shadow: 0 0 0 20px rgba(46, 213, 115, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(46, 213, 115, 0); }
+    }
 
-        .mic-hint {
-            font-size: 0.8rem;
-            color: #444;
-        }
+    .pulse-amber { animation: pulseAmber 2s infinite; }
+    .pulse-green { animation: pulseGreen 1.5s infinite; }
 
-        .powered-by {
-            margin-top: 40px;
-            font-size: 0.75rem;
-            color: #333;
-        }
+    .timer {
+      font-size: 28px;
+      font-weight: 300;
+      font-variant-numeric: tabular-nums;
+      margin-top: 16px;
+      display: none;
+    }
 
-        .powered-by a {
-            color: #444;
-            text-decoration: none;
-        }
+    .timer.visible { display: block; }
 
-        .powered-by a:hover { color: #c8833a; }
-    </style>
+    .footer {
+      margin-top: 48px;
+      font-size: 12px;
+      color: #3a2810;
+    }
+
+    .footer a {
+      color: #c8833a;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="bg-overlay"></div>
-    <div class="container">
-        <div class="logo-icon">📸</div>
-        <h1>Curb Appeal Photography</h1>
-        <div class="tagline">Atlanta, GA — Real Estate Media</div>
+  <div class="container">
+    <div class="logo">Curb Appeal Photography</div>
+    <div class="subtitle">Real Estate Media · Atlanta, GA</div>
 
-        <p class="description">
-            Talk to our AI receptionist. Ask about booking a shoot, services, coverage area, or turnaround times.
-        </p>
-
-        <div class="services">
-            <span class="service-tag">📸 Real Estate Photography</span>
-            <span class="service-tag">🚁 Drone Aerial</span>
-            <span class="service-tag">🏠 Matterport 3D Tours</span>
-            <span class="service-tag">🌅 Twilight Photography</span>
-            <span class="service-tag">🛋️ Virtual Staging</span>
-            <span class="service-tag">🎬 Realtor Headshots</span>
-        </div>
-
-        <button class="call-btn" id="callBtn" onclick="toggleCall()">
-            <span class="btn-icon">🎤</span>
-            <span id="btnText">Talk to Matt's Receptionist</span>
-        </button>
-
-        <div class="status" id="status">🎤 Allow microphone access when prompted</div>
-
-        <div class="powered-by">
-            Powered by <a href="https://voqalai.com" target="_blank">Voqal AI</a>
-        </div>
+    <div class="avatar-ring" id="avatarRing">
+      <div class="avatar" id="avatar">📸</div>
     </div>
 
-    <script type="module">
-        import { RetellWebClient } from "https://cdn.jsdelivr.net/npm/retell-client-js-sdk@latest/+esm";
+    <div class="agent-name">AI Receptionist</div>
+    <div class="agent-role">Matt's Virtual Assistant</div>
 
-        const retellWebClient = new RetellWebClient();
-        let callActive = false;
+    <button class="call-btn" id="callBtn" onclick="toggleCall()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+      Talk to Receptionist
+    </button>
 
-        function setStatus(text, cls) {
-            const el = document.getElementById('status');
-            el.textContent = text;
-            el.className = 'status ' + (cls || '');
-        }
+    <div class="timer" id="timer">00:00</div>
+    <div class="status" id="status"></div>
 
-        function setBtn(text, active) {
-            document.getElementById('btnText').textContent = text;
-            const btn = document.getElementById('callBtn');
-            btn.className = 'call-btn' + (active ? ' active' : '');
-        }
+    <div class="footer">
+      Powered by <a href="https://voqalai.com" target="_blank">Voqal AI</a>
+    </div>
+  </div>
 
-        retellWebClient.on('call_started', () => {
-            callActive = true;
-            setBtn('End Call', true);
-            setStatus('🟢 Connected — speak naturally', 'active');
-        });
+  <script type="module">
+    import { RetellWebClient } from "https://cdn.jsdelivr.net/npm/retell-client-js-sdk@latest/+esm";
 
-        retellWebClient.on('call_ended', () => {
-            callActive = false;
-            setBtn("Talk to Matt's Receptionist", false);
-            setStatus('Call ended. Click to start a new one.');
-        });
+    const retellClient = new RetellWebClient();
+    let isCallActive = false;
+    let timerInterval = null;
+    let seconds = 0;
 
-        retellWebClient.on('error', (err) => {
-            callActive = false;
-            setBtn("Talk to Matt's Receptionist", false);
-            setStatus('Connection error. Please try again.', 'error');
-            retellWebClient.stopCall();
-        });
+    const btn = document.getElementById('callBtn');
+    const statusEl = document.getElementById('status');
+    const avatar = document.getElementById('avatar');
+    const avatarRing = document.getElementById('avatarRing');
+    const timerEl = document.getElementById('timer');
 
-        window.toggleCall = async function() {
-            const btn = document.getElementById('callBtn');
-            if (callActive) {
-                retellWebClient.stopCall();
-                return;
-            }
+    const PHONE_ICON = `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>`;
+    const END_ICON = `<svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08a.956.956 0 01-.29-.7c0-.28.11-.53.29-.71C3.34 8.78 7.46 7 12 7s8.66 1.78 11.71 4.67c.18.18.29.43.29.71 0 .28-.11.53-.29.71l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.1-.7-.28a11.27 11.27 0 00-2.67-1.85.996.996 0 01-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"/></svg>`;
 
-            btn.disabled = true;
-            setStatus('Connecting...', 'connecting');
-            setBtn('Connecting...', false);
+    function updateTimer() {
+      seconds++;
+      const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const s = String(seconds % 60).padStart(2, '0');
+      timerEl.textContent = `${m}:${s}`;
+    }
 
-            try {
-                const res = await fetch('/.netlify/functions/retell-token', { method: 'POST' });
-                const { access_token } = await res.json();
-                await retellWebClient.startCall({ accessToken: access_token });
-            } catch (err) {
-                setStatus('Could not connect. Please try again.', 'error');
-                setBtn("Talk to Matt's Receptionist", false);
-            } finally {
-                btn.disabled = false;
-            }
-        };
-    </script>
+    retellClient.on('call_started', () => {
+      isCallActive = true;
+      statusEl.textContent = 'Connected — speak naturally';
+      statusEl.className = 'status connected';
+      avatar.textContent = '🟢';
+      avatarRing.classList.remove('pulse-amber');
+      avatarRing.classList.add('pulse-green');
+      btn.innerHTML = `${END_ICON} End Call`;
+      btn.classList.add('end-btn');
+      btn.disabled = false;
+      timerEl.classList.add('visible');
+      seconds = 0;
+      timerInterval = setInterval(updateTimer, 1000);
+    });
+
+    retellClient.on('call_ended', () => resetUI());
+    retellClient.on('error', () => {
+      statusEl.textContent = 'Connection error — please try again';
+      resetUI();
+    });
+
+    function resetUI() {
+      isCallActive = false;
+      if (timerInterval) clearInterval(timerInterval);
+      timerEl.classList.remove('visible');
+      avatar.textContent = '📸';
+      avatarRing.classList.remove('pulse-green', 'pulse-amber');
+      btn.innerHTML = `${PHONE_ICON} Talk to Receptionist`;
+      btn.classList.remove('end-btn');
+      btn.disabled = false;
+      statusEl.textContent = '';
+      statusEl.className = 'status';
+    }
+
+    window.toggleCall = async function() {
+      if (isCallActive) { retellClient.stopCall(); return; }
+
+      btn.disabled = true;
+      statusEl.textContent = 'Connecting...';
+      statusEl.className = 'status active';
+      avatarRing.classList.add('pulse-amber');
+
+      try {
+        const res = await fetch('/.netlify/functions/retell-token', { method: 'POST' });
+        const { access_token } = await res.json();
+        await retellClient.startCall({ accessToken: access_token });
+      } catch (err) {
+        statusEl.textContent = 'Failed to connect — please try again';
+        statusEl.className = 'status';
+        avatarRing.classList.remove('pulse-amber');
+        btn.disabled = false;
+      }
+    };
+  </script>
 </body>
 </html>
