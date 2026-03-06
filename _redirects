@@ -113,5 +113,8 @@ https://www.arkaisolutions.net/*  https://voqalai.com/:splat  301!
 /favicon.ico                    /favicon.png            200
 /index.html                     /                       301
 
+# Demo pages — must come before 404 fallback
+/demos/*                         /demos/:splat           200
+
 # 404 fallback — must be last
 /*                               /404.html               404
