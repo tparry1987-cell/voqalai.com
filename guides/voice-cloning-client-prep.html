@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Cloning Preparation Guide | Voqal AI</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --accent: #db7c54;
+      --accent-light: #e8955e;
+      --dark: #070908;
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --bg: #ffffff;
+      --bg-warm: #faf8f6;
+      --border: #e5e0db;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 20mm 18mm;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 14px;
+      background: var(--bg);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    @media print {
+      .page { padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 24px;
+      border-bottom: 3px solid var(--accent);
+      margin-bottom: 32px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .logo-text {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .doc-type {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      background: rgba(219, 124, 84, 0.08);
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+
+    /* Title section */
+    .title-section {
+      text-align: center;
+      padding: 36px 20px;
+      background: linear-gradient(135deg, var(--dark) 0%, #1a1c1b 100%);
+      border-radius: 12px;
+      margin-bottom: 36px;
+    }
+
+    .title-section h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .title-section h1 span {
+      color: var(--accent-light);
+    }
+
+    .title-section p {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    /* Sections */
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 24px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    /* Info boxes */
+    .info-box {
+      background: var(--bg-warm);
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+
+    .info-box h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .info-box p {
+      margin-bottom: 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* Requirements grid */
+    .req-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .req-item {
+      background: var(--bg-warm);
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .req-item .label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .req-item .value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    /* Tips list */
+    .tips-list {
+      list-style: none;
+      margin: 12px 0;
+      counter-reset: tip;
+    }
+
+    .tips-list li {
+      position: relative;
+      padding: 10px 12px 10px 42px;
+      margin-bottom: 6px;
+      background: var(--bg-warm);
+      border-radius: 6px;
+      font-size: 13.5px;
+      counter-increment: tip;
+    }
+
+    .tips-list li::before {
+      content: counter(tip);
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Script section */
+    .script-container {
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 20px 0;
+    }
+
+    .script-container h3 {
+      color: var(--dark);
+      font-size: 14px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .script-container h3:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .script-container p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .script-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      background: rgba(219, 124, 84, 0.1);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    .placeholder {
+      background: rgba(219, 124, 84, 0.15);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    /* Consent section */
+    .consent-box {
+      background: linear-gradient(135deg, var(--dark) 0%, #1a1c1b 100%);
+      color: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      margin: 24px 0;
+    }
+
+    .consent-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--accent-light);
+    }
+
+    .consent-box p {
+      color: rgba(255,255,255,0.7);
+      font-size: 13.5px;
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right a {
+      display: block;
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-right .email {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    /* Print button */
+    .print-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--dark);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      z-index: 100;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+
+    .print-bar button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+
+    .print-bar button:hover {
+      background: var(--accent-light);
+    }
+
+    @media screen {
+      body { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Print bar -->
+<div class="print-bar no-print">
+  <button onclick="window.print()">Save as PDF / Print</button>
+</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-area">
+      <svg class="logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ico-grad" x1="0" y1="10" x2="0" y2="70">
+            <stop offset="0%" stop-color="#e8955e"/>
+            <stop offset="100%" stop-color="#db7c54"/>
+          </linearGradient>
+        </defs>
+        <rect width="80" height="80" rx="18" fill="#070908"/>
+        <rect x="12" y="31" width="7" height="18" rx="3.5" fill="url(#ico-grad)"/>
+        <rect x="24" y="24" width="7" height="32" rx="3.5" fill="url(#ico-grad)"/>
+        <rect x="36" y="17" width="7" height="46" rx="3.5" fill="url(#ico-grad)"/>
+        <rect x="48" y="25" width="7" height="30" rx="3.5" fill="url(#ico-grad)"/>
+        <rect x="60" y="32" width="7" height="16" rx="3.5" fill="url(#ico-grad)"/>
+      </svg>
+      <div class="logo-text">Voqal <span>AI</span></div>
+    </div>
+    <div class="doc-type">Client Guide</div>
+  </div>
+
+  <!-- Title -->
+  <div class="title-section">
+    <h1>Voice Cloning <span>Preparation Guide</span></h1>
+    <p>Everything you need to record the perfect voice sample for your AI agent</p>
+  </div>
+
+  <!-- What we need -->
+  <h2><span class="num">1</span> What We Need From You</h2>
+  <p>We'll use a short recording of your voice to create an AI voice agent that sounds just like you. Your clients will hear <em>your</em> voice when they call, 24/7 - even when you're on a shoot.</p>
+
+  <div class="req-grid">
+    <div class="req-item">
+      <div class="label">Recording Length</div>
+      <div class="value">3 - 5 minutes</div>
+    </div>
+    <div class="req-item">
+      <div class="label">File Format</div>
+      <div class="value">MP3 or WAV</div>
+    </div>
+    <div class="req-item">
+      <div class="label">Environment</div>
+      <div class="value">Quiet room, no echo</div>
+    </div>
+    <div class="req-item">
+      <div class="label">Equipment</div>
+      <div class="value">Phone voice memo is fine</div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h4>Why 3-5 minutes?</h4>
+    <p>The AI needs enough audio to learn the unique characteristics of your voice - your tone, pace, accent, and natural inflections. More audio = a more accurate clone. Aim for 5 minutes if possible.</p>
+  </div>
+
+  <!-- Recording tips -->
+  <h2><span class="num">2</span> Recording Tips</h2>
+  <p>Follow these tips to get the best possible voice clone:</p>
+
+  <ol class="tips-list">
+    <li>Record in the quietest room available - a carpeted room or even a wardrobe/closet is ideal</li>
+    <li>Hold your phone or microphone 6-8 inches from your mouth</li>
+    <li>Use your natural, friendly phone voice - not a "reading aloud" voice</li>
+    <li>Keep your pace consistent and conversational - don't rush</li>
+    <li>If you make a mistake, pause for 2 seconds then re-read the sentence</li>
+    <li>No background music, TV, or other noise</li>
+    <li>Avoid rooms with hard surfaces (tiles, glass) as they create echo</li>
+    <li>Only your voice should be in the recording - no other speakers</li>
+  </ol>
+
+  <!-- Script -->
+  <div class="page-break"></div>
+
+  <h2><span class="num">3</span> The Script</h2>
+  <p>Read the script below naturally, as if you're chatting with a client on the phone. Replace <span class="placeholder">YOUR NAME</span> with your actual name.</p>
+
+  <div class="script-container">
+    <span class="script-label">Read aloud - approx. 5 minutes</span>
+
+    <h3>Section 1 - Greeting</h3>
+    <p>Hi there, thanks so much for calling! My name is <span class="placeholder">YOUR NAME</span>, and I'm really glad you reached out. Whether you're looking for wedding photography, family portraits, or something completely unique, I'd love to help you capture those special moments.</p>
+    <p>So tell me, what kind of shoot are you thinking about? I'm all ears.</p>
+
+    <h3>Section 2 - Services</h3>
+    <p>I offer a wide range of photography services. Weddings are probably my biggest passion - there's nothing quite like capturing that first look, the laughter during the speeches, and all those beautiful candid moments throughout the day.</p>
+    <p>But I also love doing family sessions, corporate headshots, engagement shoots, and special events. Every project is different, and that's what keeps it exciting for me.</p>
+    <p>For weddings, my packages typically start from around five hundred pounds and go up depending on how many hours of coverage you need, whether you'd like a second photographer, and what kind of album or prints you're after.</p>
+
+    <h3>Section 3 - Booking</h3>
+    <p>Great question! Let me check my availability for you. I'd recommend booking as early as possible, especially for weekend dates during the summer months. Those tend to fill up quite quickly.</p>
+    <p>Once we've agreed on a date, I'll send over a booking form and a contract for you to review. There's a deposit required to secure your date, and then the remaining balance is due two weeks before the event.</p>
+    <p>If you need to reschedule, that's absolutely fine - just give me as much notice as you can, and we'll work something out together.</p>
+
+    <h3>Section 4 - The Experience</h3>
+    <p>One thing I always tell my clients is to just relax and be yourselves. I know having your photo taken can feel a bit awkward at first, but I promise I'll guide you through every step. By the end of the session, most people actually say they had a brilliant time!</p>
+    <p>I usually deliver your final gallery within three to four weeks after the shoot. You'll get a private online gallery where you can view, download, and share all your images with family and friends.</p>
+
+    <h3>Section 5 - Questions & Wrap-up</h3>
+    <p>Would you like me to email you my full price list? I can also send over some examples from recent shoots so you can get a feel for my style.</p>
+    <p>Absolutely, no problem at all. I completely understand - it's a big decision, and you want to make sure you find the right photographer for your special day.</p>
+    <p>Is there anything else I can help you with today? Perfect. Well, it's been lovely chatting with you. I'll follow up with an email shortly, and please don't hesitate to reach out if you have any more questions. Take care, and I look forward to working with you!</p>
+
+    <h3>Section 6 - Extra Phrases</h3>
+    <p>The weather forecast looks fantastic for Saturday, so we should get some gorgeous golden hour shots.</p>
+    <p>I just wanted to quickly confirm - your session is booked for the fourteenth of June at half past two in the afternoon at Riverside Park.</p>
+    <p>Unfortunately, I'm fully booked on that particular date. However, I do have availability the following weekend if that works for you?</p>
+    <p>That sounds absolutely wonderful. I think the beach location will give us some stunning backdrops, especially around sunset.</p>
+    <p>Right, so just to summarise - you'd like the full day package with two photographers, an engagement shoot, and the premium leather album. Is that correct?</p>
+  </div>
+
+  <!-- Consent -->
+  <h2><span class="num">4</span> Voice Consent</h2>
+
+  <div class="consent-box">
+    <h4>Verification Required</h4>
+    <p>For security and legal compliance, you'll need to record a short verification phrase to confirm you consent to having your voice cloned. We'll send you the exact phrase when we're ready to set things up - it only takes about 10 seconds.</p>
+  </div>
+
+  <!-- Send -->
+  <h2><span class="num">5</span> Send Your Recording</h2>
+  <p>Once you've recorded the script, please send the audio file to:</p>
+
+  <div class="info-box">
+    <h4>Email</h4>
+    <p style="font-size: 16px; font-weight: 600; color: var(--accent);">info@voqalai.com</p>
+  </div>
+
+  <p>Once we receive your recording, we'll have your AI voice agent ready for you to test within a few days. You'll get a phone number to call so you can hear your own voice as the AI agent!</p>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-left">
+      &copy; Voqal AI 2026 &middot; Confidential
+    </div>
+    <div class="footer-right">
+      <a href="https://voqalai.com">voqalai.com</a>
+      <span class="email">info@voqalai.com</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

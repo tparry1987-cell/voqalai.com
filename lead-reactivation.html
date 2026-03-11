@@ -21,6 +21,10 @@
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://dashboard.retellai.com">
+  <link rel="preconnect" href="https://app.cal.com">
+  <link rel="preload" href="fonts/saira-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -113,292 +117,6 @@
     Cal("ui", {"theme":"dark","styles":{"branding":{"brandColor":"#db7c54"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 
-  <!-- Lead Reactivation page-specific styles -->
-  <style>
-    /* Hero */
-    .lr-hero {
-      padding: 160px 0 40px;
-      text-align: center;
-    }
-    .lr-hero h1 {
-      font-size: clamp(42px, 6vw, 72px);
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .lr-hero p {
-      color: rgba(248,249,250,0.55);
-      font-size: 17px;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    /* Problem section */
-    .problem-section h2 {
-      font-size: 36px;
-      font-weight: 300;
-      margin-bottom: 12px;
-    }
-    .problem-copy {
-      color: rgba(248,249,250,0.55);
-      font-size: 15px;
-      max-width: 620px;
-      line-height: 1.7;
-      font-weight: 300;
-      margin-top: 32px;
-    }
-    .stats-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .stat-block-lg {
-      padding: 32px 24px;
-      background: rgba(7,9,8,0.65);
-      border: 1px solid rgba(248,249,250,0.08);
-      border-radius: 16px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      text-align: center;
-    }
-    .stat-block-lg .stat-big {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-style: italic;
-      font-size: 48px;
-      color: #db7c54;
-      line-height: 1.1;
-      margin-bottom: 8px;
-    }
-    .stat-block-lg .stat-desc {
-      font-size: 14px;
-      color: rgba(248,249,250,0.55);
-      font-weight: 300;
-      line-height: 1.5;
-    }
-
-    /* How it works — reuse protocol-grid styles */
-    .lr-protocol h2 {
-      font-size: 36px;
-      font-weight: 300;
-      margin-bottom: 12px;
-    }
-
-    /* Performance Model / VS section */
-    .vs-section { text-align: center; }
-    .vs-section h2 {
-      font-size: 36px;
-      font-weight: 300;
-      margin-bottom: 12px;
-    }
-    .vs-desc {
-      color: rgba(248,249,250,0.5);
-      font-size: 15px;
-      margin-bottom: 48px;
-      font-weight: 300;
-    }
-    .vs-grid {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 32px;
-      align-items: start;
-      text-align: left;
-    }
-    .vs-card {
-      background: rgba(7,9,8,0.65);
-      border: 1px solid rgba(248,249,250,0.08);
-      border-radius: 16px;
-      padding: 32px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-    .vs-card.highlight {
-      border-color: rgba(219,124,84,0.35);
-    }
-    .vs-card h3 {
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(248,249,250,0.5);
-      margin-bottom: 24px;
-      font-weight: 400;
-    }
-    .vs-card ul { list-style: none; padding: 0; margin: 0; }
-    .vs-card li {
-      padding: 8px 0;
-      font-size: 14px;
-      color: rgba(248,249,250,0.7);
-      font-weight: 300;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .vs-card li::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #db7c54;
-      flex-shrink: 0;
-    }
-    .vs-divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-style: italic;
-      font-size: 24px;
-      color: rgba(248,249,250,0.3);
-      padding-top: 80px;
-    }
-
-    /* Callout box */
-    .callout-box {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 40px;
-      border: 1px solid rgba(219,124,84,0.35);
-      border-radius: 16px;
-      background: rgba(7,9,8,0.65);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      text-align: center;
-    }
-    .callout-box p {
-      font-size: 17px;
-      color: rgba(248,249,250,0.85);
-      line-height: 1.7;
-      font-weight: 300;
-      margin-bottom: 16px;
-    }
-    .callout-box p:last-child {
-      margin-bottom: 0;
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-style: italic;
-      font-size: 19px;
-      color: #db7c54;
-    }
-
-    /* ROI Calculator */
-    .lr-calculator h2 {
-      font-size: 36px;
-      font-weight: 300;
-      margin-bottom: 12px;
-    }
-
-    /* Performance stats 4-col grid */
-    .stats-grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .perf-stat {
-      padding: 28px 20px;
-      background: rgba(7,9,8,0.65);
-      border: 1px solid rgba(248,249,250,0.08);
-      border-radius: 16px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      text-align: center;
-    }
-    .perf-stat .perf-number {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-style: italic;
-      font-size: 32px;
-      color: #db7c54;
-      line-height: 1.1;
-      margin-bottom: 8px;
-    }
-    .perf-stat .perf-label {
-      font-size: 13px;
-      color: rgba(248,249,250,0.5);
-      font-weight: 300;
-      line-height: 1.5;
-    }
-
-    /* FAQ Accordion */
-    .faq-section h2 {
-      font-size: 36px;
-      font-weight: 300;
-      margin-bottom: 48px;
-    }
-    .faq-list {
-      max-width: 740px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border-bottom: 1px solid rgba(248,249,250,0.08);
-    }
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 20px 0;
-      color: #f8f9fa;
-      font-family: 'Saira', sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      transition: color 0.3s;
-    }
-    .faq-question:hover {
-      color: #db7c54;
-    }
-    .faq-icon {
-      font-size: 20px;
-      font-weight: 300;
-      color: rgba(248,249,250,0.4);
-      transition: transform 0.3s;
-      flex-shrink: 0;
-    }
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-    .faq-item.open .faq-answer {
-      max-height: 300px;
-    }
-    .faq-answer p {
-      padding: 0 0 20px;
-      font-size: 14px;
-      color: rgba(248,249,250,0.55);
-      line-height: 1.7;
-      font-weight: 300;
-      max-width: none;
-    }
-
-    /* CTA Form section heading */
-    .lr-form h2 {
-      font-size: 36px;
-      font-weight: 300;
-      margin-bottom: 12px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .lr-hero { padding: 140px 0 30px; }
-      .stats-grid-3 { grid-template-columns: 1fr; max-width: 400px; margin: 48px auto 0; }
-      .stats-grid-4 { grid-template-columns: 1fr 1fr; }
-      .vs-grid { grid-template-columns: 1fr; }
-      .vs-divider { padding: 0; font-size: 18px; }
-      .callout-box { padding: 28px 20px; }
-    }
-    @media (max-width: 480px) {
-      .stats-grid-4 { grid-template-columns: 1fr; max-width: 300px; margin: 48px auto 0; }
-    }
-  </style>
 </head>
 <body>
 
@@ -445,7 +163,7 @@
       <section class="lr-hero container">
         <div class="reveal">
           <span class="section-label">Lead Reactivation</span>
-          <h1>Your Database Is a <span class="italic-accent">Gold Mine.</span></h1>
+          <h1>AI Lead Reactivation — Pay Only When <span class="italic-accent">Leads Convert.</span></h1>
           <p>You've already paid to acquire these leads. Our AI reactivates them &mdash; and you only pay when they convert.</p>
         </div>
       </section>
@@ -750,7 +468,8 @@
         </div>
       </div>
       <div class="container footer-bottom">
-        <p>&copy; 2026 Voqal AI. All rights reserved.</p>
+        <p>&copy; 2026 Voqal AI Ltd. Registered in England &amp; Wales. Company No. 17080303.</p>
+        <p class="footer-address">Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
       </div>
     </footer>
 

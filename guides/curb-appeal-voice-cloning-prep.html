@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Cloning Preparation Guide - Curb Appeal Photography | Voqal AI</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --accent: #db7c54;
+      --accent-light: #e8955e;
+      --dark: #070908;
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --bg: #ffffff;
+      --bg-warm: #faf8f6;
+      --border: #e5e0db;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 20mm 18mm;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 14px;
+      background: var(--bg);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    @media print {
+      .page { padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 24px;
+      border-bottom: 3px solid var(--accent);
+      margin-bottom: 32px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+    }
+
+    .logo-text {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .doc-type {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      background: rgba(219, 124, 84, 0.08);
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+
+    /* Title section */
+    .title-section {
+      text-align: center;
+      padding: 36px 20px;
+      background: linear-gradient(135deg, var(--dark) 0%, #1a1c1b 100%);
+      border-radius: 12px;
+      margin-bottom: 36px;
+    }
+
+    .title-section h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .title-section h1 span {
+      color: var(--accent-light);
+    }
+
+    .title-section p {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .title-section .client-name {
+      color: var(--accent-light);
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Sections */
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 24px 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    /* Info boxes */
+    .info-box {
+      background: var(--bg-warm);
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+
+    .info-box h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .info-box p {
+      margin-bottom: 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* Requirements grid */
+    .req-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .req-item {
+      background: var(--bg-warm);
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .req-item .label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .req-item .value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    /* Tips list */
+    .tips-list {
+      list-style: none;
+      margin: 12px 0;
+      counter-reset: tip;
+    }
+
+    .tips-list li {
+      position: relative;
+      padding: 10px 12px 10px 42px;
+      margin-bottom: 6px;
+      background: var(--bg-warm);
+      border-radius: 6px;
+      font-size: 13.5px;
+      counter-increment: tip;
+    }
+
+    .tips-list li::before {
+      content: counter(tip);
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Script section */
+    .script-container {
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 20px 0;
+    }
+
+    .script-container h3 {
+      color: var(--dark);
+      font-size: 14px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .script-container h3:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .script-container p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text);
+    }
+
+    .script-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      background: rgba(219, 124, 84, 0.1);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    /* Consent section */
+    .consent-box {
+      background: linear-gradient(135deg, var(--dark) 0%, #1a1c1b 100%);
+      color: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      margin: 24px 0;
+    }
+
+    .consent-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--accent-light);
+    }
+
+    .consent-box p {
+      color: rgba(255,255,255,0.7);
+      font-size: 13.5px;
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right a {
+      display: block;
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-right .email {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    /* Print button */
+    .print-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--dark);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      z-index: 100;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+
+    .print-bar button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+
+    .print-bar button:hover {
+      background: var(--accent-light);
+    }
+
+    @media screen {
+      body { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Print bar -->
+<div class="print-bar no-print">
+  <button onclick="window.print()">Save as PDF / Print</button>
+</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-area">
+      <svg class="logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ico-grad" x1="0" y1="10" x2="0" y2="70">
+            <stop offset="0%" stop-color="#e8955e"/>
+            <stop offset="100%" stop-color="#db7c54"/>
+          </linearGradient>
+        </defs>
+        <rect width="80" height="80" rx="18" fill="#070908"/>
+        <rect x="12" y="31" width="7" height="18" rx="3.5" fill="url(#ico-grad)"/>
+        <rect x="24" y="24" width="7" height="32" rx="3.5" fill="url(#ico-grad)"/>
+        <rect x="36" y="17" width="7" height="46" rx="3.5" fill="url(#ico-grad)"/>
+        <rect x="48" y="25" width="7" height="30" rx="3.5" fill="url(#ico-grad)"/>
+        <rect x="60" y="32" width="7" height="16" rx="3.5" fill="url(#ico-grad)"/>
+      </svg>
+      <div class="logo-text">Voqal <span>AI</span></div>
+    </div>
+    <div class="doc-type">Client Guide</div>
+  </div>
+
+  <!-- Title -->
+  <div class="title-section">
+    <h1>Voice Cloning <span>Preparation Guide</span></h1>
+    <p>Everything you need to record the perfect voice sample for your AI receptionist</p>
+    <div class="client-name">Prepared for Matt &mdash; Curb Appeal Photography</div>
+  </div>
+
+  <!-- What we need -->
+  <h2><span class="num">1</span> What We Need From You</h2>
+  <p>We'll use a short recording of your voice to create an AI receptionist that sounds just like you. Your clients &mdash; agents, brokers, property managers &mdash; will hear <em>your</em> voice when they call, 24/7, even when you're out on a shoot.</p>
+
+  <div class="req-grid">
+    <div class="req-item">
+      <div class="label">Recording Length</div>
+      <div class="value">3 - 5 minutes</div>
+    </div>
+    <div class="req-item">
+      <div class="label">File Format</div>
+      <div class="value">MP3 or WAV</div>
+    </div>
+    <div class="req-item">
+      <div class="label">Environment</div>
+      <div class="value">Quiet room, no echo</div>
+    </div>
+    <div class="req-item">
+      <div class="label">Equipment</div>
+      <div class="value">Phone voice memo is fine</div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h4>Why 3-5 minutes?</h4>
+    <p>The AI needs enough audio to learn the unique characteristics of your voice &mdash; your tone, pace, accent, and natural inflections. More audio = a more accurate clone. Aim for 5 minutes if possible.</p>
+  </div>
+
+  <!-- Recording tips -->
+  <h2><span class="num">2</span> Recording Tips</h2>
+  <p>Follow these tips to get the best possible voice clone:</p>
+
+  <ol class="tips-list">
+    <li>Record in the quietest room available &mdash; a carpeted room or closet is ideal</li>
+    <li>Hold your phone or microphone 6-8 inches from your mouth</li>
+    <li>Use your natural, friendly phone voice &mdash; not a "reading aloud" voice</li>
+    <li>Keep your pace consistent and conversational &mdash; don't rush</li>
+    <li>If you make a mistake, pause for 2 seconds then re-read the sentence</li>
+    <li>No background music, TV, or other noise</li>
+    <li>Avoid rooms with hard surfaces (tiles, glass) as they create echo</li>
+    <li>Only your voice should be in the recording &mdash; no other speakers</li>
+  </ol>
+
+  <!-- Script -->
+  <div class="page-break"></div>
+
+  <h2><span class="num">3</span> The Script</h2>
+  <p>Read the script below naturally, as if you're talking to a real estate agent on the phone who's calling to book a shoot or ask about your services.</p>
+
+  <div class="script-container">
+    <span class="script-label">Read aloud &mdash; approx. 5 minutes</span>
+
+    <h3>Section 1 &mdash; Greeting &amp; Welcome</h3>
+    <p>Hey, thanks for calling Curb Appeal Photography! This is Matt. I appreciate you reaching out. Whether you need listing photos, drone aerials, a Matterport tour, or the full package, I'd love to help you make your listing shine.</p>
+    <p>So tell me, what property are you working with? I'm happy to help you figure out the best option.</p>
+
+    <h3>Section 2 &mdash; Services Overview</h3>
+    <p>We offer a full range of real estate media services here at Curb Appeal. Professional interior and exterior photography is our bread and butter, but we also do drone aerial photos and video &mdash; we're FAA licensed for that &mdash; Matterport three-D virtual tours, real estate video walkthroughs, virtual staging, twilight photography, floor plans, and realtor headshots and branding.</p>
+    <p>We work with residential agents, commercial brokers, property managers, Airbnb hosts, apartment communities, restaurants &mdash; really anyone who needs their space to look incredible. We've been serving Metro Atlanta for over seven years now, and we take a lot of pride in what we do.</p>
+
+    <h3>Section 3 &mdash; Pricing &amp; Packages</h3>
+    <p>Our photography packages start at one hundred and twenty-five dollars, and pricing is based on the number of images you need, not the square footage. So whether it's a small condo or a big estate, we've got a package that fits.</p>
+    <p>Matterport virtual tours start at one hundred and twenty-five dollars per thousand square feet, and virtual staging starts at fifty dollars per image. Drone aerials and video are available as add-ons when you pick your package. Oh, and blue sky replacement is always included at no extra charge.</p>
+
+    <h3>Section 4 &mdash; Booking &amp; Scheduling</h3>
+    <p>The easiest way to get booked in is through our online scheduler. You can pick your package, choose your date and time, and even pay right there &mdash; paying at booking gets you the fastest turnaround.</p>
+    <p>I'd definitely recommend booking as early as you can, especially for weekday morning slots. Those tend to go quick. But if you need to reschedule, no worries at all &mdash; as long as you give us twenty-four hours' notice, there's no charge for that. And if it's a weather reschedule, that's always free.</p>
+
+    <h3>Section 5 &mdash; Turnaround &amp; Delivery</h3>
+    <p>We deliver your photos within twenty-four hours of the shoot &mdash; so if we shoot on Tuesday, you'll have everything by Wednesday. Saturday shoots get delivered Monday morning. Everything goes into a private online gallery where you can view, download, and share. All images are edited, color-corrected, and MLS-ready.</p>
+    <p>Nobody needs to be home for the shoot, by the way. As long as we have lockbox access or a Supra key, and the homeowner or agent approves, we're good to go. We always make sure to lock up, turn off lights, and close the blinds when we're done.</p>
+
+    <h3>Section 6 &mdash; Coverage Area &amp; Availability</h3>
+    <p>We cover all of Metro Atlanta and over twenty Georgia counties. That includes Fulton, Cobb, Gwinnett, DeKalb, Cherokee, Forsyth, Henry, and a bunch more. Cities like Alpharetta, Buckhead, Marietta, Roswell, Sandy Springs, Decatur, Dunwoody, Johns Creek, Kennesaw, Woodstock &mdash; we're out there shooting every day.</p>
+    <p>If your listing is a little outside our normal area, just give us a call and we can usually work something out.</p>
+
+    <h3>Section 7 &mdash; Conversations &amp; Questions</h3>
+    <p>Would you like me to send you a link to our booking page? I can text it or email it to you, whichever's easier.</p>
+    <p>Absolutely, I totally understand. Take your time &mdash; and when you're ready, just go ahead and book online or give us a call back. We're open eight to five, Monday through Saturday.</p>
+    <p>Is there anything else I can help you with? Awesome. Well, thanks again for calling Curb Appeal Photography. I really look forward to working with you. Take care now!</p>
+
+    <h3>Section 8 &mdash; Extra Phrases for Voice Range</h3>
+    <p>Perfect, I've got you down for Thursday morning at ten o'clock at the property on Peachtree Street. We'll see you there.</p>
+    <p>Unfortunately, I'm all booked up that particular day. But I do have availability Friday afternoon if that works for you?</p>
+    <p>That's a gorgeous property &mdash; the drone shots are going to look amazing, especially with that lot and those trees.</p>
+    <p>So just to confirm &mdash; you'd like the full package with interior and exterior photos, drone aerials, and a Matterport tour. Is that right?</p>
+    <p>We accept all major credit cards, cash, check, and ACH. You can pay online when you book, or we'll send you an invoice once the photos are ready to go.</p>
+  </div>
+
+  <!-- Consent -->
+  <h2><span class="num">4</span> Voice Consent</h2>
+
+  <div class="consent-box">
+    <h4>Verification Required</h4>
+    <p>For security and legal compliance, you'll need to record a short verification phrase to confirm you consent to having your voice cloned for the AI receptionist. We'll send you the exact phrase when we're ready to set things up &mdash; it only takes about 10 seconds.</p>
+  </div>
+
+  <!-- Send -->
+  <h2><span class="num">5</span> Send Your Recording</h2>
+  <p>Once you've recorded the script, send the audio file using whichever method is easiest for you:</p>
+
+  <div class="info-box" style="margin-bottom: 12px;">
+    <h4>Option 1 &mdash; WhatsApp Voice Note</h4>
+    <p style="font-size: 13.5px; color: var(--text);">Send a WhatsApp voice note to <span style="font-weight: 600; color: var(--accent);">info@voqalai.com's WhatsApp</span> &mdash; just hold the mic button and read the script. <strong>Tip:</strong> Use the Voice Memo / Recorder app on your phone instead if possible &mdash; it records at higher quality than WhatsApp's compression. But a WhatsApp voice note will still work.</p>
+  </div>
+
+  <div class="info-box">
+    <h4>Option 2 &mdash; Email</h4>
+    <p style="font-size: 16px; font-weight: 600; color: var(--accent);">info@voqalai.com</p>
+    <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">Record using your phone's Voice Memo app, then email the file.</p>
+  </div>
+
+  <p>Once we receive your recording, we'll have your AI receptionist ready for you to test within a few days. You'll get a phone number to call so you can hear your own voice as the AI &mdash; answering calls, booking shoots, and handling questions, just like you would.</p>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-left">
+      &copy; Voqal AI 2026 &middot; Confidential
+    </div>
+    <div class="footer-right">
+      <a href="https://voqalai.com">voqalai.com</a>
+      <span class="email">info@voqalai.com</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
