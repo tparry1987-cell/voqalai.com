@@ -33,6 +33,27 @@
     "name": "AI Receptionist for Accountancy Firms",
     "description": "AI receptionist for UK accountancy practices. Handles client calls 24/7, books appointments, manages tax deadline enquiries.",
     "url": "https://voqalai.com/ai-receptionist-accountants.html",
+    "citation": [
+      {
+        "@type": "CreativeWork",
+        "name": "Self Assessment filing statistics 2024-25",
+        "author": { "@type": "Organization", "name": "HM Revenue & Customs" },
+        "datePublished": "2025",
+        "url": "https://www.gov.uk/government/news/565-million-still-to-file-as-the-self-assessment-deadline-looms"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Small Business Call Report",
+        "author": { "@type": "Organization", "name": "Moneypenny" },
+        "url": "https://www.moneypenny.com/uk/resources/news/small-business-call-report/"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "The Effect of Customer Retention on Profitability",
+        "author": { "@type": "Organization", "name": "Bain & Company / Harvard Business School" },
+        "url": "https://hbswk.hbs.edu/archive/the-economics-of-e-loyalty"
+      }
+    ],
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -70,6 +91,39 @@
         "unitText": "month"
       }
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can it handle questions about tax deadlines and HMRC requirements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The AI is configured with key HMRC dates and filing requirements — self-assessment deadlines, corporation tax payment dates, VAT return periods, and more. For complex or case-specific tax queries, it routes the caller to an appropriate member of your team."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it integrate with accounting software like Xero or QuickBooks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We integrate with widely used platforms including Xero, QuickBooks, Sage, and FreeAgent, as well as practice management tools like Karbon and Senta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the ROI of an AI receptionist for an accountancy firm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With nearly half of all Self Assessment returns filed in January (HMRC, 2025) and a third of small business calls going unanswered (Moneypenny), every missed call during peak season is a potential client lost. At an average client value of £1,800/year and research from Bain & Company showing a 5% increase in client retention can boost profits by 25-95%, recovering even a few missed calls per month through AI call handling delivers substantial ROI."
+        }
+      }
+    ]
   }
   </script>
 
@@ -131,16 +185,16 @@
 
         <div class="stats-grid-3 reveal" style="transition-delay: 0.1s;">
           <div class="stat-block-lg">
-            <div class="stat-big">3x</div>
-            <div class="stat-desc">normal call volume in January and October for accountancy firms</div>
+            <div class="stat-big">5.7m</div>
+            <div class="stat-desc">Self Assessment returns filed in January alone &mdash; nearly half the annual total<sup class="cite"><a href="#ref1">[1]</a></sup></div>
           </div>
           <div class="stat-block-lg">
-            <div class="stat-big">35%</div>
-            <div class="stat-desc">of new client enquiries come outside office hours</div>
+            <div class="stat-big">33%</div>
+            <div class="stat-desc">of small business calls go unanswered<sup class="cite"><a href="#ref2">[2]</a></sup></div>
           </div>
           <div class="stat-block-lg">
             <div class="stat-big">&pound;1,800</div>
-            <div class="stat-desc">average annual value of an accountancy client</div>
+            <div class="stat-desc">average annual value of a full-service accountancy client<sup class="cite"><a href="#ref3">[3]</a></sup></div>
           </div>
         </div>
 
@@ -276,7 +330,28 @@
               <p>The AI is designed to handle routine enquiries confidently but recognises its limits. When a caller asks something that requires professional judgement &mdash; such as specific tax planning advice, complex VAT scenarios, or questions about their individual returns &mdash; the AI acknowledges the question, captures the relevant details, and routes it to the appropriate accountant for a callback. Your team gets a complete summary so they can respond without asking the client to repeat themselves.</p>
             </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What is the ROI of an AI receptionist for an accountancy firm?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>With nearly half of all Self Assessment returns filed in January<sup class="cite"><a href="#ref1">[1]</a></sup> and a third of small business calls going unanswered<sup class="cite"><a href="#ref2">[2]</a></sup>, every missed call during peak season is a potential client lost. At an average client value of &pound;1,800/year<sup class="cite"><a href="#ref3">[3]</a></sup> and research from Bain &amp; Company showing a 5% increase in client retention can boost profits by 25&ndash;95%<sup class="cite"><a href="#ref4">[4]</a></sup>, recovering even a few missed calls per month delivers substantial ROI.</p>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <!-- References -->
+      <section class="section-padding container references-section" id="references">
+        <h3>References</h3>
+        <ol class="references-list">
+          <li id="ref1">HMRC (2025). Self Assessment filing statistics. 5.65 million returns filed in January alone, nearly half the annual total of ~12 million. <a href="https://www.gov.uk/government/news/565-million-still-to-file-as-the-self-assessment-deadline-looms" rel="noopener noreferrer" target="_blank">gov.uk</a></li>
+          <li id="ref2">Moneypenny. &ldquo;Small Business Call Report.&rdquo; 33% of micro businesses (0&ndash;9 employees) fail to answer incoming calls; 69% of callers reaching voicemail don&rsquo;t leave a message. <a href="https://www.moneypenny.com/uk/resources/news/small-business-call-report/" rel="noopener noreferrer" target="_blank">moneypenny.com</a></li>
+          <li id="ref3">Industry pricing analysis. Average full-service limited company accountancy client (accounts, tax, VAT) valued at &pound;1,200&ndash;&pound;1,800/year based on UK pricing surveys. <a href="https://www.goforma.com/small-business-accounting/how-much-should-accounting-cost" rel="noopener noreferrer" target="_blank">goforma.com</a></li>
+          <li id="ref4">Reichheld, F. / Bain &amp; Company. &ldquo;The Economics of Loyalty.&rdquo; A 5% increase in customer retention can increase profits by 25&ndash;95%. Published via Harvard Business School. <a href="https://hbswk.hbs.edu/archive/the-economics-of-e-loyalty" rel="noopener noreferrer" target="_blank">hbswk.hbs.edu</a></li>
+        </ol>
       </section>
 
       <!-- CTA -->

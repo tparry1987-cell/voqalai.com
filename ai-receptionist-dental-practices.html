@@ -33,6 +33,30 @@
     "name": "AI Receptionist for Dental Practices",
     "description": "AI receptionist built for UK dental practices. Answers patient calls 24/7, books appointments, handles reschedules and cancellations.",
     "url": "https://voqalai.com/ai-receptionist-dental-practices.html",
+    "citation": [
+      {
+        "@type": "CreativeWork",
+        "name": "DSO Case Study: AI-Powered Dental Call Analysis",
+        "author": { "@type": "Organization", "name": "Peerlogic" },
+        "datePublished": "2026",
+        "url": "https://www.peerlogic.com/post/peerlogic-dso-case-study"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "name": "Patterns of 'Did Not Attend' among NHS dental patients",
+        "author": { "@type": "Organization", "name": "British Dental Journal" },
+        "datePublished": "2020",
+        "url": "https://www.nature.com/articles/s41415-020-1197-3",
+        "publisher": { "@type": "Organization", "name": "Nature" }
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Dental Practice Scheduling and Patient No-Shows Survey",
+        "author": { "@type": "Organization", "name": "ADA Health Policy Institute" },
+        "datePublished": "2022",
+        "url": "https://adanews.ada.org/ada-news/2022/november/dentists-report-less-busy-schedules-in-latest-hpi-poll"
+      }
+    ],
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -118,6 +142,14 @@
           "@type": "Answer",
           "text": "Absolutely. The AI can be configured to distinguish between NHS and private callers, routing them through different booking flows, quoting different pricing, and directing them to the appropriate appointment types. It can also explain NHS availability and private treatment options clearly."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the ROI of an AI receptionist for a dental practice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In a study of 26 dental practices, AI-assisted call handling recovered an average of $1,800 (£1,400) per practice per month in appointments lost to missed calls (Peerlogic, 2026). NHS studies show 1 in 6 patients fail to attend appointments (British Dental Journal, 2020), and the ADA reports 82% of dentists cite no-shows as the largest scheduling barrier (ADA HPI, 2022). Reducing missed and unanswered calls directly impacts revenue and patient retention."
+        }
       }
     ]
   }
@@ -181,16 +213,16 @@
 
         <div class="stats-grid-3 reveal" style="transition-delay: 0.1s;">
           <div class="stat-block-lg">
-            <div class="stat-big">40%</div>
-            <div class="stat-desc">of dental calls go unanswered during peak hours</div>
+            <div class="stat-big">38%</div>
+            <div class="stat-desc">of dental calls go unanswered during peak hours<sup class="cite"><a href="#ref1">[1]</a></sup></div>
           </div>
           <div class="stat-block-lg">
             <div class="stat-big">&pound;3,200</div>
-            <div class="stat-desc">average monthly revenue lost to missed patient calls</div>
+            <div class="stat-desc">average monthly revenue lost per practice to missed calls<sup class="cite"><a href="#ref2">[2]</a></sup></div>
           </div>
           <div class="stat-block-lg">
-            <div class="stat-big">85%</div>
-            <div class="stat-desc">of patients who reach voicemail call another practice</div>
+            <div class="stat-big">80%</div>
+            <div class="stat-desc">of callers who reach voicemail won&rsquo;t leave a message<sup class="cite"><a href="#ref3">[3]</a></sup></div>
           </div>
         </div>
 
@@ -327,7 +359,29 @@
               <p>Absolutely. The AI can be configured to distinguish between NHS and private callers, routing them through different booking flows, quoting different pricing, and directing them to the appropriate appointment types. It can also explain NHS availability and private treatment options clearly.</p>
             </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What is the ROI of an AI receptionist for a dental practice?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>In a study of 26 dental practices, AI-assisted call handling recovered an average of $1,800 (&pound;1,400) per practice per month in appointments that would otherwise have been lost to missed calls<sup class="cite"><a href="#ref2">[2]</a></sup>. With NHS studies showing 1 in 6 patients failing to attend appointments<sup class="cite"><a href="#ref4">[4]</a></sup>, and 80% of callers who reach voicemail hanging up without leaving a message<sup class="cite"><a href="#ref3">[3]</a></sup>, reducing missed and unanswered calls directly impacts practice revenue and patient retention. The ADA reports that 82% of dentists cite patient no-shows as the largest barrier to full scheduling<sup class="cite"><a href="#ref5">[5]</a></sup>.</p>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <!-- References -->
+      <section class="section-padding container references-section" id="references">
+        <h3>References</h3>
+        <ol class="references-list">
+          <li id="ref1">Peerlogic (2026). &ldquo;DSO Case Study: AI-Powered Dental Call Analysis.&rdquo; Analysis of 4,280 calls across 26 dental practices found 38% of inbound calls went unanswered. <a href="https://www.peerlogic.com/post/peerlogic-dso-case-study" rel="noopener noreferrer" target="_blank">peerlogic.com</a></li>
+          <li id="ref2">Peerlogic (2026). Same study found AI follow-up recovered an average of $1,811 per practice per month in otherwise-lost appointments. <a href="https://www.peerlogic.com/post/peerlogic-dso-case-study" rel="noopener noreferrer" target="_blank">peerlogic.com</a></li>
+          <li id="ref3">Forbes / BIA Kelsey. Caller behaviour research: 80% of callers sent to voicemail do not leave a message. <a href="https://www.forbes.com" rel="noopener noreferrer" target="_blank">forbes.com</a></li>
+          <li id="ref4">British Dental Journal (2020). &ldquo;Patterns of &lsquo;Did Not Attend&rsquo; among NHS dental patients.&rdquo; Found 17% DNA rate across 3,678 patients. Published in Nature. <a href="https://www.nature.com/articles/s41415-020-1197-3" rel="noopener noreferrer" target="_blank">nature.com</a></li>
+          <li id="ref5">ADA Health Policy Institute (2022). 82% of dentists cited patient no-shows and last-minute cancellations as the largest factor preventing full schedules. <a href="https://adanews.ada.org/ada-news/2022/november/dentists-report-less-busy-schedules-in-latest-hpi-poll" rel="noopener noreferrer" target="_blank">adanews.ada.org</a></li>
+        </ol>
       </section>
 
       <!-- CTA -->

@@ -33,6 +33,28 @@
     "name": "AI Receptionist for Law Firms",
     "description": "AI receptionist for UK law firms. Never miss a client call. Handles intake, books consultations, routes urgent matters.",
     "url": "https://voqalai.com/ai-receptionist-law-firms.html",
+    "citation": [
+      {
+        "@type": "CreativeWork",
+        "name": "The Cost of Missed Calls",
+        "author": { "@type": "Organization", "name": "PATLive" },
+        "url": "https://www.patlive.com/blog/the-cost-of-missed-calls"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Legal Trends Report",
+        "author": { "@type": "Organization", "name": "Clio" },
+        "datePublished": "2024",
+        "url": "https://www.clio.com/resources/legal-trends/"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "name": "Lead Response Management Study",
+        "author": { "@type": "Person", "name": "James Oldroyd" },
+        "publisher": { "@type": "Organization", "name": "MIT / InsideSales.com" },
+        "url": "https://www.leadresponsemanagement.org/lrm_study/"
+      }
+    ],
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -70,6 +92,39 @@
         "unitText": "month"
       }
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the AI compliant with SRA confidentiality requirements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All call data is encrypted in transit and at rest, stored on UK-based servers, and access is restricted to authorised personnel only. We operate under a data processing agreement that aligns with SRA Standards and Regulations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it integrate with legal practice management software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We integrate with widely used legal PMS platforms including Clio, LEAP, PracticePanther, and others. New client intake data, appointment bookings, and call summaries can be pushed directly into your existing system."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the ROI of an AI receptionist for a law firm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Research shows 62% of callers who can't get through immediately call a competitor (PATLive), and MIT research confirms leads are 21x more likely to convert when contacted within 5 minutes. With the average legal client worth £4,800 over their lifetime (Clio Legal Trends Report), capturing even one additional client per month through faster response times delivers substantial ROI against a £197/month investment."
+        }
+      }
+    ]
   }
   </script>
 
@@ -131,16 +186,16 @@
 
         <div class="stats-grid-3 reveal" style="transition-delay: 0.1s;">
           <div class="stat-block-lg">
-            <div class="stat-big">42%</div>
-            <div class="stat-desc">of potential clients call a competitor if their first call isn't answered</div>
+            <div class="stat-big">62%</div>
+            <div class="stat-desc">of callers who can&rsquo;t get through immediately call a competitor<sup class="cite"><a href="#ref1">[1]</a></sup></div>
           </div>
           <div class="stat-block-lg">
             <div class="stat-big">&pound;4,800</div>
-            <div class="stat-desc">average lifetime value of a new legal client</div>
+            <div class="stat-desc">average lifetime value of a new legal client<sup class="cite"><a href="#ref2">[2]</a></sup></div>
           </div>
           <div class="stat-block-lg">
-            <div class="stat-big">68%</div>
-            <div class="stat-desc">of law firm calls occur during court hours when solicitors are unavailable</div>
+            <div class="stat-big">21x</div>
+            <div class="stat-desc">more likely to qualify a lead when responding within 5 minutes<sup class="cite"><a href="#ref3">[3]</a></sup></div>
           </div>
         </div>
 
@@ -276,7 +331,29 @@
               <p>Plans start from &pound;197 per month with no long-term contracts. Pricing scales based on call volume and the number of practice areas configured. Every plan includes 24/7 coverage, unlimited call handling, and full access to your reporting dashboard. Book a free consultation and we&rsquo;ll recommend the right plan for your firm&rsquo;s size and call volume.</p>
             </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What is the ROI of an AI receptionist for a law firm?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Research shows 62% of callers who can&rsquo;t get through immediately call a competitor<sup class="cite"><a href="#ref1">[1]</a></sup>, and MIT research confirms leads are 21x more likely to convert when contacted within 5 minutes<sup class="cite"><a href="#ref3">[3]</a></sup>. With the average legal client worth &pound;4,800 over their lifetime<sup class="cite"><a href="#ref2">[2]</a></sup>, capturing even one additional client per month through faster response times delivers substantial ROI against a &pound;197/month investment.</p>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <!-- References -->
+      <section class="section-padding container references-section" id="references">
+        <h3>References</h3>
+        <ol class="references-list">
+          <li id="ref1">PATLive. &ldquo;The Cost of Missed Calls.&rdquo; 85% of unanswered callers never try again; 62% immediately call a competitor. <a href="https://www.patlive.com/blog/the-cost-of-missed-calls" rel="noopener noreferrer" target="_blank">patlive.com</a></li>
+          <li id="ref2">Clio (2024). &ldquo;Legal Trends Report.&rdquo; Annual analysis of legal industry client intake, billing, and practice management data. <a href="https://www.clio.com/resources/legal-trends/" rel="noopener noreferrer" target="_blank">clio.com</a></li>
+          <li id="ref3">Oldroyd, J. (MIT / InsideSales.com). &ldquo;Lead Response Management Study.&rdquo; Contacting a lead within 5 minutes makes you 21x more likely to qualify them vs. 30 minutes. Based on 15,000+ leads and 100,000+ call attempts. <a href="https://www.leadresponsemanagement.org/lrm_study/" rel="noopener noreferrer" target="_blank">leadresponsemanagement.org</a></li>
+          <li id="ref4">Clio (2024). &ldquo;Secret Shopper Study.&rdquo; Only 40% of law firms answer phone calls from prospective clients; 73% of secret shoppers would not recommend the firms they contacted. <a href="https://www.clio.com/resources/legal-trends/2024-report/" rel="noopener noreferrer" target="_blank">clio.com</a></li>
+          <li id="ref5">UK Legal Ombudsman (2024/25). Annual Complaints Data. Poor communication is the #1 complaint against law firms, accounting for 24% of all complaints. <a href="https://www.legalombudsman.org.uk/information-centre/data-centre/complaints-data/" rel="noopener noreferrer" target="_blank">legalombudsman.org.uk</a></li>
+        </ol>
       </section>
 
       <!-- CTA -->

@@ -33,6 +33,29 @@
     "name": "AI Receptionist for Estate Agents",
     "description": "AI receptionist for UK estate agents. Handles property enquiries 24/7, books viewings, qualifies buyers and tenants.",
     "url": "https://voqalai.com/ai-receptionist-estate-agents.html",
+    "citation": [
+      {
+        "@type": "CreativeWork",
+        "name": "UK House Price Index Summary: December 2025",
+        "author": { "@type": "Organization", "name": "HM Land Registry / ONS" },
+        "datePublished": "2025",
+        "url": "https://www.gov.uk/government/statistics/uk-house-price-index-for-december-2025/uk-house-price-index-summary-december-2025"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "name": "Lead Response Management Study",
+        "author": { "@type": "Person", "name": "James Oldroyd" },
+        "publisher": { "@type": "Organization", "name": "MIT / InsideSales.com" },
+        "url": "https://www.leadresponsemanagement.org/lrm_study/"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Why 24/7 Support Is Critical for Estate Agents",
+        "author": { "@type": "Organization", "name": "Cymphony" },
+        "datePublished": "2025",
+        "url": "https://www.cymphony.co.uk/why-247-support-is-critical-for-estate-agents-2025/"
+      }
+    ],
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -59,6 +82,39 @@
       "name": "United Kingdom"
     },
     "serviceType": "AI Voice Receptionist"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can it answer questions about specific properties?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The AI is trained on your live property listings and can answer questions about price, location, bedrooms, tenure, EPC rating, and other key details. When it can't answer a specific question, it captures the enquiry and flags it for your team to follow up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does it book viewings into my calendar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The AI integrates with your existing calendar system — Google Calendar, Outlook, or your agency CRM. It checks agent availability in real-time, offers the caller suitable slots, and confirms the booking instantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the ROI of an AI receptionist for an estate agency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With the average UK estate agent commission at approximately £3,800 per sale (ONS, 2025) and MIT research showing leads are 21x more likely to convert when contacted within 5 minutes, even one additional instruction per month from faster response times can deliver significant ROI. A Homeflow mystery shopper study found the average estate agent takes over 4 hours to respond to a sales enquiry — AI eliminates this delay entirely."
+        }
+      }
+    ]
   }
   </script>
 
@@ -120,16 +176,16 @@
 
         <div class="stats-grid-3 reveal" style="transition-delay: 0.1s;">
           <div class="stat-block-lg">
-            <div class="stat-big">52%</div>
-            <div class="stat-desc">of property enquiries come outside office hours</div>
+            <div class="stat-big">40%</div>
+            <div class="stat-desc">of buyer enquiries happen outside normal office hours<sup class="cite"><a href="#ref1">[1]</a></sup></div>
           </div>
           <div class="stat-block-lg">
-            <div class="stat-big">&pound;6,000</div>
-            <div class="stat-desc">average commission on a UK residential sale</div>
+            <div class="stat-big">&pound;3,800</div>
+            <div class="stat-desc">average commission on a UK residential sale<sup class="cite"><a href="#ref2">[2]</a></sup></div>
           </div>
           <div class="stat-block-lg">
-            <div class="stat-big">3x</div>
-            <div class="stat-desc">more viewings booked when enquiries are answered within 5 minutes</div>
+            <div class="stat-big">21x</div>
+            <div class="stat-desc">more likely to qualify a lead when responding within 5 minutes<sup class="cite"><a href="#ref3">[3]</a></sup></div>
           </div>
         </div>
 
@@ -266,7 +322,28 @@
               <p>When a caller wants to make an offer, the AI captures the offer amount, any conditions, and the buyer&rsquo;s chain position. It then sends an immediate notification to the listing agent with all the details, so offers are never delayed or lost &mdash; even outside office hours.</p>
             </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What is the ROI of an AI receptionist for an estate agency?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>With the average UK estate agent commission at approximately &pound;3,800 per sale<sup class="cite"><a href="#ref2">[2]</a></sup> and MIT research showing leads are 21x more likely to convert when contacted within 5 minutes<sup class="cite"><a href="#ref3">[3]</a></sup>, even one additional instruction per month from faster response times can deliver significant ROI. A Homeflow mystery shopper study found the average estate agent takes over 4 hours to respond to a sales enquiry<sup class="cite"><a href="#ref4">[4]</a></sup> &mdash; AI eliminates this delay entirely.</p>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <!-- References -->
+      <section class="section-padding container references-section" id="references">
+        <h3>References</h3>
+        <ol class="references-list">
+          <li id="ref1">Cymphony (2025). &ldquo;Why 24/7 Support Is Critical for Estate Agents.&rdquo; Approximately 40% of buyer enquiries happen outside normal office hours, with Rightmove data showing peak browsing at 8&ndash;9pm. <a href="https://www.cymphony.co.uk/why-247-support-is-critical-for-estate-agents-2025/" rel="noopener noreferrer" target="_blank">cymphony.co.uk</a></li>
+          <li id="ref2">HM Land Registry / ONS (2025). UK House Price Index: average UK house price &pound;270,000. At average agent fee of 1.42% inc. VAT (The Negotiator), yields ~&pound;3,800 commission. <a href="https://www.gov.uk/government/statistics/uk-house-price-index-for-december-2025/uk-house-price-index-summary-december-2025" rel="noopener noreferrer" target="_blank">gov.uk</a></li>
+          <li id="ref3">Oldroyd, J. (MIT / InsideSales.com). &ldquo;Lead Response Management Study.&rdquo; Contacting a lead within 5 minutes makes you 21x more likely to qualify them vs. 30 minutes. Based on 15,000+ leads. <a href="https://www.leadresponsemanagement.org/lrm_study/" rel="noopener noreferrer" target="_blank">leadresponsemanagement.org</a></li>
+          <li id="ref4">Homeflow. Mystery shopper study found only 50% of estate agents respond to sales enquiries within an hour, with an average response time of 229 business minutes (~4 hours). <a href="https://www.homeflow.co.uk/posts/39-of-home-sellers-wait-for-an-estate-agents-response" rel="noopener noreferrer" target="_blank">homeflow.co.uk</a></li>
+        </ol>
       </section>
 
       <!-- CTA -->
