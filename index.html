@@ -51,6 +51,28 @@
       "name": "United Kingdom"
     },
     "priceRange": "££",
+    "citation": [
+      {
+        "@type": "CreativeWork",
+        "name": "Lead Response Management Study",
+        "author": { "@type": "Person", "name": "James Oldroyd" },
+        "publisher": { "@type": "Organization", "name": "MIT / InsideSales.com" },
+        "url": "https://www.leadresponsemanagement.org/lrm_study/"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Missed GP appointments costing NHS millions",
+        "author": { "@type": "Organization", "name": "NHS England" },
+        "datePublished": "2019",
+        "url": "https://www.england.nhs.uk/2019/01/missed-gp-appointments-costing-nhs-millions/"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "The Cost of Missed Calls",
+        "author": { "@type": "Organization", "name": "PATLive" },
+        "url": "https://www.patlive.com/blog/the-cost-of-missed-calls"
+      }
+    ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -143,6 +165,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "We serve dental practices, medical clinics, law firms, estate agents, accountancy firms, veterinary clinics, trades businesses, and many more across the UK and US."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the ROI of an AI receptionist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Research shows 80% of callers sent to voicemail won't leave a message, and 62% immediately call a competitor (PATLive/Forbes). MIT research confirms leads are 21x more likely to convert when contacted within 5 minutes. At £197/month, an AI receptionist pays for itself by capturing even one or two additional bookings per month that would otherwise be lost."
         }
       }
     ]
@@ -1063,6 +1093,105 @@ ul, ol { list-style: none; }
 @media (max-width: 768px) {
   .calc-grid { grid-template-columns: 1fr; }
 }
+
+/* By the Numbers */
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 0.5rem + 1vw, 2rem);
+}
+.number-card {
+  background: var(--oat);
+  border-radius: 1.25rem;
+  padding: clamp(1.5rem, 1rem + 1vw, 2rem);
+  text-align: center;
+}
+.number-big {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 1.5rem + 1.5vw, 3.5rem);
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+.number-desc {
+  font-size: 0.875rem;
+  color: var(--slate-light);
+  line-height: 1.5;
+}
+.number-source {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.number-source:hover { opacity: 1; }
+@media (max-width: 768px) {
+  .numbers-grid { grid-template-columns: 1fr; }
+}
+
+/* Light-theme references */
+.references-light {
+  padding: clamp(2rem, 1rem + 2vw, 3rem) 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  margin-top: 2rem;
+}
+.references-light h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.references-light ol {
+  list-style: none;
+  counter-reset: ref-counter;
+  padding: 0;
+}
+.references-light li {
+  counter-increment: ref-counter;
+  font-size: 0.75rem;
+  color: var(--slate-light);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  padding-left: 24px;
+  position: relative;
+}
+.references-light li::before {
+  content: "[" counter(ref-counter) "]";
+  position: absolute;
+  left: 0;
+  color: rgba(0,0,0,0.3);
+  font-size: 0.6875rem;
+}
+.references-light a {
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+}
+.references-light a:hover { text-decoration: underline; }
+
+/* Homepage citation superscripts */
+sup.cite-light a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.625rem;
+  font-weight: 500;
+}
+.calc-benchmark {
+  font-size: 0.75rem;
+  color: var(--slate-light);
+  line-height: 1.5;
+  margin-top: 1rem;
+  max-width: 65ch;
+}
+.calc-benchmark a {
+  color: var(--accent);
+  text-decoration: none;
+}
 </style>
 </head>
 
@@ -1123,6 +1252,32 @@ ul, ol { list-style: none; }
         </div>
       </div>
     </header>
+
+    <!-- ====== BY THE NUMBERS ====== -->
+    <section class="section-space-m">
+      <div class="container">
+        <h2 class="display-l reveal" style="margin-bottom: 0.75rem;">The cost of missed calls</h2>
+        <p class="paragraph-m color-faded reveal" style="margin-bottom: clamp(1.5rem, 1rem + 1.5vw, 2.5rem); max-width: 55ch;">Every unanswered call is revenue walking out the door. Here&rsquo;s what the research shows.</p>
+
+        <div class="numbers-grid reveal">
+          <div class="number-card">
+            <div class="number-big">80%</div>
+            <div class="number-desc">of callers sent to voicemail won&rsquo;t leave a message &mdash; and 62% call a competitor instead</div>
+            <a href="https://www.patlive.com/blog/the-cost-of-missed-calls" class="number-source" rel="noopener noreferrer" target="_blank">Forbes / BIA Kelsey &amp; PATLive</a>
+          </div>
+          <div class="number-card">
+            <div class="number-big">21&times;</div>
+            <div class="number-desc">more likely to qualify a lead when you respond within 5 minutes vs. 30 minutes</div>
+            <a href="https://www.leadresponsemanagement.org/lrm_study/" class="number-source" rel="noopener noreferrer" target="_blank">MIT / InsideSales.com Study</a>
+          </div>
+          <div class="number-card">
+            <div class="number-big">&pound;216m</div>
+            <div class="number-desc">annual cost of missed GP appointments to the NHS alone &mdash; at &pound;30 per missed slot</div>
+            <a href="https://www.england.nhs.uk/2019/01/missed-gp-appointments-costing-nhs-millions/" class="number-source" rel="noopener noreferrer" target="_blank">NHS England, 2019</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ====== EARTH CTA SECTION ====== -->
     <section class="earth-section">
@@ -1253,6 +1408,7 @@ ul, ol { list-style: none; }
             </div>
           </div>
         </div>
+        <p class="calc-benchmark reveal" style="margin-top: 1.5rem;">Default values are based on industry benchmarks. UK tradespeople lose an average of <a href="https://www.digitalx.marketing/post/press-release-uk-trades-losing-24-000-in-annual-revenue-as-over-60-of-calls-go-unanswered" rel="noopener noreferrer" target="_blank">&pound;24,000/year to missed calls</a> (DigitalX Marketing, 2026). Adjust the inputs above to match your business.</p>
       </div>
     </section>
 
@@ -1372,6 +1528,16 @@ ul, ol { list-style: none; }
               <p>We serve dental practices, medical clinics, law firms, estate agents, accountancy firms, veterinary clinics, trades businesses, and many more across the UK and US. <a href="about.html">Learn more &rarr;</a></p>
             </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span>What is the ROI of an AI receptionist?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Research shows 80% of callers sent to voicemail won&rsquo;t leave a message, and 62% immediately call a competitor (<a href="https://www.patlive.com/blog/the-cost-of-missed-calls">PATLive</a>). MIT research confirms leads are 21x more likely to convert when contacted within 5 minutes (<a href="https://www.leadresponsemanagement.org/lrm_study/">MIT / InsideSales.com</a>). At &pound;197/month, our AI receptionist pays for itself by capturing even one or two additional bookings per month that would otherwise be lost to voicemail or competitors.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1414,6 +1580,21 @@ ul, ol { list-style: none; }
             </form>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ====== REFERENCES ====== -->
+    <section class="section-space-m">
+      <div class="container references-light" id="references">
+        <h3>References</h3>
+        <ol>
+          <li>Forbes / BIA Kelsey. 80% of callers sent to voicemail do not leave a message. PATLive: 85% of unanswered callers never try again; 62% call a competitor. <a href="https://www.patlive.com/blog/the-cost-of-missed-calls" rel="noopener noreferrer" target="_blank">patlive.com</a></li>
+          <li>Oldroyd, J. (MIT / InsideSales.com). &ldquo;Lead Response Management Study.&rdquo; Contacting a lead within 5 minutes makes you 21x more likely to qualify them vs. 30 minutes. Based on 15,000+ leads. <a href="https://www.leadresponsemanagement.org/lrm_study/" rel="noopener noreferrer" target="_blank">leadresponsemanagement.org</a></li>
+          <li>NHS England (2019). &ldquo;Missed GP appointments costing NHS millions.&rdquo; 15.4 million practice appointments missed annually, costing over &pound;216 million. <a href="https://www.england.nhs.uk/2019/01/missed-gp-appointments-costing-nhs-millions/" rel="noopener noreferrer" target="_blank">england.nhs.uk</a></li>
+          <li>DigitalX Marketing (2026). UK tradespeople lose an average of &pound;24,000 per year to missed calls. <a href="https://www.digitalx.marketing/post/press-release-uk-trades-losing-24-000-in-annual-revenue-as-over-60-of-calls-go-unanswered" rel="noopener noreferrer" target="_blank">digitalx.marketing</a></li>
+          <li>Fix Radio / Builders Station (2024). Survey of 220+ UK tradespeople: 60% struggle to answer the phone while working. <a href="https://www.fixradio.co.uk/fix-feed/construction-news/post/34-of-tradespeople-lose-work-by-not-answering-phone/" rel="noopener noreferrer" target="_blank">fixradio.co.uk</a></li>
+          <li>Clio (2024). &ldquo;Legal Trends Report.&rdquo; Only 40% of law firms answer phone calls from prospective clients. <a href="https://www.clio.com/resources/legal-trends/2024-report/" rel="noopener noreferrer" target="_blank">clio.com</a></li>
+        </ol>
       </div>
     </section>
 
