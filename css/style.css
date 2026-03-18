@@ -1973,3 +1973,22 @@ sup.cite a:hover {
 .reviewed-by a:hover {
   color: var(--accent-light);
 }
+
+/* --- CITATION BLOCKS --- */
+.citation-block {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--border-hover);
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+  line-height: 1.6;
+}
+.citation-block a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.citation-block a:hover {
+  color: var(--accent-light);
+}
