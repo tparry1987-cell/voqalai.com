@@ -1909,3 +1909,67 @@ sup.cite a {
 sup.cite a:hover {
   color: var(--accent-light);
 }
+
+/* --- AUTHOR BOX --- */
+.author-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  margin: 0 0 48px;
+}
+.author-box img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-subtle);
+}
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.author-info strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.author-info .author-role {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+.author-info .author-bio {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 6px 0 0;
+  line-height: 1.5;
+}
+.author-info .author-link {
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 6px;
+  display: inline-block;
+}
+.author-info .author-link:hover {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+.reviewed-by {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  margin: -32px 0 48px;
+}
+.reviewed-by a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.reviewed-by a:hover {
+  color: var(--accent-light);
+}
