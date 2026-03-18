@@ -87,6 +87,15 @@
     .comparison-table td:first-child { color: var(--text-primary); font-weight: 500; }
     .comparison-table .accent-col { color: var(--accent); font-weight: 600; }
     @media (max-width: 768px) { .cost-comparison { grid-template-columns: 1fr; } .cost-card .price { font-size: 32px; } .blog-content h2 { font-size: 26px; } .comparison-table { font-size: 14px; } .comparison-table th, .comparison-table td { padding: 10px 8px; } }
+    .author-box { display: flex; align-items: flex-start; gap: 16px; padding: 20px 24px; background: rgba(255,255,255,0.03); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; margin: 24px 0 32px; max-width: 720px; }
+    .author-box img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .author-box .author-info { display: flex; flex-direction: column; gap: 2px; }
+    .author-box .author-info strong { font-size: 0.95rem; color: var(--text-primary); }
+    .author-box .author-info .author-role { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+    .author-box .author-info .author-bio { font-size: 0.8rem; color: var(--text-secondary); margin: 4px 0 0; line-height: 1.5; }
+    .author-box .author-info .author-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; margin-top: 4px; display: inline-block; }
+    .author-box .author-info .author-link:hover { text-decoration: underline; }
+    @media (max-width: 600px) { .author-box { flex-direction: column; align-items: center; text-align: center; } }
   </style>
 </head>
 <body>
@@ -131,7 +140,7 @@
       <section class="section-padding container" style="padding-top: 120px;">
         <div class="reveal">
           <span class="section-label">Blog</span>
-          <p class="blog-meta">Thomas &middot; 14 March 2026 &middot; 5 min read</p>
+          <p class="blog-meta">Thomas Parry &middot; 14 March 2026 &middot; 5 min read</p>
           <h1 style="font-size: 44px; line-height: 1.2; margin-bottom: 24px;">How Much Does a Virtual Receptionist<br>Cost in the UK? <span class="italic-accent">(2026 Guide)</span></h1>
           <p style="font-size: 20px; color: var(--text-secondary); max-width: 720px;">Three options, three price points, one honest breakdown. No hidden fees, no sales waffle.</p>
         </div>
@@ -140,6 +149,16 @@
       <!-- Blog Content -->
       <section class="section-padding container">
         <div class="blog-content reveal">
+
+          <div class="author-box" itemscope itemtype="https://schema.org/Person">
+            <img src="../images/avatars/tom.webp" alt="Thomas Parry — Founder of Voqal AI" width="56" height="56" itemprop="image">
+            <div class="author-info">
+              <strong itemprop="name">Thomas Parry</strong>
+              <p class="author-role"><span itemprop="jobTitle">Founder &amp; CEO</span> at Voqal AI</p>
+              <p class="author-bio" itemprop="description">15 years in B2B/B2C sales and business communications. Builds AI voice agents for UK and US service businesses including dental practices, law firms, and trades.</p>
+              <a class="author-link" href="https://www.linkedin.com/in/tom-parry-698bbb29a" rel="noopener" target="_blank" itemprop="sameAs">LinkedIn Profile &rarr;</a>
+            </div>
+          </div>
 
           <p>If you've Googled "virtual receptionist cost UK" recently, you'll know the pricing landscape is a mess. Some companies quote per minute. Others per call. Some give you a monthly fee that looks reasonable until you read the small print and discover you're paying extra for every transfer, every message, every second over your allowance.</p>
 

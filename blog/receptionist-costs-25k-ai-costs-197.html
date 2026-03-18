@@ -82,6 +82,15 @@
     .cost-card.highlight .price { color: var(--accent); }
     .cost-card .detail { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
     @media (max-width: 600px) { .cost-comparison { grid-template-columns: 1fr; } .cost-card .price { font-size: 32px; } .blog-content h2 { font-size: 26px; } }
+    .author-box { display: flex; align-items: flex-start; gap: 16px; padding: 20px 24px; background: rgba(255,255,255,0.03); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; margin: 24px 0 32px; max-width: 720px; }
+    .author-box img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .author-box .author-info { display: flex; flex-direction: column; gap: 2px; }
+    .author-box .author-info strong { font-size: 0.95rem; color: var(--text-primary); }
+    .author-box .author-info .author-role { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+    .author-box .author-info .author-bio { font-size: 0.8rem; color: var(--text-secondary); margin: 4px 0 0; line-height: 1.5; }
+    .author-box .author-info .author-link { font-size: 0.8rem; color: var(--accent); text-decoration: none; margin-top: 4px; display: inline-block; }
+    .author-box .author-info .author-link:hover { text-decoration: underline; }
+    @media (max-width: 600px) { .author-box { flex-direction: column; align-items: center; text-align: center; } }
   </style>
 </head>
 <body>
@@ -135,6 +144,16 @@
       <!-- Blog Content -->
       <section class="section-padding container">
         <div class="blog-content reveal">
+
+          <div class="author-box" itemscope itemtype="https://schema.org/Person">
+            <img src="../images/avatars/tom.webp" alt="Thomas Parry — Founder of Voqal AI" width="56" height="56" itemprop="image">
+            <div class="author-info">
+              <strong itemprop="name">Thomas Parry</strong>
+              <p class="author-role"><span itemprop="jobTitle">Founder &amp; CEO</span> at Voqal AI</p>
+              <p class="author-bio" itemprop="description">15 years in B2B/B2C sales and business communications. Builds AI voice agents for UK and US service businesses including dental practices, law firms, and trades.</p>
+              <a class="author-link" href="https://www.linkedin.com/in/tom-parry-698bbb29a" rel="noopener" target="_blank" itemprop="sameAs">LinkedIn Profile &rarr;</a>
+            </div>
+          </div>
 
           <p>Let me be blunt. If you're running a small business in the UK and paying a full-time receptionist to answer your phones, you're probably spending more than you need to.</p>
 
