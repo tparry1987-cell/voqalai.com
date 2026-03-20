@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="Tivb7eP0KpHp0TDuL1ohBbOquok_JbGckqwiTHUZHHs" />
+  <title>Dentally Integration — AI Receptionist for Dental Practices | Voqal AI</title>
+  <meta name="description" content="Connect Voqal AI to Dentally. Sync patient records, book into treatment rooms, manage clinician schedules, and handle NHS and private appointments automatically.">
+  <meta property="og:title" content="Dentally Integration — AI Receptionist for Dental Practices">
+  <meta property="og:description" content="Connect Voqal AI to Dentally. Sync patient records, book treatment rooms, and handle NHS and private appointments automatically.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://voqalai.com/integrations/dentally.html">
+  <meta property="og:site_name" content="Voqal AI">
+  <meta property="og:image" content="https://voqalai.com/images/hero-forest.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dentally Integration — AI Receptionist for Dental Practices">
+  <meta name="twitter:description" content="Connect Voqal AI to Dentally. Sync patient records, book treatment rooms, and handle NHS and private appointments automatically.">
+  <meta name="twitter:image" content="https://voqalai.com/images/hero-forest.jpg">
+  <link rel="canonical" href="https://voqalai.com/integrations/dentally.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://dashboard.retellai.com">
+  <link rel="preconnect" href="https://app.cal.com">
+  <link rel="preload" href="../fonts/saira-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Voqal AI",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "AI Receptionist",
+        "operatingSystem": "Web",
+        "description": "AI receptionist that integrates with Dentally to sync patient records, book into treatment rooms, manage clinician schedules, and handle NHS and private appointments automatically.",
+        "url": "https://voqalai.com/integrations/dentally.html",
+        "author": { "@type": "Organization", "name": "Voqal AI Ltd", "url": "https://voqalai.com" },
+        "offers": { "@type": "Offer", "price": "197", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31" },
+        "softwareRequirements": "Dentally",
+        "featureList": ["Patient record sync", "Treatment room booking", "Clinician schedule access", "NHS and private appointment handling", "Patient recall automation"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://voqalai.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://voqalai.com/integrations.html" },
+          { "@type": "ListItem", "position": 3, "name": "Dentally Integration", "item": "https://voqalai.com/integrations/dentally.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Voqal AI handle both NHS and private appointments in Dentally?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Voqal AI distinguishes between NHS and private appointment types within Dentally. When a patient calls, the AI identifies their payment route and books the correct appointment type, applying the right clinician and treatment room rules for each." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Voqal AI manage multiple surgeries in Dentally?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. The integration supports multi-site dental groups. Voqal AI reads availability across all your Dentally locations and can route patients to the nearest surgery or next available slot based on your preferences." }
+          },
+          {
+            "@type": "Question",
+            "name": "How does clinician matching work with Dentally?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Voqal AI checks each clinician's schedule, treatment capabilities, and room assignments in Dentally. When a patient requests a specific dentist or treatment, the AI matches them to the right clinician and available slot automatically." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Voqal AI trigger recall campaigns through Dentally?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Voqal AI can identify patients due for recall based on their Dentally records and proactively manage rebooking during inbound calls. It can also flag overdue recall patients for your team to follow up on." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are emergency dental slots available to callers through Voqal AI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can designate emergency slots within your Dentally schedule. Voqal AI recognises urgent dental situations during the call — such as severe pain, swelling, or trauma — and books the caller into the next available emergency slot." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"theme":"dark","styles":{"branding":{"brandColor":"#db7c54"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+</head>
+<body>
+
+  <div class="page-background" style="background-image: url('../images/hero-forest.webp');"></div>
+
+  <div class="page-overlay">
+
+    <nav id="navbar" class="fade-up-1">
+      <a href="../" class="logo"><svg viewBox="0 0 295 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="wf-grad" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#e8955e"/><stop offset="100%" stop-color="#db7c54"/></linearGradient></defs>
+  <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="22;7.7;22" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="27;34.15;27" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
+  <rect x="13" y="19" width="8" height="38" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="38;13.3;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="19;31.35;19" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
+  <rect x="26" y="11" width="8" height="54" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="54;18.9;54" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="11;28.55;11" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
+  <rect x="39" y="21" width="8" height="34" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="34;11.9;34" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="21;32.05;21" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
+  <rect x="52" y="29" width="8" height="18" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="18;6.3;18" dur="1.2s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite"/></rect>
+  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="94" y="52" font-family="'Instrument Serif', Georgia, serif" font-weight="400" font-style="italic" font-size="52" fill="#f8f9fa" letter-spacing="1">Voqal</text>
+  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#db7c54" letter-spacing="2">Ai</text>
+  <circle cx="282" cy="47" r="4" fill="#db7c54"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+</svg></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#protocol">Protocol</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../integrations.html">Integrations</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../#demo">Contact</a></li>
+      </ul>
+      <a href="../#demo" class="btn-nav">Book Demo</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <main class="content-wrapper">
+
+      <!-- Hero -->
+      <section class="section-padding container" style="padding-top: 120px;">
+        <div class="reveal">
+          <span class="section-label">Integration</span>
+          <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 24px;">Voqal AI + <span class="italic-accent">Dentally.</span></h1>
+          <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 720px;">Connect your Dentally practice management system to Voqal AI. Every patient call answered, every appointment booked into the right treatment room, every clinician schedule respected — without your reception team lifting a finger.</p>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>How the integration <span class="italic-accent">works.</span></h2>
+          <p style="color: var(--text-secondary); max-width: 700px; margin-bottom: 16px;">Voqal AI connects to Dentally through a secure API link. Once authorised, the AI receptionist gains read and write access to your patient records, appointment diary, clinician schedules, and treatment room availability.</p>
+          <p style="color: var(--text-secondary); max-width: 700px; margin-bottom: 16px;">When a patient calls, Voqal AI matches them against your Dentally database using their name, date of birth, or phone number. Existing patients are recognised instantly. New patients are registered in Dentally during the call, with all relevant details captured before the appointment is confirmed.</p>
+          <p style="color: var(--text-secondary); max-width: 700px;">The integration handles the complexity of dental scheduling — NHS band allocations, private treatment pricing tiers, hygienist versus dentist availability, and multi-surgery room management — so your front desk can focus on the patients already in the practice.</p>
+        </div>
+      </section>
+
+      <!-- What Syncs -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>What <span class="italic-accent">syncs.</span></h2>
+          <div class="sync-grid">
+            <div class="sync-card">
+              <h3>Patient Record Matching</h3>
+              <p>Voqal AI searches Dentally in real time to identify returning patients by name, date of birth, or contact number. Verified patients are linked to their existing record — no duplicate entries, no manual look-ups.</p>
+            </div>
+            <div class="sync-card">
+              <h3>Treatment Room &amp; Clinician Booking</h3>
+              <p>The AI checks clinician diaries and treatment room allocations within Dentally before offering appointment slots. It respects individual clinician working patterns, lunch breaks, and room assignments across your practice.</p>
+            </div>
+            <div class="sync-card">
+              <h3>NHS vs Private Appointment Routing</h3>
+              <p>Voqal AI identifies whether the caller requires an NHS or private appointment and books the correct type in Dentally. NHS band rules, exemption categories, and private fee structures are all handled during the call.</p>
+            </div>
+            <div class="sync-card">
+              <h3>Recall &amp; Follow-Up Automation</h3>
+              <p>Patients overdue for check-ups or hygiene visits are flagged automatically. When they call in, Voqal AI prompts rebooking based on their recall interval stored in Dentally, keeping your appointment book consistently full.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Setup Steps -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>Live in three <span class="italic-accent">steps.</span></h2>
+          <div class="setup-steps">
+            <div class="setup-step">
+              <div class="step-num">1</div>
+              <h3>Connect Your Dentally Account</h3>
+              <p>Authorise Voqal AI to access your Dentally practice via API. We handle the technical setup — you just approve the connection from your Dentally admin panel.</p>
+            </div>
+            <div class="setup-step">
+              <div class="step-num">2</div>
+              <h3>Map Appointment Types &amp; Clinicians</h3>
+              <p>Configure which appointment categories, clinicians, and treatment rooms Voqal AI can book into. Set rules for NHS slots, private treatments, hygienist visits, and emergency availability.</p>
+            </div>
+            <div class="setup-step">
+              <div class="step-num">3</div>
+              <h3>Activate Live Patient Booking</h3>
+              <p>Switch on the integration and Voqal AI starts answering calls, verifying patients, and booking appointments directly into your Dentally diary — from the very first ring.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>Built for dental <span class="italic-accent">practices.</span></h2>
+          <p style="color: var(--text-secondary); max-width: 700px; margin-bottom: 16px;">The Dentally integration is designed for how dental practices actually operate. Whether you run a single surgery or a multi-site group, Voqal AI adapts to your workflows. See our dedicated <a href="../ai-receptionist-dental-practices.html" style="color: #db7c54;">AI receptionist for dental practices</a> page for the full picture.</p>
+          <ul style="color: var(--text-secondary); max-width: 700px; padding-left: 20px; line-height: 2;">
+            <li><strong>Single-site dental practices</strong> — replace missed calls during busy morning slots when reception is overwhelmed with check-ins and phone lines ring simultaneously.</li>
+            <li><strong>Multi-surgery dental groups</strong> — route patients to the correct location and clinician across multiple Dentally-connected sites, balancing appointment load automatically.</li>
+            <li><strong>NHS and mixed practices</strong> — distinguish between NHS and private callers, apply the correct appointment types, and maintain accurate UDA tracking within Dentally.</li>
+            <li><strong>Practices with high recall volumes</strong> — capture rebooking opportunities every time a recall patient calls in, reducing the backlog your reception team needs to chase manually.</li>
+            <li><strong>Emergency dental slots</strong> — prioritise urgent cases like pain, swelling, or trauma into designated emergency appointment slots without disrupting the regular diary.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>Frequently asked <span class="italic-accent">questions.</span></h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question"><span>Does Voqal AI handle both NHS and private appointments in Dentally?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer"><p>Yes. Voqal AI distinguishes between NHS and private appointment types within Dentally. When a patient calls, the AI identifies their payment route and books the correct appointment type, applying the right clinician and treatment room rules for each.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span>Can it manage multiple surgeries in Dentally?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer"><p>Absolutely. The integration supports multi-site dental groups. Voqal AI reads availability across all your Dentally locations and can route patients to the nearest surgery or next available slot based on your preferences.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span>How does clinician matching work with Dentally?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer"><p>Voqal AI checks each clinician's schedule, treatment capabilities, and room assignments in Dentally. When a patient requests a specific dentist or treatment, the AI matches them to the right clinician and available slot automatically.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span>Can Voqal AI trigger recall campaigns through Dentally?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer"><p>Yes. Voqal AI can identify patients due for recall based on their Dentally records and proactively manage rebooking during inbound calls. It can also flag overdue recall patients for your team to follow up on.</p></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span>Are emergency dental slots available to callers?</span><span class="faq-icon">+</span></button>
+              <div class="faq-answer"><p>Yes. You can designate emergency slots within your Dentally schedule. Voqal AI recognises urgent dental situations during the call — such as severe pain, swelling, or trauma — and books the caller into the next available emergency slot.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section-padding container">
+        <div class="reveal integration-cta-section">
+          <span class="section-label">Get Connected</span>
+          <h2>Ready to connect <span class="italic-accent">Dentally?</span></h2>
+          <p>Book a demo and we'll show you how Voqal AI integrates with your Dentally system. Setup typically takes less than 15 minutes.</p>
+          <div class="cta-buttons">
+            <a href="tel:+13322641587" class="btn-submit" style="text-decoration: none;">Call Demo: +1 (332) 264-1587</a>
+            <a href="https://cal.com/thomas-parry-nkksqk" class="btn-nav" style="text-decoration: none;">Book Consultation</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <a href="../" class="logo footer-logo"><svg viewBox="0 0 295 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="wf-grad-footer" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#e8955e"/><stop offset="100%" stop-color="#db7c54"/></linearGradient></defs>
+  <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="22;7.7;22" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="27;34.15;27" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
+  <rect x="13" y="19" width="8" height="38" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="38;13.3;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="19;31.35;19" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
+  <rect x="26" y="11" width="8" height="54" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="54;18.9;54" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="11;28.55;11" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
+  <rect x="39" y="21" width="8" height="34" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="34;11.9;34" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="21;32.05;21" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
+  <rect x="52" y="29" width="8" height="18" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="18;6.3;18" dur="1.2s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite"/></rect>
+  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="94" y="52" font-family="'Instrument Serif', Georgia, serif" font-weight="400" font-style="italic" font-size="52" fill="#f8f9fa" letter-spacing="1">Voqal</text>
+  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#db7c54" letter-spacing="2">Ai</text>
+  <circle cx="282" cy="47" r="4" fill="#db7c54"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+</svg></a>
+          <p class="footer-tagline">Never miss another call. Intelligent voice agents serving London, Manchester, and businesses across the UK.</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-heading">Navigation</p>
+          <a href="../#services">Services</a>
+          <a href="../#protocol">Protocol</a>
+          <a href="../pricing.html">Pricing</a>
+          <a href="../integrations.html">Integrations</a>
+          <a href="../about.html">About</a>
+          <a href="../#demo">Free Demo</a>
+        </div>
+        <div class="footer-links">
+          <p class="footer-heading">Get in Touch</p>
+          <a href="tel:+442039960962">020 3996 0962</a>
+          <a href="mailto:info@voqalai.com">info@voqalai.com</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Voqal AI Ltd. Registered in England &amp; Wales. Company No. 17080303.</p>
+        <p class="footer-address">Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script id="retell-widget" src="https://dashboard.retellai.com/retell-widget.js" type="module" data-public-key="public_key_692e22f82e27e1f57afe6" data-agent-id="agent_42e2f4ee39b0f6db2cbe9db919" data-title="Chat with Aria" data-color="#db7c54" data-logo-url="https://voqalai.com/favicon.png" data-bot-name="Aria" data-popup-message="Hey! 👋 Got questions? Chat with us." data-show-ai-popup="true" data-show-ai-popup-time="15"></script>
+  <button id="voqalChatLauncher" aria-label="Chat with Aria" style="position: fixed; bottom: 24px; right: 24px; z-index: 1000000; width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; background: linear-gradient(135deg, #e8955e, #db7c54); box-shadow: 0 4px 20px rgba(219,124,84,0.4); display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4C10.6 4 3 10.4 3 18.2c0 4.5 2.4 8.5 6.2 11.2L7.5 36l7.2-3.6c1.7 0.4 3.4 0.6 5.3 0.6 9.4 0 17-6.4 17-14.2S29.4 4 20 4z" fill="white" opacity="0.95"/><rect x="12" y="16" width="3" height="8" rx="1.5" fill="#db7c54"><animate attributeName="height" values="8;3;8" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="16;18.5;16" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect><rect x="17" y="13" width="3" height="14" rx="1.5" fill="#db7c54"><animate attributeName="height" values="14;5;14" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="13;17.5;13" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect><rect x="22" y="15" width="3" height="10" rx="1.5" fill="#db7c54"><animate attributeName="height" values="10;3.5;10" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="15;18.25;15" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect><rect x="27" y="17" width="3" height="6" rx="1.5" fill="#db7c54"><animate attributeName="height" values="6;2;6" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="17;19;17" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect></svg>
+  </button>
+  <script>(function retellCustomize(){var host=null;document.querySelectorAll('div').forEach(function(el){if(el.shadowRoot&&el.style.position==='fixed'&&el.style.zIndex==='999999')host=el;});if(host&&host.shadowRoot){var s=document.createElement('style');s.textContent='.retell-chat-window{max-height:350px!important;height:350px!important}#retell-fab{display:none!important}.retell-popup-container{bottom:70px!important;right:0!important}';host.shadowRoot.appendChild(s);var inp=host.shadowRoot.querySelector('input[placeholder],textarea[placeholder]');if(inp)inp.placeholder='Ask us anything...';var fab=host.shadowRoot.querySelector('#retell-fab');document.getElementById('voqalChatLauncher').addEventListener('click',function(){if(fab)fab.click();});var btn=document.getElementById('voqalChatLauncher');btn.addEventListener('mouseenter',function(){btn.style.transform='scale(1.1)';btn.style.boxShadow='0 6px 28px rgba(219,124,84,0.5)';});btn.addEventListener('mouseleave',function(){btn.style.transform='scale(1)';btn.style.boxShadow='0 4px 20px rgba(219,124,84,0.4)';});}else{setTimeout(retellCustomize,500);}})();</script>
+
+  <script>const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50);});const mobileToggle=document.getElementById('mobileToggle');const navLinks=document.getElementById('navLinks');mobileToggle.addEventListener('click',()=>{navLinks.classList.toggle('active');mobileToggle.classList.toggle('active');});navLinks.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{navLinks.classList.remove('active');mobileToggle.classList.remove('active');});});document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){if(this.getAttribute('href')==='#')return;e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target)target.scrollIntoView({behavior:'smooth',block:'start'});});});function reveal(){document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-100){el.classList.add('active');}});}window.addEventListener('scroll',reveal);reveal();document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;item.classList.toggle('open');});});</script>
+
+</body>
+</html>

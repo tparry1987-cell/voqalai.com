@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="Tivb7eP0KpHp0TDuL1ohBbOquok_JbGckqwiTHUZHHs" />
+  <title>Salesforce Integration — Enterprise Call Logging & Lead Sync | Voqal AI</title>
+  <meta name="description" content="Connect Voqal AI to Salesforce. Sync leads, contacts, and activities from every call. Enterprise-grade integration with custom objects and workflows.">
+  <meta property="og:title" content="Salesforce Integration — Enterprise Call Logging & Lead Sync | Voqal AI">
+  <meta property="og:description" content="Connect Voqal AI to Salesforce. Sync leads, contacts, and activities from every call. Enterprise-grade integration with custom objects and workflows.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://voqalai.com/integrations/salesforce.html">
+  <meta property="og:site_name" content="Voqal AI">
+  <meta property="og:image" content="https://voqalai.com/images/hero-forest.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Salesforce Integration — Enterprise Call Logging & Lead Sync | Voqal AI">
+  <meta name="twitter:description" content="Connect Voqal AI to Salesforce. Sync leads, contacts, and activities from every call. Enterprise-grade integration with custom objects and workflows.">
+  <meta name="twitter:image" content="https://voqalai.com/images/hero-forest.jpg">
+  <link rel="canonical" href="https://voqalai.com/integrations/salesforce.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://dashboard.retellai.com">
+  <link rel="preconnect" href="https://app.cal.com">
+  <link rel="preload" href="../fonts/saira-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Voqal AI",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "AI Receptionist",
+        "operatingSystem": "Web",
+        "description": "AI receptionist that integrates with Salesforce to sync leads, contacts, and activities from every call with enterprise-grade custom object and workflow support.",
+        "url": "https://voqalai.com/integrations/salesforce.html",
+        "author": { "@type": "Organization", "name": "Voqal AI Ltd", "url": "https://voqalai.com" },
+        "offers": { "@type": "Offer", "price": "197", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31" },
+        "softwareRequirements": "Salesforce CRM",
+        "featureList": ["Lead and contact sync", "Activity timeline logging", "Custom object support", "Task auto-creation", "Workflow trigger integration"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://voqalai.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://voqalai.com/integrations.html" },
+          { "@type": "ListItem", "position": 3, "name": "Salesforce Integration", "item": "https://voqalai.com/integrations/salesforce.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which Salesforce editions are supported by Voqal AI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Voqal AI supports Salesforce Professional, Enterprise, Unlimited, and Developer editions. The integration uses the Salesforce REST API, which is available on all these plans. Essentials edition has limited API access, so we recommend Professional or above for the best experience." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Voqal AI write to custom objects in Salesforce?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The integration supports both standard and custom objects. You can map call data to any custom object in your org, including custom fields, lookup relationships, and record types. This is configured during setup with no coding required." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Voqal AI log activities on the Salesforce timeline?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every call is logged as a completed Task or Event on the relevant lead, contact, or account record. The activity includes the call transcript, duration, outcome, and any notes captured during the conversation. Activities appear on the standard Salesforce activity timeline." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the Salesforce sync real-time or batched?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Syncs are real-time. Data is pushed to Salesforce within seconds of a call ending via the REST API. There is no overnight batch process or manual trigger required. Your team sees updated records immediately." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I test the integration in a Salesforce sandbox?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We recommend connecting to a sandbox org first so you can validate field mappings, test workflow triggers, and confirm data quality before going live in production. Switching from sandbox to production is a single configuration change." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"theme":"dark","styles":{"branding":{"brandColor":"#db7c54"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+</head>
+<body>
+
+  <div class="page-background" style="background-image: url('../images/hero-forest.webp');"></div>
+
+  <div class="page-overlay">
+
+    <nav id="navbar" class="fade-up-1">
+      <a href="../" class="logo"><svg viewBox="0 0 295 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="wf-grad" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#e8955e"/><stop offset="100%" stop-color="#db7c54"/></linearGradient></defs>
+  <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="22;7.7;22" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="27;34.15;27" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
+  <rect x="13" y="19" width="8" height="38" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="38;13.3;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="19;31.35;19" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
+  <rect x="26" y="11" width="8" height="54" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="54;18.9;54" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="11;28.55;11" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
+  <rect x="39" y="21" width="8" height="34" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="34;11.9;34" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="21;32.05;21" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
+  <rect x="52" y="29" width="8" height="18" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="18;6.3;18" dur="1.2s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite"/></rect>
+  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="94" y="52" font-family="'Instrument Serif', Georgia, serif" font-weight="400" font-style="italic" font-size="52" fill="#f8f9fa" letter-spacing="1">Voqal</text>
+  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#db7c54" letter-spacing="2">Ai</text>
+  <circle cx="282" cy="47" r="4" fill="#db7c54"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+</svg></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#protocol">Protocol</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../integrations.html">Integrations</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../#demo">Contact</a></li>
+      </ul>
+      <a href="../#demo" class="btn-nav">Book Demo</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <main class="content-wrapper">
+
+      <!-- Hero -->
+      <section class="section-padding container" style="padding-top: 120px;">
+        <div class="reveal">
+          <span class="section-label">Integration</span>
+          <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 24px;">Voqal AI + <span class="italic-accent">Salesforce.</span></h1>
+          <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 720px;">Enterprise-grade call intelligence for your Salesforce org. Every inbound call creates or updates leads, logs activities on the timeline, and triggers workflows — with full support for custom objects.</p>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>How the connection <span class="italic-accent">works.</span></h2>
+          <p style="color: var(--text-secondary); max-width: 640px; margin-bottom: 16px;">Voqal AI authenticates with your Salesforce org via OAuth 2.0 and uses the REST API to read and write records. When a call ends, the integration matches the caller against existing leads and contacts using phone number, email, or custom identifiers. If a match is found, the record is updated. If not, a new lead or contact is created based on your routing rules.</p>
+          <p style="color: var(--text-secondary); max-width: 640px; margin-bottom: 16px;">Every call is logged as a completed activity on the relevant record's timeline. The activity includes the full transcript, call duration, outcome classification, and any structured data captured during the conversation. Tasks can be auto-created for follow-up actions identified during the call.</p>
+          <p style="color: var(--text-secondary); max-width: 640px;">The integration supports standard objects (Lead, Contact, Account, Opportunity, Task) and any custom objects in your org. It works with Salesforce Flows and Process Builder, so call events can trigger downstream automations without additional configuration.</p>
+        </div>
+      </section>
+
+      <!-- What Syncs -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <span class="section-label">What Syncs</span>
+          <h2>Data that flows <span class="italic-accent">automatically.</span></h2>
+        </div>
+        <div class="sync-grid reveal">
+          <div class="sync-card">
+            <h3>Lead & Contact Records</h3>
+            <p>New callers are created as leads or contacts based on your assignment rules. Existing records are matched by phone or email and updated with the latest conversation data. Duplicate detection respects your org's matching rules.</p>
+          </div>
+          <div class="sync-card">
+            <h3>Activity Timeline</h3>
+            <p>Every call appears on the record's activity timeline as a completed task. The entry includes the full transcript, call duration, outcome, and caller sentiment. Your team gets complete call context without leaving Salesforce.</p>
+          </div>
+          <div class="sync-card">
+            <h3>Custom Objects & Fields</h3>
+            <p>Map call data to any custom object or field in your org. Whether you use custom objects for enquiries, service requests, or intake forms, Voqal AI writes directly to them with no middleware.</p>
+          </div>
+          <div class="sync-card">
+            <h3>Automated Tasks & Workflows</h3>
+            <p>Follow-up tasks are created automatically when a call requires action — such as a callback, document request, or manager review. These tasks feed into Salesforce Flows and assignment rules like any other record.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Setup Steps -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <span class="section-label">Setup</span>
+          <h2>Live in three <span class="italic-accent">steps.</span></h2>
+        </div>
+        <div class="setup-steps reveal">
+          <div class="setup-step">
+            <div class="step-num">1</div>
+            <h3>Authorise Your Salesforce Org</h3>
+            <p>Connect via OAuth 2.0 directly from the Voqal AI dashboard. We support both production and sandbox environments, so you can test before going live.</p>
+          </div>
+          <div class="setup-step">
+            <div class="step-num">2</div>
+            <h3>Configure Object Mappings</h3>
+            <p>Choose which Salesforce objects and fields receive call data. Map caller details to leads, contacts, or custom objects. Set assignment rules and record types.</p>
+          </div>
+          <div class="setup-step">
+            <div class="step-num">3</div>
+            <h3>Go Live</h3>
+            <p>Run a test call to verify data appears correctly in Salesforce, then activate the integration. Your existing Flows and automations work immediately with the new data.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>Built for teams that run on <span class="italic-accent">Salesforce.</span></h2>
+          <p style="color: var(--text-secondary); max-width: 640px; margin-bottom: 20px;">From enterprise sales organisations to multi-location businesses, the Salesforce integration ensures every call is captured, classified, and actionable inside your CRM.</p>
+          <ul style="color: var(--text-secondary); max-width: 640px; line-height: 2; padding-left: 20px;">
+            <li><strong>Enterprise sales teams</strong> — inbound calls create leads with full context, ready for sales reps to action from their Salesforce queue.</li>
+            <li><strong>Multi-location businesses</strong> — calls are routed to the correct account or location record, keeping data organised across branches.</li>
+            <li><strong>Teams using Salesforce Flows</strong> — call events trigger existing automations, from email follow-ups to Slack notifications to approval processes.</li>
+            <li><strong>Organisations with custom Salesforce objects</strong> — map call data directly to bespoke objects for intake forms, service requests, or compliance records.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <span class="section-label">FAQ</span>
+          <h2>Common <span class="italic-accent">questions.</span></h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question"><span>Which Salesforce editions are supported?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Voqal AI supports Professional, Enterprise, Unlimited, and Developer editions. The integration uses the Salesforce REST API, which is available on all these plans. We recommend Professional or above for the best experience, as Essentials has limited API access.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question"><span>Can it write to custom objects?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. The integration supports both standard and custom objects. You can map call data to any custom object in your org, including custom fields, lookup relationships, and record types. Configuration is done through the Voqal AI dashboard with no coding required.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question"><span>Does it log activities on the timeline?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. Every call is logged as a completed Task on the relevant lead, contact, or account record. The activity includes the full transcript, call duration, outcome classification, and any structured data captured during the conversation.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question"><span>Is the sync real-time or batched?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>All syncs are real-time. Data is pushed to Salesforce within seconds of a call ending via the REST API. There is no overnight batch process or manual trigger — your team sees updated records immediately.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question"><span>Is sandbox testing available?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Absolutely. We recommend connecting to a sandbox org first so you can validate field mappings, test workflow triggers, and confirm data quality before going live in production. Switching from sandbox to production is a single configuration change in the dashboard.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section-padding container">
+        <div class="reveal integration-cta-section">
+          <span class="section-label">Get Started</span>
+          <h2>Ready to connect <span class="italic-accent">Salesforce?</span></h2>
+          <p>Book a demo and we'll show you the Salesforce integration working with your org's objects and fields. Sandbox testing included at no extra cost.</p>
+          <div class="cta-buttons">
+            <a href="tel:+13322641587" class="btn-submit" style="text-decoration: none;">Call Demo: +1 (332) 264-1587</a>
+            <a href="https://cal.com/thomas-parry-nkksqk" class="btn-nav" style="text-decoration: none;">Book Consultation</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <a href="../" class="logo footer-logo"><svg viewBox="0 0 295 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="wf-grad-footer" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#e8955e"/><stop offset="100%" stop-color="#db7c54"/></linearGradient></defs>
+  <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="22;7.7;22" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="27;34.15;27" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
+  <rect x="13" y="19" width="8" height="38" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="38;13.3;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="19;31.35;19" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
+  <rect x="26" y="11" width="8" height="54" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="54;18.9;54" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="11;28.55;11" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
+  <rect x="39" y="21" width="8" height="34" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="34;11.9;34" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="21;32.05;21" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
+  <rect x="52" y="29" width="8" height="18" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="18;6.3;18" dur="1.2s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite"/></rect>
+  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="94" y="52" font-family="'Instrument Serif', Georgia, serif" font-weight="400" font-style="italic" font-size="52" fill="#f8f9fa" letter-spacing="1">Voqal</text>
+  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#db7c54" letter-spacing="2">Ai</text>
+  <circle cx="282" cy="47" r="4" fill="#db7c54"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+</svg></a>
+          <p class="footer-tagline">Never miss another call. Intelligent voice agents serving London, Manchester, and businesses across the UK.</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-heading">Navigation</p>
+          <a href="../#services">Services</a>
+          <a href="../#protocol">Protocol</a>
+          <a href="../pricing.html">Pricing</a>
+          <a href="../integrations.html">Integrations</a>
+          <a href="../about.html">About</a>
+          <a href="../#demo">Free Demo</a>
+        </div>
+        <div class="footer-links">
+          <p class="footer-heading">Get in Touch</p>
+          <a href="tel:+442039960962">020 3996 0962</a>
+          <a href="mailto:info@voqalai.com">info@voqalai.com</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Voqal AI Ltd. Registered in England &amp; Wales. Company No. 17080303.</p>
+        <p class="footer-address">Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script id="retell-widget" src="https://dashboard.retellai.com/retell-widget.js" type="module" data-public-key="public_key_692e22f82e27e1f57afe6" data-agent-id="agent_42e2f4ee39b0f6db2cbe9db919" data-title="Chat with Aria" data-color="#db7c54" data-logo-url="https://voqalai.com/favicon.png" data-bot-name="Aria" data-popup-message="Hey! 👋 Got questions? Chat with us." data-show-ai-popup="true" data-show-ai-popup-time="15"></script>
+  <button id="voqalChatLauncher" aria-label="Chat with Aria" style="position: fixed; bottom: 24px; right: 24px; z-index: 1000000; width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; background: linear-gradient(135deg, #e8955e, #db7c54); box-shadow: 0 4px 20px rgba(219,124,84,0.4); display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4C10.6 4 3 10.4 3 18.2c0 4.5 2.4 8.5 6.2 11.2L7.5 36l7.2-3.6c1.7 0.4 3.4 0.6 5.3 0.6 9.4 0 17-6.4 17-14.2S29.4 4 20 4z" fill="white" opacity="0.95"/><rect x="12" y="16" width="3" height="8" rx="1.5" fill="#db7c54"><animate attributeName="height" values="8;3;8" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="16;18.5;16" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect><rect x="17" y="13" width="3" height="14" rx="1.5" fill="#db7c54"><animate attributeName="height" values="14;5;14" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="13;17.5;13" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect><rect x="22" y="15" width="3" height="10" rx="1.5" fill="#db7c54"><animate attributeName="height" values="10;3.5;10" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="15;18.25;15" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect><rect x="27" y="17" width="3" height="6" rx="1.5" fill="#db7c54"><animate attributeName="height" values="6;2;6" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="17;19;17" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect></svg>
+  </button>
+  <script>(function retellCustomize(){var host=null;document.querySelectorAll('div').forEach(function(el){if(el.shadowRoot&&el.style.position==='fixed'&&el.style.zIndex==='999999')host=el;});if(host&&host.shadowRoot){var s=document.createElement('style');s.textContent='.retell-chat-window{max-height:350px!important;height:350px!important}#retell-fab{display:none!important}.retell-popup-container{bottom:70px!important;right:0!important}';host.shadowRoot.appendChild(s);var inp=host.shadowRoot.querySelector('input[placeholder],textarea[placeholder]');if(inp)inp.placeholder='Ask us anything...';var fab=host.shadowRoot.querySelector('#retell-fab');document.getElementById('voqalChatLauncher').addEventListener('click',function(){if(fab)fab.click();});var btn=document.getElementById('voqalChatLauncher');btn.addEventListener('mouseenter',function(){btn.style.transform='scale(1.1)';btn.style.boxShadow='0 6px 28px rgba(219,124,84,0.5)';});btn.addEventListener('mouseleave',function(){btn.style.transform='scale(1)';btn.style.boxShadow='0 4px 20px rgba(219,124,84,0.4)';});}else{setTimeout(retellCustomize,500);}})();</script>
+
+  <script>const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50);});const mobileToggle=document.getElementById('mobileToggle');const navLinks=document.getElementById('navLinks');mobileToggle.addEventListener('click',()=>{navLinks.classList.toggle('active');mobileToggle.classList.toggle('active');});navLinks.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{navLinks.classList.remove('active');mobileToggle.classList.remove('active');});});document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){if(this.getAttribute('href')==='#')return;e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target)target.scrollIntoView({behavior:'smooth',block:'start'});});});function reveal(){document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-100){el.classList.add('active');}});}window.addEventListener('scroll',reveal);reveal();document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;item.classList.toggle('open');});});</script>
+
+</body>
+</html>

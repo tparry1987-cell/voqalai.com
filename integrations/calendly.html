@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="Tivb7eP0KpHp0TDuL1ohBbOquok_JbGckqwiTHUZHHs" />
+  <title>Calendly Integration — Book Appointments During Calls | Voqal AI</title>
+  <meta name="description" content="Connect Voqal AI to Calendly. Your AI receptionist checks real-time availability and books meetings during phone conversations. Automatic confirmations.">
+  <meta property="og:title" content="Calendly Integration — Book Appointments During Calls | Voqal AI">
+  <meta property="og:description" content="Connect Voqal AI to Calendly. Your AI receptionist checks real-time availability and books meetings during phone conversations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://voqalai.com/integrations/calendly.html">
+  <meta property="og:site_name" content="Voqal AI">
+  <meta property="og:image" content="https://voqalai.com/images/hero-forest.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calendly Integration — Book Appointments During Calls | Voqal AI">
+  <meta name="twitter:description" content="Connect Voqal AI to Calendly. Your AI receptionist checks real-time availability and books meetings during phone conversations.">
+  <meta name="twitter:image" content="https://voqalai.com/images/hero-forest.jpg">
+  <link rel="canonical" href="https://voqalai.com/integrations/calendly.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://dashboard.retellai.com">
+  <link rel="preconnect" href="https://app.cal.com">
+  <link rel="preload" href="../fonts/saira-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Voqal AI",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "AI Receptionist",
+        "operatingSystem": "Web",
+        "description": "AI receptionist that integrates with Calendly to check real-time availability and book appointments during live phone conversations with automatic confirmations.",
+        "url": "https://voqalai.com/integrations/calendly.html",
+        "author": { "@type": "Organization", "name": "Voqal AI Ltd", "url": "https://voqalai.com" },
+        "offers": { "@type": "Offer", "price": "197", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31" },
+        "softwareRequirements": "Calendly",
+        "featureList": ["Real-time availability checking", "In-call appointment booking", "Automatic confirmation emails", "Buffer time respect", "Round-robin team scheduling"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://voqalai.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://voqalai.com/integrations.html" },
+          { "@type": "ListItem", "position": 3, "name": "Calendly Integration", "item": "https://voqalai.com/integrations/calendly.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which Calendly event types work with Voqal AI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Voqal AI works with all Calendly event types including one-on-one meetings, group events, round-robin assignments, and collective scheduling. You choose which event types to make available during phone calls." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Voqal AI respect Calendly buffer times?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Voqal AI reads your full Calendly configuration including buffer times before and after events, minimum scheduling notice periods, and daily booking limits. It will never offer a slot that violates your scheduling rules." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is round-robin scheduling supported?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. If you use Calendly's round-robin feature, Voqal AI will automatically distribute bookings across your team based on availability and your configured distribution rules." }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Voqal AI handle time zones with Calendly?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Voqal AI detects the caller's time zone from their phone number or asks them directly, then presents available slots in their local time. Calendly handles the conversion on the back end so the booking always lands in the correct slot." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can callers cancel or reschedule through Voqal AI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Callers can request to reschedule or cancel an existing booking during a phone call. Voqal AI looks up their appointment in Calendly and processes the change, then sends an updated confirmation email." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"theme":"dark","styles":{"branding":{"brandColor":"#db7c54"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+</head>
+<body>
+
+  <div class="page-background" style="background-image: url('../images/hero-forest.webp');"></div>
+
+  <div class="page-overlay">
+
+    <nav id="navbar" class="fade-up-1">
+      <a href="../" class="logo"><svg viewBox="0 0 295 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="wf-grad" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#e8955e"/><stop offset="100%" stop-color="#db7c54"/></linearGradient></defs>
+  <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="22;7.7;22" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="27;34.15;27" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
+  <rect x="13" y="19" width="8" height="38" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="38;13.3;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="19;31.35;19" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
+  <rect x="26" y="11" width="8" height="54" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="54;18.9;54" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="11;28.55;11" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
+  <rect x="39" y="21" width="8" height="34" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="34;11.9;34" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="21;32.05;21" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
+  <rect x="52" y="29" width="8" height="18" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="18;6.3;18" dur="1.2s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite"/></rect>
+  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="94" y="52" font-family="'Instrument Serif', Georgia, serif" font-weight="400" font-style="italic" font-size="52" fill="#f8f9fa" letter-spacing="1">Voqal</text>
+  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#db7c54" letter-spacing="2">Ai</text>
+  <circle cx="282" cy="47" r="4" fill="#db7c54"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+</svg></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#protocol">Protocol</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../integrations.html">Integrations</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../#demo">Contact</a></li>
+      </ul>
+      <a href="../#demo" class="btn-nav">Book Demo</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <main class="content-wrapper">
+
+      <!-- Hero -->
+      <section class="section-padding container" style="padding-top: 120px;">
+        <div class="reveal">
+          <span class="section-label">Integration</span>
+          <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 24px;">Voqal AI + <span class="italic-accent">Calendly.</span></h1>
+          <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 720px;">Your AI receptionist checks Calendly availability in real time and books appointments while the caller is still on the phone. No hold music, no call-backs, no missed opportunities.</p>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>How the connection <span class="italic-accent">works.</span></h2>
+          <p style="color: var(--text-secondary); max-width: 640px; margin-bottom: 16px;">When a caller asks to book an appointment, Voqal AI queries your Calendly account through a secure API connection. It reads your event types, checks which slots are genuinely free, and offers the caller a choice of times that suit them.</p>
+          <p style="color: var(--text-secondary); max-width: 640px; margin-bottom: 16px;">Once the caller picks a slot, the booking is confirmed in Calendly instantly. The caller receives an email confirmation, your calendar updates, and any connected integrations (Zoom, Google Meet, Teams) generate their meeting links automatically.</p>
+          <p style="color: var(--text-secondary); max-width: 640px;">The entire process happens during the conversation. By the time the caller hangs up, the appointment is locked in and both parties have received confirmation.</p>
+        </div>
+      </section>
+
+      <!-- What Syncs -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>What <span class="italic-accent">syncs.</span></h2>
+        </div>
+        <div class="sync-grid reveal">
+          <div class="sync-card">
+            <h3>Real-Time Availability</h3>
+            <p>Voqal AI pulls live availability from your Calendly account, respecting working hours, buffer times, and minimum notice periods. Callers only hear slots that are genuinely open.</p>
+          </div>
+          <div class="sync-card">
+            <h3>In-Call Booking</h3>
+            <p>Appointments are created in Calendly the moment the caller confirms. No queues, no pending states — the slot is reserved immediately so double-bookings never happen.</p>
+          </div>
+          <div class="sync-card">
+            <h3>Automatic Confirmations</h3>
+            <p>Calendly sends its standard confirmation and reminder emails to both the caller and your team. Any connected video conferencing tools generate meeting links automatically.</p>
+          </div>
+          <div class="sync-card">
+            <h3>Reschedule &amp; Cancellation Handling</h3>
+            <p>Returning callers can reschedule or cancel existing bookings during a phone call. Voqal AI finds their appointment, processes the change, and triggers updated notifications.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Setup Steps -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>Live in three <span class="italic-accent">steps.</span></h2>
+        </div>
+        <div class="setup-steps reveal">
+          <div class="setup-step">
+            <span class="step-num">1</span>
+            <h3>Connect Your Calendly Account</h3>
+            <p>Authorise Voqal AI to access your Calendly account through a secure OAuth connection. We never store your password — only a revocable access token.</p>
+          </div>
+          <div class="setup-step">
+            <span class="step-num">2</span>
+            <h3>Select Event Types to Offer</h3>
+            <p>Choose which Calendly event types your AI receptionist can book. Offer discovery calls, consultations, check-ups, or any combination — you decide what callers can schedule.</p>
+          </div>
+          <div class="setup-step">
+            <span class="step-num">3</span>
+            <h3>Enable Live Booking</h3>
+            <p>Switch on the integration and your AI receptionist starts offering real-time availability to every caller. Test it with a quick phone call to hear it in action.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>Built for businesses that <span class="italic-accent">book.</span></h2>
+          <p style="color: var(--text-secondary); max-width: 640px; margin-bottom: 24px;">Any business that uses Calendly to manage appointments can benefit from AI-powered phone booking. Common use cases include:</p>
+          <ul style="color: var(--text-secondary); max-width: 640px; line-height: 2; padding-left: 20px;">
+            <li>Consultancies booking discovery calls and strategy sessions with prospects</li>
+            <li>Dental practices scheduling check-ups, hygiene visits, and emergency slots</li>
+            <li>Law firms booking initial consultations and case reviews with new clients</li>
+            <li>Agencies scheduling client meetings, creative reviews, and onboarding calls</li>
+            <li>Tradesmen booking site visits, quotation appointments, and follow-up inspections</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section-padding container">
+        <div class="reveal">
+          <h2>Frequently asked <span class="italic-accent">questions.</span></h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question"><span>Which Calendly event types work with Voqal AI?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>All of them. Voqal AI supports one-on-one meetings, group events, round-robin assignments, and collective scheduling. During onboarding you choose which event types to make available to callers, and you can update your selection at any time.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question"><span>Does it respect Calendly buffer times?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. Voqal AI reads your complete Calendly configuration including buffer times before and after events, minimum scheduling notice periods, and maximum bookings per day. It will never offer a slot that violates any of your scheduling rules.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question"><span>Is round-robin scheduling supported?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Absolutely. If your team uses Calendly's round-robin feature, Voqal AI distributes bookings across team members based on their individual availability and your configured distribution method — whether that is optimised for availability or equal distribution.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question"><span>How does Voqal AI handle time zones?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Voqal AI detects the caller's likely time zone from their phone number or asks them directly if needed. Available slots are presented in the caller's local time, and Calendly handles the conversion on the back end so the booking always lands in the correct slot on your calendar.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question"><span>Can callers cancel or reschedule by phone?</span><span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. When a caller asks to change or cancel an existing appointment, Voqal AI looks up their booking in Calendly using their phone number or email. It processes the reschedule or cancellation and Calendly sends updated confirmation emails to everyone involved.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section-padding container">
+        <div class="reveal integration-cta-section">
+          <span class="section-label">Get Started</span>
+          <h2>Ready to connect <span class="italic-accent">Calendly?</span></h2>
+          <p>Book a demo and we'll connect Voqal AI to your Calendly account live on the call. Most integrations are fully operational within 10 minutes.</p>
+          <div class="cta-buttons">
+            <a href="tel:+13322641587" class="btn-submit" style="text-decoration: none;">Call Demo: +1 (332) 264-1587</a>
+            <a href="https://cal.com/thomas-parry-nkksqk" class="btn-nav" style="text-decoration: none;">Book Consultation</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <a href="../" class="logo footer-logo"><svg viewBox="0 0 295 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="wf-grad-footer" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#e8955e"/><stop offset="100%" stop-color="#db7c54"/></linearGradient></defs>
+  <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="22;7.7;22" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="27;34.15;27" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
+  <rect x="13" y="19" width="8" height="38" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="38;13.3;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="19;31.35;19" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
+  <rect x="26" y="11" width="8" height="54" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="54;18.9;54" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="11;28.55;11" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
+  <rect x="39" y="21" width="8" height="34" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="34;11.9;34" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="21;32.05;21" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
+  <rect x="52" y="29" width="8" height="18" rx="4" fill="url(#wf-grad-footer)"><animate attributeName="height" values="18;6.3;18" dur="1.2s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite"/></rect>
+  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="94" y="52" font-family="'Instrument Serif', Georgia, serif" font-weight="400" font-style="italic" font-size="52" fill="#f8f9fa" letter-spacing="1">Voqal</text>
+  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#db7c54" letter-spacing="2">Ai</text>
+  <circle cx="282" cy="47" r="4" fill="#db7c54"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+</svg></a>
+          <p class="footer-tagline">Never miss another call. Intelligent voice agents serving London, Manchester, and businesses across the UK.</p>
+        </div>
+        <div class="footer-links">
+          <p class="footer-heading">Navigation</p>
+          <a href="../#services">Services</a>
+          <a href="../#protocol">Protocol</a>
+          <a href="../pricing.html">Pricing</a>
+          <a href="../integrations.html">Integrations</a>
+          <a href="../about.html">About</a>
+          <a href="../#demo">Free Demo</a>
+        </div>
+        <div class="footer-links">
+          <p class="footer-heading">Get in Touch</p>
+          <a href="tel:+442039960962">020 3996 0962</a>
+          <a href="mailto:info@voqalai.com">info@voqalai.com</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Voqal AI Ltd. Registered in England &amp; Wales. Company No. 17080303.</p>
+        <p class="footer-address">Registered Office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script id="retell-widget" src="https://dashboard.retellai.com/retell-widget.js" type="module" data-public-key="public_key_692e22f82e27e1f57afe6" data-agent-id="agent_42e2f4ee39b0f6db2cbe9db919" data-title="Chat with Aria" data-color="#db7c54" data-logo-url="https://voqalai.com/favicon.png" data-bot-name="Aria" data-popup-message="Hey! &#x1F44B; Got questions? Chat with us." data-show-ai-popup="true" data-show-ai-popup-time="15"></script>
+  <button id="voqalChatLauncher" aria-label="Chat with Aria" style="position: fixed; bottom: 24px; right: 24px; z-index: 1000000; width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; background: linear-gradient(135deg, #e8955e, #db7c54); box-shadow: 0 4px 20px rgba(219,124,84,0.4); display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4C10.6 4 3 10.4 3 18.2c0 4.5 2.4 8.5 6.2 11.2L7.5 36l7.2-3.6c1.7 0.4 3.4 0.6 5.3 0.6 9.4 0 17-6.4 17-14.2S29.4 4 20 4z" fill="white" opacity="0.95"/><rect x="12" y="16" width="3" height="8" rx="1.5" fill="#db7c54"><animate attributeName="height" values="8;3;8" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="16;18.5;16" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect><rect x="17" y="13" width="3" height="14" rx="1.5" fill="#db7c54"><animate attributeName="height" values="14;5;14" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="13;17.5;13" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect><rect x="22" y="15" width="3" height="10" rx="1.5" fill="#db7c54"><animate attributeName="height" values="10;3.5;10" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="15;18.25;15" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect><rect x="27" y="17" width="3" height="6" rx="1.5" fill="#db7c54"><animate attributeName="height" values="6;2;6" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="17;19;17" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect></svg>
+  </button>
+  <script>(function retellCustomize(){var host=null;document.querySelectorAll('div').forEach(function(el){if(el.shadowRoot&&el.style.position==='fixed'&&el.style.zIndex==='999999')host=el;});if(host&&host.shadowRoot){var s=document.createElement('style');s.textContent='.retell-chat-window{max-height:350px!important;height:350px!important}#retell-fab{display:none!important}.retell-popup-container{bottom:70px!important;right:0!important}';host.shadowRoot.appendChild(s);var inp=host.shadowRoot.querySelector('input[placeholder],textarea[placeholder]');if(inp)inp.placeholder='Ask us anything...';var fab=host.shadowRoot.querySelector('#retell-fab');document.getElementById('voqalChatLauncher').addEventListener('click',function(){if(fab)fab.click();});var btn=document.getElementById('voqalChatLauncher');btn.addEventListener('mouseenter',function(){btn.style.transform='scale(1.1)';btn.style.boxShadow='0 6px 28px rgba(219,124,84,0.5)';});btn.addEventListener('mouseleave',function(){btn.style.transform='scale(1)';btn.style.boxShadow='0 4px 20px rgba(219,124,84,0.4)';});}else{setTimeout(retellCustomize,500);}})();</script>
+
+  <script>const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50);});const mobileToggle=document.getElementById('mobileToggle');const navLinks=document.getElementById('navLinks');mobileToggle.addEventListener('click',()=>{navLinks.classList.toggle('active');mobileToggle.classList.toggle('active');});navLinks.querySelectorAll('a').forEach(link=>{link.addEventListener('click',()=>{navLinks.classList.remove('active');mobileToggle.classList.remove('active');});});document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){if(this.getAttribute('href')==='#')return;e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target)target.scrollIntoView({behavior:'smooth',block:'start'});});});function reveal(){document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-100){el.classList.add('active');}});}window.addEventListener('scroll',reveal);reveal();document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;item.classList.toggle('open');});});</script>
+
+</body>
+</html>
