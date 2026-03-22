@@ -19,7 +19,7 @@
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://app.cal.com https://dashboard.retellai.com https://cdn.retellai.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com; frame-src https://app.cal.com https://www.googletagmanager.com https://*.retellai.com; connect-src 'self' https://www.google-analytics.com https://app.cal.com https://*.retellai.com; font-src 'self';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://app.cal.com https://dashboard.retellai.com https://cdn.retellai.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.retellai.com; frame-src https://app.cal.com https://www.googletagmanager.com https://*.retellai.com; connect-src 'self' https://www.google-analytics.com https://app.cal.com https://*.retellai.com; font-src 'self'; media-src 'self' https://d8j0ntlcm91z4.cloudfront.net;"
 
 [[headers]]
   for = "/_next/static/*"
