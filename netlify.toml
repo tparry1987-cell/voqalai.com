@@ -11,6 +11,89 @@
   [redirects.conditions]
     Host = ["arkaisolutions.net", "www.arkaisolutions.net"]
 
+# ── Old .html URLs → new clean URLs (301 for SEO) ──
+
+# Core pages
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/pricing.html"
+  to = "/pricing/"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy/"
+  status = 301
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/terms/"
+  status = 301
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you/"
+  status = 301
+
+# Pages that existed but now redirect to closest match
+[[redirects]]
+  from = "/lead-reactivation.html"
+  to = "/pricing/#lead-reactivation"
+  status = 301
+
+[[redirects]]
+  from = "/locations.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/brand-facts.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/integrations.html"
+  to = "/#services"
+  status = 301
+
+[[redirects]]
+  from = "/integrations/*"
+  to = "/#services"
+  status = 301
+
+# Industry pages → about (industries section)
+[[redirects]]
+  from = "/ai-receptionist-*.html"
+  to = "/about/"
+  status = 301
+
+# Blog posts → homepage
+[[redirects]]
+  from = "/blog/*"
+  to = "/"
+  status = 301
+
+# Comparison pages → pricing
+[[redirects]]
+  from = "/compare/*"
+  to = "/pricing/"
+  status = 301
+
+# Guide pages → homepage
+[[redirects]]
+  from = "/guides/*"
+  to = "/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
