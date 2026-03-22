@@ -113,6 +113,23 @@ const structuredData = [
       addressCountry: "GB",
     },
     sameAs: ["https://www.linkedin.com/in/tom-parry-698bbb29a"],
+    description:
+      "AI Receptionist UK: 24/7 call answering, appointment booking and lead qualification. Sector-trained for dental, legal, trades and more.",
+    foundingDate: "2025",
+    founders: [
+      {
+        "@type": "Person",
+        name: "Thomas Parry",
+      },
+    ],
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
+    serviceArea: {
+      "@type": "Country",
+      name: "United Kingdom",
+    },
   },
   {
     "@context": "https://schema.org",
