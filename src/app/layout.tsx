@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import "@fontsource/geist-sans/400.css";
+import "@fontsource/geist-sans/500.css";
+import "@fontsource/geist-sans/600.css";
+import "@fontsource/geist-sans/700.css";
 import "./globals.css";
+import { CalEmbed } from "@/components/CalEmbed";
+import { CookieConsent } from "@/components/CookieConsent";
+import { RetellWidget } from "@/components/RetellWidget";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://voqalai.com"),
@@ -191,20 +198,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased scroll-smooth">
       <head>
-        <link
-          rel="preload"
-          href="/fonts/saira-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/instrument-serif-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
         <link rel="preconnect" href="https://dashboard.retellai.com" />
         <link rel="preconnect" href="https://app.cal.com" />
         {structuredData.map((data, i) => (
@@ -215,7 +208,12 @@ export default function RootLayout({
           />
         ))}
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <CalEmbed />
+        <RetellWidget />
+        <CookieConsent />
+      </body>
     </html>
   );
 }

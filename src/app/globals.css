@@ -1,49 +1,28 @@
 @import "tailwindcss";
 
-/* ── Self-hosted Fonts ── */
-@font-face {
-  font-family: "Saira";
-  src: url("/fonts/saira-latin.woff2") format("woff2");
-  font-weight: 300 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Instrument Serif";
-  src: url("/fonts/instrument-serif-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Instrument Serif";
-  src: url("/fonts/instrument-serif-italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* ── Variables (matches current voqalai.com exactly) ── */
+/* ── Variables (Geist Sans + Green accent) ── */
 :root {
   --text-primary: #1A1A2E;
   --text-secondary: #5A5A6E;
   --text-faint: #8A8A9E;
-  --accent: #C4785A;
-  --accent-light: #D4896B;
+  --accent: #87FB89;
+  --accent-light: #A0FCA2;
   --bg-primary: #FAF8F5;
   --bg-white: #FFFFFF;
   --bg-alt: #F3F0EB;
   --bg-footer: #1A1A2E;
   --border-subtle: rgba(26, 26, 46, 0.08);
   --border-hover: rgba(26, 26, 46, 0.15);
-  --font-sans: "Saira", system-ui, -apple-system, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Geist Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Geist Sans", system-ui, -apple-system, sans-serif;
   --ease: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @theme inline {
   --color-primary: var(--accent);
   --color-primary-light: var(--accent-light);
-  --font-sans: "Saira", system-ui, -apple-system, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Geist Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Geist Sans", system-ui, -apple-system, sans-serif;
 }
 
 /* ── Reset ── */
@@ -59,7 +38,7 @@ html {
 }
 
 body {
-  font-family: "Saira", system-ui, sans-serif !important;
+  font-family: "Geist Sans", system-ui, sans-serif !important;
   color: #1A1A2E !important;
   font-weight: 400;
   line-height: 1.6;
@@ -74,7 +53,7 @@ h1, h2, h3, h4, h5, h6 { color: #1A1A2E; }
 p, li, span, label { color: #3A3A4E; }
 
 ::selection {
-  background: rgba(196, 120, 90, 0.25);
+  background: rgba(135, 251, 137, 0.25);
   color: var(--text-primary);
 }
 
@@ -87,7 +66,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Typography (editorial, light-weight) ── */
 .heading {
-  font-family: "Saira", system-ui, sans-serif !important;
+  font-family: "Geist Sans", system-ui, sans-serif !important;
   font-weight: 300 !important;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -95,9 +74,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .italic-accent {
-  font-family: "Instrument Serif", Georgia, serif !important;
+  font-family: "Geist Sans", system-ui, sans-serif !important;
   font-style: italic !important;
-  color: #C4785A !important;
+  color: #87FB89 !important;
   font-weight: 400 !important;
 }
 
@@ -113,7 +92,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.75rem !important;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: #C4785A !important;
+  color: #87FB89 !important;
   margin-bottom: 1.5rem;
   font-weight: 600 !important;
   display: block;
@@ -179,7 +158,7 @@ a { color: inherit; text-decoration: none; }
   font-style: italic;
 }
 .service-card h3 {
-  font-family: "Saira", system-ui, sans-serif;
+  font-family: "Geist Sans", system-ui, sans-serif;
   font-weight: 500;
   font-size: 1.4rem;
   color: #1A1A2E !important;
@@ -199,7 +178,7 @@ a { color: inherit; text-decoration: none; }
 .step-number {
   font-family: var(--font-serif);
   font-size: 4.5rem;
-  color: rgba(196, 120, 90, 0.15);
+  color: rgba(135, 251, 137, 0.15);
   position: absolute;
   top: -25px;
   left: -10px;
@@ -337,14 +316,14 @@ a { color: inherit; text-decoration: none; }
   background: none;
   border: none;
   color: #1A1A2E !important;
-  font-family: "Saira", system-ui, sans-serif;
+  font-family: "Geist Sans", system-ui, sans-serif;
   font-size: 1.1rem;
   font-weight: 400;
   text-align: left;
   cursor: pointer;
   transition: color 0.3s;
 }
-.faq-question:hover { color: #C4785A !important; }
+.faq-question:hover { color: #87FB89 !important; }
 .faq-icon {
   font-size: 1.25rem;
   transition: transform 0.3s;
@@ -360,7 +339,7 @@ a { color: inherit; text-decoration: none; }
 }
 .faq-item.open .faq-answer { max-height: 500px; padding-bottom: 1.5rem; }
 .faq-answer p { color: #4A4A5E !important; font-size: 1rem; line-height: 1.7; }
-.faq-answer a { color: #C4785A !important; }
+.faq-answer a { color: #87FB89 !important; }
 
 /* ── Form (editorial underline style) ── */
 .form-card {
@@ -455,7 +434,7 @@ a { color: inherit; text-decoration: none; }
 }
 .pricing-card.featured {
   border-color: var(--accent);
-  box-shadow: 0 4px 30px rgba(196, 120, 90, 0.12);
+  box-shadow: 0 4px 30px rgba(135, 251, 137, 0.12);
 }
 
 /* ── Liquid Glass (hero only) ── */
@@ -482,6 +461,28 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 
+/* ── Hero CTA (animated glowing border) ── */
+.hero-cta {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #fff !important;
+  font-weight: 500;
+  border: 2px solid rgba(255, 255, 255, 0.7) !important;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  animation: hero-cta-glow 2.5s ease-in-out infinite;
+}
+.hero-cta:hover {
+  border-color: #fff !important;
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 0 30px rgba(135, 251, 137, 0.4), 0 0 60px rgba(135, 251, 137, 0.15);
+}
+@keyframes hero-cta-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 255, 255, 0.15), 0 0 20px rgba(135, 251, 137, 0.1); }
+  50% { box-shadow: 0 0 16px rgba(255, 255, 255, 0.3), 0 0 40px rgba(135, 251, 137, 0.25); }
+}
+
 /* ── Marquee ── */
 @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
 .animate-marquee { animation: marquee 25s linear infinite; }
@@ -493,7 +494,7 @@ a { color: inherit; text-decoration: none; }
 @keyframes scanline-flicker { 0% { opacity: 0.4; } 25% { opacity: 0.6; } 50% { opacity: 0.3; } 75% { opacity: 0.55; } 100% { opacity: 0.45; } }
 @keyframes brightness-pulse { 0%, 100% { opacity: 0; } 15% { opacity: 0.4; } 20% { opacity: 0; } 65% { opacity: 0; } 70% { opacity: 0.5; } 75% { opacity: 0; } }
 @keyframes roll-bar { 0% { top: -10%; } 100% { top: 110%; } }
-.glitch-bar { position: absolute; left: 0; right: 0; height: 3%; background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.04) 20%, rgba(196,120,90,0.07) 40%, rgba(255,255,255,0.08) 50%, rgba(212,137,107,0.05) 60%, rgba(255,255,255,0.04) 80%, transparent 100%); pointer-events: none; z-index: 6; mix-blend-mode: screen; animation: roll-bar 8s linear infinite; }
+.glitch-bar { position: absolute; left: 0; right: 0; height: 3%; background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.04) 20%, rgba(135,251,137,0.07) 40%, rgba(255,255,255,0.08) 50%, rgba(160,252,162,0.05) 60%, rgba(255,255,255,0.04) 80%, transparent 100%); pointer-events: none; z-index: 6; mix-blend-mode: screen; animation: roll-bar 8s linear infinite; }
 @keyframes static-shift { 0% { opacity: 0.3; } 25% { opacity: 0.45; } 50% { opacity: 0.25; } 75% { opacity: 0.4; } 100% { opacity: 0.35; } }
 .static-noise { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.4; mix-blend-mode: overlay; animation: static-shift 0.3s steps(2) infinite; }
 
@@ -501,6 +502,35 @@ a { color: inherit; text-decoration: none; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .reveal { opacity: 0; transform: translateY(20px); transition: var(--ease); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Legal content pages ── */
+.legal-content h2 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #1A1A2E !important;
+  margin: 2.5rem 0 1rem;
+}
+.legal-content p {
+  color: #4A4A5E !important;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.legal-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.legal-content li {
+  color: #4A4A5E !important;
+  font-size: 1rem;
+  line-height: 1.7;
+  padding: 0.2rem 0;
+}
+.legal-content a {
+  color: var(--accent) !important;
+}
 
 /* ── Scroll anchor offset ── */
 [id] { scroll-margin-top: 5rem; }

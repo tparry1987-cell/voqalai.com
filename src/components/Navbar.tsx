@@ -37,7 +37,7 @@ export function Navbar({ variant = "light" }: { variant?: "glass" | "light" }) {
               </Link>
             ))}
           </div>
-          <Link href="/contact" className="hidden md:inline-block btn-accent rounded-full px-6 py-2.5 text-sm">
+          <Link href="/contact" className="hidden md:inline-block rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-300 hover:scale-105" style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "#fff", background: "rgba(255,255,255,0.06)" }}>
             Book Demo
           </Link>
           <button className="md:hidden text-white" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">

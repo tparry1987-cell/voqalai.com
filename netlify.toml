@@ -1,0 +1,35 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Redirect old domain to new domain
+[[redirects]]
+  from = "/*"
+  to = "https://voqalai.com/:splat"
+  status = 301
+  force = true
+  [redirects.conditions]
+    Host = ["arkaisolutions.net", "www.arkaisolutions.net"]
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://app.cal.com https://dashboard.retellai.com https://cdn.retellai.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com; frame-src https://app.cal.com https://www.googletagmanager.com https://*.retellai.com; connect-src 'self' https://www.google-analytics.com https://app.cal.com https://*.retellai.com; font-src 'self';"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

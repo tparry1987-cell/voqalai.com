@@ -34,6 +34,8 @@ export function Footer() {
               <a href="tel:+442039960962" className="block hover:text-white transition-colors">020 3996 0962 (UK)</a>
               <a href="tel:+13322641587" className="block hover:text-white transition-colors">+1 (332) 264-1587 (US)</a>
               <a href="mailto:info@voqalai.com" className="block hover:text-white transition-colors">info@voqalai.com</a>
+              <Link href="/privacy" className="block hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="block hover:text-white transition-colors">Terms &amp; Conditions</Link>
             </div>
           </div>
         </div>

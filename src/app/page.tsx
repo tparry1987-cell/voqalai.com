@@ -1,34 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
 import { ChevronRight, Phone } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
-
-/* ── Retell Chat Widget ── */
-function RetellWidget() {
-  useEffect(() => {
-    if (document.getElementById("retell-widget")) return;
-    const s = document.createElement("script");
-    s.id = "retell-widget";
-    s.src = "https://dashboard.retellai.com/retell-widget.js";
-    s.type = "module";
-    s.setAttribute("data-public-key", "public_key_692e22f82e27e1f57afe6");
-    s.setAttribute("data-agent-id", "agent_42e2f4ee39b0f6db2cbe9db919");
-    s.setAttribute("data-title", "Chat with Aria");
-    s.setAttribute("data-color", "#C4785A");
-    s.setAttribute("data-logo-url", "https://voqalai.com/favicon.png");
-    s.setAttribute("data-bot-name", "Aria");
-    s.setAttribute("data-popup-message", "Hey! Got questions? Chat with us.");
-    s.setAttribute("data-show-ai-popup", "true");
-    s.setAttribute("data-show-ai-popup-time", "15");
-    document.body.appendChild(s);
-    return () => { s.remove(); };
-  }, []);
-  return null;
-}
 
 const trustedBy = [
   { name: "Dental", letter: "D" },
@@ -43,7 +19,7 @@ export default function Home() {
   return (
     <>
       {/* ═══ HERO — Dark, full viewport ═══ */}
-      <section className="relative min-h-screen w-full overflow-hidden">
+      <section className="fixed inset-0 h-screen w-full overflow-hidden">
         <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover" style={{ filter: "saturate(1.6) contrast(1.1) brightness(0.85)" }}>
           <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260309_042944_4a2205b7-b061-490a-852b-92d9e9955ce9.mp4" type="video/mp4" />
         </video>
@@ -73,17 +49,19 @@ export default function Home() {
           <h1 style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", color: "#fff", textShadow: "0 2px 16px rgba(0,0,0,0.3)" }}>
             Never Miss Another
             <br />
-            <span className="italic-accent" style={{ color: "var(--accent-light)" }}>Business Call.</span>
+            <span className="italic-accent" style={{ color: "var(--accent-light)" }}>Customer Call.</span>
           </h1>
 
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-            <Link href="/contact" className="btn-accent rounded-full px-8 py-3.5 text-base">
-              Book Free Demo
-            </Link>
-            <a href="tel:+442039960962" className="liquid-glass rounded-full px-7 py-3.5 text-white/90 flex items-center gap-2 hover:bg-white/10 transition-colors">
-              <Phone className="h-4 w-4" /> 020 3996 0962
-            </a>
-          </div>
+          <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.7)", maxWidth: 460, marginTop: "1.5rem", lineHeight: 1.6 }}>
+            AI receptionist that answers, books, and supports your business 24/7.
+          </p>
+
+          <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.55)", marginTop: "2.5rem", marginBottom: "0.75rem" }}>
+            Call Now &amp; Hear Our AI Receptionist in Action
+          </p>
+          <a href="tel:+442039960962" className="hero-cta rounded-full px-12 py-4 text-lg flex items-center gap-3" style={{ display: "inline-flex" }}>
+            <Phone className="h-5 w-5" style={{ color: "#87FB89" }} /> 020 3996 0962
+          </a>
 
           {/* Marquee */}
           <div className="absolute bottom-0 left-0 right-0 z-[8] pb-16 pt-12">
@@ -105,6 +83,9 @@ export default function Home() {
         {/* Bottom gradient fade */}
         <div className="absolute bottom-0 left-0 right-0 z-[7] h-64 pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent 0%, var(--bg-primary) 85%)" }} />
       </section>
+
+      {/* ═══ Scrolling content — slides up over fixed hero ═══ */}
+      <div className="relative z-30" style={{ marginTop: "100vh", backgroundColor: "var(--bg-primary)" }}>
 
       {/* ═══ SERVICES — Light, editorial ═══ */}
       <section id="services" className="section-padding section-white container" style={{ paddingTop: "10rem" }}>
@@ -214,7 +195,7 @@ export default function Home() {
       </section>
 
       <Footer />
-      <RetellWidget />
+      </div>
     </>
   );
 }

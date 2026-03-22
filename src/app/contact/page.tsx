@@ -24,7 +24,7 @@ export default function ContactPage() {
 
         <Reveal delay={0.15}>
           <div className="form-card" style={{ maxWidth: 700, margin: "0 auto" }}>
-            <form name="demo" method="POST" action="/thank-you">
+            <form name="demo" method="POST" action="/thank-you" data-netlify="true">
               <input type="hidden" name="form-name" value="demo" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
