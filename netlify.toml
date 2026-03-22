@@ -72,7 +72,32 @@
 
 # Industry pages → about (industries section)
 [[redirects]]
-  from = "/ai-receptionist-*.html"
+  from = "/ai-receptionist-dental-practices.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-receptionist-law-firms.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-receptionist-medical-practices.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-receptionist-tradesmen.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-receptionist-estate-agents.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-receptionist-accountants.html"
   to = "/about/"
   status = 301
 
