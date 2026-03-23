@@ -1,3 +1,3 @@
-:HL["/_next/static/chunks/12wyuvih5tp9x.css","style"]
+:HL["/_next/static/chunks/0p47dp61mod.z.css","style"]
 :HC["/",""]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"guides","param":null,"prefetchHints":0,"slots":{"children":{"name":"how-to-set-up-ai-receptionist","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"O-JfwuB_1wV7czxBjw5ZR"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"guides","param":null,"prefetchHints":0,"slots":{"children":{"name":"how-to-set-up-ai-receptionist","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"mCXNr_zna0e-rJUJcg9xe"}

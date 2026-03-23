@@ -6,14 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 
-const trustedBy = [
-  { name: "Dental", letter: "D" },
-  { name: "Medical", letter: "M" },
-  { name: "Legal", letter: "L" },
-  { name: "Property", letter: "P" },
-  { name: "Trades", letter: "T" },
-  { name: "Finance", letter: "F" },
-];
+const trustedBy = ["Dental", "Medical", "Legal", "Property", "Trades", "Finance"];
 
 export default function Home() {
   return (
@@ -46,14 +39,14 @@ export default function Home() {
             <span className="italic-accent" style={{ color: "var(--accent-light)" }}>Customer Call.</span>
           </h1>
 
-          <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.7)", maxWidth: 460, marginTop: "1.5rem", lineHeight: 1.6 }}>
+          <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.85)", maxWidth: 460, marginTop: "1.5rem", lineHeight: 1.6 }}>
             AI receptionist that answers, books, and supports your business 24/7.
           </p>
 
-          <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.55)", marginTop: "2.5rem", marginBottom: "0.75rem" }}>
+          <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.7)", marginTop: "2.5rem", marginBottom: "0.75rem" }}>
             Call Now &amp; Hear Our AI Receptionist in Action
           </p>
-          <a href="tel:+442039960962" className="hero-cta rounded-full px-12 py-4 text-lg flex items-center gap-3" style={{ display: "inline-flex" }}>
+          <a href="tel:+442039960962" className="hero-cta rounded-full" style={{ display: "inline-flex", alignItems: "center", gap: "0.75rem", padding: "1rem 3rem", fontSize: "1.15rem", fontWeight: 600, letterSpacing: "0.04em" }}>
             <Phone className="h-5 w-5" style={{ color: "#87FB89" }} /> 020 3996 0962
           </a>
 
@@ -63,11 +56,8 @@ export default function Home() {
               <span className="hidden lg:block shrink-0" style={{ fontSize: "0.75rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(255,255,255,0.4)" }}>Trusted across<br />every sector</span>
               <div className="relative flex-1 overflow-hidden marquee-mask">
                 <div className="animate-marquee flex w-max items-center gap-10">
-                  {[...trustedBy, ...trustedBy].map((b, i) => (
-                    <div key={i} className="flex items-center gap-3 shrink-0">
-                      <div className="sector-badge flex h-9 w-9 items-center justify-center rounded-md text-xs font-bold text-white/95">{b.letter}</div>
-                      <span className="text-sm font-medium tracking-wide text-white/70">{b.name}</span>
-                    </div>
+                  {[...trustedBy, ...trustedBy].map((name, i) => (
+                    <span key={i} className="shrink-0" style={{ fontSize: "0.9rem", fontWeight: 500, letterSpacing: "0.05em", color: "rgba(255,255,255,0.6)" }}>{name}</span>
                   ))}
                 </div>
               </div>
