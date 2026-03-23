@@ -13,7 +13,7 @@ export function Footer() {
               Never miss another call. Intelligent voice agents serving businesses across the UK.
             </p>
             <a
-              href="https://www.trustpilot.com/review/voqalai.com"
+              href="https://www.trustpilot.com/evaluate/voqalai.com"
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", marginTop: "1.25rem" }}
