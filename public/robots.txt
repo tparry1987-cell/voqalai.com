@@ -2,6 +2,13 @@ User-agent: *
 Allow: /
 Disallow: /thank-you/
 
+# Traditional Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 # AI Search Engine Crawlers — explicitly permitted
 User-agent: GPTBot
 Allow: /
