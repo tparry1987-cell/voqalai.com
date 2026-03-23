@@ -58,9 +58,9 @@ export default function Home() {
           </a>
 
           {/* Marquee */}
-          <div className="absolute bottom-0 left-0 right-0 z-[8] pb-16 pt-12">
-            <div className="flex items-center gap-8 px-6 sm:px-12 lg:px-16">
-              <span className="hidden lg:block shrink-0 text-xs font-medium uppercase tracking-[0.2em] text-white/40 ml-2">Trusted across<br />every sector</span>
+          <div className="absolute bottom-0 left-0 right-0 z-[8]" style={{ paddingBottom: "4rem", paddingTop: "3rem" }}>
+            <div className="flex items-center" style={{ gap: "2rem", paddingLeft: "clamp(2rem, 5vw, 5rem)", paddingRight: "clamp(2rem, 5vw, 5rem)" }}>
+              <span className="hidden lg:block shrink-0" style={{ fontSize: "0.75rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(255,255,255,0.4)" }}>Trusted across<br />every sector</span>
               <div className="relative flex-1 overflow-hidden marquee-mask">
                 <div className="animate-marquee flex w-max items-center gap-10">
                   {[...trustedBy, ...trustedBy].map((b, i) => (

@@ -37,7 +37,7 @@ export function Navbar({ variant = "light" }: { variant?: "glass" | "light" }) {
               </Link>
             ))}
           </div>
-          <Link href="/contact" className="hidden md:inline-block rounded-full px-8 py-3 text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-105" style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "#fff", background: "rgba(255,255,255,0.08)", letterSpacing: "0.04em" }}>
+          <Link href="/contact" className="hidden md:inline-block rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/15 hover:border-white" style={{ border: "1.5px solid rgba(255,255,255,0.6)", color: "#fff", background: "rgba(255,255,255,0.08)", letterSpacing: "0.06em", padding: "0.7rem 2rem" }}>
             Book Demo
           </Link>
           <button className="md:hidden text-white" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
