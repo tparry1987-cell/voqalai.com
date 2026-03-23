@@ -20,7 +20,8 @@ export default function Home() {
     <>
       {/* ═══ HERO — Dark, full viewport ═══ */}
       <section className="fixed inset-0 h-screen w-full overflow-hidden">
-        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover" style={{ filter: "saturate(1.6) contrast(1.1) brightness(0.85)" }}>
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+        <video autoPlay loop muted playsInline className="hero-video absolute inset-0 h-full w-full object-cover" style={{ filter: "saturate(1.6) contrast(1.1) brightness(0.85)" }}>
           <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260309_042944_4a2205b7-b061-490a-852b-92d9e9955ce9.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,5,15,0.7) 0%, rgba(0,20,40,0.25) 40%, rgba(0,15,35,0.2) 70%, rgba(0,5,15,0.6) 100%)" }} />
@@ -38,7 +39,7 @@ export default function Home() {
 
         <Navbar variant="glass" />
 
-        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 text-center pt-20">
+        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-5 sm:px-8 text-center pt-20">
           <h1 style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", color: "#fff", textShadow: "0 2px 16px rgba(0,0,0,0.3)" }}>
             Never Miss Another
             <br />
@@ -58,8 +59,8 @@ export default function Home() {
 
           {/* Marquee */}
           <div className="absolute bottom-0 left-0 right-0 z-[8] pb-16 pt-12">
-            <div className="flex items-center gap-8 px-8">
-              <span className="hidden lg:block shrink-0 text-xs font-medium uppercase tracking-[0.2em] text-white/40">Trusted across<br />every sector</span>
+            <div className="flex items-center gap-8 px-6 sm:px-12 lg:px-16">
+              <span className="hidden lg:block shrink-0 text-xs font-medium uppercase tracking-[0.2em] text-white/40 ml-2">Trusted across<br />every sector</span>
               <div className="relative flex-1 overflow-hidden marquee-mask">
                 <div className="animate-marquee flex w-max items-center gap-10">
                   {[...trustedBy, ...trustedBy].map((b, i) => (

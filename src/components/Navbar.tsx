@@ -25,10 +25,10 @@ export function Navbar({ variant = "light" }: { variant?: "glass" | "light" }) {
 
   if (isGlass) {
     return (
-      <nav className="absolute top-0 left-0 w-full z-20" style={{ padding: "2.5rem 4rem" }}>
-        <div className="liquid-glass flex items-center justify-between rounded-3xl px-6 py-3" style={{ maxWidth: 900, margin: "0 auto", background: "rgba(0, 0, 0, 0.55)" }}>
+      <nav className="absolute top-0 left-0 w-full z-20 px-4 sm:px-8 lg:px-16 pt-6 sm:pt-10">
+        <div className="liquid-glass flex items-center justify-between rounded-3xl px-5 sm:px-6 py-3" style={{ maxWidth: 900, margin: "0 auto", background: "rgba(0, 0, 0, 0.55)" }}>
           <Link href="/" className="flex items-center">
-            <VoqalLogo className="h-9 w-auto" variant="dark" />
+            <VoqalLogo className="h-8 sm:h-9 w-auto" variant="dark" />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             {links.map((l) => (
@@ -37,7 +37,7 @@ export function Navbar({ variant = "light" }: { variant?: "glass" | "light" }) {
               </Link>
             ))}
           </div>
-          <Link href="/contact" className="hidden md:inline-block rounded-full px-6 py-2.5 text-sm font-medium transition-all duration-300 hover:scale-105" style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "#fff", background: "rgba(255,255,255,0.06)" }}>
+          <Link href="/contact" className="hidden md:inline-block rounded-full px-8 py-3 text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-105" style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "#fff", background: "rgba(255,255,255,0.08)", letterSpacing: "0.04em" }}>
             Book Demo
           </Link>
           <button className="md:hidden text-white" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">

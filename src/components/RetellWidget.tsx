@@ -15,7 +15,7 @@ export function RetellWidget() {
     s.setAttribute("data-color", "#87FB89");
     s.setAttribute("data-logo-url", "https://voqalai.com/favicon.png");
     s.setAttribute("data-bot-name", "Aria");
-    s.setAttribute("data-popup-message", "Hey! Got questions? Chat with us.");
+    s.setAttribute("data-popup-message", "Hi, I'm Aria! Got questions? I'm here to help.");
     s.setAttribute("data-show-ai-popup", "true");
     s.setAttribute("data-show-ai-popup-time", "15");
     document.body.appendChild(s);
