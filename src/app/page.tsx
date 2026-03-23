@@ -66,13 +66,13 @@ export default function Home() {
           {/* Marquee */}
           <div className="absolute bottom-0 left-0 right-0 z-[8] pb-16 pt-12">
             <div className="flex items-center gap-8 px-8">
-              <span className="hidden lg:block shrink-0 text-sm text-white/50" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>Trusted across<br />every sector</span>
-              <div className="relative flex-1 overflow-hidden">
-                <div className="animate-marquee flex w-max items-center gap-8">
+              <span className="hidden lg:block shrink-0 text-xs font-medium uppercase tracking-[0.2em] text-white/40">Trusted across<br />every sector</span>
+              <div className="relative flex-1 overflow-hidden marquee-mask">
+                <div className="animate-marquee flex w-max items-center gap-10">
                   {[...trustedBy, ...trustedBy].map((b, i) => (
                     <div key={i} className="flex items-center gap-3 shrink-0">
-                      <div className="liquid-glass flex h-10 w-10 items-center justify-center rounded-lg text-sm font-semibold text-white/90">{b.letter}</div>
-                      <span className="text-base font-medium text-white/80" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>{b.name}</span>
+                      <div className="sector-badge flex h-9 w-9 items-center justify-center rounded-md text-xs font-bold text-white/95">{b.letter}</div>
+                      <span className="text-sm font-medium tracking-wide text-white/70">{b.name}</span>
                     </div>
                   ))}
                 </div>

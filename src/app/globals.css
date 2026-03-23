@@ -485,7 +485,14 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Marquee ── */
 @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
-.animate-marquee { animation: marquee 25s linear infinite; }
+.animate-marquee { animation: marquee 30s linear infinite; }
+.marquee-mask { -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%); }
+.sector-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
 
 /* ── VHS Glitch (hero only) ── */
 .glitch-overlay { position: absolute; inset: 0; pointer-events: none; z-index: 5; isolation: isolate; }
