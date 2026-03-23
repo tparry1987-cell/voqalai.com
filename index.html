@@ -24,7 +24,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://dashboard.retellai.com">
   <link rel="preconnect" href="https://app.cal.com">
-  <link rel="preload" href="images/hero-forest.webp" as="image" type="image/webp">
   <link rel="preload" href="fonts/saira-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -265,7 +264,7 @@
   <script>
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", {origin:"https://cal.com"});
-    Cal("ui", {"theme":"dark","styles":{"branding":{"brandColor":"#db7c54"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    Cal("ui", {"theme":"light","styles":{"branding":{"brandColor":"#C4785A"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
 </head>
 <body>
@@ -273,25 +272,22 @@
   <!-- Google Tag Manager (noscript) — uncomment when GTM ID is set -->
   <!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
 
-  <!-- Fixed Background Image -->
-  <div class="page-background" style="background-image: url('images/hero-forest.webp');"></div>
-
-  <!-- Page Overlay -->
+  <!-- Page Wrapper -->
   <div class="page-overlay">
 
     <!-- Navigation -->
     <nav id="navbar" class="fade-up-1">
       <a href="#" class="logo"><svg viewBox="0 0 295 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="wf-grad" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#e8955e"/><stop offset="100%" stop-color="#db7c54"/></linearGradient></defs>
+  <defs><linearGradient id="wf-grad" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#D4896B"/><stop offset="100%" stop-color="#C4785A"/></linearGradient></defs>
   <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="22;7.7;22" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="27;34.15;27" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
   <rect x="13" y="19" width="8" height="38" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="38;13.3;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="19;31.35;19" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
   <rect x="26" y="11" width="8" height="54" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="54;18.9;54" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="11;28.55;11" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
   <rect x="39" y="21" width="8" height="34" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="34;11.9;34" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="21;32.05;21" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
   <rect x="52" y="29" width="8" height="18" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="18;6.3;18" dur="1.2s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite"/></rect>
-  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-  <text x="94" y="52" font-family="'Instrument Serif', Georgia, serif" font-weight="400" font-style="italic" font-size="52" fill="#f8f9fa" letter-spacing="1">Voqal</text>
-  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#db7c54" letter-spacing="2">Ai</text>
-  <circle cx="282" cy="47" r="4" fill="#db7c54"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(26,26,46,0.08)" stroke-width="1"/>
+  <text x="94" y="52" font-family="'Instrument Serif', Georgia, serif" font-weight="400" font-style="italic" font-size="52" fill="#1A1A2E" letter-spacing="1">Voqal</text>
+  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#C4785A" letter-spacing="2">Ai</text>
+  <circle cx="282" cy="47" r="4" fill="#C4785A"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
 </svg></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#services">Services</a></li>
@@ -311,10 +307,49 @@
     <header class="hero">
       <div class="hero-content">
         <h1 class="main-headline fade-up-3">
-          AI Receptionist UK &ndash; 24/7 Phone
-          <span class="italic-serif">Answering.</span>
+          Never Miss Another
+          <span class="italic-serif">Call.</span>
         </h1>
-        <p class="hero-sub fade-up-3">AI Receptionist UK by Voqal AI &mdash; the 24/7 phone answering system behind every answered call. UK businesses lose an estimated &pound;30,000+ per year from missed calls alone (<a href="https://www.fsb.org.uk/resources-page/small-business-statistics.html" style="color: var(--accent);" rel="noopener" target="_blank">FSB, 2024</a>). In the US, that figure exceeds $75,000 (<a href="https://www.patlive.com/blog/the-cost-of-missed-calls" style="color: var(--accent);" rel="noopener" target="_blank">PATLive</a>).</p>
+        <p class="hero-sub fade-up-3">UK businesses lose an estimated &pound;30,000+ per year from missed calls alone (<a href="https://www.fsb.org.uk/resources-page/small-business-statistics.html" style="color: var(--accent);" rel="noopener" target="_blank">FSB, 2024</a>). In the US, that figure exceeds $75,000 (<a href="https://www.patlive.com/blog/the-cost-of-missed-calls" style="color: var(--accent);" rel="noopener" target="_blank">PATLive</a>). Voqal AI answers every call, books appointments, and qualifies leads &mdash; so you don&rsquo;t have to.</p>
+      </div>
+
+      <div class="hero-waveform fade-up-4">
+        <svg viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="hero-bar-grad" x1="0" y1="0" x2="0" y2="260">
+              <stop offset="0%" stop-color="#D4896B"/>
+              <stop offset="100%" stop-color="#C4785A"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="80" width="30" height="100" rx="15" fill="url(#hero-bar-grad)" opacity="0.85">
+            <animate attributeName="height" values="100;40;100" dur="2s" begin="0s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="80;110;80" dur="2s" begin="0s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="48" y="40" width="30" height="180" rx="15" fill="url(#hero-bar-grad)" opacity="0.9">
+            <animate attributeName="height" values="180;70;180" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="40;95;40" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="96" y="10" width="30" height="240" rx="15" fill="url(#hero-bar-grad)">
+            <animate attributeName="height" values="240;90;240" dur="2s" begin="0.15s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="10;85;10" dur="2s" begin="0.15s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="144" y="50" width="30" height="160" rx="15" fill="url(#hero-bar-grad)" opacity="0.9">
+            <animate attributeName="height" values="160;60;160" dur="2s" begin="0.45s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="50;100;50" dur="2s" begin="0.45s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="192" y="70" width="30" height="120" rx="15" fill="url(#hero-bar-grad)" opacity="0.85">
+            <animate attributeName="height" values="120;45;120" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="70;107;70" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="240" y="55" width="30" height="150" rx="15" fill="url(#hero-bar-grad)" opacity="0.75">
+            <animate attributeName="height" values="150;55;150" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="55;102;55" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="288" y="90" width="30" height="80" rx="15" fill="url(#hero-bar-grad)" opacity="0.65">
+            <animate attributeName="height" values="80;30;80" dur="2s" begin="0.35s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="90;115;90" dur="2s" begin="0.35s" repeatCount="indefinite"/>
+          </rect>
+        </svg>
       </div>
 
       <div class="bottom-indicator fade-up-4"></div>
@@ -324,9 +359,9 @@
     <main class="content-wrapper">
 
       <!-- SERVICES -->
-      <section id="services" class="section-padding container">
+      <section id="services" class="section-padding section-white container">
         <div class="reveal">
-          <span class="section-label">What We Do</span>
+          <span class="section-label">01 &mdash; What We Do</span>
           <h2>Intelligent <span class="italic-accent">Capabilities.</span></h2>
           <p>Our AI Receptionist UK service builds voice engines designed not just to answer your phone, but to execute complex operational workflows &mdash; converting missed calls into captured revenue. According to research from <a href="https://www.leadresponsemanagement.org/lrm_study/" style="color: var(--accent);" rel="noopener" target="_blank">MIT and InsideSales.com</a>, leads are 21&times; more likely to convert when contacted within five minutes. Meanwhile, <a href="https://www.gartner.com/en/newsroom/press-releases/2022-08-31-gartner-predicts-conversational-ai-will-reduce-contact-center-agent-labor-costs-by-80-billion-in-2026" style="color: var(--accent);" rel="noopener" target="_blank">Gartner forecasts</a> that conversational AI will reduce contact centre labour costs by $80 billion by 2026.</p>
         </div>
@@ -362,9 +397,9 @@
       </section>
 
       <!-- PROTOCOL -->
-      <section id="protocol" class="section-padding container protocol-section">
+      <section id="protocol" class="section-padding section-alt container protocol-section">
         <div class="reveal">
-          <span class="section-label">How We Do It</span>
+          <span class="section-label">02 &mdash; How We Work</span>
           <h2>The <span class="italic-accent">Protocol.</span></h2>
         </div>
 
@@ -390,9 +425,9 @@
       </section>
 
       <!-- INDUSTRIES -->
-      <section id="industries" class="section-padding container">
+      <section id="industries" class="section-padding section-white container">
         <div class="reveal">
-          <span class="section-label">Who We Serve</span>
+          <span class="section-label">03 &mdash; Who We Serve</span>
           <h2>Built for <span class="italic-accent">Every Sector.</span></h2>
           <p>From high-street practices to enterprise operations — our voice agents adapt to the language, workflows, and compliance requirements of your industry.</p>
         </div>
@@ -416,9 +451,9 @@
       </section>
 
       <!-- MARKET EVIDENCE -->
-      <section class="section-padding container">
+      <section class="section-padding section-alt container">
         <div class="reveal">
-          <span class="section-label">Market Evidence</span>
+          <span class="section-label">04 &mdash; The Evidence</span>
           <h2>The Data Behind <span class="italic-accent">AI Receptionists.</span></h2>
           <p>AI-powered call handling is one of the fastest-growing categories in business automation. Here is what the research says.</p>
         </div>
@@ -457,39 +492,31 @@
             <div class="stat-label">Upper estimate of annual value AI could deliver across industries, according to <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier" target="_blank" rel="noopener" style="color: var(--accent);">McKinsey (2023)</a></div>
           </div>
         </div>
-      </section>
 
-      <!-- SOCIAL PROOF -->
-      <section class="section-padding container">
-        <div class="reveal">
-          <span class="section-label">Performance</span>
-          <h2>Results That <span class="italic-accent">Compound.</span></h2>
-        </div>
-
-        <div class="services-grid reveal" style="transition-delay: 0.1s;">
-          <div class="stat-block">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Availability — answers 100% of calls vs. 68% industry average (<a href="https://www.patlive.com/blog/the-cost-of-missed-calls" target="_blank" rel="noopener" style="color: var(--accent);">PATLive</a>)</div>
+        <div class="performance-row reveal" style="transition-delay: 0.2s;">
+          <div class="perf-item">
+            <div class="perf-number">24/7</div>
+            <div class="perf-label">Availability — answers 100% of calls vs. 68% industry average (<a href="https://www.patlive.com/blog/the-cost-of-missed-calls" target="_blank" rel="noopener" style="color: var(--accent);">PATLive</a>)</div>
           </div>
-          <div class="stat-block">
-            <div class="stat-number">90%</div>
-            <div class="stat-label">Cost reduction vs. hiring a full-time receptionist — &pound;197/mo vs. &pound;2,100/mo average (<a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours" target="_blank" rel="noopener" style="color: var(--accent);">ONS ASHE, 2024</a>). In the US, $249/mo vs. $3,400/mo (<a href="https://www.bls.gov/oes/current/oes434171.htm" target="_blank" rel="noopener" style="color: var(--accent);">BLS, 2024</a>)</div>
+          <div class="perf-item">
+            <div class="perf-number">90%</div>
+            <div class="perf-label">Cost reduction vs. hiring a full-time receptionist — &pound;197/mo vs. &pound;2,100/mo average (<a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours" target="_blank" rel="noopener" style="color: var(--accent);">ONS ASHE, 2024</a>)</div>
           </div>
-          <div class="stat-block">
-            <div class="stat-number">&lt; 48hrs</div>
-            <div class="stat-label">From onboarding to live deployment with your custom voice agent</div>
+          <div class="perf-item">
+            <div class="perf-number">&lt; 48hrs</div>
+            <div class="perf-label">From onboarding to live deployment with your custom voice agent</div>
           </div>
-          <div class="stat-block">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Contracts — cancel anytime, no lock-in, completely risk-free</div>
+          <div class="perf-item">
+            <div class="perf-number">0</div>
+            <div class="perf-label">Contracts — cancel anytime, no lock-in, completely risk-free</div>
           </div>
         </div>
       </section>
 
       <!-- LEAD REACTIVATION CTA -->
-      <section class="section-padding container">
+      <section class="section-padding section-white container">
         <div class="reveal" style="text-align: center;">
-          <span class="section-label" style="color: #db7c54;">New Service</span>
+          <span class="section-label">05 &mdash; Lead Reactivation</span>
           <h2>Your Old Leads Are Worth <span class="italic-accent">Money.</span></h2>
           <p>Got dormant leads gathering dust in your CRM? According to <a href="https://www.marketingsherpa.com/article/chart/leads-not-ready-to-buy" style="color: var(--accent);" rel="noopener" target="_blank">MarketingSherpa</a>, 79% of marketing leads never convert to sales &mdash; often due to poor follow-up timing. Our AI reactivates them with natural voice conversations and you only pay when they convert. Zero risk. Zero upfront cost.</p>
         </div>
@@ -511,9 +538,9 @@
       </section>
 
       <!-- REVENUE CALCULATOR -->
-      <section id="calculator" class="section-padding container">
+      <section id="calculator" class="section-padding section-alt container">
         <div class="reveal">
-          <span class="section-label">The Cost of Silence</span>
+          <span class="section-label">06 &mdash; The Cost of Silence</span>
           <h2>What Missed Calls Are Really <span class="italic-accent">Costing.</span></h2>
           <p class="calculator-stat">62% of business calls go unanswered. 85% of those callers never call back. <span style="font-size: 0.75em; opacity: 0.6;">(Source: <a href="https://www.forbes.com/councils/forbescommunicationscouncil/2023/03/20/why-your-business-cant-afford-to-miss-customer-calls/" style="color: var(--accent); text-decoration: underline;" rel="noopener" target="_blank">Forbes</a> / <a href="https://www.patlive.com/blog/the-cost-of-missed-calls" style="color: var(--accent); text-decoration: underline;" rel="noopener" target="_blank">PATLive</a>)</span></p>
         </div>
@@ -552,9 +579,9 @@
       </section>
 
       <!-- FAQ -->
-      <section id="faq" class="section-padding container faq-section">
+      <section id="faq" class="section-padding section-white container faq-section">
         <div class="reveal">
-          <span class="section-label">FAQ</span>
+          <span class="section-label">07 &mdash; Questions</span>
           <h2>Frequently Asked <span class="italic-accent">Questions.</span></h2>
         </div>
 
@@ -662,9 +689,9 @@
       </section>
 
       <!-- DEMO FORM -->
-      <section id="demo" class="section-padding container">
+      <section id="demo" class="section-padding section-alt container">
         <div class="form-section reveal">
-          <span class="section-label">System Initialization</span>
+          <span class="section-label">08 &mdash; Get Started</span>
           <h2>Request <span class="italic-accent">Demonstration.</span></h2>
           <p>Provide the essential parameters below. Our engineering team will generate a personalised voice model testing environment within 48 hours.</p>
 
@@ -703,16 +730,16 @@
       <div class="container footer-grid">
         <div>
           <a href="#" class="logo footer-logo"><svg viewBox="0 0 295 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="wf-grad" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#e8955e"/><stop offset="100%" stop-color="#db7c54"/></linearGradient></defs>
-  <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="22;7.7;22" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="27;34.15;27" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
-  <rect x="13" y="19" width="8" height="38" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="38;13.3;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="19;31.35;19" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
-  <rect x="26" y="11" width="8" height="54" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="54;18.9;54" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="11;28.55;11" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
-  <rect x="39" y="21" width="8" height="34" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="34;11.9;34" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="21;32.05;21" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
-  <rect x="52" y="29" width="8" height="18" rx="4" fill="url(#wf-grad)"><animate attributeName="height" values="18;6.3;18" dur="1.2s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite"/></rect>
-  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <defs><linearGradient id="wf-grad-f" x1="0" y1="15" x2="0" y2="75"><stop offset="0%" stop-color="#D4896B"/><stop offset="100%" stop-color="#C4785A"/></linearGradient></defs>
+  <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad-f)"><animate attributeName="height" values="22;7.7;22" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="27;34.15;27" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
+  <rect x="13" y="19" width="8" height="38" rx="4" fill="url(#wf-grad-f)"><animate attributeName="height" values="38;13.3;38" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="19;31.35;19" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
+  <rect x="26" y="11" width="8" height="54" rx="4" fill="url(#wf-grad-f)"><animate attributeName="height" values="54;18.9;54" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="11;28.55;11" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
+  <rect x="39" y="21" width="8" height="34" rx="4" fill="url(#wf-grad-f)"><animate attributeName="height" values="34;11.9;34" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="21;32.05;21" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
+  <rect x="52" y="29" width="8" height="18" rx="4" fill="url(#wf-grad-f)"><animate attributeName="height" values="18;6.3;18" dur="1.2s" begin="0.15s" repeatCount="indefinite"/><animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite"/></rect>
+  <line x1="76" y1="12" x2="76" y2="64" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
   <text x="94" y="52" font-family="'Instrument Serif', Georgia, serif" font-weight="400" font-style="italic" font-size="52" fill="#f8f9fa" letter-spacing="1">Voqal</text>
-  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#db7c54" letter-spacing="2">Ai</text>
-  <circle cx="282" cy="47" r="4" fill="#db7c54"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
+  <text x="230" y="52" font-family="'Saira', sans-serif" font-weight="300" font-size="48" fill="#C4785A" letter-spacing="2">Ai</text>
+  <circle cx="282" cy="47" r="4" fill="#C4785A"><animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite"/></circle>
 </svg></a>
           <p class="footer-tagline">Never miss another call. Intelligent voice agents serving London, Manchester, and businesses across the UK.</p>
           <div class="footer-social">
@@ -756,7 +783,7 @@
     data-public-key="public_key_692e22f82e27e1f57afe6"
     data-agent-id="agent_42e2f4ee39b0f6db2cbe9db919"
     data-title="Chat with Aria"
-    data-color="#db7c54"
+    data-color="#C4785A"
     data-logo-url="https://voqalai.com/favicon.png"
     data-bot-name="Aria"
     data-popup-message="Hey! 👋 Got questions? Chat with us."
@@ -767,17 +794,17 @@
   <button id="voqalChatLauncher" aria-label="Chat with Aria" style="
     position: fixed; bottom: 24px; right: 24px; z-index: 1000000;
     width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer;
-    background: linear-gradient(135deg, #e8955e, #db7c54);
-    box-shadow: 0 4px 20px rgba(219,124,84,0.4);
+    background: linear-gradient(135deg, #D4896B, #C4785A);
+    box-shadow: 0 4px 20px rgba(196,120,90,0.4);
     display: flex; align-items: center; justify-content: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   ">
     <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M20 4C10.6 4 3 10.4 3 18.2c0 4.5 2.4 8.5 6.2 11.2L7.5 36l7.2-3.6c1.7 0.4 3.4 0.6 5.3 0.6 9.4 0 17-6.4 17-14.2S29.4 4 20 4z" fill="white" opacity="0.95"/>
-      <rect x="12" y="16" width="3" height="8" rx="1.5" fill="#db7c54"><animate attributeName="height" values="8;3;8" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="16;18.5;16" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
-      <rect x="17" y="13" width="3" height="14" rx="1.5" fill="#db7c54"><animate attributeName="height" values="14;5;14" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="13;17.5;13" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
-      <rect x="22" y="15" width="3" height="10" rx="1.5" fill="#db7c54"><animate attributeName="height" values="10;3.5;10" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="15;18.25;15" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
-      <rect x="27" y="17" width="3" height="6" rx="1.5" fill="#db7c54"><animate attributeName="height" values="6;2;6" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="17;19;17" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
+      <rect x="12" y="16" width="3" height="8" rx="1.5" fill="#C4785A"><animate attributeName="height" values="8;3;8" dur="1.2s" begin="0s" repeatCount="indefinite"/><animate attributeName="y" values="16;18.5;16" dur="1.2s" begin="0s" repeatCount="indefinite"/></rect>
+      <rect x="17" y="13" width="3" height="14" rx="1.5" fill="#C4785A"><animate attributeName="height" values="14;5;14" dur="1.2s" begin="0.2s" repeatCount="indefinite"/><animate attributeName="y" values="13;17.5;13" dur="1.2s" begin="0.2s" repeatCount="indefinite"/></rect>
+      <rect x="22" y="15" width="3" height="10" rx="1.5" fill="#C4785A"><animate attributeName="height" values="10;3.5;10" dur="1.2s" begin="0.1s" repeatCount="indefinite"/><animate attributeName="y" values="15;18.25;15" dur="1.2s" begin="0.1s" repeatCount="indefinite"/></rect>
+      <rect x="27" y="17" width="3" height="6" rx="1.5" fill="#C4785A"><animate attributeName="height" values="6;2;6" dur="1.2s" begin="0.3s" repeatCount="indefinite"/><animate attributeName="y" values="17;19;17" dur="1.2s" begin="0.3s" repeatCount="indefinite"/></rect>
     </svg>
   </button>
   <script>
@@ -801,8 +828,8 @@
         });
         // Hover effect
         var btn = document.getElementById('voqalChatLauncher');
-        btn.addEventListener('mouseenter', function() { btn.style.transform = 'scale(1.1)'; btn.style.boxShadow = '0 6px 28px rgba(219,124,84,0.5)'; });
-        btn.addEventListener('mouseleave', function() { btn.style.transform = 'scale(1)'; btn.style.boxShadow = '0 4px 20px rgba(219,124,84,0.4)'; });
+        btn.addEventListener('mouseenter', function() { btn.style.transform = 'scale(1.1)'; btn.style.boxShadow = '0 6px 28px rgba(196,120,90,0.5)'; });
+        btn.addEventListener('mouseleave', function() { btn.style.transform = 'scale(1)'; btn.style.boxShadow = '0 4px 20px rgba(196,120,90,0.4)'; });
       } else {
         setTimeout(retellCustomize, 500);
       }
