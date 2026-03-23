@@ -6,6 +6,45 @@ import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 
+const aboutSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Voqal AI",
+    "description": "Voqal AI Ltd builds AI voice agents for UK and US businesses. Founded by Thomas Parry, registered in England & Wales (Company No. 17080303).",
+    "url": "https://voqalai.com/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Voqal AI",
+      "url": "https://voqalai.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is an AI voice agent?", "acceptedAnswer": { "@type": "Answer", "text": "An AI voice agent is an intelligent phone system powered by conversational AI that answers calls, books appointments, qualifies leads, and handles enquiries \u2014 just like a trained receptionist, but available 24/7 with no sick days, holidays, or hold music." } },
+      { "@type": "Question", "name": "How much does an AI receptionist cost in the UK?", "acceptedAnswer": { "@type": "Answer", "text": "Voqal AI plans start at \u00a3197/month for 200 minutes, with no contracts or hidden fees. A full-time human receptionist costs \u00a322,000\u2013\u00a328,000 per year (ONS, 2024), making AI 70\u201390% more cost-effective." } },
+      { "@type": "Question", "name": "How quickly can I get set up?", "acceptedAnswer": { "@type": "Answer", "text": "We\u2019ll send you a personalised voice agent demo within 24 hours of your enquiry. From there, we handle everything \u2014 building your custom agent, integrating with your phone system, calendar, and CRM." } },
+      { "@type": "Question", "name": "Will callers know they\u2019re speaking to an AI?", "acceptedAnswer": { "@type": "Answer", "text": "Our voice agents sound natural and conversational. They use your business\u2019s tone, know your services inside out, and handle complex queries. Many callers don\u2019t realise they\u2019re speaking to an AI." } },
+      { "@type": "Question", "name": "What is the ROI of an AI receptionist?", "acceptedAnswer": { "@type": "Answer", "text": "80% of callers sent to voicemail won\u2019t leave a message, and 62% will phone a competitor. Leads are 21\u00d7 more likely to convert when contacted within 5 minutes. At \u00a3197/month, it pays for itself by capturing even one or two extra bookings." } },
+      { "@type": "Question", "name": "How does AI compare to a human receptionist?", "acceptedAnswer": { "@type": "Answer", "text": "A human receptionist costs \u00a322,000\u2013\u00a328,000/year and works office hours. AI costs from \u00a3197/month, works 24/7, handles multiple simultaneous calls, and never calls in sick." } },
+      { "@type": "Question", "name": "Is my data safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Voqal AI Ltd (Companies House No. 17080303) processes all data in compliance with UK GDPR and the Data Protection Act 2018. Call data is encrypted in transit and at rest." } },
+      { "@type": "Question", "name": "Do I need a long-term contract?", "acceptedAnswer": { "@type": "Answer", "text": "No. All managed service plans are month-to-month. Cancel anytime with no exit fees." } },
+      { "@type": "Question", "name": "What industries do you serve?", "acceptedAnswer": { "@type": "Answer", "text": "Dental practices, medical clinics, law firms, estate agents, accountancy firms, tradesmen, and many more across the UK and US. Any service-based business relying on inbound calls." } },
+      { "@type": "Question", "name": "Can the AI handle multiple calls at once?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Unlike a human receptionist, our voice agents answer multiple simultaneous calls with zero wait time. Every caller gets an immediate, personalised response." } }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://voqalai.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://voqalai.com/about" }
+    ]
+  }
+];
+
 const faqs = [
   { q: "What is an AI voice agent?", a: "An AI voice agent is an intelligent phone system powered by conversational AI that answers calls, books appointments, qualifies leads, and handles enquiries \u2014 just like a trained receptionist, but available 24/7 with no sick days, holidays, or hold music." },
   { q: "How much does an AI receptionist cost in the UK?", a: "Voqal AI plans start at \u00a3197/month for 200 minutes, with no contracts or hidden fees. A full-time human receptionist costs \u00a322,000\u2013\u00a328,000 per year (ONS, 2024), making AI 70\u201390% more cost-effective." },
@@ -25,6 +64,9 @@ export default function AboutPage() {
 
   return (
     <>
+      {aboutSchema.map((data, i) => (
+        <script key={`about-schema-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      ))}
       <Navbar variant="light" />
 
       {/* ── About ── */}

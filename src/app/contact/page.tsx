@@ -4,9 +4,37 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 
+const contactSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Voqal AI",
+    "description": "Book a free demo or get in touch with Voqal AI. AI receptionist setup within 24 hours. No contracts.",
+    "url": "https://voqalai.com/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Voqal AI",
+      "url": "https://voqalai.com",
+      "telephone": "+442039960962",
+      "email": "info@voqalai.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://voqalai.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://voqalai.com/contact" }
+    ]
+  }
+];
+
 export default function ContactPage() {
   return (
     <>
+      {contactSchema.map((data, i) => (
+        <script key={`contact-schema-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      ))}
       <Navbar variant="light" />
 
       <section className="section-padding section-white container" style={{ paddingTop: "12rem" }}>

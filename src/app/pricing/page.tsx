@@ -6,6 +6,64 @@ import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 
+const pricingSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Voqal AI Receptionist",
+    "description": "AI voice receptionist service for UK and US businesses. 24/7 call answering, appointment booking, lead qualification, and CRM integration.",
+    "provider": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
+    "areaServed": [
+      { "@type": "Country", "name": "United Kingdom" },
+      { "@type": "Country", "name": "United States" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Receptionist Plans",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "description": "200 minutes/month, 1 AI flow, 1 UK phone number, basic call routing. Ideal for small businesses.",
+          "price": "197",
+          "priceCurrency": "GBP",
+          "priceValidUntil": "2026-12-31",
+          "eligibleDuration": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" },
+          "url": "https://voqalai.com/pricing"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "description": "500 minutes/month, full booking flow, calendar and CRM integration, standard call routing. Most popular for practices and firms.",
+          "price": "397",
+          "priceCurrency": "GBP",
+          "priceValidUntil": "2026-12-31",
+          "eligibleDuration": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" },
+          "url": "https://voqalai.com/pricing"
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium",
+          "description": "1,000 minutes/month, multi-flow handling, advanced call routing, CRM with QA monitoring, priority support.",
+          "price": "697",
+          "priceCurrency": "GBP",
+          "priceValidUntil": "2026-12-31",
+          "eligibleDuration": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" },
+          "url": "https://voqalai.com/pricing"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://voqalai.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://voqalai.com/pricing" }
+    ]
+  }
+];
+
 export default function PricingPage() {
   const [calcCalls, setCalcCalls] = useState(10);
   const [calcValue, setCalcValue] = useState(200);
@@ -15,6 +73,9 @@ export default function PricingPage() {
 
   return (
     <>
+      {pricingSchema.map((data, i) => (
+        <script key={`pricing-schema-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      ))}
       <Navbar variant="light" />
 
       {/* ── Pricing ── */}

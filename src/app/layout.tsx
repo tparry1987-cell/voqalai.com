@@ -91,6 +91,7 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://voqalai.com/#organization",
     name: "Voqal AI",
     legalName: "Voqal AI Ltd",
     url: "https://voqalai.com",
@@ -120,21 +121,48 @@ const structuredData = [
     },
     sameAs: ["https://www.linkedin.com/in/tom-parry-698bbb29a"],
     description:
-      "AI Receptionist UK: 24/7 call answering, appointment booking and lead qualification. Sector-trained for dental, legal, trades and more.",
+      "AI Receptionist UK: 24/7 call answering, appointment booking and lead qualification. Sector-trained for dental, legal, trades and more. Plans from \u00a3197/month, no contracts. 90% cost reduction vs. hiring a full-time receptionist (ONS ASHE, 2024).",
     foundingDate: "2025",
     founders: [
       {
         "@type": "Person",
         name: "Thomas Parry",
+        jobTitle: "Founder & CEO",
+        sameAs: "https://www.linkedin.com/in/tom-parry-698bbb29a",
       },
     ],
-    areaServed: {
-      "@type": "Country",
-      name: "United Kingdom",
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      value: "1-10",
     },
-    serviceArea: {
-      "@type": "Country",
-      name: "United Kingdom",
+    knowsAbout: [
+      "AI voice agents",
+      "AI receptionists",
+      "conversational AI",
+      "appointment booking automation",
+      "lead qualification",
+      "call handling automation",
+      "CRM integration",
+      "dental practice automation",
+      "legal firm call handling",
+      "UK business telephony",
+    ],
+    areaServed: [
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "United States" },
+    ],
+    serviceArea: [
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "United States" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "AI Receptionist Plans",
+      itemListElement: [
+        { "@type": "Offer", name: "Starter", price: "197", priceCurrency: "GBP" },
+        { "@type": "Offer", name: "Pro", price: "397", priceCurrency: "GBP" },
+        { "@type": "Offer", name: "Premium", price: "697", priceCurrency: "GBP" },
+      ],
     },
   },
   {
