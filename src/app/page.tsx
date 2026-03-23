@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
@@ -39,13 +39,6 @@ export default function Home() {
         <Navbar variant="glass" />
 
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 text-center pt-20">
-          <div className="liquid-glass mb-10 flex items-center gap-2 rounded-full px-5 py-2.5" style={{ background: "rgba(0,0,0,0.45)" }}>
-            <span className="text-sm" style={{ color: "#fff" }}>AI Receptionist UK</span>
-            <span className="flex items-center gap-1 rounded-full bg-white/15 px-3 py-0.5 text-sm" style={{ color: "#fff" }}>
-              24/7 Live <ChevronRight className="h-3.5 w-3.5" />
-            </span>
-          </div>
-
           <h1 style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", color: "#fff", textShadow: "0 2px 16px rgba(0,0,0,0.3)" }}>
             Never Miss Another
             <br />
