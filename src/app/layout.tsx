@@ -47,6 +47,7 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://voqalai.com",
     name: "Voqal AI",
     legalName: "Voqal AI Ltd",
     foundingDate: "2025",
@@ -64,6 +65,11 @@ const structuredData = [
       addressRegion: "London",
       postalCode: "WC2H 9JQ",
       addressCountry: "GB",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 51.5154,
+      longitude: -0.1222,
     },
     areaServed: { "@type": "Country", name: "United Kingdom" },
     priceRange: "\u00a3\u00a3",
