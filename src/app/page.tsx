@@ -79,7 +79,7 @@ export default function Home() {
             Intelligent <span className="italic-accent">Capabilities.</span>
           </h2>
           <p className="body-text">
-            UK businesses lose &pound;30,000+ per year from missed calls. Our AI voice agents answer every call, book appointments, and qualify leads &mdash; around the clock. Leads are 21&times; more likely to convert when contacted within five minutes.
+            According to Forbes (2023), 67% of customers hang up when they cannot reach a real person &mdash; and 80% of those sent to voicemail will not leave a message (PATLive, 2023). With 5.5 million UK SMEs relying on inbound phone calls (FSB, 2024), missed calls translate directly into lost revenue. Our AI voice agents answer every call, book appointments, and qualify leads &mdash; around the clock. Research from MIT and InsideSales.com found that leads are 21&times; more likely to convert when contacted within five minutes.
           </p>
         </Reveal>
 
@@ -88,7 +88,7 @@ export default function Home() {
             <Link href="/pricing" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="icon">I.</div>
               <h3>Voice AI Agents</h3>
-              <p>Your calls answered perfectly, day or night. We build voice models that book appointments, process reschedules, handle cancellations, and route urgent calls autonomously.</p>
+              <p>Your calls answered perfectly, day or night. Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026. We build voice models that book appointments, process reschedules, handle cancellations, and route urgent calls autonomously.</p>
               <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>View pricing &rarr;</span>
             </Link>
 
@@ -101,7 +101,7 @@ export default function Home() {
             <Link href="/pricing#lead-reactivation" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="icon">III.</div>
               <h3>Lead Reactivation</h3>
-              <p>Wake up your dormant database. AI-powered outreach protocols re-engage old leads, identifying who is ready to convert without utilising your human resources.</p>
+              <p>Wake up your dormant database. McKinsey Global Institute (2023) estimates AI could deliver $4.4 trillion in annual value across industries &mdash; and re-engaging existing leads is one of the highest-ROI applications. Our AI outreach protocols identify who is ready to convert without utilising your human resources.</p>
               <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>Learn more &rarr;</span>
             </Link>
 
@@ -146,8 +146,8 @@ export default function Home() {
         <Reveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { n: "24/7", l: "Availability \u2014 answers 100% of calls vs. 68% industry average" },
-              { n: "90%", l: "Cost reduction vs. hiring a full-time receptionist" },
+              { n: "24/7", l: "Availability \u2014 answers every call, unlike the 67% of customers lost when they can\u2019t reach a person (Forbes, 2023)" },
+              { n: "90%", l: "Cost reduction vs. a full-time UK receptionist earning \u00a322,000\u2013\u00a328,000/year (ONS ASHE, 2024)" },
               { n: "< 24hrs", l: "From enquiry to personalised demo" },
               { n: "0", l: "Contracts \u2014 cancel anytime, completely risk-free" },
             ].map((p, i) => (
@@ -168,7 +168,7 @@ export default function Home() {
               Ready to stop losing <span className="italic-accent">revenue?</span>
             </h2>
             <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.5)", marginBottom: "3rem", maxWidth: 500, margin: "0 auto 3rem" }}>
-              From &pound;197/month. No contracts. Demo within 24 hours.
+              A UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024). Our AI starts from &pound;197/month &mdash; no contracts, demo within 24 hours.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/contact" className="btn-accent rounded-full px-8 py-3.5">Book Free Demo</Link>

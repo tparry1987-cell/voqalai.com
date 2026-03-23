@@ -27,7 +27,7 @@ const aboutSchema = [
       { "@type": "Question", "name": "How much does an AI receptionist cost in the UK?", "acceptedAnswer": { "@type": "Answer", "text": "Voqal AI plans start at \u00a3197/month for 200 minutes, with no contracts or hidden fees. A full-time human receptionist costs \u00a322,000\u2013\u00a328,000 per year (ONS, 2024), making AI 70\u201390% more cost-effective." } },
       { "@type": "Question", "name": "How quickly can I get set up?", "acceptedAnswer": { "@type": "Answer", "text": "We\u2019ll send you a personalised voice agent demo within 24 hours of your enquiry. From there, we handle everything \u2014 building your custom agent, integrating with your phone system, calendar, and CRM." } },
       { "@type": "Question", "name": "Will callers know they\u2019re speaking to an AI?", "acceptedAnswer": { "@type": "Answer", "text": "Our voice agents sound natural and conversational. They use your business\u2019s tone, know your services inside out, and handle complex queries. Many callers don\u2019t realise they\u2019re speaking to an AI." } },
-      { "@type": "Question", "name": "What is the ROI of an AI receptionist?", "acceptedAnswer": { "@type": "Answer", "text": "80% of callers sent to voicemail won\u2019t leave a message, and 62% will phone a competitor. Leads are 21\u00d7 more likely to convert when contacted within 5 minutes. At \u00a3197/month, it pays for itself by capturing even one or two extra bookings." } },
+      { "@type": "Question", "name": "What is the ROI of an AI receptionist?", "acceptedAnswer": { "@type": "Answer", "text": "According to PATLive (2023), 80% of callers sent to voicemail will not leave a message. Forbes (2023) found that 67% of customers hang up when they cannot reach a real person. Research from MIT and InsideSales.com showed leads are 21\u00d7 more likely to convert when contacted within five minutes. At \u00a3197/month, an AI receptionist pays for itself by capturing even one or two extra bookings." } },
       { "@type": "Question", "name": "How does AI compare to a human receptionist?", "acceptedAnswer": { "@type": "Answer", "text": "A human receptionist costs \u00a322,000\u2013\u00a328,000/year and works office hours. AI costs from \u00a3197/month, works 24/7, handles multiple simultaneous calls, and never calls in sick." } },
       { "@type": "Question", "name": "Is my data safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Voqal AI Ltd (Companies House No. 17080303) processes all data in compliance with UK GDPR and the Data Protection Act 2018. Call data is encrypted in transit and at rest." } },
       { "@type": "Question", "name": "Do I need a long-term contract?", "acceptedAnswer": { "@type": "Answer", "text": "No. All managed service plans are month-to-month. Cancel anytime with no exit fees." } },
@@ -50,8 +50,8 @@ const faqs = [
   { q: "How much does an AI receptionist cost in the UK?", a: "Voqal AI plans start at \u00a3197/month for 200 minutes, with no contracts or hidden fees. A full-time human receptionist costs \u00a322,000\u2013\u00a328,000 per year (ONS, 2024), making AI 70\u201390% more cost-effective." },
   { q: "How quickly can I get set up?", a: "We\u2019ll send you a personalised voice agent demo within 24 hours of your enquiry. From there, we handle everything \u2014 building your custom agent, integrating with your phone system, calendar, and CRM." },
   { q: "Will callers know they\u2019re speaking to an AI?", a: "Our voice agents sound natural and conversational. They use your business\u2019s tone, know your services inside out, and handle complex queries. Many callers don\u2019t realise they\u2019re speaking to an AI." },
-  { q: "What is the ROI of an AI receptionist?", a: "80% of callers sent to voicemail won\u2019t leave a message, and 62% will phone a competitor. Leads are 21\u00d7 more likely to convert when contacted within 5 minutes. At \u00a3197/month, it pays for itself by capturing even one or two extra bookings." },
-  { q: "How does AI compare to a human receptionist?", a: "A human receptionist costs \u00a322,000\u2013\u00a328,000/year and works office hours. AI costs from \u00a3197/month, works 24/7, handles multiple simultaneous calls, and never calls in sick." },
+  { q: "What is the ROI of an AI receptionist?", a: "According to PATLive (2023), 80% of callers sent to voicemail will not leave a message. Forbes (2023) found that 67% of customers hang up when they cannot reach a real person. Research from MIT and InsideSales.com showed leads are 21\u00d7 more likely to convert when contacted within five minutes. At \u00a3197/month, an AI receptionist pays for itself by capturing even one or two extra bookings." },
+  { q: "How does AI compare to a human receptionist?", a: "According to ONS ASHE (2024), a full-time UK receptionist earns \u00a322,000\u2013\u00a328,000 per year and works standard office hours. An AI receptionist from Voqal AI costs from \u00a3197/month, operates 24/7, handles multiple simultaneous calls, and never calls in sick. Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026." },
   { q: "Is my data safe?", a: "Yes. Voqal AI Ltd (Companies House No. 17080303) processes all data in compliance with UK GDPR and the Data Protection Act 2018. Call data is encrypted in transit and at rest." },
   { q: "Do I need a long-term contract?", a: "No. All managed service plans are month-to-month. Cancel anytime with no exit fees." },
   { q: "What industries do you serve?", a: "Dental practices, medical clinics, law firms, estate agents, accountancy firms, tradesmen, and many more across the UK and US. Any service-based business relying on inbound calls." },
@@ -77,7 +77,7 @@ export default function AboutPage() {
             The Team Behind Your <span className="italic-accent">AI Voice Agent.</span>
           </h2>
           <p className="body-text">
-            Voqal AI Ltd builds bespoke voice models for UK and US businesses. We eliminate friction through continuous availability &mdash; engineering conversations so your team can focus on what matters.
+            Voqal AI Ltd builds bespoke voice models for UK and US businesses. With 5.5 million UK SMEs relying on inbound phone calls (Federation of Small Businesses, 2024) and 91 million active UK mobile subscriptions (Ofcom, 2024), phone communication remains the backbone of British commerce. We eliminate friction through continuous availability &mdash; engineering conversations so your team can focus on what matters.
           </p>
         </Reveal>
 
@@ -168,14 +168,14 @@ export default function AboutPage() {
         <Reveal delay={0.15}>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8" style={{ marginTop: "4rem" }}>
             {[
-              { n: "$80B", l: "Contact-centre savings from conversational AI by 2026 (Gartner)" },
-              { n: "67%", l: "Of customers hang up when they can\u2019t reach a real person (Forbes)" },
-              { n: "5.5M", l: "UK SMEs relying on inbound phone calls (FSB)" },
-              { n: "21\u00d7", l: "Lead conversion increase when answered within 5 minutes (MIT)" },
-              { n: "\u00a325K", l: "Average UK receptionist salary. AI costs under \u00a32,400/yr (ONS)" },
-              { n: "80%", l: "Of voicemail callers won\u2019t leave a message (PATLive)" },
-              { n: "91M", l: "Active UK mobile subscriptions (Ofcom)" },
-              { n: "$4.4T", l: "Annual value AI could deliver across industries (McKinsey)" },
+              { n: "$80B", l: "Contact-centre savings from conversational AI by 2026 (Gartner, 2022)" },
+              { n: "67%", l: "Of customers hang up when they can\u2019t reach a real person (Forbes, 2023)" },
+              { n: "5.5M", l: "UK SMEs relying on inbound phone calls (Federation of Small Businesses, 2024)" },
+              { n: "21\u00d7", l: "Lead conversion increase when answered within 5 minutes (MIT/InsideSales.com, 2011)" },
+              { n: "\u00a325K", l: "Average UK receptionist salary. AI costs under \u00a32,400/yr (ONS ASHE, 2024)" },
+              { n: "80%", l: "Of voicemail callers won\u2019t leave a message (PATLive, 2023)" },
+              { n: "91M", l: "Active UK mobile subscriptions (Ofcom Communications Market Report, 2024)" },
+              { n: "$4.4T", l: "Annual value AI could deliver across industries (McKinsey Global Institute, 2023)" },
             ].map((s, i) => (
               <div key={i} className="stat-block" style={{ textAlign: "center" }}>
                 <div className="stat-number">{s.n}</div>

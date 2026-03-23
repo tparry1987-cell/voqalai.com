@@ -121,7 +121,7 @@ const structuredData = [
     },
     sameAs: ["https://www.linkedin.com/in/tom-parry-698bbb29a"],
     description:
-      "AI Receptionist UK: 24/7 call answering, appointment booking and lead qualification. Sector-trained for dental, legal, trades and more. Plans from \u00a3197/month, no contracts. 90% cost reduction vs. hiring a full-time receptionist (ONS ASHE, 2024).",
+      "AI Receptionist UK: 24/7 call answering, appointment booking and lead qualification for 5.5 million UK SMEs (FSB, 2024). Sector-trained for dental, legal, trades and more. Plans from \u00a3197/month, no contracts. Up to 90% cost reduction compared with a full-time UK receptionist earning \u00a322,000\u2013\u00a328,000/year (ONS ASHE, 2024). Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026.",
     foundingDate: "2025",
     founders: [
       {
@@ -201,7 +201,7 @@ const structuredData = [
         name: "How much does an AI receptionist cost in the UK?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "AI receptionist services in the UK typically range from \u00a3150\u2013\u00a3700 per month. Voqal AI plans start at \u00a3197/month for 200 minutes, with no contracts or hidden fees.",
+          text: "AI receptionist services in the UK typically range from \u00a3150\u2013\u00a3700 per month. Voqal AI plans start at \u00a3197/month for 200 minutes, with no contracts or hidden fees. For comparison, a full-time human receptionist costs \u00a322,000\u2013\u00a328,000 per year (ONS ASHE, 2024), making AI 70\u201390% more cost-effective.",
         },
       },
       {

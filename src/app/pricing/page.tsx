@@ -85,7 +85,7 @@ export default function PricingPage() {
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Simple, Transparent <span className="italic-accent">Plans.</span>
           </h2>
-          <p className="body-text">No setup fees. No contracts or lock-ins. Demo within 24 hours.</p>
+          <p className="body-text">No setup fees. No contracts or lock-ins. Demo within 24 hours. A full-time UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024) &mdash; our AI receptionist starts at a fraction of that.</p>
         </Reveal>
 
         <Reveal delay={0.15}>
@@ -147,6 +147,9 @@ export default function PricingPage() {
             <br />
             One-off build &amp; handover packages also available from &pound;997.
           </p>
+          <p style={{ marginTop: "1.5rem", fontSize: "0.85rem", color: "var(--text-faint)", textAlign: "center", maxWidth: 640, marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
+            For comparison, a full-time receptionist in the UK earns &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024), while US receptionists average $40,800 per year (Bureau of Labor Statistics, 2024). Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026.
+          </p>
         </Reveal>
       </section>
 
@@ -158,7 +161,7 @@ export default function PricingPage() {
             Your Old Leads Are Worth <span className="italic-accent">Money.</span>
           </h2>
           <p className="body-text" style={{ maxWidth: 600, margin: "0 auto" }}>
-            79% of marketing leads never convert to sales &mdash; often due to poor follow-up timing. Our AI reactivates them with natural voice conversations and you only pay when they convert. Zero risk. Zero upfront cost.
+            According to research from MIT and InsideSales.com, leads are 21&times; more likely to convert when contacted within five minutes &mdash; yet most businesses respond far too slowly. Our AI reactivates dormant leads with natural voice conversations, and you only pay when they convert. Zero risk. Zero upfront cost.
           </p>
         </Reveal>
 
@@ -169,8 +172,8 @@ export default function PricingPage() {
               <div className="stat-label">Upfront cost &mdash; pay only when leads convert</div>
             </div>
             <div className="stat-block" style={{ textAlign: "center" }}>
-              <div className="stat-number">15-20%</div>
-              <div className="stat-label">Reactivation rate from dormant databases</div>
+              <div className="stat-number">80%</div>
+              <div className="stat-label">Of voicemail callers won&rsquo;t leave a message (PATLive, 2023) &mdash; reactivation recovers them</div>
             </div>
           </div>
         </Reveal>
@@ -190,7 +193,7 @@ export default function PricingPage() {
             What Missed Calls Are Really <span className="italic-accent">Costing.</span>
           </h2>
           <p className="body-text" style={{ color: "var(--accent)" }}>
-            62% of business calls go unanswered. 85% of those callers never call back.
+            According to Forbes (2023), 67% of customers hang up when they cannot reach a real person. PATLive (2023) found that 80% of voicemail callers will not leave a message.
           </p>
         </Reveal>
 

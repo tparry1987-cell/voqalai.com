@@ -8,12 +8,12 @@ import Link from "next/link";
 import Script from "next/script";
 
 const stats = [
-  { n: "£127K", l: "Average annual revenue lost to missed calls by UK SMEs" },
-  { n: "47", l: "Average calls missed per week by UK dental practices" },
-  { n: "78%", l: "Of law firms lose clients due to slow phone response" },
-  { n: "62%", l: "Of business calls go unanswered across all sectors" },
-  { n: "85%", l: "Of unanswered callers never call back" },
-  { n: "21×", l: "Higher lead conversion when answered within 5 minutes" },
+  { n: "67%", l: "Of customers hang up when they can\u2019t reach a real person (Forbes, 2023)" },
+  { n: "80%", l: "Of voicemail callers won\u2019t leave a message (PATLive, 2023)" },
+  { n: "5.5M", l: "UK SMEs relying on inbound phone calls (Federation of Small Businesses, 2024)" },
+  { n: "$80B", l: "Projected contact-centre savings from conversational AI by 2026 (Gartner, 2022)" },
+  { n: "21\u00d7", l: "Higher lead conversion when answered within 5 minutes (MIT/InsideSales.com, 2011)" },
+  { n: "\u00a325K", l: "Average UK receptionist salary \u2014 AI costs under \u00a32,400/yr (ONS ASHE, 2024)" },
 ];
 
 const sectors = [
@@ -136,7 +136,7 @@ export default function ResearchPage() {
             Calculate Your Missed Call <span className="italic-accent">Cost.</span>
           </h2>
           <p className="body-text" style={{ color: "var(--accent)" }}>
-            62% of business calls go unanswered. 85% of those callers never call back.
+            According to Forbes (2023), 67% of customers hang up when they cannot reach a real person. PATLive (2023) found that 80% of voicemail callers will not leave a message.
           </p>
         </Reveal>
 
