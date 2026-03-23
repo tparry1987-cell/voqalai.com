@@ -40,8 +40,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
-          <p style={{ textAlign: "center", fontSize: "0.7rem", color: "rgba(255,255,255,0.25)", letterSpacing: "0.05em", paddingTop: "4rem", paddingBottom: "2rem" }}>
+        {/* Trustpilot Badge */}
+        <div className="mt-16 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.08)", textAlign: "center" }}>
+          <a
+            href="https://www.trustpilot.com/review/voqalai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: "0.75rem", padding: "0.75rem 1.5rem", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.03)", transition: "border-color 0.3s" }}
+            className="hover:border-white/20"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2l2.09 6.26L20.18 9l-5.09 3.74L16.18 19 12 15.27 7.82 19l1.09-6.26L3.82 9l6.09-.74L12 2z" fill="#00B67A"/>
+            </svg>
+            <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.85rem", fontWeight: 500 }}>
+              Review us on <span style={{ color: "#00B67A", fontWeight: 600 }}>Trustpilot</span>
+            </span>
+          </a>
+        </div>
+
+        <div className="mt-8">
+          <p style={{ textAlign: "center", fontSize: "0.7rem", color: "rgba(255,255,255,0.25)", letterSpacing: "0.05em", paddingTop: "2rem", paddingBottom: "2rem" }}>
             &copy; 2026 Voqal AI Ltd. Registered in England &amp; Wales. Company No. 17080303.
           </p>
         </div>
