@@ -102,6 +102,54 @@
   }
   </script>
 
+  <!-- HowTo Schema: How to Connect Your Business Tools -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Connect Voqal AI to Your Business Tools",
+    "description": "Integrate your AI receptionist with your CRM, calendar, and practice management software so every call is logged, every appointment booked, and every lead captured automatically.",
+    "totalTime": "PT15M",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Choose your integrations",
+        "text": "Identify which tools you want to connect. Voqal AI supports CRM systems (HubSpot, Salesforce, Zoho, Pipedrive), calendars (Google Calendar, Outlook, Calendly, Cal.com), industry software (Dentally, Cliniko, Clio, Xero), and 6,000+ apps via Zapier.",
+        "url": "https://voqalai.com/integrations.html"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Authorise the connection",
+        "text": "Click Connect on your chosen integration and sign in with your existing credentials. Voqal AI uses OAuth so your passwords are never stored. You grant specific permissions for contact creation, calendar access, or activity logging.",
+        "url": "https://voqalai.com/integrations.html"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Configure data mapping",
+        "text": "Map call data (caller name, phone, email, transcript, outcome) to the correct fields in your connected tool. Default mappings are applied automatically — customise only if you use non-standard fields.",
+        "url": "https://voqalai.com/integrations.html"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Test with a sample call",
+        "text": "Make a test call and verify that data flows correctly into your connected tools. Check that contacts are created, appointments appear on your calendar, and call logs are attached to the right records.",
+        "url": "https://voqalai.com/integrations.html"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Go live",
+        "text": "Once verified, the integration runs automatically on every call. No manual triggers, no data entry. Monitor sync status from your Voqal AI dashboard.",
+        "url": "https://voqalai.com/integrations.html"
+      }
+    ]
+  }
+  </script>
+
   <script>
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", {origin:"https://cal.com"});
@@ -144,6 +192,13 @@
     <main class="content-wrapper">
 
       <section class="section-padding container" style="padding-top: 120px;">
+        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Integrations</li>
+          </ol>
+        </nav>
+
         <div class="reveal">
           <span class="section-label">Integrations</span>
           <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 24px;">Connects to the tools you <span class="italic-accent">already use.</span></h1>

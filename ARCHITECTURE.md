@@ -36,6 +36,8 @@ voqalai.com/
 
   blog/                   Blog pages (simplified header/footer, ../  relative paths)
 
+  guides/                 Guide pages (setup, integration, buying guides — HowTo schema)
+
   _redirects              Netlify redirect rules
   netlify.toml            Netlify build configuration
   robots.txt              Search engine crawl rules
@@ -112,6 +114,9 @@ Verified via HTML file method (`google86faee6b81056abd.html` at root).
 | `about.html`           | AboutPage                        |
 | `locations.html`       | ServiceArea                      |
 | `lead-reactivation.html` | FAQPage                       |
+| `integrations.html`    | SoftwareApplication, CollectionPage, HowTo |
+| `guides/how-to-set-up-ai-receptionist.html` | HowTo, BreadcrumbList |
+| `guides/how-to-integrate-voqal-with-your-crm.html` | HowTo, BreadcrumbList |
 
 ---
 
