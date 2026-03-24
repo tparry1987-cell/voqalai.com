@@ -81,9 +81,9 @@ export default function AboutPage() {
           </p>
         </Reveal>
 
-        {/* Founders */}
+        {/* The Team */}
         <Reveal delay={0.15}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-16" style={{ marginTop: "5rem", maxWidth: 800 }}>
+          <div className="team-grid">
             <div>
               <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>Founder &amp; CEO</span>
               <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: "1.5rem", marginBottom: "1rem", color: "var(--text-primary)" }}>Thomas Parry</h3>
@@ -92,10 +92,24 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>Co-Founder</span>
+              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>Co-Founder &amp; Operations</span>
               <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: "1.5rem", marginBottom: "1rem", color: "var(--text-primary)" }}>Augusta</h3>
               <p style={{ fontSize: "1rem", color: "var(--text-secondary)", lineHeight: 1.7 }}>
                 5 years in real estate, bringing operational insight and deep understanding of client-facing communication. Handles client onboarding and voice agent tailoring.
+              </p>
+            </div>
+            <div>
+              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>Senior Business Consultant</span>
+              <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: "1.5rem", marginBottom: "1rem", color: "var(--text-primary)" }}>Joseph K.</h3>
+              <p style={{ fontSize: "1rem", color: "var(--text-secondary)", lineHeight: 1.7 }}>
+                Over a decade advising SMEs across healthcare, legal, property, and financial services on growth strategy and operational efficiency. Bridges the gap between business needs and AI capability &mdash; ensuring every voice agent deployment translates to measurable commercial outcomes.
+              </p>
+            </div>
+            <div>
+              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>Lead Engineer</span>
+              <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: "1.5rem", marginBottom: "1rem", color: "var(--text-primary)" }}>Dev Team</h3>
+              <p style={{ fontSize: "1rem", color: "var(--text-secondary)", lineHeight: 1.7 }}>
+                Our engineering team specialises in conversational AI, real-time voice synthesis, and telephony infrastructure. They build, test, and deploy every voice agent &mdash; handling everything from NLP model tuning to CRM integration and call-routing architecture.
               </p>
             </div>
           </div>
