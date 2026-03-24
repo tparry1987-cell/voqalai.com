@@ -31,7 +31,7 @@ export function Footer() {
           {/* Col 2 */}
           <div>
             <h4 style={{ fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "1.5rem", color: "rgba(255,255,255,0.9)" }}>Navigate</h4>
-            <div className="grid grid-cols-2 gap-3" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.45)" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.85rem 1.5rem", fontSize: "0.9rem", color: "rgba(255,255,255,0.45)" }}>
               <Link href="/#services" className="hover:text-white transition-colors">Services</Link>
               <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
               <Link href="/about" className="hover:text-white transition-colors">About</Link>
@@ -44,12 +44,14 @@ export function Footer() {
           {/* Col 3 */}
           <div>
             <h4 style={{ fontSize: "0.8rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "1.5rem", color: "rgba(255,255,255,0.9)" }}>Get in Touch</h4>
-            <div className="space-y-3" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.45)" }}>
-              <a href="tel:+442039960962" className="block hover:text-white transition-colors">020 3996 0962 (UK)</a>
-              <a href="tel:+13322641587" className="block hover:text-white transition-colors">+1 (332) 264-1587 (US)</a>
-              <a href="mailto:info@voqalai.com" className="block hover:text-white transition-colors">info@voqalai.com</a>
-              <Link href="/privacy" className="block hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="block hover:text-white transition-colors">Terms &amp; Conditions</Link>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", fontSize: "0.9rem", color: "rgba(255,255,255,0.45)" }}>
+              <a href="tel:+442039960962" className="hover:text-white transition-colors" style={{ display: "block" }}>020 3996 0962 (UK)</a>
+              <a href="tel:+13322641587" className="hover:text-white transition-colors" style={{ display: "block" }}>+1 (332) 264-1587 (US)</a>
+              <a href="mailto:info@voqalai.com" className="hover:text-white transition-colors" style={{ display: "block" }}>info@voqalai.com</a>
+              <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginTop: "0.25rem", paddingTop: "0.85rem", display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+                <Link href="/privacy" className="hover:text-white transition-colors" style={{ display: "block" }}>Privacy Policy</Link>
+                <Link href="/terms" className="hover:text-white transition-colors" style={{ display: "block" }}>Terms &amp; Conditions</Link>
+              </div>
             </div>
           </div>
         </div>
