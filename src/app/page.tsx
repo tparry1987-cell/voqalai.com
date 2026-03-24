@@ -170,9 +170,9 @@ export default function Home() {
             <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.5)", marginBottom: "3rem", maxWidth: 500, margin: "0 auto 3rem" }}>
               A UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024). Our AI starts from &pound;197/month &mdash; no contracts, demo within 24 hours.
             </p>
-            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link href="/contact" className="btn-accent rounded-full px-8 py-3.5">Book Free Demo</Link>
-              <Link href="/pricing" className="rounded-full px-8 py-3.5 border border-white/30 hover:border-white/50 transition-all" style={{ color: "#ffffff" }}>View Pricing</Link>
+            <div className="cta-row">
+              <Link href="/contact" className="hero-cta" style={{ display: "inline-flex", alignItems: "center", padding: "0.9rem 2.5rem", fontSize: "1rem", fontWeight: 600, letterSpacing: "0.04em", borderRadius: "9999px", textDecoration: "none" }}>Book Free Demo</Link>
+              <Link href="/pricing" className="hero-cta" style={{ display: "inline-flex", alignItems: "center", padding: "0.9rem 2.5rem", fontSize: "1rem", fontWeight: 600, letterSpacing: "0.04em", borderRadius: "9999px", textDecoration: "none", background: "transparent", border: "1.5px solid rgba(255,255,255,0.5)" }}>View Pricing</Link>
             </div>
           </Reveal>
         </div>
