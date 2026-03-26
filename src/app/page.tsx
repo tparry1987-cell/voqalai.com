@@ -34,13 +34,13 @@ export default function Home() {
 
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-5 sm:px-8 text-center pt-20">
           <h1 style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", color: "#fff", textShadow: "0 2px 16px rgba(0,0,0,0.3)" }}>
-            AI Receptionist UK: Never Miss
+            Never Miss Another
             <br />
-            <span className="italic-accent" style={{ color: "var(--accent-light)" }}>Another Call.</span>
+            <span className="italic-accent" style={{ color: "var(--accent-light)" }}>Customer Call.</span>
           </h1>
 
           <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.85)", maxWidth: 460, marginTop: "1.5rem", lineHeight: 1.6 }}>
-            AI receptionist that answers, books, and supports your business 24/7.
+            UK&rsquo;s AI receptionist that answers, books, and supports your business 24/7.
           </p>
 
           <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.7)", marginTop: "2.5rem", marginBottom: "0.75rem" }}>
