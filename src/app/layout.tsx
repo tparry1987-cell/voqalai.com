@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://voqalai.com"),
   title: "AI Receptionist UK \u2013 24/7 Phone Answering | Voqal AI",
   description:
-    "AI Receptionist UK: 24/7 call answering, booking & lead qualification. Dental, legal, trades & more. No contracts. From \u00a3197/mo.",
+    "AI Receptionist UK: 24/7 call answering, booking & lead qualification for dental, legal & trades. No contracts. From \u00a3197/mo.",
   openGraph: {
     title: "AI Receptionist UK \u2013 24/7 Phone Answering | Voqal AI",
     description:

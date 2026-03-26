@@ -79,7 +79,10 @@ export default function Home() {
             Intelligent <span className="italic-accent">Capabilities.</span>
           </h2>
           <p className="body-text">
-            According to Forbes (2023), 67% of customers hang up when they cannot reach a real person &mdash; and 80% of those sent to voicemail will not leave a message (PATLive, 2023). With 5.5 million UK SMEs relying on inbound phone calls (FSB, 2024), missed calls translate directly into lost revenue. Our AI voice agents answer every call, book appointments, and qualify leads &mdash; around the clock. Research from MIT and InsideSales.com found that leads are 21&times; more likely to convert when contacted within five minutes.
+            67% of customers hang up when they can&rsquo;t reach a real person (Forbes, 2023). 80% sent to voicemail won&rsquo;t leave a message (PATLive, 2023). With 5.5 million UK SMEs relying on phone calls (FSB, 2024), every missed call is lost revenue.
+          </p>
+          <p className="body-text" style={{ marginTop: "1rem" }}>
+            Our AI voice agents answer every call, book appointments, and qualify leads &mdash; 24/7. Leads contacted within five minutes are 21&times; more likely to convert (MIT/InsideSales.com).
           </p>
         </Reveal>
 
@@ -88,7 +91,7 @@ export default function Home() {
             <Link href="/pricing" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="icon">I.</div>
               <h3>Voice AI Agents</h3>
-              <p>Your calls answered perfectly, day or night. Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026. We build voice models that book appointments, process reschedules, handle cancellations, and route urgent calls autonomously.</p>
+              <p>Your calls answered perfectly, day or night. We build AI voice agents that book appointments, handle reschedules and cancellations, and route urgent calls &mdash; no human needed.</p>
               <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>View pricing &rarr;</span>
             </Link>
 
@@ -101,14 +104,14 @@ export default function Home() {
             <Link href="/pricing#lead-reactivation" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="icon">III.</div>
               <h3>Lead Reactivation</h3>
-              <p>Wake up your dormant database. McKinsey Global Institute (2023) estimates AI could deliver $4.4 trillion in annual value across industries &mdash; and re-engaging existing leads is one of the highest-ROI applications. Our AI outreach protocols identify who is ready to convert without utilising your human resources.</p>
+              <p>Wake up your dormant database. Our AI contacts your old leads, identifies who&rsquo;s ready to buy, and books them in &mdash; without using your team&rsquo;s time. You only pay when a lead converts.</p>
               <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>Learn more &rarr;</span>
             </Link>
 
             <Link href="/about" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="icon">IV.</div>
               <h3>Process Automation</h3>
-              <p>Eliminate redundant data entry. We connect your telecommunications, CRM, and calendar tools, automating the repetitive work so your team focuses on closing.</p>
+              <p>We connect your phone system, CRM, and calendar so data flows automatically. No more manual entry. Your team focuses on closing.</p>
               <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>About our team &rarr;</span>
             </Link>
           </div>
@@ -120,16 +123,16 @@ export default function Home() {
         <Reveal>
           <span className="section-label">02 &mdash; How We Work</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "5rem" }}>
-            The <span className="italic-accent">Protocol.</span>
+            How It <span className="italic-accent">Works.</span>
           </h2>
         </Reveal>
 
         <Reveal delay={0.15}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16" style={{ textAlign: "left" }}>
             {[
-              { step: "01", title: "Knowledge Acquisition", desc: "We extract your operational data \u2014 FAQs, schedules, service boundaries, and brand voice. Tell us exactly how you want calls handled, and we construct the baseline." },
-              { step: "02", title: "Model Synthesis", desc: "Our engineers synthesise your custom voice agent. A personalised demo is delivered within 24 hours, allowing you to call and hear it live before deployment." },
-              { step: "03", title: "Live Integration", desc: "Upon your final verification, the system integrates seamlessly into your existing infrastructure. It begins answering alongside your team instantly." },
+              { step: "01", title: "We Learn Your Business", desc: "Share your FAQs, opening hours, services, and how you want calls handled. We use this to train your AI receptionist on your specific business." },
+              { step: "02", title: "We Build Your AI Agent", desc: "Our team builds your custom voice agent. You get a personalised demo within 24 hours \u2014 call it and hear it live before going ahead." },
+              { step: "03", title: "You Go Live", desc: "Once you\u2019re happy, we connect it to your phone system. Your AI receptionist starts answering calls alongside your team instantly." },
             ].map((p) => (
               <div key={p.step} className="protocol-step">
                 <div className="step-number">{p.step}</div>
