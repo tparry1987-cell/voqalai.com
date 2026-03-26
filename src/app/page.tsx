@@ -72,16 +72,18 @@ export default function Home() {
       {/* ═══ SERVICES — Light, editorial ═══ */}
       <section id="services" className="section-padding section-white container" style={{ paddingTop: "10rem" }}>
         <Reveal>
-          <span className="section-label">01 &mdash; What We Do</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "2rem" }}>
-            Intelligent <span className="italic-accent">Capabilities.</span>
-          </h2>
-          <p className="body-text">
-            67% of customers hang up when they can&rsquo;t reach a real person (Forbes, 2023). 80% sent to voicemail won&rsquo;t leave a message (PATLive, 2023). With 5.5 million UK SMEs relying on phone calls (FSB, 2024), every missed call is lost revenue.
-          </p>
-          <p className="body-text" style={{ marginTop: "1rem" }}>
-            Our AI voice agents answer every call, book appointments, and qualify leads &mdash; 24/7. Leads contacted within five minutes are 21&times; more likely to convert (MIT/InsideSales.com).
-          </p>
+          <div style={{ textAlign: "center", maxWidth: 700, margin: "0 auto" }}>
+            <span className="section-label">01 &mdash; What We Do</span>
+            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "2rem" }}>
+              Intelligent <span className="italic-accent">Capabilities.</span>
+            </h2>
+            <p className="body-text" style={{ maxWidth: "none", margin: "0 auto" }}>
+              67% of customers hang up when they can&rsquo;t reach a real person (Forbes, 2023). 80% sent to voicemail won&rsquo;t leave a message (PATLive, 2023). With 5.5 million UK SMEs relying on phone calls (FSB, 2024), every missed call is lost revenue.
+            </p>
+            <p className="body-text" style={{ marginTop: "1rem", maxWidth: "none", margin: "1rem auto 0" }}>
+              Our AI voice agents answer every call, book appointments, and qualify leads &mdash; 24/7. Leads contacted within five minutes are 21&times; more likely to convert (MIT/InsideSales.com).
+            </p>
+          </div>
         </Reveal>
 
         <Reveal delay={0.15}>
