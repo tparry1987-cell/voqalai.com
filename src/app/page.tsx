@@ -14,7 +14,7 @@ export default function Home() {
       {/* ═══ HERO — Dark, full viewport ═══ */}
       <section className="fixed inset-0 h-screen w-full overflow-hidden">
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <video autoPlay loop muted playsInline className="hero-video absolute inset-0 h-full w-full object-cover" style={{ filter: "saturate(1.6) contrast(1.1) brightness(0.85)" }}>
+        <video autoPlay loop muted playsInline className="hero-video absolute inset-0 h-full w-full object-cover" style={{ filter: "brightness(0.85)" }}>
           <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260309_042944_4a2205b7-b061-490a-852b-92d9e9955ce9.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,5,15,0.7) 0%, rgba(0,20,40,0.25) 40%, rgba(0,15,35,0.2) 70%, rgba(0,5,15,0.6) 100%)" }} />
@@ -22,10 +22,8 @@ export default function Home() {
         <div className="glitch-bar" />
         <svg className="static-noise" xmlns="http://www.w3.org/2000/svg">
           <filter id="static">
-            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" seed="0">
-              <animate attributeName="seed" from="0" to="100" dur="0.8s" repeatCount="indefinite" />
-            </feTurbulence>
-            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -12" />
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" seed="42" />
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" />
           </filter>
           <rect width="100%" height="100%" filter="url(#static)" />
         </svg>
