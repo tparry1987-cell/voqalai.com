@@ -40,7 +40,7 @@ export default function Home() {
           </h1>
 
           <p style={{ fontSize: "1.15rem", color: "rgba(255,255,255,0.85)", maxWidth: 460, marginTop: "1.5rem", lineHeight: 1.6 }}>
-            UK&rsquo;s AI receptionist that answers, books, and supports your business 24/7.
+            AI receptionist that answers, books, and supports your business 24/7.
           </p>
 
           <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.7)", marginTop: "2.5rem", marginBottom: "0.75rem" }}>
