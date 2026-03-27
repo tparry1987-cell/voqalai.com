@@ -35,11 +35,21 @@
     "url": "https://voqalai.com/about.html",
     "mainEntity": {
       "@type": "Organization",
+      "@id": "https://voqalai.com/#organization",
       "name": "Voqal AI",
+      "alternateName": ["Voqal", "VoqalAI"],
       "legalName": "Voqal AI Ltd",
       "url": "https://voqalai.com",
+      "description": "AI Receptionist UK: 24/7 AI voice agents that answer calls, book appointments, and qualify leads for dental, legal, trades, and medical businesses across the United Kingdom.",
+      "logo": "https://voqalai.com/favicon.svg",
       "foundingDate": "2025",
       "taxID": "17080303",
+      "slogan": "Never miss another call.",
+      "areaServed": [
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "United States" }
+      ],
+      "serviceType": ["AI Receptionist", "AI Voice Agent", "Virtual Phone Answering", "Automated Appointment Booking"],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "71-75 Shelton Street",
@@ -47,6 +57,11 @@
         "postalCode": "WC2H 9JQ",
         "addressCountry": "GB"
       },
+      "contactPoint": [
+        { "@type": "ContactPoint", "telephone": "+442039960962", "contactType": "sales", "areaServed": "GB", "availableLanguage": "English" },
+        { "@type": "ContactPoint", "telephone": "+13322641587", "contactType": "sales", "areaServed": "US", "availableLanguage": "English" }
+      ],
+      "sameAs": ["https://www.linkedin.com/in/tom-parry-698bbb29a"],
       "founder": [
         {
           "@type": "Person",
@@ -57,6 +72,12 @@
           "sameAs": [
             "https://www.linkedin.com/in/tom-parry-698bbb29a"
           ],
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://voqalai.com/images/avatars/tom.webp",
+            "description": "Thomas Parry, Founder and CEO of Voqal AI",
+            "encodingFormat": "image/webp"
+          },
           "knowsAbout": ["AI voice agents", "business automation", "conversational AI", "telephony systems", "lead qualification"]
         },
         {
@@ -64,6 +85,12 @@
           "name": "Augusta",
           "jobTitle": "Co-Founder",
           "description": "Operations and client relations specialist with 5 years of experience in real estate and client-facing communication.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://voqalai.com/images/avatars/augusta.webp",
+            "description": "Augusta, Co-Founder of Voqal AI",
+            "encodingFormat": "image/webp"
+          },
           "knowsAbout": ["real estate", "client relations", "business operations", "customer experience"]
         }
       ]
@@ -73,7 +100,7 @@
 </head>
 <body>
 
-  <div class="page-background" style="background-image: url('images/hero-forest.webp');"></div>
+  <div class="page-background" role="img" aria-label="Atmospheric forest canopy background representing Voqal AI's natural, human-like AI receptionist technology for UK businesses" style="background-image: url('images/hero-forest.webp');"></div>
 
   <div class="page-overlay">
 
@@ -155,7 +182,7 @@
         <div class="founders-grid">
           <div class="founder-card reveal">
             <div class="founder-image">
-              <img src="images/avatars/tom.webp" alt="Thomas Parry — Founder of Voqal AI" loading="lazy" width="180" height="180">
+              <img src="images/avatars/tom.webp" alt="Thomas Parry, Founder and CEO of Voqal AI, a UK-based AI receptionist and virtual phone answering service" loading="lazy" width="180" height="180">
             </div>
             <h3>Thomas Parry</h3>
             <span class="founder-role">Founder &amp; CEO</span>
@@ -165,7 +192,7 @@
 
           <div class="founder-card reveal" style="transition-delay: 0.1s;">
             <div class="founder-image">
-              <img src="images/avatars/augusta.webp" alt="Augusta — Co-Founder of Voqal AI" loading="lazy" width="180" height="180" style="object-position: center 20%;">
+              <img src="images/avatars/augusta.webp" alt="Augusta, Co-Founder of Voqal AI, leading product development for AI-powered phone answering and appointment booking" loading="lazy" width="180" height="180" style="object-position: center 20%;">
             </div>
             <h3>Augusta</h3>
             <span class="founder-role">Co-Founder</span>
