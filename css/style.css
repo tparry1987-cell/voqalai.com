@@ -1288,6 +1288,234 @@ footer {
   }
 }
 
+/* --- COMPARISON TABLE --- */
+.comparison-table-wrap {
+  overflow-x: auto;
+  margin-top: 48px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-weight: 300;
+  min-width: 640px;
+}
+
+.comparison-table thead th {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 2px solid rgba(219,124,84,0.3);
+}
+
+.section-white .comparison-table thead th {
+  color: rgba(26,26,46,0.5);
+  border-bottom-color: rgba(26,26,46,0.12);
+}
+
+.section-alt .comparison-table thead th {
+  color: rgba(248,249,250,0.5);
+}
+
+.comparison-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.section-white .comparison-table td {
+  color: rgba(26,26,46,0.7);
+  border-bottom-color: rgba(26,26,46,0.06);
+}
+
+.section-alt .comparison-table td {
+  color: rgba(248,249,250,0.65);
+  border-bottom-color: rgba(248,249,250,0.06);
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tr.highlight-row {
+  font-weight: 500;
+}
+
+.section-white .comparison-table tr.highlight-row td {
+  color: #1A1A2E;
+  background: rgba(196,120,90,0.06);
+}
+
+.section-alt .comparison-table tr.highlight-row td {
+  color: #f8f9fa;
+  background: rgba(219,124,84,0.08);
+}
+
+.comparison-table .check {
+  color: #3daa5c;
+  font-weight: 600;
+}
+
+.comparison-table .cross {
+  color: rgba(200,60,60,0.7);
+  font-weight: 600;
+}
+
+.section-white .comparison-table .accent-cell {
+  color: #C4785A;
+  font-weight: 600;
+}
+
+.section-alt .comparison-table .accent-cell {
+  color: #db7c54;
+  font-weight: 600;
+}
+
+/* --- EXPERT QUOTES --- */
+.expert-quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.expert-quote {
+  padding: 32px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(248,249,250,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.section-white .expert-quote {
+  background: rgba(26,26,46,0.02);
+  border-color: rgba(26,26,46,0.08);
+}
+
+.expert-quote blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.7;
+  border: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.section-white .expert-quote blockquote {
+  color: rgba(26,26,46,0.75);
+}
+
+.section-alt .expert-quote blockquote {
+  color: rgba(248,249,250,0.75);
+}
+
+.expert-quote blockquote::before {
+  content: '\201C';
+  font-size: 2.5rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.section-white .expert-quote blockquote::before {
+  color: #C4785A;
+}
+
+.section-alt .expert-quote blockquote::before {
+  color: #db7c54;
+}
+
+.expert-quote cite {
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  display: block;
+}
+
+.section-white .expert-quote cite {
+  color: rgba(26,26,46,0.45);
+}
+
+.section-alt .expert-quote cite {
+  color: rgba(248,249,250,0.45);
+}
+
+.expert-quote cite a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.section-white .expert-quote cite a {
+  color: #C4785A;
+}
+
+.section-alt .expert-quote cite a {
+  color: #db7c54;
+}
+
+/* --- PROTOCOL SUB-STEPS --- */
+.protocol-details {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.protocol-details li {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  padding: 4px 0 4px 16px;
+  position: relative;
+}
+
+.section-white .protocol-details li {
+  color: rgba(26,26,46,0.55);
+}
+
+.section-alt .protocol-details li {
+  color: rgba(248,249,250,0.45);
+}
+
+.protocol-details li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+.section-white .protocol-details li::before {
+  background: #C4785A;
+}
+
+.section-alt .protocol-details li::before {
+  background: #db7c54;
+}
+
+@media (max-width: 1024px) {
+  .expert-quotes-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comparison-table-wrap {
+    margin-top: 32px;
+  }
+}
+
 /* --- FLOATING CALL BUTTON --- */
 .floating-call {
   position: fixed;
