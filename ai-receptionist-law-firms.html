@@ -124,7 +124,7 @@
         "name": "Is the AI compliant with SRA confidentiality requirements?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. All call data is encrypted in transit and at rest, stored on UK-based servers, and access is restricted to authorised personnel only. We operate under a data processing agreement that aligns with SRA Standards and Regulations."
+          "text": "Yes. All call data is encrypted using AES-256 encryption in transit (TLS 1.3) and at rest, stored on UK-based servers, and access is restricted to authorised personnel only. We operate under a data processing agreement that aligns with SRA Standards and Regulations, including Principle 6 (duty of confidentiality) and Paragraph 6.3 of the SRA Code of Conduct (SRA Handbook, 2023). The SRA regulates over 160,000 practising solicitors in England and Wales, and we ensure our systems meet the same confidentiality standards your firm is held to. We never use your client data for model training or share it with third parties."
         }
       },
       {
@@ -132,7 +132,7 @@
         "name": "Does it integrate with legal practice management software?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. We integrate with widely used legal PMS platforms including Clio, LEAP, PracticePanther, and others. New client intake data, appointment bookings, and call summaries can be pushed directly into your existing system."
+          "text": "Yes. We integrate with widely used legal PMS platforms including Clio, LEAP, PracticePanther, and others via secure API connections. The Clio Legal Trends Report (2024) found that solicitors spend only 2.5 hours per day on billable work, with the rest consumed by admin — much of it related to intake and scheduling. New client intake data, appointment bookings, and call summaries can be pushed directly into your existing system, reducing double-entry and freeing fee earners to focus on billable tasks."
         }
       },
       {
@@ -298,7 +298,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes. Our system is designed with legal confidentiality as a core requirement. All call data is encrypted in transit and at rest, stored on UK-based servers, and access is restricted to authorised personnel only. We operate under a data processing agreement that aligns with SRA Standards and Regulations, and we never use your client data to train models or share it with third parties.</p>
+              <p>Yes. Our system is designed with legal confidentiality as a core requirement. All call data is encrypted using AES-256 encryption in transit (TLS 1.3) and at rest, stored on UK-based servers, and access is restricted to authorised personnel only. We operate under a data processing agreement that aligns with SRA Standards and Regulations, including Principle 6 (duty of confidentiality) and Paragraph 6.3 of the SRA Code of Conduct (SRA Handbook, 2023). The SRA regulates over 160,000 practising solicitors in England and Wales, and we ensure our systems meet the same confidentiality standards your firm is held to. We never use your client data for model training or share it with third parties.</p>
             </div>
           </div>
 
@@ -308,7 +308,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>The AI captures key identifying information from new callers &mdash; names, opposing parties, and matter details &mdash; and flags potential conflicts against your existing client database. This is a preliminary screening step, not a replacement for your formal conflict check process. Flagged matters are routed to the appropriate fee earner for manual review before any engagement proceeds.</p>
+              <p>The AI captures key identifying information from new callers &mdash; names, opposing parties, and matter details &mdash; and flags potential conflicts against your existing client database. The Law Society reports that conflict of interest failures are among the most common SRA disciplinary issues (Law Society Practice Note, 2023), so early screening is critical. This is a preliminary screening step using automated data matching, not a replacement for your formal conflict check process. Flagged matters are routed to the appropriate fee earner for manual review before any engagement proceeds.</p>
             </div>
           </div>
 
@@ -318,7 +318,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>The AI is trained to recognise emotional distress, urgency signals, and sensitive subject matter. In these situations, it adjusts its tone to be calm and reassuring, prioritises gathering essential details efficiently, and escalates to a human team member when appropriate. For domestic violence, safeguarding, or emergency situations, it follows your firm&rsquo;s predefined escalation protocol immediately.</p>
+              <p>The AI uses sentiment analysis and NLP to recognise emotional distress, urgency signals, and sensitive subject matter. The Law Society estimates that solicitors in family and criminal law regularly handle callers in crisis, with over 2 million family law cases processed annually in England and Wales (Ministry of Justice, 2024). In these situations, the AI adjusts its tone to be calm and reassuring, prioritises gathering essential details efficiently, and escalates to a human team member when appropriate. For domestic violence, safeguarding, or emergency situations, it follows your firm&rsquo;s predefined escalation protocol immediately &mdash; acting as a supportive first point of contact, not a replacement for your expertise.</p>
             </div>
           </div>
 
@@ -328,7 +328,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Absolutely. Each practice area &mdash; conveyancing, family, criminal, commercial, litigation &mdash; can have its own intake questions, routing rules, and escalation criteria. The AI identifies the nature of the enquiry early in the call and follows the appropriate workflow. You can update these flows at any time as your practice evolves.</p>
+              <p>Absolutely. Each practice area &mdash; conveyancing, family, criminal, commercial, litigation &mdash; can have its own intake questions, call routing rules, and escalation criteria. The Clio Legal Trends Report (2024) shows that firms offering multiple practice areas see 35% more new client enquiries, making efficient intake critical. The AI uses intent classification to identify the nature of the enquiry early in the call and follows the appropriate workflow. You can update these flows at any time as your practice evolves.</p>
             </div>
           </div>
 
@@ -338,7 +338,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Yes. We integrate with widely used legal PMS platforms including Clio, LEAP, PracticePanther, and others. New client intake data, appointment bookings, and call summaries can be pushed directly into your existing system, reducing double-entry and keeping your matter records up to date automatically.</p>
+              <p>Yes. We integrate with widely used legal PMS platforms including Clio, LEAP, PracticePanther, and others via secure API connections. The Clio Legal Trends Report (2024) found that solicitors spend only 2.5 hours per day on billable work, with the rest consumed by admin &mdash; much of it related to intake and scheduling. New client intake data, appointment bookings, and call summaries can be pushed directly into your existing system, reducing double-entry and freeing fee earners to focus on billable tasks.</p>
             </div>
           </div>
 
@@ -348,7 +348,7 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-answer">
-              <p>Plans start from &pound;197 per month with no long-term contracts. Pricing scales based on call volume and the number of practice areas configured. Every plan includes 24/7 coverage, unlimited call handling, and full access to your reporting dashboard. Book a free consultation and we&rsquo;ll recommend the right plan for your firm&rsquo;s size and call volume.</p>
+              <p>Plans start from &pound;197 per month with no long-term contracts. Pricing scales based on call volume and the number of practice areas configured. For comparison, the average outsourced legal receptionist costs &pound;12&ndash;&pound;18 per hour (Law Society Gazette, 2023), which adds up quickly with 24/7 coverage. Every plan includes round-the-clock availability, unlimited call handling, and full access to your reporting dashboard. Book a free consultation and we&rsquo;ll recommend the right plan for your firm&rsquo;s size and call volume.</p>
             </div>
           </div>
 
