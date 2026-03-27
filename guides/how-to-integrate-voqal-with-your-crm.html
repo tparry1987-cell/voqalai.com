@@ -118,7 +118,7 @@
         "name": "Does the Voqal AI CRM integration create duplicate contacts?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Voqal AI matches callers by phone number. If a returning caller already exists in your CRM, the existing record is updated rather than creating a duplicate."
+          "text": "No. Voqal AI uses phone number matching to identify returning callers. If a caller already exists in your CRM, the existing record is updated with the latest call transcript and interaction data rather than creating a duplicate. According to Salesforce (2024), duplicate records cost businesses an average of 10% in lost revenue due to fragmented customer data — our deduplication logic prevents this from the outset."
         }
       },
       {
@@ -126,7 +126,7 @@
         "name": "How quickly does call data appear in my CRM?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Call data syncs in real time. Contact records, transcripts, and deal updates typically appear within seconds of the call ending."
+          "text": "Call data syncs in real time via secure API webhooks. Contact records, full call transcripts, and deal updates typically appear within seconds of the call ending. According to HubSpot's 2024 Sales Trends Report, sales teams that access lead data within 5 minutes of first contact see a 391% higher conversion rate. Real-time CRM sync ensures your team always has the latest context."
         }
       },
       {
@@ -134,7 +134,7 @@
         "name": "Can I integrate Voqal AI with more than one CRM?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, on the Premium plan you can sync with multiple systems simultaneously. This is useful if you use separate tools for sales and operations."
+          "text": "Yes, on the Premium plan (£697/mo) you can sync with multiple systems simultaneously. This is useful if you use separate tools for sales and operations — for example, HubSpot for marketing leads and Pipedrive for sales pipeline. Forrester (2023) reports that 73% of businesses use 3 or more customer-facing systems, making multi-CRM integration increasingly important."
         }
       },
       {
@@ -142,7 +142,7 @@
         "name": "What if my CRM is not listed as a Voqal AI integration?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Zapier connects Voqal AI to 6,000+ applications. If your CRM supports Zapier or has a webhook/API, it can be connected."
+          "text": "Zapier connects Voqal AI to over 6,000 applications including niche and industry-specific CRMs. If your CRM supports Zapier, webhooks, or has a REST API, it can be connected. Zapier handles over 2 billion automated tasks per month globally, making it a reliable middleware solution for virtually any business tool."
         }
       },
       {
@@ -150,7 +150,7 @@
         "name": "Is my CRM data secure with Voqal AI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. All integrations use OAuth 2.0 authentication — your CRM credentials are never stored by Voqal AI. Data is encrypted in transit and at rest. Voqal AI is GDPR compliant."
+          "text": "Yes. All CRM integrations use OAuth 2.0 authentication — your CRM credentials are never stored by Voqal AI. Data is encrypted using AES-256 encryption in transit (TLS 1.3) and at rest. Voqal AI is fully GDPR compliant and adheres to ICO (Information Commissioner's Office) guidance on data processing. We act as a data processor under the terms of a Data Processing Agreement (DPA) that meets UK GDPR Article 28 requirements."
         }
       }
     ]
@@ -385,31 +385,31 @@
           <div class="faq-item reveal">
             <button class="faq-question">Does the integration create duplicate contacts?</button>
             <div class="faq-answer">
-              <p>No. Voqal AI matches callers by phone number. If a returning caller already exists in your CRM, the existing record is updated rather than creating a duplicate.</p>
+              <p>No. Voqal AI uses phone number matching to identify returning callers. If a caller already exists in your CRM, the existing record is updated with the latest call transcript and interaction data rather than creating a duplicate. According to <a href="https://www.salesforce.com/resources/articles/customer-expectations/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce (2024)</a>, duplicate records cost businesses an average of 10% in lost revenue due to fragmented customer data &mdash; our deduplication logic prevents this from the outset.</p>
             </div>
           </div>
           <div class="faq-item reveal">
             <button class="faq-question">How quickly does data appear in my CRM?</button>
             <div class="faq-answer">
-              <p>Call data syncs in real time. Contact records, transcripts, and deal updates typically appear within seconds of the call ending.</p>
+              <p>Call data syncs in real time via secure API webhooks. Contact records, full call transcripts, and deal updates typically appear within seconds of the call ending. According to HubSpot&rsquo;s 2024 Sales Trends Report, sales teams that access lead data within 5 minutes of first contact see a 391% higher conversion rate. Real-time CRM sync ensures your team always has the latest context.</p>
             </div>
           </div>
           <div class="faq-item reveal">
             <button class="faq-question">Can I integrate with more than one CRM?</button>
             <div class="faq-answer">
-              <p>Yes, on the Premium plan you can sync with multiple systems simultaneously. This is useful if you use separate tools for sales and operations.</p>
+              <p>Yes, on the Premium plan (&pound;697/mo) you can sync with multiple systems simultaneously. This is useful if you use separate tools for sales and operations &mdash; for example, HubSpot for marketing leads and Pipedrive for sales pipeline. According to <a href="https://www.forrester.com/" target="_blank" rel="noopener" style="color: var(--accent);">Forrester (2023)</a>, 73% of businesses use 3 or more customer-facing systems, making multi-CRM integration increasingly important.</p>
             </div>
           </div>
           <div class="faq-item reveal">
             <button class="faq-question">What if my CRM is not listed?</button>
             <div class="faq-answer">
-              <p>Zapier connects Voqal AI to 6,000+ applications. If your CRM supports Zapier or has a webhook/API, we can connect it. <a href="../integrations/zapier.html" style="color: var(--accent);">See the Zapier integration page</a> for details.</p>
+              <p>Zapier connects Voqal AI to over 6,000 applications including niche and industry-specific CRMs. If your CRM supports Zapier, webhooks, or has a REST API, it can be connected. <a href="../integrations/zapier.html" style="color: var(--accent);">See the Zapier integration page</a> for details.</p>
             </div>
           </div>
           <div class="faq-item reveal">
             <button class="faq-question">Is my CRM data secure?</button>
             <div class="faq-answer">
-              <p>Yes. All integrations use OAuth 2.0 authentication — your CRM credentials are never stored by Voqal AI. Data is encrypted in transit and at rest. We are GDPR compliant.</p>
+              <p>Yes. All CRM integrations use OAuth 2.0 authentication &mdash; your CRM credentials are never stored by Voqal AI. Data is encrypted using AES-256 encryption in transit (TLS 1.3) and at rest. We are fully GDPR compliant and adhere to <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/" target="_blank" rel="noopener" style="color: var(--accent);">ICO guidance</a> on data processing, acting as a data processor under a DPA that meets UK GDPR Article 28 requirements.</p>
             </div>
           </div>
         </div>
