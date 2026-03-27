@@ -2,271 +2,283 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://voqalai.com/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://voqalai.com/pricing.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/lead-reactivation.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/about.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/locations.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/brand-facts.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://voqalai.com/guides/best-ai-receptionist-uk-2026.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/guides/how-to-set-up-ai-receptionist.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/guides/how-to-integrate-voqal-with-your-crm.html</loc>
-    <lastmod>2026-03-23</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://voqalai.com/guides/voice-cloning-client-prep.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://voqalai.com/guides/curb-appeal-voice-cloning-prep.html</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://voqalai.com/compare/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-moneypenny.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-smith-ai.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-ruby-receptionists.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-answerconnect.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-receptionhq.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-bland-ai.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-synthflow.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-air-ai.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-my-ai-front-desk.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/compare/voqal-ai-vs-rosie-ai.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/ai-receptionist-dental-practices.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/ai-receptionist-law-firms.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/ai-receptionist-medical-practices.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/ai-receptionist-tradesmen.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/ai-receptionist-estate-agents.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/ai-receptionist-accountants.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/blog/receptionist-costs-25k-ai-costs-197.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/blog/ai-vs-human-receptionist-uk.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/blog/how-much-does-virtual-receptionist-cost-uk.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/hubspot.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/salesforce.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/zoho-crm.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/pipedrive.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/calendly.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/cal-com.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/google-calendar.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/microsoft-outlook.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/dentally.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/cliniko.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/clio.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/xero.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/integrations/zapier.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://voqalai.com/privacy.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://voqalai.com/terms.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
