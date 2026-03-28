@@ -309,7 +309,7 @@ export default function PricingPage() {
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             What Missed Calls Are Really <span className="italic-accent">Costing.</span>
           </h2>
-          <p className="body-text" style={{ color: "var(--accent)", maxWidth: "none", margin: "0 auto" }}>
+          <p className="body-text" style={{ color: "var(--accent)", maxWidth: 600, margin: "1.5rem auto 0", lineHeight: 1.7 }}>
             According to Forbes (2023), 67% of customers hang up when they cannot reach a real person. PATLive (2023) found that 80% of voicemail callers will not leave a message.
           </p>
         </Reveal>
