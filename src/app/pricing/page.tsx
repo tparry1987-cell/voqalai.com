@@ -259,7 +259,7 @@ export default function PricingPage() {
       <section id="lead-reactivation" className="section-padding section-white container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">Lead Reactivation</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 700, margin: "0 auto 2rem" }}>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 700, margin: "0 auto 3rem" }}>
             Your Old Leads Are Worth <span className="italic-accent">Money.</span>
           </h2>
           <p className="body-text" style={{ maxWidth: 600, margin: "0 auto" }}>
@@ -291,7 +291,7 @@ export default function PricingPage() {
       <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">How Pricing Compares</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
             AI Receptionist vs Traditional <span className="italic-accent">Alternatives.</span>
           </h2>
           <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "left" }}>
@@ -312,7 +312,7 @@ export default function PricingPage() {
       <section className="section-padding section-white container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">The Cost of Silence</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
             What Missed Calls Are Really <span className="italic-accent">Costing.</span>
           </h2>
           <p className="body-text" style={{ color: "var(--accent)", maxWidth: 600, margin: "1.5rem auto 0", lineHeight: 1.7 }}>
@@ -362,7 +362,7 @@ export default function PricingPage() {
       <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">Industry Applications</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
             Which Businesses Get the Most from <span className="italic-accent">AI Receptionists.</span>
           </h2>
           <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "left" }}>
