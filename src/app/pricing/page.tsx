@@ -82,11 +82,13 @@ export default function PricingPage() {
       {/* ── Pricing Hero ── */}
       <section className="section-padding section-white container" style={{ paddingTop: "12rem" }}>
         <Reveal>
-          <span className="section-label">Pricing</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            Simple, Transparent <span className="italic-accent">Plans.</span>
-          </h2>
-          <p className="body-text">No setup fees. No contracts or lock-ins. Demo within 24 hours. A full-time UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024) &mdash; our AI receptionist starts at a fraction of that.</p>
+          <div style={{ textAlign: "center" }}>
+            <span className="section-label">Pricing</span>
+            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+              Simple, Transparent <span className="italic-accent">Plans.</span>
+            </h2>
+            <p className="body-text" style={{ maxWidth: 560, margin: "0 auto" }}>No setup fees. No contracts or lock-ins. Demo within 24 hours. A full-time UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024) &mdash; our AI receptionist starts at a fraction of that.</p>
+          </div>
         </Reveal>
 
         {/* Problem statement */}
