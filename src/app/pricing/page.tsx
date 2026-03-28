@@ -91,18 +91,6 @@ export default function PricingPage() {
           </div>
         </Reveal>
 
-        {/* Problem statement */}
-        <Reveal delay={0.1}>
-          <div style={{ maxWidth: 700, marginTop: "4rem", marginLeft: "auto", marginRight: "auto" }}>
-            <p className="body-text" style={{ maxWidth: "none" }}>
-              Before comparing plans, it is worth understanding the scale of the problem that AI receptionist pricing is designed to solve. According to Forbes (2023), 67% of customers will hang up if they cannot reach a real person &mdash; and the majority never call back. Research from PATLive puts it even more starkly: 80% of callers sent to voicemail do not leave a message. They simply move on to the next business in their search results.
-            </p>
-            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
-              For service businesses that depend on inbound phone enquiries &mdash; dental practices, law firms, tradesmen, estate agents &mdash; each unanswered call represents a customer who was ready to book but could not get through. The Federation of Small Businesses (2024) estimates that the average UK SME loses over &pound;30,000 per year in revenue from missed calls alone. A landmark study by MIT and InsideSales.com found that leads are 21 times more likely to convert when contacted within five minutes. Every minute of delay reduces that probability, and a missed call is the ultimate delay.
-            </p>
-          </div>
-        </Reveal>
-
         {/* Toggle */}
         <Reveal delay={0.1}>
           <div style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
@@ -249,8 +237,26 @@ export default function PricingPage() {
         </Reveal>
       </section>
 
+      {/* ── Why AI Receptionist Pricing Matters ── */}
+      <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
+        <Reveal>
+          <span className="section-label">The Problem</span>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            Why Every Missed Call <span className="italic-accent">Costs You.</span>
+          </h2>
+          <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "left" }}>
+            <p className="body-text" style={{ maxWidth: "none" }}>
+              Before comparing plans, it is worth understanding the scale of the problem that AI receptionist pricing is designed to solve. According to Forbes (2023), 67% of customers will hang up if they cannot reach a real person &mdash; and the majority never call back. Research from PATLive puts it even more starkly: 80% of callers sent to voicemail do not leave a message. They simply move on to the next business in their search results.
+            </p>
+            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+              For service businesses that depend on inbound phone enquiries &mdash; dental practices, law firms, tradesmen, estate agents &mdash; each unanswered call represents a customer who was ready to book but could not get through. The Federation of Small Businesses (2024) estimates that the average UK SME loses over &pound;30,000 per year in revenue from missed calls alone. A landmark study by MIT and InsideSales.com found that leads are 21 times more likely to convert when contacted within five minutes. Every minute of delay reduces that probability, and a missed call is the ultimate delay.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
       {/* ── Lead Reactivation ── */}
-      <section id="lead-reactivation" className="section-padding section-alt container" style={{ textAlign: "center" }}>
+      <section id="lead-reactivation" className="section-padding section-white container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">Lead Reactivation</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 700, margin: "0 auto 2rem" }}>
@@ -282,7 +288,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── How Pricing Compares ── */}
-      <section className="section-padding section-white container" style={{ textAlign: "center" }}>
+      <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">How Pricing Compares</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
@@ -303,7 +309,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── Calculator ── */}
-      <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
+      <section className="section-padding section-white container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">The Cost of Silence</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
@@ -353,7 +359,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── Which Industries Benefit Most ── */}
-      <section className="section-padding section-white container" style={{ textAlign: "center" }}>
+      <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">Industry Applications</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
