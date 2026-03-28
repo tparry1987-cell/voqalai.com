@@ -78,7 +78,7 @@ export default function PricingPage() {
       ))}
       <Navbar variant="light" />
 
-      {/* ── Pricing ── */}
+      {/* ── Pricing Hero ── */}
       <section className="section-padding section-white container" style={{ paddingTop: "12rem" }}>
         <Reveal>
           <span className="section-label">Pricing</span>
@@ -86,6 +86,18 @@ export default function PricingPage() {
             Simple, Transparent <span className="italic-accent">Plans.</span>
           </h2>
           <p className="body-text">No setup fees. No contracts or lock-ins. Demo within 24 hours. A full-time UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024) &mdash; our AI receptionist starts at a fraction of that.</p>
+        </Reveal>
+
+        {/* Problem statement */}
+        <Reveal delay={0.1}>
+          <div style={{ maxWidth: 700, marginTop: "4rem" }}>
+            <p className="body-text" style={{ maxWidth: "none" }}>
+              Before comparing plans, it is worth understanding the scale of the problem that AI receptionist pricing is designed to solve. According to Forbes (2023), 67% of customers will hang up if they cannot reach a real person &mdash; and the majority never call back. Research from PATLive puts it even more starkly: 80% of callers sent to voicemail do not leave a message. They simply move on to the next business in their search results.
+            </p>
+            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+              For service businesses that depend on inbound phone enquiries &mdash; dental practices, law firms, tradesmen, estate agents &mdash; each unanswered call represents a customer who was ready to book but could not get through. The Federation of Small Businesses (2024) estimates that the average UK SME loses over &pound;30,000 per year in revenue from missed calls alone. A landmark study by MIT and InsideSales.com found that leads are 21 times more likely to convert when contacted within five minutes. Every minute of delay reduces that probability, and a missed call is the ultimate delay.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal delay={0.15}>
@@ -185,8 +197,29 @@ export default function PricingPage() {
         </Reveal>
       </section>
 
-      {/* ── Calculator ── */}
+      {/* ── How Pricing Compares ── */}
       <section className="section-padding section-white container">
+        <Reveal>
+          <span className="section-label">How Pricing Compares</span>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            AI Receptionist vs Traditional <span className="italic-accent">Alternatives.</span>
+          </h2>
+          <div style={{ maxWidth: 700 }}>
+            <p className="body-text" style={{ maxWidth: "none" }}>
+              According to the Office for National Statistics (ASHE, 2024), the median annual salary for a receptionist in the United Kingdom is approximately &pound;22,000&ndash;&pound;28,000. When employer National Insurance contributions, pension auto-enrolment, holiday pay, and recruitment costs are included, the true cost of a full-time receptionist typically exceeds &pound;30,000 per year. In the United States, the Bureau of Labor Statistics (2024) puts the median receptionist wage at $40,800 annually, with total employment costs often surpassing $50,000.
+            </p>
+            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+              Outsourced telephone answering services such as Moneypenny, AnswerConnect, and ReceptionHQ charge between &pound;200 and &pound;800 per month in the UK, depending on call volume. These services use human operators who follow scripts, but availability can be limited during peak demand and callers may experience hold times.
+            </p>
+            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+              Voqal AI&rsquo;s managed service starts at &pound;197 per month for 200 minutes of AI-handled calls. Unlike human alternatives, the system answers every call simultaneously with no hold queues, operates 24 hours a day including weekends and bank holidays, and actively books appointments into connected calendars. At &pound;2,364 per year, that represents a 90% cost reduction compared with a full-time receptionist &mdash; with significantly greater capability.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ── Calculator ── */}
+      <section className="section-padding section-alt container">
         <Reveal>
           <span className="section-label">The Cost of Silence</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
@@ -232,6 +265,33 @@ export default function PricingPage() {
             <em style={{ fontFamily: "var(--font-serif)", color: "var(--text-primary)", fontSize: "1.1rem" }}>Stop the leak.</em>{" "}
             <Link href="/contact" className="text-link">Request a demonstration &rarr;</Link>
           </p>
+        </Reveal>
+      </section>
+
+      {/* ── Which Industries Benefit Most ── */}
+      <section className="section-padding section-white container">
+        <Reveal>
+          <span className="section-label">Industry Applications</span>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            Which Businesses Get the Most from <span className="italic-accent">AI Receptionists.</span>
+          </h2>
+          <div style={{ maxWidth: 700 }}>
+            <p className="body-text" style={{ maxWidth: "none" }}>
+              AI receptionist pricing delivers the strongest return for service businesses where inbound calls directly drive revenue. If a missed call means a missed booking, an AI voice agent pays for itself quickly.
+            </p>
+            <p className="body-text" style={{ maxWidth: "none", marginTop: "1.5rem" }}>
+              <strong>Dental practices</strong> are among the highest-volume users of AI receptionists in the UK. According to the NHS (2019), missed healthcare appointments cost the system over &pound;216 million annually. Private dental practices face the same challenge &mdash; patients who call to book but reach voicemail often try another surgery. An AI receptionist ensures every patient enquiry is answered immediately, appointments are confirmed, and rescheduling is handled without staff involvement.
+            </p>
+            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+              <strong>Law firms and solicitors</strong> depend on capturing new client enquiries at the point of first contact. Legal consumers frequently contact multiple firms and instruct whichever responds first. An AI voice agent qualifies the enquiry by case type and urgency, captures client details, and routes the matter to the appropriate fee earner &mdash; all within the first call.
+            </p>
+            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+              <strong>Tradesmen and home service businesses</strong> &mdash; electricians, plumbers, builders &mdash; face a unique challenge: the business owner is often on-site and unable to answer the phone during working hours. According to the FSB (2024), there are 5.5 million private-sector businesses in the UK, the vast majority of which are one- or two-person operations that rely entirely on inbound phone calls for new work. An AI receptionist captures every lead, books call-backs, and provides quotes information &mdash; even when the tradesperson is on a ladder.
+            </p>
+            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+              <strong>Estate agents</strong> operate in a time-sensitive market where buyers and tenants expect immediate responses to viewing requests. An AI agent books viewings directly into the calendar, captures property preferences, and follows up with confirmation messages &mdash; ensuring no enquiry falls through the cracks during busy periods or after office hours.
+            </p>
+          </div>
         </Reveal>
       </section>
 
