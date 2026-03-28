@@ -241,7 +241,7 @@ export default function PricingPage() {
       <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">The Problem</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
             Why Every Missed Call <span className="italic-accent">Costs You.</span>
           </h2>
           <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "left" }}>
