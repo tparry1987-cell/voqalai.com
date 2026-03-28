@@ -93,7 +93,7 @@ export default function PricingPage() {
 
         {/* Problem statement */}
         <Reveal delay={0.1}>
-          <div style={{ maxWidth: 700, marginTop: "4rem" }}>
+          <div style={{ maxWidth: 700, marginTop: "4rem", marginLeft: "auto", marginRight: "auto" }}>
             <p className="body-text" style={{ maxWidth: "none" }}>
               Before comparing plans, it is worth understanding the scale of the problem that AI receptionist pricing is designed to solve. According to Forbes (2023), 67% of customers will hang up if they cannot reach a real person &mdash; and the majority never call back. Research from PATLive puts it even more starkly: 80% of callers sent to voicemail do not leave a message. They simply move on to the next business in their search results.
             </p>
@@ -288,7 +288,7 @@ export default function PricingPage() {
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             AI Receptionist vs Traditional <span className="italic-accent">Alternatives.</span>
           </h2>
-          <div style={{ maxWidth: 700 }}>
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
             <p className="body-text" style={{ maxWidth: "none" }}>
               According to the Office for National Statistics (ASHE, 2024), the median annual salary for a receptionist in the United Kingdom is approximately &pound;22,000&ndash;&pound;28,000. When employer National Insurance contributions, pension auto-enrolment, holiday pay, and recruitment costs are included, the true cost of a full-time receptionist typically exceeds &pound;30,000 per year. In the United States, the Bureau of Labor Statistics (2024) puts the median receptionist wage at $40,800 annually, with total employment costs often surpassing $50,000.
             </p>
@@ -359,7 +359,7 @@ export default function PricingPage() {
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Which Businesses Get the Most from <span className="italic-accent">AI Receptionists.</span>
           </h2>
-          <div style={{ maxWidth: 700 }}>
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
             <p className="body-text" style={{ maxWidth: "none" }}>
               AI receptionist pricing delivers the strongest return for service businesses where inbound calls directly drive revenue. If a missed call means a missed booking, an AI voice agent pays for itself quickly.
             </p>
