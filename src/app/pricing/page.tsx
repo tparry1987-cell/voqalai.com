@@ -65,6 +65,7 @@ const pricingSchema = [
 ];
 
 export default function PricingPage() {
+  const [pricingMode, setPricingMode] = useState<"managed" | "build">("managed");
   const [calcCalls, setCalcCalls] = useState(10);
   const [calcValue, setCalcValue] = useState(200);
   const [calcRate, setCalcRate] = useState(30);
@@ -100,64 +101,145 @@ export default function PricingPage() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.15}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8" style={{ marginTop: "4rem" }}>
-            {/* Starter */}
-            <div className="pricing-card">
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600 }}>Starter</span>
-              <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
-                <span className="italic-accent" style={{ fontSize: "3rem", lineHeight: 1 }}>&pound;197</span>
-                <span style={{ fontSize: "0.9rem", color: "var(--text-faint)", marginLeft: 4 }}>/mo</span>
-              </div>
-              <ul style={{ listStyle: "none", padding: 0 }}>
-                {["200 minutes included", "1 AI receptionist flow", "Basic knowledge base", "1 UK phone number", "Standard support"].map((f) => (
-                  <li key={f} style={{ padding: "0.6rem 0", borderBottom: "1px solid var(--border-subtle)", fontSize: "0.95rem", color: "var(--text-secondary)" }}>{f}</li>
-                ))}
-                <li style={{ padding: "0.6rem 0", fontSize: "0.85rem", color: "var(--text-faint)" }}>Overage: &pound;0.20/min</li>
-              </ul>
-              <Link href="/contact" className="btn block text-center mt-8">Get Started</Link>
-            </div>
-
-            {/* Pro */}
-            <div className="pricing-card featured" style={{ position: "relative" }}>
-              <span style={{ position: "absolute", top: -14, left: 24, background: "var(--accent)", color: "#fff", padding: "0.35rem 1rem", borderRadius: 20, fontSize: "0.7rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>Most Popular</span>
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600 }}>Pro</span>
-              <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
-                <span className="italic-accent" style={{ fontSize: "3rem", lineHeight: 1 }}>&pound;397</span>
-                <span style={{ fontSize: "0.9rem", color: "var(--text-faint)", marginLeft: 4 }}>/mo</span>
-              </div>
-              <ul style={{ listStyle: "none", padding: 0 }}>
-                {["500 minutes included", "Full booking flow", "Calendar & CRM integrations", "Comprehensive knowledge base", "Standard support"].map((f) => (
-                  <li key={f} style={{ padding: "0.6rem 0", borderBottom: "1px solid var(--border-subtle)", fontSize: "0.95rem", color: "var(--text-secondary)" }}>{f}</li>
-                ))}
-                <li style={{ padding: "0.6rem 0", fontSize: "0.85rem", color: "var(--text-faint)" }}>Overage: &pound;0.18/min</li>
-              </ul>
-              <Link href="/contact" className="btn-accent block text-center mt-8 rounded-full" style={{ padding: "0.9rem 2.5rem" }}>Get Started</Link>
-            </div>
-
-            {/* Premium */}
-            <div className="pricing-card">
-              <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600 }}>Premium</span>
-              <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
-                <span className="italic-accent" style={{ fontSize: "3rem", lineHeight: 1 }}>&pound;697</span>
-                <span style={{ fontSize: "0.9rem", color: "var(--text-faint)", marginLeft: 4 }}>/mo</span>
-              </div>
-              <ul style={{ listStyle: "none", padding: 0 }}>
-                {["1,000 minutes included", "Multi-flow AI receptionist", "CRM integration & QA monitoring", "Advanced call routing", "Priority support"].map((f) => (
-                  <li key={f} style={{ padding: "0.6rem 0", borderBottom: "1px solid var(--border-subtle)", fontSize: "0.95rem", color: "var(--text-secondary)" }}>{f}</li>
-                ))}
-                <li style={{ padding: "0.6rem 0", fontSize: "0.85rem", color: "var(--text-faint)" }}>Overage: &pound;0.15/min</li>
-              </ul>
-              <Link href="/contact" className="btn block text-center mt-8">Get Started</Link>
+        {/* Toggle */}
+        <Reveal delay={0.1}>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
+            <div style={{ display: "inline-flex", background: "var(--bg-alt)", border: "1px solid var(--border-subtle)", borderRadius: 50, padding: 4, gap: 4 }}>
+              <button
+                onClick={() => setPricingMode("managed")}
+                style={{ padding: "0.75rem 2rem", border: pricingMode === "managed" ? "1px solid rgba(135,251,137,0.3)" : "1px solid transparent", borderRadius: 50, background: pricingMode === "managed" ? "rgba(135,251,137,0.12)" : "transparent", color: pricingMode === "managed" ? "var(--accent)" : "var(--text-faint)", fontFamily: "inherit", fontSize: "0.875rem", cursor: "pointer", fontWeight: 400, letterSpacing: "0.5px", transition: "all 0.3s" }}
+              >
+                Managed Service
+              </button>
+              <button
+                onClick={() => setPricingMode("build")}
+                style={{ padding: "0.75rem 2rem", border: pricingMode === "build" ? "1px solid rgba(135,251,137,0.3)" : "1px solid transparent", borderRadius: 50, background: pricingMode === "build" ? "rgba(135,251,137,0.12)" : "transparent", color: pricingMode === "build" ? "var(--accent)" : "var(--text-faint)", fontFamily: "inherit", fontSize: "0.875rem", cursor: "pointer", fontWeight: 400, letterSpacing: "0.5px", transition: "all 0.3s" }}
+              >
+                Build &amp; Handover
+              </button>
             </div>
           </div>
         </Reveal>
 
+        {/* Managed Service Cards */}
+        {pricingMode === "managed" && (
+          <Reveal delay={0.15}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8" style={{ marginTop: "3rem" }}>
+              {/* Starter */}
+              <div className="pricing-card">
+                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600 }}>Starter</span>
+                <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
+                  <span className="italic-accent" style={{ fontSize: "3rem", lineHeight: 1 }}>&pound;197</span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--text-faint)", marginLeft: 4 }}>/mo</span>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0 }}>
+                  {["200 minutes included", "1 AI receptionist flow", "Basic knowledge base", "1 UK phone number", "Standard support"].map((f) => (
+                    <li key={f} style={{ padding: "0.6rem 0", borderBottom: "1px solid var(--border-subtle)", fontSize: "0.95rem", color: "var(--text-secondary)" }}>{f}</li>
+                  ))}
+                  <li style={{ padding: "0.6rem 0", fontSize: "0.85rem", color: "var(--text-faint)" }}>Overage: &pound;0.20/min</li>
+                </ul>
+                <Link href="/contact" className="btn block text-center mt-8">Get Started</Link>
+              </div>
+
+              {/* Pro */}
+              <div className="pricing-card featured" style={{ position: "relative" }}>
+                <span style={{ position: "absolute", top: -14, left: 24, background: "var(--accent)", color: "#fff", padding: "0.35rem 1rem", borderRadius: 20, fontSize: "0.7rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>Most Popular</span>
+                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600 }}>Pro</span>
+                <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
+                  <span className="italic-accent" style={{ fontSize: "3rem", lineHeight: 1 }}>&pound;397</span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--text-faint)", marginLeft: 4 }}>/mo</span>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0 }}>
+                  {["500 minutes included", "Full booking flow", "Calendar & CRM integrations", "Comprehensive knowledge base", "Standard support"].map((f) => (
+                    <li key={f} style={{ padding: "0.6rem 0", borderBottom: "1px solid var(--border-subtle)", fontSize: "0.95rem", color: "var(--text-secondary)" }}>{f}</li>
+                  ))}
+                  <li style={{ padding: "0.6rem 0", fontSize: "0.85rem", color: "var(--text-faint)" }}>Overage: &pound;0.18/min</li>
+                </ul>
+                <Link href="/contact" className="btn-accent block text-center mt-8 rounded-full" style={{ padding: "0.9rem 2.5rem" }}>Get Started</Link>
+              </div>
+
+              {/* Premium */}
+              <div className="pricing-card">
+                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600 }}>Premium</span>
+                <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
+                  <span className="italic-accent" style={{ fontSize: "3rem", lineHeight: 1 }}>&pound;697</span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--text-faint)", marginLeft: 4 }}>/mo</span>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0 }}>
+                  {["1,000 minutes included", "Multi-flow AI receptionist", "CRM integration & QA monitoring", "Advanced call routing", "Priority support"].map((f) => (
+                    <li key={f} style={{ padding: "0.6rem 0", borderBottom: "1px solid var(--border-subtle)", fontSize: "0.95rem", color: "var(--text-secondary)" }}>{f}</li>
+                  ))}
+                  <li style={{ padding: "0.6rem 0", fontSize: "0.85rem", color: "var(--text-faint)" }}>Overage: &pound;0.15/min</li>
+                </ul>
+                <Link href="/contact" className="btn block text-center mt-8">Get Started</Link>
+              </div>
+            </div>
+          </Reveal>
+        )}
+
+        {/* Build & Handover Cards */}
+        {pricingMode === "build" && (
+          <Reveal delay={0.15}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8" style={{ marginTop: "3rem" }}>
+              {/* Lite */}
+              <div className="pricing-card">
+                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600 }}>Lite</span>
+                <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
+                  <span className="italic-accent" style={{ fontSize: "3rem", lineHeight: 1 }}>&pound;997</span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--text-faint)", marginLeft: 4 }}>one-off</span>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0 }}>
+                  {["1 receptionist flow", "Knowledge base setup", "Basic integrations", "1 week post-build support"].map((f) => (
+                    <li key={f} style={{ padding: "0.6rem 0", borderBottom: "1px solid var(--border-subtle)", fontSize: "0.95rem", color: "var(--text-secondary)" }}>{f}</li>
+                  ))}
+                  <li style={{ padding: "0.6rem 0", fontSize: "0.85rem", color: "var(--text-faint)" }}>Built on your Retell account</li>
+                </ul>
+                <Link href="/contact" className="btn block text-center mt-8">Book Consultation</Link>
+              </div>
+
+              {/* Standard */}
+              <div className="pricing-card featured" style={{ position: "relative" }}>
+                <span style={{ position: "absolute", top: -14, left: 24, background: "var(--accent)", color: "#fff", padding: "0.35rem 1rem", borderRadius: 20, fontSize: "0.7rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>Most Chosen</span>
+                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600 }}>Standard</span>
+                <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
+                  <span className="italic-accent" style={{ fontSize: "3rem", lineHeight: 1 }}>&pound;2,497</span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--text-faint)", marginLeft: 4 }}>one-off</span>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0 }}>
+                  {["Full multi-flow build", "Calendar & CRM integrations", "Comprehensive training + docs", "2 weeks post-build support"].map((f) => (
+                    <li key={f} style={{ padding: "0.6rem 0", borderBottom: "1px solid var(--border-subtle)", fontSize: "0.95rem", color: "var(--text-secondary)" }}>{f}</li>
+                  ))}
+                  <li style={{ padding: "0.6rem 0", fontSize: "0.85rem", color: "var(--text-faint)" }}>Built on your Retell account</li>
+                </ul>
+                <Link href="/contact" className="btn-accent block text-center mt-8 rounded-full" style={{ padding: "0.9rem 2.5rem" }}>Book Consultation</Link>
+              </div>
+
+              {/* Premium */}
+              <div className="pricing-card">
+                <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600 }}>Premium</span>
+                <div style={{ marginTop: "1rem", marginBottom: "2rem" }}>
+                  <span className="italic-accent" style={{ fontSize: "3rem", lineHeight: 1 }}>&pound;4,997</span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--text-faint)", marginLeft: 4 }}>one-off</span>
+                </div>
+                <ul style={{ listStyle: "none", padding: 0 }}>
+                  {["Advanced multi-flow build", "CRM + calendar + custom integrations", "Full training + support framework", "4 weeks post-build support"].map((f) => (
+                    <li key={f} style={{ padding: "0.6rem 0", borderBottom: "1px solid var(--border-subtle)", fontSize: "0.95rem", color: "var(--text-secondary)" }}>{f}</li>
+                  ))}
+                  <li style={{ padding: "0.6rem 0", fontSize: "0.85rem", color: "var(--text-faint)" }}>Built on your Retell account</li>
+                </ul>
+                <Link href="/contact" className="btn block text-center mt-8">Book Consultation</Link>
+              </div>
+            </div>
+
+            <p style={{ marginTop: "2rem", fontSize: "0.9rem", color: "var(--text-faint)", textAlign: "center" }}>
+              <strong style={{ color: "var(--accent)", fontWeight: 500 }}>+ Optional &pound;147/mo maintenance</strong> &mdash; ongoing monitoring, knowledge base updates, and priority support after handover.
+            </p>
+          </Reveal>
+        )}
+
         <Reveal delay={0.2}>
           <p style={{ marginTop: "3rem", fontSize: "0.9rem", color: "var(--text-faint)", textAlign: "center" }}>
             Prices shown in GBP. US businesses: equivalent USD pricing available &mdash; contact us for a quote.
-            <br />
-            One-off build &amp; handover packages also available from &pound;997.
           </p>
           <p style={{ marginTop: "1.5rem", fontSize: "0.85rem", color: "var(--text-faint)", textAlign: "center", maxWidth: 640, marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
             For comparison, a full-time receptionist in the UK earns &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024), while US receptionists average $40,800 per year (Bureau of Labor Statistics, 2024). Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026.
