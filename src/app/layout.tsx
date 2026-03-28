@@ -328,7 +328,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased scroll-smooth">
+    <html lang="en-GB" className="h-full antialiased scroll-smooth">
       <head>
         <link rel="preconnect" href="https://dashboard.retellai.com" />
         <link rel="preconnect" href="https://app.cal.com" />

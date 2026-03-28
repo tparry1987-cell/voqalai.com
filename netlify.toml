@@ -113,10 +113,42 @@
   to = "/pricing/"
   status = 301
 
-# Guide pages → homepage
+# Guide pages — specific .html → new clean URLs
+[[redirects]]
+  from = "/guides/how-to-set-up-ai-receptionist.html"
+  to = "/guides/how-to-set-up-ai-receptionist/"
+  status = 301
+
+[[redirects]]
+  from = "/guides/ai-receptionist-dental-practice-compliance.html"
+  to = "/guides/ai-receptionist-dental-practice-compliance/"
+  status = 301
+
+[[redirects]]
+  from = "/guides/gdpr-compliant-ai-receptionist-uk.html"
+  to = "/guides/gdpr-compliant-ai-receptionist-uk/"
+  status = 301
+
+[[redirects]]
+  from = "/guides/ico-voice-ai-compliance-checklist.html"
+  to = "/guides/ico-voice-ai-compliance-checklist/"
+  status = 301
+
+# Guide pages — wildcard fallback → homepage
 [[redirects]]
   from = "/guides/*"
   to = "/"
+  status = 301
+
+# Missing industry page redirects
+[[redirects]]
+  from = "/ai-receptionist-electricians.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/ai-receptionist-gyms.html"
+  to = "/about/"
   status = 301
 
 [[headers]]

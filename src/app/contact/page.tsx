@@ -41,9 +41,9 @@ export default function ContactPage() {
         <Reveal>
           <div style={{ textAlign: "center", marginBottom: "5rem" }}>
             <span className="section-label">Get Started</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 600, margin: "0 auto 2rem" }}>
+            <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 600, margin: "0 auto 2rem" }}>
               Request <span className="italic-accent">Demonstration.</span>
-            </h2>
+            </h1>
             <p className="body-text" style={{ maxWidth: 500, margin: "0 auto" }}>
               Fill in the form and our team will send you a personalised voice agent demo within 24 hours.
             </p>
