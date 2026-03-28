@@ -100,14 +100,14 @@ const structuredData = [
       {
         "@type": "ContactPoint",
         telephone: "+442039960962",
-        contactType: "sales",
+        contactType: "customer service",
         areaServed: "GB",
         availableLanguage: "English",
       },
       {
         "@type": "ContactPoint",
         telephone: "+13322641587",
-        contactType: "sales",
+        contactType: "customer service",
         areaServed: "US",
         availableLanguage: "English",
       },
@@ -133,7 +133,8 @@ const structuredData = [
     ],
     numberOfEmployees: {
       "@type": "QuantitativeValue",
-      value: "1-10",
+      minValue: 1,
+      maxValue: 10,
     },
     knowsAbout: [
       "AI voice agents",
@@ -228,6 +229,86 @@ const structuredData = [
           text: "No. All Voqal AI managed service plans are month-to-month with no lock-in contracts. You can cancel anytime with no exit fees.",
         },
       },
+      {
+        "@type": "Question",
+        name: "What is the ROI of an AI receptionist?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Research from PATLive and Forbes shows 80% of callers sent to voicemail won\u2019t leave a message, and 67% of unanswered callers will phone a competitor instead. A study by MIT and InsideSales.com found leads are 21\u00d7 more likely to convert when contacted within 5 minutes. At \u00a3197/month, an AI receptionist pays for itself by capturing even one or two bookings per month that would otherwise be lost.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How does an AI receptionist compare to a human receptionist?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A human receptionist in the UK earns approximately \u00a322,000\u2013\u00a328,000 per year (ONS, 2024) and works standard office hours. An AI receptionist from Voqal AI costs from \u00a3197/month (under \u00a32,400/year), works 24/7 including weekends and bank holidays, handles multiple calls simultaneously, and never calls in sick.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is my data safe with an AI receptionist?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Voqal AI Ltd is a UK-registered company (Companies House No. 17080303) and processes all data in compliance with UK GDPR and the Data Protection Act 2018. Call data is encrypted in transit and at rest, and we do not share customer data with third parties.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What industries do you work with?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Voqal AI serves dental practices, medical clinics, law firms, estate agents, accountancy firms, veterinary clinics, tradesmen, and many more across the UK and US. Each agent is custom-trained on your specific industry terminology and workflows.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can the AI handle multiple calls at the same time?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Unlike a human receptionist who can only handle one call at a time, Voqal AI voice agents can answer multiple simultaneous calls with no wait times or hold music. During peak periods, every caller gets an immediate, personalised response.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What happens to calls the AI cannot handle?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "If a caller raises a query outside the voice agent\u2019s knowledge base or requests to speak with a human, the system transfers the call to your designated team member or takes a detailed message with the caller\u2019s name, number, and reason for calling. You receive an instant notification so you can follow up promptly. According to research from MIT and InsideSales.com, responding within five minutes makes conversion 21\u00d7 more likely.",
+        },
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Voqal AI Receptionist",
+    description:
+      "AI-powered voice receptionist that answers calls 24/7, books appointments, qualifies leads, and integrates with CRMs and calendars for UK and US service businesses.",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Cloud-hosted (SaaS)",
+    url: "https://voqalai.com",
+    offers: {
+      "@type": "Offer",
+      price: "197",
+      priceCurrency: "GBP",
+      priceValidUntil: "2027-03-28",
+      availability: "https://schema.org/InStock",
+      url: "https://voqalai.com/pricing",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "Voqal AI",
+      url: "https://voqalai.com",
+    },
+    featureList: [
+      "24/7 AI call answering",
+      "Appointment booking with calendar sync",
+      "Lead qualification and CRM updates",
+      "Call routing and transfer",
+      "Industry-specific voice flows",
+      "Multi-call simultaneous handling",
+      "48-hour deployment",
     ],
   },
   {
