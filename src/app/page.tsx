@@ -69,8 +69,26 @@ export default function Home() {
       {/* ═══ Scrolling content — slides up over fixed hero ═══ */}
       <div className="relative z-30" style={{ marginTop: "100vh", backgroundColor: "var(--bg-primary)" }}>
 
+      {/* ═══ WHY VOQAL AI ═══ */}
+      <section className="section-padding section-white container" style={{ paddingTop: "10rem" }}>
+        <Reveal>
+          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+            <span className="section-label">The Problem</span>
+            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "2rem" }}>
+              Why <span className="italic-accent">Voqal AI.</span>
+            </h2>
+            <p className="body-text" style={{ maxWidth: "none" }}>
+              Every day, UK businesses lose revenue to calls that ring out. Research from Forbes (2023) found that 67% of customers hang up when they cannot reach a real person &mdash; and most never call back. For a dental practice handling 40 calls a day, even a 15% miss rate means six potential patients lost before lunch. Multiply that across a week, a month, a year, and the cost compounds into tens of thousands in lost revenue.
+            </p>
+            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+              Human receptionists are effective during office hours, but they cannot answer at 7&nbsp;a.m. on a Saturday or during a bank-holiday weekend &mdash; precisely when many customers try to book. Voqal AI bridges that gap with voice agents that pick up in under two seconds, handle appointment scheduling, qualify leads, and route urgent enquiries, all without putting a single caller on hold. Because the system runs around the clock and handles multiple calls simultaneously, capacity is never a bottleneck.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
       {/* ═══ SERVICES — Light, editorial ═══ */}
-      <section id="services" className="section-padding section-white container" style={{ paddingTop: "10rem" }}>
+      <section id="services" className="section-padding section-alt container">
         <Reveal>
           <div style={{ textAlign: "center", maxWidth: 700, margin: "0 auto" }}>
             <span className="section-label">01 &mdash; What We Do</span>
@@ -78,7 +96,7 @@ export default function Home() {
               Intelligent <span className="italic-accent">Capabilities.</span>
             </h2>
             <p className="body-text" style={{ maxWidth: "none", margin: "0 auto" }}>
-              67% of customers hang up when they can&rsquo;t reach a real person (Forbes, 2023). 80% sent to voicemail won&rsquo;t leave a message (PATLive, 2023). With 5.5 million UK SMEs relying on phone calls (FSB, 2024), every missed call is lost revenue.
+              With 5.5 million UK SMEs relying on phone calls (FSB, 2024), every missed call is lost revenue. 80% of callers sent to voicemail will not leave a message (PATLive, 2023) &mdash; they simply move on to the next business in their search results.
             </p>
             <p className="body-text" style={{ marginTop: "1rem", maxWidth: "none", margin: "1rem auto 0" }}>
               Our AI voice agents answer every call, book appointments, and qualify leads &mdash; 24/7. Leads contacted within five minutes are 21&times; more likely to convert (MIT/InsideSales.com).
@@ -91,27 +109,27 @@ export default function Home() {
             <Link href="/pricing" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="icon">I.</div>
               <h3>Voice AI Agents</h3>
-              <p>Your calls answered perfectly, day or night. We build AI voice agents that book appointments, handle reschedules and cancellations, and route urgent calls &mdash; no human needed.</p>
+              <p>Our voice AI agents answer calls in under two seconds, 24 hours a day, 365 days a year. They handle appointment booking, FAQ responses, lead qualification, rescheduling, and urgent call routing &mdash; all without human intervention. Each agent is custom-trained on your business knowledge, services, and tone of voice, so callers receive accurate, personalised answers from the first ring.</p>
               <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>View pricing &rarr;</span>
             </Link>
 
             <div className="service-card">
               <div className="icon">II.</div>
               <h3>AI Chat Agents</h3>
-              <p>Turn website traffic into captured leads. Smart chat that lives on your site 24/7, answering specific business questions and getting prospects into your pipeline.</p>
+              <p>Turn website visitors into booked appointments with an AI chat widget that works around the clock. Embedded on your site via a single script tag, the agent answers business-specific questions, captures contact details, and feeds qualified leads directly into your CRM or calendar &mdash; converting passive browsing into active pipeline without any manual follow-up.</p>
             </div>
 
             <Link href="/pricing#lead-reactivation" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="icon">III.</div>
               <h3>Lead Reactivation</h3>
-              <p>Wake up your dormant database. Our AI contacts your old leads, identifies who&rsquo;s ready to buy, and books them in &mdash; without using your team&rsquo;s time. You only pay when a lead converts.</p>
+              <p>Most businesses have hundreds of dormant contacts sitting untouched in their CRM. Our AI outreach reactivates those leads with natural voice conversations, identifying who is ready to buy now. You pay nothing upfront &mdash; we only charge when a lead meets your conversion criteria. Typical reactivation rates run 15&ndash;20%, compared with 2&ndash;5% from manual follow-up.</p>
               <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>Learn more &rarr;</span>
             </Link>
 
             <Link href="/about" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="icon">IV.</div>
               <h3>Process Automation</h3>
-              <p>We connect your phone system, CRM, and calendar so data flows automatically. No more manual entry. Your team focuses on closing.</p>
+              <p>Eliminate redundant data entry by connecting your phone system, CRM, calendar, and workflow tools into a single automated pipeline. Using integrations with Zapier, HubSpot, Calendly, and 6,000+ other applications, we ensure that every call outcome &mdash; booked appointment, qualified lead, or follow-up task &mdash; flows into the right system without your team lifting a finger.</p>
               <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>About our team &rarr;</span>
             </Link>
           </div>
@@ -119,7 +137,7 @@ export default function Home() {
       </section>
 
       {/* ═══ PROTOCOL ═══ */}
-      <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
+      <section className="section-padding section-white container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">02 &mdash; How We Work</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "5rem" }}>
@@ -145,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* ═══ PERFORMANCE STRIP ═══ */}
-      <section className="section-padding section-white container">
+      <section className="section-padding section-alt container">
         <Reveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
