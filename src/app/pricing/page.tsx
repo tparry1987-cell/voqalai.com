@@ -282,13 +282,13 @@ export default function PricingPage() {
       </section>
 
       {/* ── How Pricing Compares ── */}
-      <section className="section-padding section-white container">
+      <section className="section-padding section-white container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">How Pricing Compares</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             AI Receptionist vs Traditional <span className="italic-accent">Alternatives.</span>
           </h2>
-          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "left" }}>
             <p className="body-text" style={{ maxWidth: "none" }}>
               According to the Office for National Statistics (ASHE, 2024), the median annual salary for a receptionist in the United Kingdom is approximately &pound;22,000&ndash;&pound;28,000. When employer National Insurance contributions, pension auto-enrolment, holiday pay, and recruitment costs are included, the true cost of a full-time receptionist typically exceeds &pound;30,000 per year. In the United States, the Bureau of Labor Statistics (2024) puts the median receptionist wage at $40,800 annually, with total employment costs often surpassing $50,000.
             </p>
@@ -303,40 +303,40 @@ export default function PricingPage() {
       </section>
 
       {/* ── Calculator ── */}
-      <section className="section-padding section-alt container">
+      <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">The Cost of Silence</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             What Missed Calls Are Really <span className="italic-accent">Costing.</span>
           </h2>
-          <p className="body-text" style={{ color: "var(--accent)" }}>
+          <p className="body-text" style={{ color: "var(--accent)", maxWidth: "none", margin: "0 auto" }}>
             According to Forbes (2023), 67% of customers hang up when they cannot reach a real person. PATLive (2023) found that 80% of voicemail callers will not leave a message.
           </p>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "6rem", marginTop: "4rem", alignItems: "start" }}>
-            <div className="grid gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "6rem", marginTop: "4rem", alignItems: "start", maxWidth: 900, margin: "4rem auto 0" }}>
+            <div className="grid gap-8" style={{ textAlign: "center" }}>
               <div>
                 <label className="calc-label">Missed calls per week</label>
-                <input type="number" value={calcCalls} onChange={(e) => setCalcCalls(Number(e.target.value) || 0)} className="calc-input" min={0} />
+                <input type="number" value={calcCalls} onChange={(e) => setCalcCalls(Number(e.target.value) || 0)} className="calc-input" style={{ textAlign: "center" }} min={0} />
               </div>
               <div>
                 <label className="calc-label">Average customer value (&pound;)</label>
-                <input type="number" value={calcValue} onChange={(e) => setCalcValue(Number(e.target.value) || 0)} className="calc-input" min={0} />
+                <input type="number" value={calcValue} onChange={(e) => setCalcValue(Number(e.target.value) || 0)} className="calc-input" style={{ textAlign: "center" }} min={0} />
               </div>
               <div>
                 <label className="calc-label">Conversion rate (%)</label>
-                <input type="number" value={calcRate} onChange={(e) => setCalcRate(Math.min(100, Number(e.target.value) || 0))} className="calc-input" min={0} max={100} />
+                <input type="number" value={calcRate} onChange={(e) => setCalcRate(Math.min(100, Number(e.target.value) || 0))} className="calc-input" style={{ textAlign: "center" }} min={0} max={100} />
               </div>
             </div>
 
             <div className="grid gap-10">
-              <div className="calc-result-block">
+              <div className="calc-result-block" style={{ textAlign: "center" }}>
                 <div className="calc-result-number">&pound;{monthly.toLocaleString()}</div>
                 <div className="calc-result-label">Lost per month</div>
               </div>
-              <div className="calc-result-block">
+              <div className="calc-result-block" style={{ textAlign: "center" }}>
                 <div className="calc-result-number">&pound;{annual.toLocaleString()}</div>
                 <div className="calc-result-label">Lost per year</div>
               </div>
@@ -345,7 +345,7 @@ export default function PricingPage() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <p style={{ marginTop: "3rem", fontSize: "1.05rem" }}>
+          <p style={{ marginTop: "3rem", fontSize: "1.05rem", textAlign: "center" }}>
             <em style={{ fontFamily: "var(--font-serif)", color: "var(--text-primary)", fontSize: "1.1rem" }}>Stop the leak.</em>{" "}
             <Link href="/contact" className="text-link">Request a demonstration &rarr;</Link>
           </p>
@@ -353,13 +353,13 @@ export default function PricingPage() {
       </section>
 
       {/* ── Which Industries Benefit Most ── */}
-      <section className="section-padding section-white container">
+      <section className="section-padding section-white container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">Industry Applications</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Which Businesses Get the Most from <span className="italic-accent">AI Receptionists.</span>
           </h2>
-          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "left" }}>
             <p className="body-text" style={{ maxWidth: "none" }}>
               AI receptionist pricing delivers the strongest return for service businesses where inbound calls directly drive revenue. If a missed call means a missed booking, an AI voice agent pays for itself quickly.
             </p>
