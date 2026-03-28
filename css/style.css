@@ -525,6 +525,20 @@ nav.scrolled {
 }
 
 /* --- REVENUE CALCULATOR --- */
+#calculator {
+  text-align: center;
+}
+
+#calculator h2,
+#calculator p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#calculator .calculator-stat {
+  max-width: none;
+}
+
 .calculator-stat {
   font-size: 1.1rem;
   color: var(--accent);
@@ -543,6 +557,7 @@ nav.scrolled {
 .calculator-inputs {
   display: grid;
   gap: 2rem;
+  text-align: center;
 }
 
 .calculator-inputs .input-group input {
@@ -555,6 +570,7 @@ nav.scrolled {
   font-size: 1.1rem;
   transition: var(--ease);
   width: 100%;
+  text-align: center;
 }
 
 .calculator-inputs .input-group input:focus {
@@ -582,6 +598,7 @@ nav.scrolled {
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   box-shadow: 0 2px 20px rgba(26, 26, 46, 0.04);
+  text-align: center;
 }
 
 .calc-result-number {
@@ -603,6 +620,8 @@ nav.scrolled {
 .calculator-closer {
   margin-top: 3rem;
   font-size: 1.05rem;
+  text-align: center;
+  max-width: none;
 }
 
 .calculator-closer em {
