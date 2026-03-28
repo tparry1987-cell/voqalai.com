@@ -72,17 +72,19 @@ export default function Home() {
       {/* ═══ WHY VOQAL AI ═══ */}
       <section className="section-padding section-white container" style={{ paddingTop: "10rem" }}>
         <Reveal>
-          <div style={{ maxWidth: 700, margin: "0 auto" }}>
+          <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
             <span className="section-label">The Problem</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "2rem" }}>
+            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
               Why <span className="italic-accent">Voqal AI.</span>
             </h2>
-            <p className="body-text" style={{ maxWidth: "none" }}>
-              Every day, UK businesses lose revenue to calls that ring out. Research from Forbes (2023) found that 67% of customers hang up when they cannot reach a real person &mdash; and most never call back. For a dental practice handling 40 calls a day, even a 15% miss rate means six potential patients lost before lunch. Multiply that across a week, a month, a year, and the cost compounds into tens of thousands in lost revenue.
-            </p>
-            <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
-              Human receptionists are effective during office hours, but they cannot answer at 7&nbsp;a.m. on a Saturday or during a bank-holiday weekend &mdash; precisely when many customers try to book. Voqal AI bridges that gap with voice agents that pick up in under two seconds, handle appointment scheduling, qualify leads, and route urgent enquiries, all without putting a single caller on hold. Because the system runs around the clock and handles multiple calls simultaneously, capacity is never a bottleneck.
-            </p>
+            <div style={{ textAlign: "left" }}>
+              <p className="body-text" style={{ maxWidth: "none" }}>
+                Every day, UK businesses lose revenue to calls that ring out. Research from Forbes (2023) found that 67% of customers hang up when they cannot reach a real person &mdash; and most never call back. For a dental practice handling 40 calls a day, even a 15% miss rate means six potential patients lost before lunch. Multiply that across a week, a month, a year, and the cost compounds into tens of thousands in lost revenue.
+              </p>
+              <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+                Human receptionists are effective during office hours, but they cannot answer at 7&nbsp;a.m. on a Saturday or during a bank-holiday weekend &mdash; precisely when many customers try to book. Voqal AI bridges that gap with voice agents that pick up in under two seconds, handle appointment scheduling, qualify leads, and route urgent enquiries, all without putting a single caller on hold. Because the system runs around the clock and handles multiple calls simultaneously, capacity is never a bottleneck.
+              </p>
+            </div>
           </div>
         </Reveal>
       </section>
