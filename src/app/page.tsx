@@ -30,7 +30,7 @@ export default function Home() {
 
         <Navbar variant="glass" />
 
-        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-5 sm:px-8 text-center pt-20">
+        <div className="speakable-hero relative z-10 flex min-h-screen flex-col items-center justify-center px-5 sm:px-8 text-center pt-20">
           <h1 style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", color: "#fff", textShadow: "0 2px 16px rgba(0,0,0,0.3)" }}>
             Never Miss Another
             <br />
@@ -72,7 +72,7 @@ export default function Home() {
       {/* ═══ WHY VOQAL AI ═══ */}
       <section className="section-padding section-white container" style={{ paddingTop: "10rem" }}>
         <Reveal>
-          <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
+          <div className="speakable-why" style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
             <span className="section-label">The Problem</span>
             <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
               Why <span className="italic-accent">Voqal AI.</span>
@@ -196,7 +196,7 @@ export default function Home() {
       </section>
 
       {/* ═══ THE EVIDENCE ═══ */}
-      <section className="section-padding section-white container" style={{ textAlign: "center" }}>
+      <section className="speakable-stats section-padding section-white container" style={{ textAlign: "center" }}>
         <Reveal>
           <span className="section-label">04 &mdash; The Evidence</span>
           <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>

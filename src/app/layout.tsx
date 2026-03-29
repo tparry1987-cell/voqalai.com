@@ -320,6 +320,20 @@ const structuredData = [
       "AI Receptionist UK \u2014 24/7 AI phone answering, appointment booking, and lead qualification for UK and US service businesses.",
     publisher: { "@type": "Organization", name: "Voqal AI", url: "https://voqalai.com" },
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "AI Receptionist UK \u2013 24/7 Phone Answering | Voqal AI",
+    url: "https://voqalai.com/",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [
+        ".speakable-hero",
+        ".speakable-why",
+        ".speakable-stats",
+      ],
+    },
+  },
 ];
 
 export default function RootLayout({
