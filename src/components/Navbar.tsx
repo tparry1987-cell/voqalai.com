@@ -27,7 +27,7 @@ export function Navbar({ variant = "light" }: { variant?: "glass" | "light" }) {
     return (
       <nav className="absolute top-0 left-0 w-full z-20 px-4 sm:px-8 lg:px-16 pt-6 sm:pt-10">
         <div className="liquid-glass flex items-center justify-between rounded-3xl px-5 sm:px-6 py-3" style={{ maxWidth: 900, margin: "0 auto", background: "rgba(0, 0, 0, 0.55)" }}>
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" aria-label="Voqal AI home">
             <VoqalLogo className="h-8 sm:h-9 w-auto" variant="dark" />
           </Link>
           <div className="hidden md:flex items-center gap-8">
