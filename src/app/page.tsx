@@ -164,6 +164,63 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* ═══ WHO IT'S FOR ═══ */}
+      <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
+        <Reveal>
+          <span className="section-label">03 &mdash; Who We Serve</span>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
+            Built for <span className="italic-accent">Every Sector.</span>
+          </h2>
+          <p className="body-text" style={{ maxWidth: 600, margin: "0 auto 3rem" }}>
+            Our voice agents adapt to the language, workflows, and compliance requirements of your industry. Each deployment is custom-trained on sector-specific terminology so callers get accurate answers on the first call.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6" style={{ maxWidth: 800, margin: "0 auto" }}>
+            {[
+              { name: "Dental Practices", benefit: "Reduce no-shows with automated appointment confirmations" },
+              { name: "Law Firms", benefit: "Qualify new enquiries by case type before they reach a fee earner" },
+              { name: "Trades & Home Services", benefit: "Capture every job lead while you\u2019re on-site" },
+              { name: "Medical Clinics", benefit: "Triage patient enquiries after hours and route urgent cases" },
+              { name: "Estate Agents", benefit: "Book viewings instantly and capture buyer requirements 24/7" },
+              { name: "Accountancy Firms", benefit: "Handle tax-deadline call surges without temporary staff" },
+            ].map((ind) => (
+              <div key={ind.name} style={{ padding: "1.5rem", borderBottom: "1px solid var(--border-subtle)", textAlign: "left" }}>
+                <strong style={{ fontSize: "1rem", color: "var(--text-primary)", display: "block", marginBottom: "0.35rem" }}>{ind.name}</strong>
+                <span style={{ fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.4 }}>{ind.benefit}</span>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ═══ THE EVIDENCE ═══ */}
+      <section className="section-padding section-white container" style={{ textAlign: "center" }}>
+        <Reveal>
+          <span className="section-label">04 &mdash; The Evidence</span>
+          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
+            The Data Behind <span className="italic-accent">AI Receptionists.</span>
+          </h2>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { n: "80%", l: "Of callers sent to voicemail will not leave a message and will call a competitor instead (PATLive, 2023)" },
+              { n: "21\u00d7", l: "Increase in lead conversion when calls are answered within 5 minutes (MIT & InsideSales.com)" },
+              { n: "\u00a325K", l: "Average UK receptionist salary per year (ONS ASHE, 2024). AI costs under \u00a32,400/yr \u2014 a 90% saving" },
+              { n: "5.5M", l: "Private-sector businesses in the UK, the vast majority relying on inbound phone calls (FSB, 2024)" },
+            ].map((s, i) => (
+              <div key={i} className="stat-block" style={{ textAlign: "center" }}>
+                <div className="stat-number">{s.n}</div>
+                <div className="stat-label">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
       {/* ═══ PERFORMANCE STRIP ═══ */}
       <section className="section-padding section-alt container">
         <Reveal>
