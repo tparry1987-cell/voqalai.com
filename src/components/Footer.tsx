@@ -57,7 +57,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
-          <p style={{ textAlign: "center", fontSize: "0.7rem", color: "rgba(255,255,255,0.45)", letterSpacing: "0.05em", paddingTop: "2rem", paddingBottom: "2rem" }}>
+          <p style={{ textAlign: "center", fontSize: "0.7rem", color: "rgba(255,255,255,0.6)", letterSpacing: "0.05em", paddingTop: "2rem", paddingBottom: "2rem" }}>
             &copy; 2026 Voqal AI Ltd. Registered in England &amp; Wales. Company No. 17080303.
           </p>
         </div>
