@@ -229,16 +229,13 @@ export default function PricingPage() {
 
         <Reveal delay={0.18}>
           <p style={{ marginTop: "2rem", fontSize: "0.85rem", color: "var(--text-faint)", textAlign: "center", maxWidth: 700, marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
-            A full-time UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024) &mdash; our AI receptionist starts at a fraction of that.
+            A full-time UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024), while US receptionists average $40,800 per year (Bureau of Labor Statistics, 2024) &mdash; our AI receptionist starts at a fraction of that.
           </p>
         </Reveal>
 
         <Reveal delay={0.2}>
           <p style={{ marginTop: "3rem", fontSize: "0.9rem", color: "var(--text-faint)", textAlign: "center" }}>
             Prices shown in GBP. US businesses: equivalent USD pricing available &mdash; contact us for a quote.
-          </p>
-          <p style={{ marginTop: "1.5rem", fontSize: "0.85rem", color: "var(--text-faint)", textAlign: "center", maxWidth: 640, marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>
-            For comparison, a full-time receptionist in the UK earns &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024), while US receptionists average $40,800 per year (Bureau of Labor Statistics, 2024). Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026.
           </p>
         </Reveal>
       </section>
