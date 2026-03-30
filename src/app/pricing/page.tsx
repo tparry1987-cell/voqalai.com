@@ -84,10 +84,9 @@ export default function PricingPage() {
         <Reveal>
           <div style={{ textAlign: "center" }}>
             <span className="section-label">Pricing</span>
-            <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "1rem" }}>
               Simple, Transparent <span className="italic-accent">Plans.</span>
             </h1>
-            <p className="body-text" style={{ maxWidth: 560, margin: "0 auto" }}>No setup fees. No contracts or lock-ins. Demo within 24 hours. A full-time UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024) &mdash; our AI receptionist starts at a fraction of that.</p>
           </div>
         </Reveal>
 
@@ -228,7 +227,10 @@ export default function PricingPage() {
         )}
 
         <Reveal delay={0.2}>
-          <p style={{ marginTop: "3rem", fontSize: "0.9rem", color: "var(--text-faint)", textAlign: "center" }}>
+          <p style={{ marginTop: "3rem", fontSize: "1rem", color: "rgba(255,255,255,0.9)", textAlign: "center", maxWidth: 640, marginLeft: "auto", marginRight: "auto", lineHeight: 1.6 }}>
+            No contracts or lock-ins. Demo within 24 hours. A full-time UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024) &mdash; our AI receptionist starts at a fraction of that.
+          </p>
+          <p style={{ marginTop: "1rem", fontSize: "0.9rem", color: "var(--text-faint)", textAlign: "center" }}>
             Prices shown in GBP. US businesses: equivalent USD pricing available &mdash; contact us for a quote.
           </p>
           <p style={{ marginTop: "1.5rem", fontSize: "0.85rem", color: "var(--text-faint)", textAlign: "center", maxWidth: 640, marginLeft: "auto", marginRight: "auto", lineHeight: 1.7 }}>

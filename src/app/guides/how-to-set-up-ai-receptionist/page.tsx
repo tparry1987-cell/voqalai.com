@@ -51,7 +51,7 @@ const faqs = [
   { q: "Do I need to change my phone number?", a: "No. You keep your existing business number. We set up call forwarding so your AI receptionist answers on your behalf." },
   { q: "What if the AI can't handle a call?", a: "It transfers to your team. You set the rules — urgent calls, specific requests, or VIP callers can always be routed to a human." },
   { q: "Can I try before I commit?", a: "Yes. We send you a free personalised demo within 24 hours. Call it, test it, and only proceed if you're satisfied. No contracts." },
-  { q: "What does it cost?", a: "Plans start at £197/month for 200 minutes. No setup fees, no contracts. Cancel anytime." },
+  { q: "What does it cost?", a: "Plans start at £197/month for 200 minutes. No contracts. Cancel anytime." },
 ];
 
 export default function SetupGuidePage() {

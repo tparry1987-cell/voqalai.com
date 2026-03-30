@@ -41,7 +41,7 @@ export default function FaqPage() {
     },
     {
       q: "How does pricing work?",
-      a: "We operate on a transparent monthly subscription based on minutes used. Our Starter plan begins at £197/month for 200 minutes. There are no setup fees and no long-term contracts. You can view all our plans on our Pricing page."
+      a: "We operate on a transparent monthly subscription based on minutes used. Our Starter plan begins at £197/month for 200 minutes. There are no long-term contracts. You can view all our plans on our Pricing page."
     },
     {
       q: "Does the AI receptionist integrate with my calendar?",

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Receptionist UK \u2013 24/7 Phone Answering | Voqal AI",
     description:
-      "AI voice agents that answer 100% of your calls 24/7. Appointment booking, lead qualification, and voice cloning. No setup fees. From \u00a3197/mo.",
+      "AI voice agents that answer 100% of your calls 24/7. Appointment booking, lead qualification, and voice cloning. From \u00a3197/mo.",
     type: "website",
     url: "https://voqalai.com/",
     siteName: "Voqal AI",
