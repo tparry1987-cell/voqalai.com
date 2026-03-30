@@ -32,6 +32,7 @@ export default function Home() {
 
         <div className="speakable-hero relative z-10 flex min-h-screen flex-col items-center justify-center px-5 sm:px-8 text-center pt-20">
           <h1 style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", lineHeight: 1.1, fontWeight: 600, letterSpacing: "-0.02em", color: "#fff", textShadow: "0 2px 16px rgba(0,0,0,0.3)" }}>
+            <span style={{ display: "block", fontSize: "0.4em", textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(255,255,255,0.7)", marginBottom: "0.75rem", fontWeight: 500 }}>AI Receptionist UK</span>
             Never Miss Another
             <br />
             <span className="italic-accent" style={{ color: "var(--accent-light)" }}>Customer Call.</span>
@@ -79,10 +80,13 @@ export default function Home() {
             </h2>
             <div style={{ textAlign: "left" }}>
               <p className="body-text" style={{ maxWidth: "none" }}>
-                Every day, UK businesses lose revenue to calls that ring out. Research from Forbes (2023) found that 67% of customers hang up when they cannot reach a real person &mdash; and most never call back. For a dental practice handling 40 calls a day, even a 15% miss rate means six potential patients lost before lunch. Multiply that across a week, a month, a year, and the cost compounds into tens of thousands in lost revenue.
+                Every day, UK businesses lose revenue to calls that ring out. Research from Forbes (2023) found that 67% of customers hang up when they cannot reach a real person &mdash; and a separate study shows <strong>62% of callers won&apos;t leave a voicemail</strong> &mdash; they simply call a competitor instead. For a busy practice handling 40 calls a day, even a 15% miss rate means missing out on crucial leads before lunch. Multiply that across a week, a month, a year, and the cost compounds into tens of thousands in lost revenue.
               </p>
               <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
-                Human receptionists are effective during office hours, but they cannot answer at 7&nbsp;a.m. on a Saturday or during a bank-holiday weekend &mdash; precisely when many customers try to book. Voqal AI bridges that gap with voice agents that pick up in under two seconds, handle appointment scheduling, qualify leads, and route urgent enquiries, all without putting a single caller on hold. Because the system runs around the clock and handles multiple calls simultaneously, capacity is never a bottleneck.
+                Human receptionists are effective during office hours, but they cannot answer at 7&nbsp;a.m. on a Saturday or during a bank-holiday weekend &mdash; precisely when many customers try to book. Our <strong>24/7 phone answering</strong> solution bridges that gap. Voqal AI provides the seamless <strong>AI call answering UK</strong> businesses rely on—voice agents that pick up in under two seconds.
+              </p>
+              <p className="body-text" style={{ maxWidth: "none", marginTop: "1rem" }}>
+                Because the system runs around the clock and handles multiple calls simultaneously, capacity is never a bottleneck. Whether you need a highly trained <strong>virtual receptionist for dentists</strong> to triage toothaches, an intelligent intake assistant for law firms, or an after-hours booking agent for tradesmen on-site, the AI qualifies leads and safely routes urgent enquiries without ever putting a single caller on hold.
               </p>
             </div>
           </div>
