@@ -56,18 +56,20 @@ export default function AboutPage() {
       {/* ── About ── */}
       <section className="section-padding section-white container" style={{ paddingTop: "12rem" }}>
         <Reveal>
-          <span className="section-label">About Voqal AI</span>
-          <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            The Team Behind Your <span className="italic-accent">AI Voice Agent.</span>
-          </h1>
-          <p className="body-text">
-            Voqal AI Ltd builds bespoke voice models for UK and US businesses. With 5.5 million UK SMEs relying on inbound phone calls (Federation of Small Businesses, 2024) and 91 million active UK mobile subscriptions (Ofcom, 2024), phone communication remains the backbone of British commerce. We eliminate friction through continuous availability &mdash; engineering conversations so your team can focus on what matters.
-          </p>
+          <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto" }}>
+            <span className="section-label">About Voqal AI</span>
+            <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 700, margin: "0 auto 1.5rem" }}>
+              The Team Behind Your <span className="italic-accent">AI Voice Agent.</span>
+            </h1>
+            <p className="body-text" style={{ maxWidth: 640, margin: "0 auto" }}>
+              Voqal AI Ltd builds bespoke voice models for UK and US businesses. With 5.5 million UK SMEs relying on inbound phone calls (Federation of Small Businesses, 2024) and 91 million active UK mobile subscriptions (Ofcom, 2024), phone communication remains the backbone of British commerce. We eliminate friction through continuous availability &mdash; engineering conversations so your team can focus on what matters.
+            </p>
+          </div>
         </Reveal>
 
         {/* The Team */}
         <Reveal delay={0.15}>
-          <div className="team-grid">
+          <div className="team-grid" style={{ maxWidth: 1080, marginInline: "auto", textAlign: "center" }}>
             <div>
               <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>Founder &amp; CEO</span>
               <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: "1.5rem", marginBottom: "1rem", color: "var(--text-primary)" }}>Thomas Parry</h3>
@@ -103,14 +105,16 @@ export default function AboutPage() {
       {/* ── Protocol ── */}
       <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
         <Reveal>
-          <span className="section-label">How We Work</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "5rem" }}>
-            The <span className="italic-accent">Protocol.</span>
-          </h2>
+          <div style={{ maxWidth: 720, margin: "0 auto 5rem" }}>
+            <span className="section-label">How We Work</span>
+            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+              The <span className="italic-accent">Protocol.</span>
+            </h2>
+          </div>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16" style={{ textAlign: "left" }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16" style={{ textAlign: "center", maxWidth: 1080, margin: "0 auto" }}>
             {[
               { step: "01", title: "Knowledge Acquisition", desc: "We extract your operational data \u2014 FAQs, schedules, service boundaries, and brand voice. Tell us exactly how you want calls handled, and we construct the baseline." },
               { step: "02", title: "Model Synthesis", desc: "Our engineers synthesise your custom voice agent. A personalised demo is delivered within 24 hours, allowing you to call and hear it live before deployment." },
@@ -129,17 +133,19 @@ export default function AboutPage() {
       {/* ── Industries ── */}
       <section className="section-padding section-white container">
         <Reveal>
-          <span className="section-label">Who We Serve</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            Built for <span className="italic-accent">Every Sector.</span>
-          </h2>
-          <p className="body-text">
-            From high-street practices to enterprise operations &mdash; our voice agents adapt to the language, workflows, and compliance requirements of your industry.
-          </p>
+          <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
+            <span className="section-label">Who We Serve</span>
+            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 640, margin: "0 auto 1.5rem" }}>
+              Built for <span className="italic-accent">Every Sector.</span>
+            </h2>
+            <p className="body-text" style={{ maxWidth: 620, margin: "0 auto" }}>
+              From high-street practices to enterprise operations &mdash; our voice agents adapt to the language, workflows, and compliance requirements of your industry.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ marginTop: "4rem" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ marginTop: "4rem", maxWidth: 1080, marginInline: "auto" }}>
             {["Dental Practices", "Medical Clinics", "Legal Firms", "Estate Agents", "Trades & Home Services", "Accountancy Practices", "Veterinary Clinics", "Hospitality & Hotels", "Financial Services", "Recruitment Agencies", "IT & Managed Services", "E-commerce & Retail"].map((name) => (
               <div key={name} className="industry-item">{name}</div>
             ))}
@@ -147,7 +153,7 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <p className="industries-note">
+          <p className="industries-note" style={{ textAlign: "center", maxWidth: 720, margin: "3rem auto 0" }}>
             Serving businesses across London, Manchester, Birmingham, Edinburgh, and 40+ cities in the UK and US. <Link href="/contact" className="text-link">Get in touch &rarr;</Link>
           </p>
         </Reveal>
@@ -156,15 +162,17 @@ export default function AboutPage() {
       {/* ── Evidence ── */}
       <section className="section-padding section-alt container">
         <Reveal>
-          <span className="section-label">The Evidence</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            The Data Behind <span className="italic-accent">AI Receptionists.</span>
-          </h2>
-          <p className="body-text">AI-powered call handling is one of the fastest-growing categories in business automation.</p>
+          <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
+            <span className="section-label">The Evidence</span>
+            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 680, margin: "0 auto 1.5rem" }}>
+              The Data Behind <span className="italic-accent">AI Receptionists.</span>
+            </h2>
+            <p className="body-text" style={{ margin: "0 auto" }}>AI-powered call handling is one of the fastest-growing categories in business automation.</p>
+          </div>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8" style={{ marginTop: "4rem" }}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8" style={{ marginTop: "4rem", maxWidth: 1080, marginInline: "auto" }}>
             {[
               { n: "$80B", l: "Contact-centre savings from conversational AI by 2026 (Gartner, 2022)" },
               { n: "67%", l: "Of customers hang up when they can\u2019t reach a real person (Forbes, 2023)" },
@@ -187,14 +195,16 @@ export default function AboutPage() {
       {/* ── FAQ ── */}
       <section id="faq" className="section-padding section-white container">
         <Reveal>
-          <span className="section-label">Questions</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            Frequently Asked <span className="italic-accent">Questions.</span>
-          </h2>
+          <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
+            <span className="section-label">Questions</span>
+            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 680, margin: "0 auto" }}>
+              Frequently Asked <span className="italic-accent">Questions.</span>
+            </h2>
+          </div>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div style={{ marginTop: "3rem", maxWidth: 800 }}>
+          <div style={{ marginTop: "3rem", maxWidth: 800, marginInline: "auto" }}>
             {faqs.map((faq, i) => (
               <div key={i} className={`faq-item ${openFaq === i ? "open" : ""}`}>
                 <button className="faq-question" onClick={() => toggleFaq(i)}>
