@@ -2,6 +2,9 @@
   publish = "."
   functions = "netlify/functions"
 
+[build.processing.html]
+  pretty_urls = false
+
 # Redirect old domain to new domain
 [[redirects]]
   from = "/*"
