@@ -96,7 +96,7 @@ export default function FaqPage() {
                 <div key={i} className={`faq-item ${isOpen ? "open" : ""}`}>
                   <button className="faq-question" onClick={() => toggleFaq(i)}>
                     {faq.q}
-                    <Plus className="faq-icon" style={{ transform: isOpen ? "rotate(45deg)" : "none" }} />
+                    <Plus className="faq-icon" style={{ transform: isOpen ? "rotate(45deg)" : "none", transition: "transform 0.3s" }} />
                   </button>
                   <div className="faq-answer" style={{ maxHeight: isOpen ? "500px" : "0", paddingBottom: isOpen ? "1.5rem" : "0" }}>
                     <p>{faq.a}</p>
