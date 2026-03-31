@@ -1,6 +1,6 @@
 # Voqal AI — Campaign Status
 
-_Last updated: 27 March 2026_
+_Last updated: 28 March 2026_
 
 ---
 
@@ -42,9 +42,22 @@ _Last updated: 27 March 2026_
 - `cleaning-uk-pipeline.csv` — 57 leads
 - 598 remaining unsegmented in other-services-uk
 
+### AI Sales Agents (configured 28 March 2026)
+
+| Agent | Target | ICP | Location | Mode | Status |
+|-------|--------|-----|----------|------|--------|
+| **UK Trades** | Electricians, plumbers, heating, trades | Owners/directors, 1-50 employees | United Kingdom | HITL | Active |
+| **US Trades** | Electricians, plumbers, HVAC, trades | Small Business Owner/Founder/Managing Director, 1-50 employees | United States | HITL | Active |
+| **Reply Agent** | All inbound replies | N/A | N/A | HITL | Active (31 reach, 27 outcomes) |
+
+- Industries: Real Estate & Construction, Consumer Services, Business Services
+- Company name corrected from "Retell" to "Voqal AI" on both agents
+- Old ICPs (Healthcare, Legal, Property, Financial Services) disabled on both agents
+- 5 credits per AI reply, 1-2 credits per lead found
+
 ### API Key
 - "claude code v2" API key created 27 March 2026 (Version 2, all:all scope)
-- 995 Instantly credits + 1,000 free AI Sales Agent credits available
+- 939 Instantly credits remaining (as of 28 March 2026)
 
 **Sending accounts:** info@voqalai.com, augusta@voqalai.com (both warmed, 95% health)
 
