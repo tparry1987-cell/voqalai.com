@@ -71,6 +71,9 @@ export default function AboutPage() {
         <Reveal delay={0.15}>
           <div className="team-grid" style={{ maxWidth: 1080, marginInline: "auto", textAlign: "center" }}>
             <div>
+              <div style={{ width: 140, height: 140, borderRadius: "50%", overflow: "hidden", margin: "0 auto 1.25rem" }}>
+                <img src="/images/avatars/tom.webp" alt="Thomas Parry — Founder of Voqal AI" width={140} height={140} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+              </div>
               <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>Founder &amp; CEO</span>
               <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: "1.5rem", marginBottom: "1rem", color: "var(--text-primary)" }}>Thomas Parry</h3>
               <p style={{ fontSize: "1rem", color: "var(--text-secondary)", lineHeight: 1.7 }}>
@@ -78,6 +81,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
+              <div style={{ width: 140, height: 140, borderRadius: "50%", overflow: "hidden", margin: "0 auto 1.25rem" }}>
+                <img src="/images/avatars/augusta.webp" alt="Augusta — Co-Founder of Voqal AI" width={140} height={140} style={{ objectFit: "cover", objectPosition: "center 20%", width: "100%", height: "100%" }} />
+              </div>
               <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>Co-Founder &amp; Operations</span>
               <h3 style={{ fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: "1.5rem", marginBottom: "1rem", color: "var(--text-primary)" }}>Augusta</h3>
               <p style={{ fontSize: "1rem", color: "var(--text-secondary)", lineHeight: 1.7 }}>
