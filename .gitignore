@@ -8,3 +8,7 @@ agents/.env
 
 # Pipeline runtime artifacts
 agents/payload.json
+
+# Python cache
+__pycache__/
+*.pyc
