@@ -10,6 +10,7 @@ import logging
 import os
 import sys
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 import anthropic
 import requests
@@ -32,6 +33,16 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 INSTANTLY_HEADERS = {"Authorization": f"Bearer {INSTANTLY_API_KEY}"}
+
+UK_TZ = ZoneInfo("Europe/London")
+
+
+def is_uk_working_hours(now_utc: datetime) -> bool:
+    """Return True if now_utc falls within Mon–Fri 08:00–18:00 UK time (BST/GMT aware)."""
+    uk_now = now_utc.astimezone(UK_TZ)
+    if uk_now.weekday() >= 5:   # Saturday=5, Sunday=6
+        return False
+    return 8 <= uk_now.hour < 18
 
 ALL_CLASSES = {
     "INTERESTED", "BOOK_A_CALL", "OBJECTION", "OOO",
@@ -193,6 +204,11 @@ def _parse_timestamp(ts: str) -> datetime | None:
 # ── Main ───────────────────────────────────────────────────────────────────────
 def main() -> None:
     now = datetime.now(timezone.utc)
+
+    if not is_uk_working_hours(now):
+        log.info("Outside UK working hours — exiting silently.")
+        sys.exit(0)
+
     since = now - timedelta(hours=2, minutes=10)
     log.info("Hot-reply watcher — checking replies since %s", since.isoformat())
 
