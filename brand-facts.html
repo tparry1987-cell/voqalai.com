@@ -237,11 +237,24 @@
   }
   </script>
 
-  <!-- Cal.com embed -->
+  <!-- Cal.com embed (lazy-loaded on user interaction) -->
   <script>
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", {origin:"https://cal.com"});
-    Cal("ui", {"theme":"dark","styles":{"branding":{"brandColor":"#db7c54"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    (function() {
+      var calLoaded = false;
+      function loadCal() {
+        if (calLoaded) return; calLoaded = true;
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", {origin:"https://cal.com"});
+        Cal("ui", {"theme":"light","styles":{"branding":{"brandColor":"#C4785A"}},"hideEventTypeDetails":false,"layout":"month_view"});
+      }
+      // Load on first user interaction (pointer, touch, key) or after idle
+      var events = ['pointerdown','touchstart','keydown','mousemove','scroll'];
+      function trigger() { events.forEach(function(e){ window.removeEventListener(e, trigger, {passive:true}); }); loadCal(); }
+      events.forEach(function(e){ window.addEventListener(e, trigger, {passive:true, once:true}); });
+      // Fallback: load during idle time after 3s
+      if ('requestIdleCallback' in window) { requestIdleCallback(loadCal, {timeout: 5000}); }
+      else { setTimeout(loadCal, 3000); }
+    })();
   </script>
 </head>
 <body>
@@ -519,21 +532,38 @@
 
   </div>
 
-  <!-- Retell AI Chat Widget -->
-  <script
-    id="retell-widget"
-    src="https://dashboard.retellai.com/retell-widget.js"
-    type="module"
-    data-public-key="public_key_692e22f82e27e1f57afe6"
-    data-agent-id="agent_42e2f4ee39b0f6db2cbe9db919"
-    data-title="Chat with Aria"
-    data-color="#db7c54"
-    data-logo-url="https://voqalai.com/favicon.png"
-    data-bot-name="Aria"
-    data-popup-message="Hey! 👋 Got questions? Chat with us."
-    data-show-ai-popup="true"
-    data-show-ai-popup-time="15"
-  ></script>
+  <!-- Retell AI Chat Widget (lazy-loaded after user interaction or idle) -->
+  <script>
+    (function() {
+      var retellLoaded = false;
+      function loadRetell() {
+        if (retellLoaded) return; retellLoaded = true;
+        var s = document.createElement('script');
+        s.id = 'retell-widget';
+        s.src = 'https://dashboard.retellai.com/retell-widget.js';
+        s.type = 'module';
+        var attrs = {
+          "data-public-key": "public_key_692e22f82e27e1f57afe6",
+          "data-agent-id": "agent_42e2f4ee39b0f6db2cbe9db919",
+          "data-title": "Chat with Aria",
+          "data-color": "#db7c54",
+          "data-logo-url": "https://voqalai.com/favicon.png",
+          "data-bot-name": "Aria",
+          "data-popup-message": "Hey! 👋 Got questions? Chat with us.",
+          "data-show-ai-popup": "true",
+          "data-show-ai-popup-time": "15"
+        };
+        Object.keys(attrs).forEach(function(k) { s.setAttribute(k, attrs[k]); });
+        document.body.appendChild(s);
+      }
+      // Load on first user interaction OR after idle time
+      var events = ['pointerdown','touchstart','keydown','scroll'];
+      function trigger() { events.forEach(function(e){ window.removeEventListener(e, trigger, {passive:true}); }); loadRetell(); }
+      events.forEach(function(e){ window.addEventListener(e, trigger, {passive:true, once:true}); });
+      if ('requestIdleCallback' in window) { requestIdleCallback(loadRetell, {timeout: 8000}); }
+      else { setTimeout(loadRetell, 5000); }
+    })();
+  </script>
   <!-- Custom Chat Launcher -->
   <button id="voqalChatLauncher" aria-label="Chat with Aria" style="
     position: fixed; bottom: 24px; right: 24px; z-index: 1000000;

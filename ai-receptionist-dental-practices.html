@@ -526,21 +526,38 @@
 
   </div>
 
-  <!-- Retell AI Chat Widget -->
-  <script
-    id="retell-widget"
-    src="https://dashboard.retellai.com/retell-widget.js"
-    type="module"
-    data-public-key="public_key_692e22f82e27e1f57afe6"
-    data-agent-id="agent_42e2f4ee39b0f6db2cbe9db919"
-    data-title="Chat with Aria"
-    data-color="#db7c54"
-    data-logo-url="https://voqalai.com/favicon.png"
-    data-bot-name="Aria"
-    data-popup-message="Hey! Got questions? Chat with us."
-    data-show-ai-popup="true"
-    data-show-ai-popup-time="15"
-  ></script>
+  <!-- Retell AI Chat Widget (lazy-loaded after user interaction or idle) -->
+  <script>
+    (function() {
+      var retellLoaded = false;
+      function loadRetell() {
+        if (retellLoaded) return; retellLoaded = true;
+        var s = document.createElement('script');
+        s.id = 'retell-widget';
+        s.src = 'https://dashboard.retellai.com/retell-widget.js';
+        s.type = 'module';
+        var attrs = {
+          "data-public-key": "public_key_692e22f82e27e1f57afe6",
+          "data-agent-id": "agent_42e2f4ee39b0f6db2cbe9db919",
+          "data-title": "Chat with Aria",
+          "data-color": "#db7c54",
+          "data-logo-url": "https://voqalai.com/favicon.png",
+          "data-bot-name": "Aria",
+          "data-popup-message": "Hey! Got questions? Chat with us.",
+          "data-show-ai-popup": "true",
+          "data-show-ai-popup-time": "15"
+        };
+        Object.keys(attrs).forEach(function(k) { s.setAttribute(k, attrs[k]); });
+        document.body.appendChild(s);
+      }
+      // Load on first user interaction OR after idle time
+      var events = ['pointerdown','touchstart','keydown','scroll'];
+      function trigger() { events.forEach(function(e){ window.removeEventListener(e, trigger, {passive:true}); }); loadRetell(); }
+      events.forEach(function(e){ window.addEventListener(e, trigger, {passive:true, once:true}); });
+      if ('requestIdleCallback' in window) { requestIdleCallback(loadRetell, {timeout: 8000}); }
+      else { setTimeout(loadRetell, 5000); }
+    })();
+  </script>
   <!-- Custom Chat Launcher -->
   <button id="voqalChatLauncher" aria-label="Chat with Aria" style="
     position: fixed; bottom: 24px; right: 24px; z-index: 1000000;
