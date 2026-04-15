@@ -5,3 +5,6 @@
 agents/.env
 .env
 *.env
+
+# Pipeline runtime artifacts
+agents/payload.json
