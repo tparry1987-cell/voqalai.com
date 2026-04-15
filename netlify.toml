@@ -11,6 +11,97 @@
   [redirects.conditions]
     Host = ["arkaisolutions.net", "www.arkaisolutions.net"]
 
+# ── Block WordPress / env / git scanner probes with 410 Gone ──
+[[redirects]]
+  from = "/xmlrpc.php"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-login.php"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp-includes/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wordpress/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/wp/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/test/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/shop/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/site/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/news/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.env"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.env.*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.git/*"
+  to = "/410"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/.aws/*"
+  to = "/410"
+  status = 410
+  force = true
+
 # ── Old .html URLs → new clean URLs (301 for SEO) ──
 
 # Core pages
