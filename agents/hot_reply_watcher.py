@@ -73,7 +73,7 @@ def classify_reply(subject: str, body: str) -> str:
         f"Subject: {subject}\nBody:\n{body[:1200]}"
     )
     response = _claude.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model="claude-haiku-4-5",
         max_tokens=20,
         messages=[{"role": "user", "content": prompt}],
     )
@@ -103,7 +103,7 @@ def generate_suggested_reply(classification: str, sender_name: str, body: str, s
         f"Subject: {subject}\nTheir reply:\n{body[:800]}"
     )
     response = _claude.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model="claude-haiku-4-5",
         max_tokens=220,
         messages=[{"role": "user", "content": prompt}],
     )
