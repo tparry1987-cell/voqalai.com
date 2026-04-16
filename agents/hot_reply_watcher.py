@@ -263,7 +263,7 @@ def main() -> None:
 
         msg = (
             f"\U0001f525 <b>{he(classification)}</b> \u2014 {he(sender_name)} ({he(sender_email)})\n"
-            f"Campaign: <b>{he(region)}</b> \u00b7 Subject: {he(subject)}\n\n"
+            f"Campaign: <b>{he(region)}</b> \u2022 Subject: {he(subject)}\n\n"
             f"<i>\u201c{he(trimmed)}\u201d</i>\n\n"
             f"\U0001f4a1 <b>Suggested response:</b>\n{he(suggested)}"
         )
@@ -280,8 +280,7 @@ def main() -> None:
 
     overflow = len(hot_messages) - cap
     if overflow > 0:
-        noun = "reply" if overflow == 1 else "replies"
-        send_telegram(f"+{overflow} more hot {noun} — see morning brief.")
+        send_telegram(f"+{overflow} more hot replies — see morning brief")
 
     log.info("Watcher done. %d notification(s) sent.", cap + (1 if overflow else 0))
 
