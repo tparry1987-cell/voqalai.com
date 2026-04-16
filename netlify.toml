@@ -2,6 +2,11 @@
   publish = "."
   functions = "netlify/functions"
 
+# Hot-reply watcher: every 2 hours, Mon–Fri, 08:00–18:00 UTC
+# Covers UK business hours in both GMT (UTC+0) and BST (UTC+1)
+[functions."hot-reply-watcher"]
+  schedule = "0 8,10,12,14,16,18 * * 1-5"
+
 [build.processing.html]
   pretty_urls = false
 
