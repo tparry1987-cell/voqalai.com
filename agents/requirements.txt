@@ -2,5 +2,4 @@ anthropic
 httpx
 requests
 python-dotenv
-pyyaml
 tzdata
