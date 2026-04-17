@@ -50,32 +50,55 @@ ALL_CLASSES = {
 }
 NOTIFIABLE = {"INTERESTED", "BOOK_A_CALL", "OBJECTION"}
 
+# Stable instruction prefixes — marked for prompt caching so repeated runs
+# reuse the cached prefix rather than re-processing identical tokens.
+_CLASSIFY_INSTRUCTIONS = (
+    "Classify this cold-email reply into exactly one of these categories:\n"
+    "INTERESTED, BOOK_A_CALL, OBJECTION, OOO, UNSUBSCRIBE, "
+    "NOT_INTERESTED, WRONG_PERSON, QUESTION\n\n"
+    "Definitions:\n"
+    "- INTERESTED: positive, wants to learn more but hasn't asked to book\n"
+    "- BOOK_A_CALL: explicitly wants to schedule a call or meeting\n"
+    "- OBJECTION: engaged pushback (price, timing, competitor) — still a warm lead\n"
+    "- OOO: out-of-office auto-reply\n"
+    "- UNSUBSCRIBE: wants to be removed / never email again\n"
+    "- NOT_INTERESTED: flat rejection, no engagement\n"
+    "- WRONG_PERSON: forwarded or says they are the wrong contact\n"
+    "- QUESTION: neutral question with no clear buying signal\n\n"
+    "Reply with the single category word only. Nothing else."
+)
+
+_REPLY_INSTRUCTIONS = (
+    "Write a warm, concise 2-4 sentence reply in UK English to this cold-email response. "
+    "Sound human and direct — not salesy or sycophantic. "
+    "Reference something specific from what they said. "
+    'Sign off as "Tom — Voqal AI". '
+    "Reply with only the message text — no subject line, no quotation marks around it."
+)
+
 # ── Claude ─────────────────────────────────────────────────────────────────────
 _claude = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
 
 
 def classify_reply(subject: str, body: str) -> str:
     """Classify a reply into exactly one of the 8 categories."""
-    prompt = (
-        "Classify this cold-email reply into exactly one of these categories:\n"
-        "INTERESTED, BOOK_A_CALL, OBJECTION, OOO, UNSUBSCRIBE, "
-        "NOT_INTERESTED, WRONG_PERSON, QUESTION\n\n"
-        "Definitions:\n"
-        "- INTERESTED: positive, wants to learn more but hasn't asked to book\n"
-        "- BOOK_A_CALL: explicitly wants to schedule a call or meeting\n"
-        "- OBJECTION: engaged pushback (price, timing, competitor) — still a warm lead\n"
-        "- OOO: out-of-office auto-reply\n"
-        "- UNSUBSCRIBE: wants to be removed / never email again\n"
-        "- NOT_INTERESTED: flat rejection, no engagement\n"
-        "- WRONG_PERSON: forwarded or says they are the wrong contact\n"
-        "- QUESTION: neutral question with no clear buying signal\n\n"
-        "Reply with the single category word only. Nothing else.\n\n"
-        f"Subject: {subject}\nBody:\n{body[:1200]}"
-    )
     response = _claude.messages.create(
         model="claude-haiku-4-5-20251001",
         max_tokens=20,
-        messages=[{"role": "user", "content": prompt}],
+        messages=[{
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": _CLASSIFY_INSTRUCTIONS,
+                    "cache_control": {"type": "ephemeral"},
+                },
+                {
+                    "type": "text",
+                    "text": f"\n\nSubject: {subject}\nBody:\n{body[:1200]}",
+                },
+            ],
+        }],
     )
     raw = response.content[0].text.strip().upper()
     for cls in ALL_CLASSES:
@@ -92,20 +115,28 @@ def generate_suggested_reply(classification: str, sender_name: str, body: str, s
         if classification in ("INTERESTED", "BOOK_A_CALL")
         else ""
     )
-    prompt = (
-        "Write a warm, concise 2-4 sentence reply in UK English to this cold-email response. "
+    dynamic = (
         f"The prospect's reply is classified as: {classification}. "
-        f"{cal_line} "
-        "Sound human and direct — not salesy or sycophantic. "
-        "Reference something specific from what they said. "
-        'Sign off as "Tom — Voqal AI". '
-        "Reply with only the message text — no subject line, no quotation marks around it.\n\n"
+        f"{cal_line}\n\n"
         f"Subject: {subject}\nTheir reply:\n{body[:800]}"
     )
     response = _claude.messages.create(
         model="claude-haiku-4-5-20251001",
         max_tokens=220,
-        messages=[{"role": "user", "content": prompt}],
+        messages=[{
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": _REPLY_INSTRUCTIONS,
+                    "cache_control": {"type": "ephemeral"},
+                },
+                {
+                    "type": "text",
+                    "text": dynamic,
+                },
+            ],
+        }],
     )
     return response.content[0].text.strip()
 
