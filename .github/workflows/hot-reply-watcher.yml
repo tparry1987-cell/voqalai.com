@@ -2,8 +2,9 @@ name: Hot-Reply Watcher
 
 on:
   schedule:
-    # Every 2 hours, 08:00–16:00 UTC — covers 09:00–17:00 BST and 09:00–17:00 GMT
-    - cron: "0 8,10,12,14,16 * * 1-5"
+    # Every 2 hours 07:00–17:00 UTC — covers 08:00–18:00 BST (summer) and 07:00–17:00 GMT (winter).
+    # The script's is_uk_working_hours() guard exits silently when outside 08:00–18:00 UK time.
+    - cron: "0 7,9,11,13,15,17 * * 1-5"
   workflow_dispatch: {}   # allow manual trigger for testing
 
 jobs:
