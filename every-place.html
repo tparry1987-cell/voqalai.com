@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Every place has a story — Voqal AI</title>
+  <meta name="description" content="Discover how ideas, art, and culture flow between cities. 112 cities. 168 routes. One living map.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preload" href="fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/saira-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    :root {
+      --bg: #05090c;
+      --bg-soft: #0a1116;
+      --fg: #e7eef4;
+      --muted: #7a8894;
+      --muted-2: #5d6b77;
+      --accent: #4fd1c5;
+      --accent-dim: rgba(79, 209, 197, 0.4);
+    }
+
+    @font-face {
+      font-family: "Instrument Serif";
+      src: url("fonts/instrument-serif-regular.woff2") format("woff2");
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Saira";
+      src: url("fonts/saira-latin.woff2") format("woff2");
+      font-weight: 300 700;
+      font-display: swap;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Saira", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .stage {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 72% 52%, rgba(79, 209, 197, 0.10), transparent 60%),
+        radial-gradient(ellipse 80% 90% at 50% 50%, rgba(10, 22, 28, 0.8), transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #globe {
+      position: absolute;
+      top: 0; right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .content {
+      position: absolute;
+      top: 0; left: 0;
+      padding: clamp(3rem, 7vh, 7rem) clamp(2rem, 5vw, 5rem);
+      max-width: min(48%, 640px);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .headline {
+      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(3rem, 6.5vw, 6.25rem);
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      margin: 0 0 1.5rem;
+      color: var(--fg);
+    }
+    .headline .accent {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: clamp(0.95rem, 1vw, 1.05rem);
+      line-height: 1.6;
+      max-width: 26rem;
+      margin: 0 0 clamp(3rem, 6vh, 5rem);
+      font-weight: 300;
+    }
+
+    .stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    .stat {
+      display: flex;
+      align-items: baseline;
+      gap: 1.75rem;
+    }
+    .stat-num {
+      color: var(--accent);
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2.5rem, 4.2vw, 3.75rem);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      min-width: 4.5ch;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-label {
+      color: var(--muted-2);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      font-weight: 400;
+    }
+
+    .cta {
+      position: absolute;
+      bottom: clamp(1.5rem, 3vh, 2.5rem);
+      right: clamp(1.5rem, 3vw, 2.5rem);
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      z-index: 3;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      pointer-events: auto;
+    }
+    .cta:hover { color: var(--accent); }
+    .cta .arrow { transition: transform 0.2s ease; }
+    .cta:hover .arrow { transform: translateX(3px); }
+
+    .brand {
+      position: absolute;
+      top: clamp(1.5rem, 3vh, 2rem);
+      left: clamp(2rem, 5vw, 5rem);
+      color: var(--fg);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      z-index: 3;
+      opacity: 0.75;
+    }
+    .brand .dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-right: 0.6rem;
+      transform: translateY(-1px);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .content {
+        max-width: 100%;
+        padding: 5rem 1.5rem 2rem;
+      }
+      #globe { opacity: 0.5; }
+      .stats { gap: 1rem; }
+      .stat { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <canvas id="globe"></canvas>
+    <div class="glow"></div>
+
+    <div class="brand"><span class="dot"></span>Voqal AI</div>
+
+    <div class="content">
+      <h1 class="headline">Every place<br>has a <span class="accent">story.</span></h1>
+      <p class="subtitle">Discover how ideas, art, and culture flow between cities. 112 cities. 168 routes. One living map.</p>
+      <div class="stats">
+        <div class="stat"><span class="stat-num" data-target="112">0</span><span class="stat-label">Cities</span></div>
+        <div class="stat"><span class="stat-num" data-target="168">0</span><span class="stat-label">Routes</span></div>
+        <div class="stat"><span class="stat-num" data-target="6">0</span><span class="stat-label">Continents</span></div>
+      </div>
+    </div>
+
+    <a href="#" class="cta">Explore the map <span class="arrow">&rarr;</span></a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script>
+  (function () {
+    const canvas = document.getElementById('globe');
+    const ctx = canvas.getContext('2d');
+    let W = 0, H = 0, dpr = 1, size = 0;
+
+    const projection = d3.geoOrthographic()
+      .rotate([-30, -18, 0])
+      .clipAngle(90);
+
+    const path = d3.geoPath(projection, ctx);
+    const graticule = d3.geoGraticule().step([15, 15])();
+
+    const cities = [
+      { name: 'London',         lng: -0.13,   lat: 51.51 },
+      { name: 'Paris',          lng:  2.35,   lat: 48.86 },
+      { name: 'Berlin',         lng: 13.40,   lat: 52.52 },
+      { name: 'Madrid',         lng: -3.70,   lat: 40.42 },
+      { name: 'Rome',           lng: 12.50,   lat: 41.90 },
+      { name: 'Istanbul',       lng: 28.98,   lat: 41.01 },
+      { name: 'Moscow',         lng: 37.62,   lat: 55.75 },
+      { name: 'Dublin',         lng: -6.26,   lat: 53.35 },
+      { name: 'Reykjavík',      lng: -21.94,  lat: 64.13 },
+      { name: 'Amsterdam',      lng:  4.90,   lat: 52.37 },
+      { name: 'Lisbon',         lng: -9.14,   lat: 38.72 },
+      { name: 'Oslo',           lng: 10.75,   lat: 59.91 },
+      { name: 'Athens',         lng: 23.73,   lat: 37.98 },
+
+      { name: 'New York',       lng: -74.01,  lat: 40.71 },
+      { name: 'Washington DC',  lng: -77.04,  lat: 38.91 },
+      { name: 'Boston',         lng: -71.06,  lat: 42.36 },
+      { name: 'Chicago',        lng: -87.65,  lat: 41.88 },
+      { name: 'Atlanta',        lng: -84.39,  lat: 33.75 },
+      { name: 'Miami',          lng: -80.19,  lat: 25.76 },
+      { name: 'Houston',        lng: -95.37,  lat: 29.76 },
+      { name: 'New Orleans',    lng: -90.07,  lat: 29.95 },
+      { name: 'Denver',         lng: -104.99, lat: 39.74 },
+      { name: 'Salt Lake City', lng: -111.89, lat: 40.76 },
+      { name: 'Phoenix',        lng: -112.07, lat: 33.45 },
+      { name: 'Los Angeles',    lng: -118.24, lat: 34.05 },
+      { name: 'San Francisco',  lng: -122.42, lat: 37.77 },
+      { name: 'Seattle',        lng: -122.33, lat: 47.61 },
+      { name: 'Portland',       lng: -122.68, lat: 45.52 },
+      { name: 'Vancouver',      lng: -123.12, lat: 49.28 },
+      { name: 'Toronto',        lng: -79.38,  lat: 43.65 },
+      { name: 'Montreal',       lng: -73.57,  lat: 45.50 },
+      { name: 'Mexico City',    lng: -99.13,  lat: 19.43 },
+      { name: 'Havana',         lng: -82.36,  lat: 23.13 },
+
+      { name: 'Cartagena',      lng: -75.51,  lat: 10.39 },
+      { name: 'Bogotá',         lng: -74.07,  lat:  4.71 },
+      { name: 'Medellín',       lng: -75.58,  lat:  6.25 },
+      { name: 'Quito',          lng: -78.47,  lat: -0.23 },
+      { name: 'Lima',           lng: -77.04,  lat: -12.05 },
+      { name: 'Santiago',       lng: -70.67,  lat: -33.45 },
+      { name: 'Buenos Aires',   lng: -58.38,  lat: -34.60 },
+      { name: 'São Paulo',      lng: -46.63,  lat: -23.55 },
+      { name: 'Rio de Janeiro', lng: -43.17,  lat: -22.91 },
+      { name: 'Brasília',       lng: -47.93,  lat: -15.78 },
+      { name: 'Caracas',        lng: -66.92,  lat: 10.48 },
+
+      { name: 'Tokyo',          lng: 139.69,  lat: 35.68 },
+      { name: 'Seoul',          lng: 126.98,  lat: 37.57 },
+      { name: 'Beijing',        lng: 116.40,  lat: 39.90 },
+      { name: 'Shanghai',       lng: 121.47,  lat: 31.23 },
+      { name: 'Hong Kong',      lng: 114.17,  lat: 22.32 },
+      { name: 'Singapore',      lng: 103.82,  lat:  1.35 },
+      { name: 'Bangkok',        lng: 100.50,  lat: 13.75 },
+      { name: 'Jakarta',        lng: 106.85,  lat: -6.21 },
+      { name: 'Manila',         lng: 120.98,  lat: 14.60 },
+      { name: 'Mumbai',         lng: 72.87,   lat: 19.08 },
+      { name: 'Delhi',          lng: 77.21,   lat: 28.61 },
+      { name: 'Dubai',          lng: 55.27,   lat: 25.20 },
+      { name: 'Tel Aviv',       lng: 34.78,   lat: 32.08 },
+
+      { name: 'Cairo',          lng: 31.24,   lat: 30.04 },
+      { name: 'Casablanca',     lng: -7.59,   lat: 33.57 },
+      { name: 'Lagos',          lng:  3.38,   lat:  6.52 },
+      { name: 'Nairobi',        lng: 36.82,   lat: -1.29 },
+      { name: 'Johannesburg',   lng: 28.05,   lat: -26.20 },
+
+      { name: 'Sydney',         lng: 151.21,  lat: -33.87 },
+      { name: 'Melbourne',      lng: 144.96,  lat: -37.81 },
+      { name: 'Auckland',       lng: 174.76,  lat: -36.85 },
+      { name: 'Wellington',     lng: 174.78,  lat: -41.29 },
+
+      { name: 'Honolulu',       lng: -157.86, lat: 21.31 }
+    ];
+
+    const routes = [
+      ['London','New York'], ['London','Paris'], ['London','Dublin'], ['London','Reykjavík'],
+      ['London','Berlin'], ['London','Madrid'], ['London','Moscow'], ['London','Dubai'],
+      ['Paris','Rome'], ['Paris','Istanbul'], ['Paris','New York'], ['Paris','Tokyo'],
+      ['Berlin','Moscow'], ['Madrid','Lisbon'], ['Madrid','Mexico City'], ['Rome','Athens'],
+      ['Istanbul','Cairo'], ['Istanbul','Dubai'], ['Amsterdam','New York'], ['Oslo','Reykjavík'],
+
+      ['New York','San Francisco'], ['New York','Los Angeles'], ['New York','Chicago'],
+      ['New York','Miami'], ['New York','Boston'], ['New York','Toronto'], ['New York','Washington DC'],
+      ['New York','Buenos Aires'], ['New York','São Paulo'],
+      ['Chicago','Denver'], ['Chicago','Atlanta'], ['Los Angeles','Tokyo'], ['Los Angeles','Honolulu'],
+      ['Los Angeles','Sydney'], ['Los Angeles','Mexico City'], ['San Francisco','Seattle'],
+      ['San Francisco','Vancouver'], ['San Francisco','Hong Kong'], ['San Francisco','Singapore'],
+      ['Seattle','Tokyo'], ['Vancouver','Tokyo'], ['Toronto','Montreal'], ['Montreal','Paris'],
+      ['Atlanta','New Orleans'], ['Atlanta','Havana'], ['Miami','Havana'], ['Miami','Cartagena'],
+      ['Miami','Bogotá'], ['Miami','Rio de Janeiro'],
+
+      ['Mexico City','Lima'], ['Mexico City','Bogotá'], ['Bogotá','Quito'], ['Bogotá','Caracas'],
+      ['Lima','Santiago'], ['Santiago','Buenos Aires'], ['Buenos Aires','São Paulo'],
+      ['São Paulo','Rio de Janeiro'], ['São Paulo','Brasília'], ['Rio de Janeiro','Lisbon'],
+
+      ['Tokyo','Seoul'], ['Tokyo','Beijing'], ['Tokyo','Shanghai'], ['Tokyo','Singapore'],
+      ['Beijing','Moscow'], ['Shanghai','Hong Kong'], ['Hong Kong','Singapore'], ['Hong Kong','Bangkok'],
+      ['Singapore','Jakarta'], ['Singapore','Manila'], ['Bangkok','Mumbai'], ['Mumbai','Delhi'],
+      ['Mumbai','Dubai'], ['Delhi','Dubai'], ['Dubai','Nairobi'], ['Dubai','Cairo'],
+      ['Tel Aviv','Athens'],
+
+      ['Cairo','Lagos'], ['Cairo','Johannesburg'], ['Lagos','Casablanca'], ['Lagos','Nairobi'],
+      ['Nairobi','Johannesburg'], ['Casablanca','Lisbon'],
+
+      ['Sydney','Auckland'], ['Sydney','Melbourne'], ['Auckland','Wellington'], ['Sydney','Singapore'],
+      ['Sydney','Tokyo'], ['Melbourne','Los Angeles'],
+
+      ['Honolulu','Tokyo'], ['Honolulu','San Francisco']
+    ];
+
+    const cityMap = Object.fromEntries(cities.map(c => [c.name, c]));
+    const arcData = routes.map(([a,b], i) => {
+      const A = cityMap[a], B = cityMap[b];
+      if (!A || !B) return null;
+      return {
+        a: A, b: B,
+        interp: d3.geoInterpolate([A.lng, A.lat], [B.lng, B.lat]),
+        phase: Math.random(),
+        speed: 0.0008 + Math.random() * 0.0012
+      };
+    }).filter(Boolean);
+
+    let land = null;
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json')
+      .then(r => r.json())
+      .then(topo => { land = topojson.feature(topo, topo.objects.land); })
+      .catch(() => {});
+
+    function resize() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = canvas.clientWidth;
+      H = canvas.clientHeight;
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const isNarrow = W < 900;
+      const cx = isNarrow ? W * 0.5 : W * 0.68;
+      const cy = H * 0.5;
+      size = Math.min(W, H) * (isNarrow ? 0.38 : 0.44);
+      projection.scale(size).translate([cx, cy]);
+    }
+
+    function isVisible(lng, lat) {
+      return projection([lng, lat]) !== null;
+    }
+
+    function drawGlowCircle(x, y, r, color, blur) {
+      ctx.save();
+      ctx.shadowColor = color;
+      ctx.shadowBlur = blur;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawArc(arc) {
+      const steps = 64;
+      let started = false;
+      ctx.beginPath();
+      for (let i = 0; i <= steps; i++) {
+        const t = i / steps;
+        const ll = arc.interp(t);
+        const p = projection(ll);
+        if (!p) { started = false; continue; }
+        if (!started) { ctx.moveTo(p[0], p[1]); started = true; }
+        else ctx.lineTo(p[0], p[1]);
+      }
+      ctx.strokeStyle = 'rgba(79, 209, 197, 0.32)';
+      ctx.lineWidth = 0.9;
+      ctx.stroke();
+
+      // Leading pulse
+      const p = projection(arc.interp(arc.phase));
+      if (p) drawGlowCircle(p[0], p[1], 2.2, 'rgba(127, 232, 222, 1)', 12);
+    }
+
+    let yaw = -30;
+    let last = performance.now();
+
+    function frame(now) {
+      const dt = Math.min(64, now - last);
+      last = now;
+
+      yaw += dt * 0.008; // slow rotation
+      projection.rotate([yaw, -18, 0]);
+
+      ctx.clearRect(0, 0, W, H);
+
+      // Sphere background
+      ctx.beginPath();
+      path({ type: 'Sphere' });
+      const [cx, cy] = projection.translate();
+      const grad = ctx.createRadialGradient(cx - size * 0.25, cy - size * 0.3, size * 0.1, cx, cy, size);
+      grad.addColorStop(0, '#0f1a22');
+      grad.addColorStop(1, '#060b0f');
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Graticule
+      ctx.beginPath();
+      path(graticule);
+      ctx.strokeStyle = 'rgba(79, 209, 197, 0.07)';
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+
+      // Land
+      if (land) {
+        ctx.beginPath();
+        path(land);
+        ctx.fillStyle = '#16232b';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(79, 209, 197, 0.22)';
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+      }
+
+      // Sphere stroke (rim)
+      ctx.beginPath();
+      path({ type: 'Sphere' });
+      ctx.strokeStyle = 'rgba(79, 209, 197, 0.22)';
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+      // Arcs
+      for (const arc of arcData) {
+        drawArc(arc);
+        arc.phase += arc.speed * dt;
+        if (arc.phase > 1) arc.phase -= 1;
+      }
+
+      // Cities
+      for (const c of cities) {
+        const p = projection([c.lng, c.lat]);
+        if (!p) continue;
+        ctx.beginPath();
+        ctx.arc(p[0], p[1], 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = '#4fd1c5';
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(p[0], p[1], 3.2, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(79, 209, 197, 0.18)';
+        ctx.fill();
+      }
+
+      // City labels (front hemisphere only, skip on narrow)
+      if (W >= 900) {
+        ctx.font = '10px "Saira", -apple-system, sans-serif';
+        ctx.fillStyle = 'rgba(230, 237, 243, 0.72)';
+        ctx.textBaseline = 'middle';
+        for (const c of cities) {
+          const p = projection([c.lng, c.lat]);
+          if (!p) continue;
+          ctx.fillText(c.name, p[0] + 5, p[1] - 6);
+        }
+      }
+
+      requestAnimationFrame(frame);
+    }
+
+    // Stat count-up
+    function animateStats() {
+      document.querySelectorAll('.stat-num').forEach(el => {
+        const target = +el.dataset.target;
+        const duration = 1400;
+        const start = performance.now();
+        function step(now) {
+          const t = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.round(target * eased);
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    requestAnimationFrame(frame);
+    animateStats();
+  })();
+  </script>
+</body>
+</html>
