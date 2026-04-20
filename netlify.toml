@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "out"
 
+[functions]
+  directory = "netlify/functions"
+
 # Redirect old domain to new domain
 [[redirects]]
   from = "/*"
