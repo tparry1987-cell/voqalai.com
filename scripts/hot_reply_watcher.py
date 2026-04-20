@@ -126,7 +126,7 @@ def build_hot_message(cls: str, reply: dict, campaign_label: str, suggested: str
     subject = escape(_reply_field(reply, "subject", "email_subject"), quote=False)
     body = escape(_reply_field(reply, "body", "text", "email_body")[:600], quote=False)
 
-    icon = "🔥" if cls in ("INTERESTED", "BOOK_A_CALL") else "📌"
+    icon = "🔥"
     lines = [
         f'{icon} <b>{cls}</b> — {sender_name} ({sender_email})',
         f"Campaign: {campaign_label} • Subject: {subject}",

@@ -70,10 +70,10 @@ function suggestReply(cls, senderName, subject, body) {
     );
   }
   if (cls === 'OBJECTION') {
+    const ref = snippet ? ` You mentioned "${snippet}" — that's something I'm happy to address properly rather than brush over.` : '';
     return (
-      `Thanks for the honest reply, ${first} — I really appreciate it. ` +
-      `That's a fair point, and it's something I'm happy to address properly rather than just brush over it. ` +
-      `Would it be worth a quick 20-minute call so I can give you a straight answer? You can book a slot here if so: https://cal.com/voqalai/discovery ` +
+      `Thanks for the honest reply, ${first} — I really appreciate it.${ref} ` +
+      `Would it be worth a quick 20-minute call so I can give you a straight answer? ` +
       `Tom — Voqal AI`
     );
   }
