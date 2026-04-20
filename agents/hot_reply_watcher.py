@@ -101,7 +101,10 @@ def classify_reply(subject: str, body: str) -> str:
         }],
     )
     raw = response.content[0].text.strip().upper()
-    for cls in ALL_CLASSES:
+    if raw in ALL_CLASSES:
+        return raw
+    # Fallback: substring match sorted longest-first so "NOT_INTERESTED" wins over "INTERESTED".
+    for cls in sorted(ALL_CLASSES, key=len, reverse=True):
         if cls in raw:
             return cls
     log.warning("Unexpected classification %r — defaulting to QUESTION", raw)
