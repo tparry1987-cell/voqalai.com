@@ -28,7 +28,18 @@ def get_env(name: str) -> str:
     return val
 
 
-def fetch_replies(campaign_id: str, since_iso: str, api_key: str) -> list[dict]:
+def _parse_ts(ts: str) -> datetime | None:
+    """Parse an ISO-8601 timestamp tolerating both Z and +00:00 suffixes."""
+    if not ts:
+        return None
+    ts = ts.replace("Z", "+00:00")
+    try:
+        return datetime.fromisoformat(ts)
+    except ValueError:
+        return None
+
+
+def fetch_replies(campaign_id: str, since: datetime, api_key: str) -> list[dict]:
     headers = {"Authorization": f"Bearer {api_key}"}
     params = {"campaign_id": campaign_id, "limit": 100}
     resp = requests.get(
@@ -42,7 +53,12 @@ def fetch_replies(campaign_id: str, since_iso: str, api_key: str) -> list[dict]:
     items = data.get("items", data) if isinstance(data, dict) else data
     if not isinstance(items, list):
         items = []
-    return [r for r in items if (r.get("timestamp_created") or "") >= since_iso]
+    result = []
+    for r in items:
+        ts = _parse_ts(r.get("timestamp_created") or "")
+        if ts and ts >= since:
+            result.append(r)
+    return result
 
 
 def _reply_field(reply: dict, *candidates: str, default: str = "") -> str:
@@ -145,7 +161,7 @@ def main() -> None:
     uk_id = get_env("UK_CAMPAIGN_ID")
     us_id = get_env("US_CAMPAIGN_ID")
 
-    since_iso = (datetime.now(timezone.utc) - timedelta(hours=2, minutes=10)).isoformat()
+    since = datetime.now(timezone.utc) - timedelta(hours=2, minutes=10)
 
     client = anthropic.Anthropic()
 
@@ -154,7 +170,7 @@ def main() -> None:
 
     for label, cid in [("UK", uk_id), ("US", us_id)]:
         try:
-            replies = fetch_replies(cid, since_iso, api_key)
+            replies = fetch_replies(cid, since, api_key)
             for r in replies:
                 all_replies.append((label, r, cid))
         except Exception as exc:
