@@ -1077,11 +1077,10 @@
   background-position: 50% 50%;
   transition: opacity 0.3s ease;
 }
+/* No desktop dimmer — match prototype. Bottom-blur element provides the
+   gentle bottom fade for marquee/CTA legibility. */
 .home-hero::after {
-  z-index: 1;
-  background:
-    linear-gradient(180deg, rgba(7, 9, 8, 0.5) 0%, rgba(7, 9, 8, 0.16) 28%, rgba(7, 9, 8, 0.72) 78%, rgba(7, 9, 8, 0.94) 100%),
-    linear-gradient(90deg, rgba(7, 9, 8, 0.62) 0%, rgba(7, 9, 8, 0.18) 50%, rgba(7, 9, 8, 0.58) 100%);
+  display: none;
 }
 .home-hero .hero-video {
   position: absolute;
