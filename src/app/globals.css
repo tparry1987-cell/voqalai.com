@@ -1011,6 +1011,7 @@
   justify-content: space-between;
   padding: 1rem;
   color: #fff;
+  gap: 0.75rem;
 }
 .hero-logo {
   display: flex;
@@ -1018,7 +1019,7 @@
   gap: 0.5rem;
 }
 .hero-logo span {
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 .hero-logo span + span {
@@ -1042,10 +1043,10 @@
 .hero-book-link {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.8rem;
   border-radius: 9999px;
   color: #fff;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   line-height: 1.25rem;
   font-weight: 500;
   white-space: nowrap;
@@ -1059,7 +1060,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 1rem 2rem;
+  padding: 0 1rem calc(8.25rem + env(safe-area-inset-bottom));
 }
 .hero-content-row {
   display: flex;
@@ -1074,47 +1075,47 @@
 .hero-kicker {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.25rem;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
   color: rgba(255, 255, 255, 0.55);
-  font-size: 0.625rem;
+  font-size: 0.56rem;
   line-height: 1rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 .hero-kicker span {
   display: inline-block;
-  width: 1.5rem;
+  width: 1.1rem;
   height: 1px;
   background: rgba(255, 255, 255, 0.4);
 }
 .hero-title {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.45rem;
   color: #fff;
-  font-size: 2.25rem;
+  font-size: clamp(2.55rem, 12.5vw, 3.45rem);
   line-height: 1.02;
   font-weight: 400;
   letter-spacing: -0.04em;
 }
 .hero-subtitle {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--accent-light);
-  font-size: 2.25rem;
+  font-size: clamp(2.55rem, 12.5vw, 3.45rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
 }
 .hero-lede {
   max-width: 42rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.15rem;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 1rem;
-  line-height: 1.625;
+  font-size: 0.98rem;
+  line-height: 1.48;
 }
 .hero-proof {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-  margin-bottom: 1.75rem;
+  gap: 0.35rem 0.85rem;
+  margin-bottom: 1.25rem;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.75rem;
   line-height: 1rem;
@@ -1133,34 +1134,40 @@
 }
 .hero-cta-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  flex-wrap: nowrap;
+  gap: 0.65rem;
 }
 .hero-primary-cta,
 .hero-secondary-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.5rem;
   border-radius: 9999px;
-  padding: 0.625rem 1.5rem;
+  padding: 0.72rem 1rem;
   font-weight: 600;
+  font-size: 0.875rem;
+  min-height: 46px;
+  justify-content: center;
   transition: background-color 0.2s ease;
 }
 .hero-primary-cta {
   background: #fff;
   color: #000;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .hero-primary-cta:hover {
   background: rgba(255, 255, 255, 0.9);
 }
 .hero-secondary-cta {
   color: #fff;
+  flex: 0 0 auto;
 }
 .hero-secondary-cta:hover {
   background: rgba(255, 255, 255, 0.05);
 }
 .hero-marquee {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 .hero-marquee-row {
   display: flex;
@@ -1185,13 +1192,13 @@
   display: flex;
   width: max-content;
   align-items: center;
-  gap: 3.5rem;
+  gap: 2rem;
   color: rgba(255, 255, 255, 0.55);
 }
 .hero-marquee-track span {
   flex-shrink: 0;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 0.95rem;
+  line-height: 1.35rem;
   font-weight: 600;
 }
 
@@ -1212,8 +1219,13 @@
 .home-reviews-grid { gap: 1.5rem; }
 
 @media (min-width: 640px) {
+  .hero-logo span { font-size: 1.875rem; }
+  .hero-book-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
   .hero-nav { padding-inline: 1.5rem; }
-  .hero-content { padding-inline: 1.5rem; }
+  .hero-content { padding-inline: 1.5rem; padding-bottom: 2rem; }
   .hero-kicker { font-size: 0.6875rem; }
   .hero-title,
   .hero-subtitle { font-size: 3rem; }
@@ -1221,10 +1233,52 @@
   .hero-proof { font-size: 0.875rem; line-height: 1.25rem; }
   .hero-cta-row { gap: 1rem; }
   .hero-primary-cta,
+  .hero-secondary-cta { flex: 0 0 auto; font-size: 1rem; min-height: auto; }
+  .hero-primary-cta,
   .hero-secondary-cta { padding: 0.75rem 2rem; }
   .home-service-grid,
   .home-reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-service-wide { grid-column: span 2 / span 2; }
+}
+
+@media (max-width: 420px) {
+  .hero-nav {
+    padding: 0.85rem 0.95rem;
+  }
+  .hero-book-link {
+    max-width: 9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hero-proof {
+    max-width: 19rem;
+  }
+  .hero-primary-cta .soundwave {
+    flex: 0 0 22px;
+  }
+  .hero-secondary-cta {
+    padding-inline: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-logo span { font-size: 1.32rem; }
+  .hero-book-link {
+    max-width: 8rem;
+    padding-inline: 0.65rem;
+    font-size: 0.75rem;
+  }
+  .hero-title,
+  .hero-subtitle {
+    font-size: 2.25rem;
+  }
+  .hero-cta-row {
+    flex-wrap: wrap;
+  }
+  .hero-primary-cta,
+  .hero-secondary-cta {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {

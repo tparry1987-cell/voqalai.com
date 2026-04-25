@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   return {
     title: `AI Receptionist in ${capitalizedCity} | Voqal AI`,
     description: `AI voice agents for businesses in ${capitalizedCity}. 24/7 call answering, appointment booking, and lead qualification for ${capitalizedCity} companies.`,
+    alternates: { canonical: `https://voqalai.com/locations/${city}/` },
   };
 }
 

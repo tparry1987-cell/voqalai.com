@@ -1,3 +1,3 @@
-:HL["/_next/static/chunks/0ttmdbj9rx_ct.css","style"]
+:HL["/_next/static/chunks/13-78y9ab5uic.css","style"]
 :HC["/",""]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"guides","param":null,"prefetchHints":0,"slots":{"children":{"name":"ico-voice-ai-compliance-checklist","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"5cHL-qpCuRmFEfA2OPsKf"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"guides","param":null,"prefetchHints":0,"slots":{"children":{"name":"ico-voice-ai-compliance-checklist","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"59cdEp6v3xZqbMwCL35hS"}
