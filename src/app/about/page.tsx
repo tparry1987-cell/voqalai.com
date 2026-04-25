@@ -107,6 +107,17 @@ export default function AboutPage() {
             </div>
 
             <div style={{ textAlign: "center" }}>
+              <div style={{ width: 120, height: 120, borderRadius: "50%", overflow: "hidden", margin: "0 auto 1.25rem", background: "linear-gradient(135deg, #f4b08b, #db7c54)" }}>
+                <img src="/images/avatars/adrian-wilkinson.webp" alt="Adrian Wilkinson — Strategic Partner at Voqal AI" width={120} height={120} style={{ objectFit: "cover", width: "100%", height: "100%" }} />
+              </div>
+              <span style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.65rem" }}>Strategic Partner</span>
+              <h3 style={{ fontWeight: 500, fontSize: "1.25rem", marginBottom: "1rem", color: "#111", letterSpacing: "-0.01em" }}>Adrian Wilkinson</h3>
+              <p style={{ fontSize: "0.875rem", color: "#555", lineHeight: 1.7 }}>
+                Three decades operating across businesses worldwide, with a unique understanding of how operations actually run and how the systems behind them either help or hinder. Adrian brings vast experience implementing AI inside real businesses &mdash; identifying where it adds genuine impact and where it simply doesn&rsquo;t belong.
+              </p>
+            </div>
+
+            <div style={{ textAlign: "center" }}>
               <div style={{ width: 120, height: 120, borderRadius: "50%", margin: "0 auto 1.25rem", background: "linear-gradient(135deg, #f4b08b, #db7c54)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.6rem", color: "#fff" }}>&lt;/&gt;</span>
               </div>
