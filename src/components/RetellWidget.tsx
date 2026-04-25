@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 export function RetellWidget() {
   useEffect(() => {
+    if (window.matchMedia("(max-width: 767px)").matches) return;
     if (document.getElementById("retell-widget")) return;
     const s = document.createElement("script");
     s.id = "retell-widget";
@@ -30,7 +31,7 @@ export function RetellWidget() {
         const sr = (host as HTMLElement & { shadowRoot: ShadowRoot }).shadowRoot;
         const style = document.createElement("style");
         style.textContent =
-          ".retell-chat-window { max-height: 350px !important; height: 350px !important; } #retell-fab { display: none !important; } .retell-popup-container { bottom: 70px !important; right: 0 !important; }";
+          ".retell-chat-window { max-height: 350px !important; height: 350px !important; } #retell-fab { display: none !important; } .retell-popup-container { bottom: 70px !important; right: 0 !important; } @media (max-width: 640px) { .retell-popup-container { display: none !important; } }";
         sr.appendChild(style);
         const inp = sr.querySelector("input[placeholder], textarea[placeholder]") as HTMLInputElement | HTMLTextAreaElement | null;
         if (inp) inp.placeholder = "Ask us anything...";
