@@ -201,20 +201,22 @@ export default function Home() {
           </Reveal>
         </section>
 
+        <div className="home-industries-divider" />
+
         {/* ─── 04 · Industries ─── */}
-        <section id="industries" className="home-industries-section section-padding section-alt container" style={{ textAlign: "center" }}>
-          <Reveal>
+        <section id="industries" className="home-industries-section">
+          <Reveal className="home-industries-heading">
             <span className="section-label">04 &mdash; Who We Serve</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "1.5rem" }}>
+            <h2>
               Built for <span className="italic-accent">every sector.</span>
             </h2>
-            <p className="body-text" style={{ maxWidth: 620, margin: "0 auto 3rem" }}>
+            <p>
               Our voice agents adapt to the language, workflows, and compliance requirements of your industry. Each deployment is custom-trained on sector-specific terminology so callers get accurate answers on the first call.
             </p>
           </Reveal>
 
-          <Reveal delay={0.15}>
-            <div className="sector-grid" style={{ maxWidth: 960, margin: "0 auto" }}>
+          <Reveal className="home-industries-grid-wrap" delay={0.15}>
+            <div className="sector-grid">
               {[
                 { name: "Dental Practices", benefit: "Reduce no-shows with automated appointment confirmations", Icon: Stethoscope },
                 { name: "Law Firms", benefit: "Qualify new enquiries by case type before they reach a fee earner", Icon: Scale },
