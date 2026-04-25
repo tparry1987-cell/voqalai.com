@@ -1,5 +1,164 @@
 @import "tailwindcss";
 
+/* Force Tailwind v4 to scan all source files. */
+@source "../**/*.{ts,tsx,js,jsx,mdx}";
+
+/* ──────────────────────────────────────────────────────────────────
+   Tailwind v4 in this project's setup is silently dropping
+   breakpoint-prefixed utilities (md:px-12, md:py-6, lg:gap-12 etc.)
+   from the production bundle even though they're statically used in
+   JSX source. Below we author these utilities directly inside
+   @layer utilities so they always exist.
+   The selectors use \: escaping so they match the same className
+   strings JSX produces ("md:px-12" → .md\:px-12).
+   ────────────────────────────────────────────────────────────────── */
+
+@layer utilities {
+  /* sm breakpoint: 640px = 40rem */
+  @media (min-width: 40rem) {
+    .sm\:px-6 { padding-inline: calc(var(--spacing) * 6); }
+    .sm\:px-8 { padding-inline: calc(var(--spacing) * 8); }
+    .sm\:py-3 { padding-block: calc(var(--spacing) * 3); }
+    .sm\:py-2\.5 { padding-block: calc(var(--spacing) * 2.5); }
+    .sm\:gap-4 { gap: calc(var(--spacing) * 4); }
+    .sm\:gap-6 { gap: calc(var(--spacing) * 6); }
+    .sm\:text-sm { font-size: var(--text-sm); line-height: var(--text-sm--line-height); }
+    .sm\:text-base { font-size: var(--text-base); line-height: var(--text-base--line-height); }
+    .sm\:text-lg { font-size: var(--text-lg); line-height: var(--text-lg--line-height); }
+    .sm\:text-5xl { font-size: var(--text-5xl); line-height: var(--text-5xl--line-height); }
+    .sm\:flex-row { flex-direction: row; }
+    .sm\:flex { display: flex; }
+  }
+
+  /* md breakpoint: 768px = 48rem */
+  @media (min-width: 48rem) {
+    .md\:px-12 { padding-inline: calc(var(--spacing) * 12); }
+    .md\:py-6 { padding-block: calc(var(--spacing) * 6); }
+    .md\:py-14 { padding-block: calc(var(--spacing) * 14); }
+    .md\:py-32 { padding-block: calc(var(--spacing) * 32); }
+    .md\:py-36 { padding-block: calc(var(--spacing) * 36); }
+    .md\:py-40 { padding-block: calc(var(--spacing) * 40); }
+    .md\:pb-14 { padding-bottom: calc(var(--spacing) * 14); }
+    .md\:pb-16 { padding-bottom: calc(var(--spacing) * 16); }
+    .md\:pb-24 { padding-bottom: calc(var(--spacing) * 24); }
+    .md\:pb-28 { padding-bottom: calc(var(--spacing) * 28); }
+    .md\:pb-36 { padding-bottom: calc(var(--spacing) * 36); }
+    .md\:pt-36 { padding-top: calc(var(--spacing) * 36); }
+    .md\:pt-44 { padding-top: calc(var(--spacing) * 44); }
+    .md\:mt-12 { margin-top: calc(var(--spacing) * 12); }
+    .md\:mt-20 { margin-top: calc(var(--spacing) * 20); }
+    .md\:mb-4 { margin-bottom: calc(var(--spacing) * 4); }
+    .md\:mb-5 { margin-bottom: calc(var(--spacing) * 5); }
+    .md\:mb-6 { margin-bottom: calc(var(--spacing) * 6); }
+    .md\:mb-7 { margin-bottom: calc(var(--spacing) * 7); }
+    .md\:mb-8 { margin-bottom: calc(var(--spacing) * 8); }
+    .md\:mb-9 { margin-bottom: calc(var(--spacing) * 9); }
+    .md\:mb-10 { margin-bottom: calc(var(--spacing) * 10); }
+    .md\:mb-12 { margin-bottom: calc(var(--spacing) * 12); }
+    .md\:mb-14 { margin-bottom: calc(var(--spacing) * 14); }
+    .md\:mb-20 { margin-bottom: calc(var(--spacing) * 20); }
+    .md\:gap-3 { gap: calc(var(--spacing) * 3); }
+    .md\:gap-4 { gap: calc(var(--spacing) * 4); }
+    .md\:gap-6 { gap: calc(var(--spacing) * 6); }
+    .md\:gap-8 { gap: calc(var(--spacing) * 8); }
+    .md\:gap-12 { gap: calc(var(--spacing) * 12); }
+    .md\:gap-14 { gap: calc(var(--spacing) * 14); }
+    .md\:gap-16 { gap: calc(var(--spacing) * 16); }
+    .md\:px-10 { padding-inline: calc(var(--spacing) * 10); }
+    .md\:p-10 { padding: calc(var(--spacing) * 10); }
+    .md\:text-5xl { font-size: var(--text-5xl); line-height: var(--text-5xl--line-height); }
+    .md\:text-6xl { font-size: var(--text-6xl); line-height: var(--text-6xl--line-height); }
+    .md\:text-xl { font-size: var(--text-xl); line-height: var(--text-xl--line-height); }
+    .md\:text-lg { font-size: var(--text-lg); line-height: var(--text-lg--line-height); }
+    .md\:text-base { font-size: var(--text-base); line-height: var(--text-base--line-height); }
+    .md\:text-\[2\.75rem\] { font-size: 2.75rem; }
+    .md\:flex { display: flex; }
+    .md\:hidden { display: none; }
+    .md\:block { display: block; }
+    .md\:flex-row { flex-direction: row; }
+    .md\:items-stretch { align-items: stretch; }
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .md\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .md\:col-span-2 { grid-column: span 2 / span 2; }
+    .md\:w-1\/2 { width: 50%; }
+    .md\:scale-100 { --tw-scale-x: 100%; --tw-scale-y: 100%; transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); }
+    .md\:min-h-\[640px\] { min-height: 640px; }
+    .md\:p-8 { padding: calc(var(--spacing) * 8); }
+    .md\:p-7 { padding: calc(var(--spacing) * 7); }
+  }
+
+  /* lg breakpoint: 1024px = 64rem */
+  @media (min-width: 64rem) {
+    .lg\:flex { display: flex; }
+    .lg\:hidden { display: none; }
+    .lg\:gap-7 { gap: calc(var(--spacing) * 7); }
+    .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .lg\:text-7xl { font-size: var(--text-7xl); line-height: var(--text-7xl--line-height); }
+    .lg\:text-xl { font-size: var(--text-xl); line-height: var(--text-xl--line-height); }
+  }
+
+  /* xl breakpoint: 1280px */
+  @media (min-width: 80rem) {
+    .xl\:text-7xl { font-size: var(--text-7xl); line-height: var(--text-7xl--line-height); }
+  }
+
+  /* Base utilities (no prefix) — also missing from auto-detection */
+  .px-10 { padding-inline: calc(var(--spacing) * 10); }
+  .px-12 { padding-inline: calc(var(--spacing) * 12); }
+  .py-3 { padding-block: calc(var(--spacing) * 3); }
+  .py-12 { padding-block: calc(var(--spacing) * 12); }
+  .py-14 { padding-block: calc(var(--spacing) * 14); }
+  .py-16 { padding-block: calc(var(--spacing) * 16); }
+  .py-20 { padding-block: calc(var(--spacing) * 20); }
+  .py-24 { padding-block: calc(var(--spacing) * 24); }
+  .py-28 { padding-block: calc(var(--spacing) * 28); }
+  .py-32 { padding-block: calc(var(--spacing) * 32); }
+  .py-36 { padding-block: calc(var(--spacing) * 36); }
+  .pt-6 { padding-top: calc(var(--spacing) * 6); }
+  .pt-16 { padding-top: calc(var(--spacing) * 16); }
+  .pt-20 { padding-top: calc(var(--spacing) * 20); }
+  .pt-24 { padding-top: calc(var(--spacing) * 24); }
+  .pt-28 { padding-top: calc(var(--spacing) * 28); }
+  .pt-36 { padding-top: calc(var(--spacing) * 36); }
+  .pb-1 { padding-bottom: calc(var(--spacing) * 1); }
+  .pb-12 { padding-bottom: calc(var(--spacing) * 12); }
+  .pb-16 { padding-bottom: calc(var(--spacing) * 16); }
+  .pb-20 { padding-bottom: calc(var(--spacing) * 20); }
+  .pb-24 { padding-bottom: calc(var(--spacing) * 24); }
+  .pb-28 { padding-bottom: calc(var(--spacing) * 28); }
+  .pb-36 { padding-bottom: calc(var(--spacing) * 36); }
+  .mt-2 { margin-top: calc(var(--spacing) * 2); }
+  .mt-6 { margin-top: calc(var(--spacing) * 6); }
+  .mt-7 { margin-top: calc(var(--spacing) * 7); }
+  .mt-8 { margin-top: calc(var(--spacing) * 8); }
+  .mt-12 { margin-top: calc(var(--spacing) * 12); }
+  .mt-16 { margin-top: calc(var(--spacing) * 16); }
+  .mt-20 { margin-top: calc(var(--spacing) * 20); }
+  .mb-2 { margin-bottom: calc(var(--spacing) * 2); }
+  .mb-4 { margin-bottom: calc(var(--spacing) * 4); }
+  .mb-8 { margin-bottom: calc(var(--spacing) * 8); }
+  .mb-9 { margin-bottom: calc(var(--spacing) * 9); }
+  .mb-10 { margin-bottom: calc(var(--spacing) * 10); }
+  .mb-12 { margin-bottom: calc(var(--spacing) * 12); }
+  .mb-14 { margin-bottom: calc(var(--spacing) * 14); }
+  .mb-16 { margin-bottom: calc(var(--spacing) * 16); }
+  .mb-20 { margin-bottom: calc(var(--spacing) * 20); }
+  .ml-1 { margin-left: calc(var(--spacing) * 1); }
+  .ml-3 { margin-left: calc(var(--spacing) * 3); }
+  .gap-3 { gap: calc(var(--spacing) * 3); }
+  .gap-9 { gap: calc(var(--spacing) * 9); }
+  .gap-10 { gap: calc(var(--spacing) * 10); }
+  .gap-11 { gap: calc(var(--spacing) * 11); }
+  .gap-16 { gap: calc(var(--spacing) * 16); }
+  .gap-20 { gap: calc(var(--spacing) * 20); }
+  .text-3xl { font-size: var(--text-3xl); line-height: var(--text-3xl--line-height); }
+  .text-4xl { font-size: var(--text-4xl); line-height: var(--text-4xl--line-height); }
+  .text-5xl { font-size: var(--text-5xl); line-height: var(--text-5xl--line-height); }
+  .text-6xl { font-size: var(--text-6xl); line-height: var(--text-6xl--line-height); }
+  .text-7xl { font-size: var(--text-7xl); line-height: var(--text-7xl--line-height); }
+}
+
 /* ══════════════════════════════════════════════════════════════
    Voqal AI — design tokens (copper palette, Inter + Instrument Serif)
    ══════════════════════════════════════════════════════════════ */
