@@ -27,14 +27,13 @@ export default function Home() {
           <Navbar variant="glass" />
 
           <div className="flex-1 flex flex-col justify-end px-4 sm:px-6 md:px-12 pb-8 md:pb-14">
-            <div className="flex-1" />
-            <div className="flex-1 flex flex-col justify-end">
+            <div className="max-w-4xl">
               <div className="blur-fade-up inline-flex items-center gap-2 mb-5 text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-white/55" style={{ animationDelay: "250ms" }}>
                 <span className="inline-block w-6 h-px bg-white/40" />
                 A new era for modern business
               </div>
 
-              <h1 className="blur-fade-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-3 md:mb-4" style={{ animationDelay: "400ms", letterSpacing: "-0.04em", lineHeight: 1.02 }}>
+              <h1 className="blur-fade-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-3 md:mb-4 text-white" style={{ animationDelay: "400ms", letterSpacing: "-0.04em", lineHeight: 1.02 }}>
                 The world is changing.
               </h1>
               <h2 className="blur-fade-up italic-accent text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8" style={{ animationDelay: "600ms", letterSpacing: "-0.03em", lineHeight: 1.02, color: "var(--accent-light)" }}>
@@ -53,11 +52,11 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap gap-3 sm:gap-4">
-                <a href="tel:+442039960962" className="blur-fade-up bg-white text-black rounded-full font-semibold px-6 sm:px-8 py-2.5 sm:py-3 inline-flex items-center gap-2 hover:bg-white/90 transition-colors" style={{ animationDelay: "1100ms" }}>
+                <a href="tel:+442039960962" className="blur-fade-up rounded-full font-semibold px-6 sm:px-8 py-3 inline-flex items-center gap-2.5 hover:bg-white/90 transition-colors" style={{ animationDelay: "1100ms", background: "#ffffff", color: "#111111" }}>
                   <span className="soundwave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
                   Speak to our AI now
                 </a>
-                <Link href="/pricing" className="blur-fade-up liquid-glass rounded-full font-semibold px-6 sm:px-8 py-2.5 sm:py-3 hover:bg-white/5 transition-colors" style={{ animationDelay: "1200ms" }}>
+                <Link href="/pricing" className="blur-fade-up liquid-glass rounded-full font-semibold px-6 sm:px-8 py-3 hover:bg-white/5 transition-colors text-white" style={{ animationDelay: "1200ms" }}>
                   View Pricing
                 </Link>
               </div>
