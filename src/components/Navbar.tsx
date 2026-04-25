@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const links = [
-  { label: "Services", href: "/#services" },
+  { label: "Voice Agents", href: "/#services" },
   { label: "Industries", href: "/#industries" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
@@ -51,16 +51,16 @@ export function Navbar({ variant = "light" }: { variant?: "glass" | "light" }) {
     // Hero dark nav (inside fixed hero) + scroll-triggered sticky white pill
     return (
       <>
-        <nav className="relative z-10 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-6 text-white">
-          <Link href="/" className="flex items-center gap-2 blur-fade-up" style={{ animationDelay: "0ms" }}>
+        <nav className="hero-nav">
+          <Link href="/" className="hero-logo blur-fade-up" style={{ animationDelay: "0ms" }}>
             {LargeSerifLogo}
           </Link>
-          <div className="hidden lg:flex items-center gap-7 text-sm text-white/85">
+          <div className="hero-nav-links">
             {links.map((l, i) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="blur-fade-up hover:text-white/60 transition-colors"
+                className="blur-fade-up hero-nav-link"
                 style={{ animationDelay: `${100 + i * 50}ms` }}
               >
                 {l.label}
@@ -69,7 +69,7 @@ export function Navbar({ variant = "light" }: { variant?: "glass" | "light" }) {
           </div>
           <Link
             href="/book"
-            className="blur-fade-up liquid-glass rounded-full text-sm font-medium text-white px-4 md:px-5 py-2 inline-flex items-center hover:bg-white/5 transition-colors"
+            className="blur-fade-up liquid-glass hero-book-link"
             style={{ animationDelay: "350ms" }}
           >
             Book Free Demo

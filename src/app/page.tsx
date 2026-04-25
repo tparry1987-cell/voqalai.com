@@ -16,48 +16,48 @@ export default function Home() {
   return (
     <>
       {/* ═══ CINEMATIC HERO — fixed backdrop ═══ */}
-      <section className="fixed inset-0 h-screen w-full overflow-hidden" aria-label="Hero">
+      <section className="home-hero" aria-label="Hero">
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <video autoPlay loop muted playsInline className="hero-video absolute inset-0 h-full w-full object-cover z-0">
+        <video autoPlay loop muted playsInline className="hero-video">
           <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4" type="video/mp4" />
         </video>
         <div className="bottom-blur" />
 
-        <div className="relative z-10 h-screen flex flex-col text-white">
+        <div className="hero-stage">
           <Navbar variant="glass" />
 
-          <div className="flex-1 flex flex-col justify-end px-4 sm:px-6 md:px-12 pb-8 md:pb-14">
-            <div className="flex flex-col md:flex-row items-end gap-8">
-              <div className="flex-1">
-                <div className="blur-fade-up inline-flex items-center gap-2 mb-5 text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-white/55" style={{ animationDelay: "250ms" }}>
-                  <span className="inline-block w-6 h-px bg-white/40" />
+          <div className="hero-content">
+            <div className="hero-content-row">
+              <div className="hero-copy">
+                <div className="hero-kicker blur-fade-up" style={{ animationDelay: "250ms" }}>
+                  <span />
                   A new era for modern business
                 </div>
 
-                <h1 className="blur-fade-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-3 md:mb-4 text-white" style={{ animationDelay: "400ms", letterSpacing: "-0.04em", lineHeight: 1.02 }}>
+                <h1 className="hero-title blur-fade-up" style={{ animationDelay: "400ms" }}>
                   The world is changing.
                 </h1>
-                <h2 className="blur-fade-up serif-italic text-copper-light text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8" style={{ animationDelay: "600ms", letterSpacing: "-0.03em", lineHeight: 1.02 }}>
+                <h2 className="hero-subtitle blur-fade-up serif-italic" style={{ animationDelay: "600ms" }}>
                   Time to step through.
                 </h2>
 
-                <p className="blur-fade-up text-base sm:text-lg md:text-xl text-white/75 max-w-2xl mb-7 md:mb-9 leading-relaxed" style={{ animationDelay: "800ms" }}>
+                <p className="hero-lede blur-fade-up" style={{ animationDelay: "800ms" }}>
                   Your AI receptionist. Every call answered, every lead captured &mdash; 24/7, in under two seconds.
                 </p>
 
-                <div className="blur-fade-up flex flex-wrap gap-x-5 gap-y-2 mb-7 md:mb-10 text-xs sm:text-sm text-white/70" style={{ animationDelay: "950ms" }}>
-                  <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full bg-copper-light" /><span>&lt; 2s answer</span></div>
-                  <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full bg-copper-light" /><span>24/7 &middot; 365</span></div>
-                  <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full bg-copper-light" /><span>Demo in 24 hours</span></div>
-                  <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full bg-copper-light" /><span>No contracts</span></div>
+                <div className="hero-proof blur-fade-up" style={{ animationDelay: "950ms" }}>
+                  <div><span /><span>&lt; 2s answer</span></div>
+                  <div><span /><span>24/7 &middot; 365</span></div>
+                  <div><span /><span>Demo in 24 hours</span></div>
+                  <div><span /><span>No contracts</span></div>
                 </div>
 
-                <div className="flex flex-wrap gap-3 sm:gap-4">
-                  <a href="tel:+442039960962" className="blur-fade-up bg-white text-black rounded-full font-semibold px-6 sm:px-8 py-2.5 sm:py-3 inline-flex items-center gap-2.5 hover:bg-white/90 transition-colors" style={{ animationDelay: "1100ms" }}>
+                <div className="hero-cta-row">
+                  <a href="tel:+442039960962" className="hero-primary-cta blur-fade-up" style={{ animationDelay: "1100ms" }}>
                     <span className="soundwave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
                     Speak to our AI now
                   </a>
-                  <Link href="/pricing" className="blur-fade-up liquid-glass rounded-full font-semibold px-6 sm:px-8 py-2.5 sm:py-3 text-white hover:bg-white/5 transition-colors" style={{ animationDelay: "1200ms" }}>
+                  <Link href="/pricing" className="hero-secondary-cta blur-fade-up liquid-glass" style={{ animationDelay: "1200ms" }}>
                     View Pricing
                   </Link>
                 </div>
@@ -65,13 +65,13 @@ export default function Home() {
             </div>
 
             {/* Works-with marquee */}
-            <div className="blur-fade-up mt-10 md:mt-12" style={{ animationDelay: "1550ms" }}>
-              <div className="flex items-center gap-6">
-                <span className="hidden md:block shrink-0 text-[10px] tracking-[0.3em] uppercase" style={{ color: "rgba(255,255,255,0.45)" }}>Works with</span>
-                <div className="relative flex-1 overflow-hidden marquee-mask">
-                  <div className="animate-marquee flex w-max items-center gap-14" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <div className="hero-marquee blur-fade-up" style={{ animationDelay: "1550ms" }}>
+              <div className="hero-marquee-row">
+                <span>Works with</span>
+                <div className="hero-marquee-mask marquee-mask">
+                  <div className="hero-marquee-track animate-marquee">
                     {[...integrations, ...integrations].map((name, i) => (
-                      <span key={i} className="shrink-0 text-lg font-semibold">{name}</span>
+                      <span key={i}>{name}</span>
                     ))}
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" style={{ marginTop: "4rem" }}>
+            <div className="home-service-grid" style={{ marginTop: "4rem" }}>
               <Link href="/pricing" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
                 <div className="icon">I.</div>
                 <h3>Voice AI Agents</h3>
@@ -165,7 +165,7 @@ export default function Home() {
                 <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>About our team &rarr;</span>
               </Link>
 
-              <Link href="/book" className="service-card block sm:col-span-2" style={{ textDecoration: "none", color: "inherit" }}>
+              <Link href="/book" className="service-card home-service-wide block" style={{ textDecoration: "none", color: "inherit" }}>
                 <div className="icon">V.</div>
                 <h3>AI-Enhanced Websites</h3>
                 <p>Your website should generate leads while you sleep, not just sit there looking pretty. We design and build professional sites with voice agents, intelligent chat, lead capture, and smart automations woven in from day one &mdash; not bolted on as afterthoughts. From real estate to trades, our clients get sites that actively convert visitors into booked appointments around the clock.</p>
@@ -185,7 +185,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16" style={{ textAlign: "left", maxWidth: 1000, margin: "0 auto" }}>
+            <div className="home-steps-grid" style={{ textAlign: "left", maxWidth: 1000, margin: "0 auto" }}>
               {[
                 { step: "01", title: "We learn your business", desc: "Share your FAQs, opening hours, services, and how you want calls handled. We use this to train your AI receptionist on your specific business." },
                 { step: "02", title: "We build your AI agent", desc: "Our team builds your custom voice agent. You get a personalised demo within 24 hours — call it and hear it live before going ahead." },
@@ -243,7 +243,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12" style={{ maxWidth: 1080, margin: "0 auto" }}>
+            <div className="home-stats-grid" style={{ maxWidth: 1080, margin: "0 auto" }}>
               {[
                 { n: "80%", l: "Of callers sent to voicemail will not leave a message and will call a competitor instead (PATLive, 2023)" },
                 { n: "21×", l: "Increase in lead conversion when calls are answered within 5 minutes (MIT & InsideSales.com)" },
@@ -272,7 +272,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ maxWidth: 840, margin: "0 auto 3rem" }}>
+            <div className="home-reviews-grid" style={{ maxWidth: 840, margin: "0 auto 3rem" }}>
               {/* Trustpilot review */}
               <div style={{ padding: "2rem", borderRadius: "16px", border: "1px solid var(--border-subtle)", textAlign: "left", display: "flex", flexDirection: "column", justifyContent: "space-between", background: "var(--bg-white)" }}>
                 <div>
