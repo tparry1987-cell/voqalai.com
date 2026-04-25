@@ -27,38 +27,40 @@ export default function Home() {
           <Navbar variant="glass" />
 
           <div className="flex-1 flex flex-col justify-end px-4 sm:px-6 md:px-12 pb-8 md:pb-14">
-            <div className="max-w-4xl">
-              <div className="blur-fade-up inline-flex items-center gap-2 mb-5 text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-white/55" style={{ animationDelay: "250ms" }}>
-                <span className="inline-block w-6 h-px bg-white/40" />
-                A new era for modern business
-              </div>
+            <div className="flex flex-col md:flex-row items-end gap-8">
+              <div className="flex-1">
+                <div className="blur-fade-up inline-flex items-center gap-2 mb-5 text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-white/55" style={{ animationDelay: "250ms" }}>
+                  <span className="inline-block w-6 h-px bg-white/40" />
+                  A new era for modern business
+                </div>
 
-              <h1 className="blur-fade-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-3 md:mb-4 text-white" style={{ animationDelay: "400ms", letterSpacing: "-0.04em", lineHeight: 1.02 }}>
-                The world is changing.
-              </h1>
-              <h2 className="blur-fade-up italic-accent text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8" style={{ animationDelay: "600ms", letterSpacing: "-0.03em", lineHeight: 1.02, color: "var(--accent-light)" }}>
-                Time to step through.
-              </h2>
+                <h1 className="blur-fade-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-3 md:mb-4 text-white" style={{ animationDelay: "400ms", letterSpacing: "-0.04em", lineHeight: 1.02 }}>
+                  The world is changing.
+                </h1>
+                <h2 className="blur-fade-up serif-italic text-copper-light text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8" style={{ animationDelay: "600ms", letterSpacing: "-0.03em", lineHeight: 1.02 }}>
+                  Time to step through.
+                </h2>
 
-              <p className="blur-fade-up text-base sm:text-lg md:text-xl max-w-2xl mb-7 md:mb-9 leading-relaxed" style={{ animationDelay: "800ms", color: "rgba(255,255,255,0.75)" }}>
-                Your AI receptionist. Every call answered, every lead captured &mdash; 24/7, in under two seconds.
-              </p>
+                <p className="blur-fade-up text-base sm:text-lg md:text-xl text-white/75 max-w-2xl mb-7 md:mb-9 leading-relaxed" style={{ animationDelay: "800ms" }}>
+                  Your AI receptionist. Every call answered, every lead captured &mdash; 24/7, in under two seconds.
+                </p>
 
-              <div className="blur-fade-up flex flex-wrap gap-x-5 gap-y-2 mb-7 md:mb-10 text-xs sm:text-sm" style={{ animationDelay: "950ms", color: "rgba(255,255,255,0.7)" }}>
-                <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent-light)" }} /><span>&lt; 2s answer</span></div>
-                <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent-light)" }} /><span>24/7 &middot; 365</span></div>
-                <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent-light)" }} /><span>Demo in 24 hours</span></div>
-                <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "var(--accent-light)" }} /><span>No contracts</span></div>
-              </div>
+                <div className="blur-fade-up flex flex-wrap gap-x-5 gap-y-2 mb-7 md:mb-10 text-xs sm:text-sm text-white/70" style={{ animationDelay: "950ms" }}>
+                  <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full bg-copper-light" /><span>&lt; 2s answer</span></div>
+                  <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full bg-copper-light" /><span>24/7 &middot; 365</span></div>
+                  <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full bg-copper-light" /><span>Demo in 24 hours</span></div>
+                  <div className="flex items-center gap-1.5"><span className="inline-block w-1.5 h-1.5 rounded-full bg-copper-light" /><span>No contracts</span></div>
+                </div>
 
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                <a href="tel:+442039960962" className="blur-fade-up rounded-full font-semibold px-6 sm:px-8 py-3 inline-flex items-center gap-2.5 hover:bg-white/90 transition-colors" style={{ animationDelay: "1100ms", background: "#ffffff", color: "#111111" }}>
-                  <span className="soundwave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
-                  Speak to our AI now
-                </a>
-                <Link href="/pricing" className="blur-fade-up liquid-glass rounded-full font-semibold px-6 sm:px-8 py-3 hover:bg-white/5 transition-colors text-white" style={{ animationDelay: "1200ms" }}>
-                  View Pricing
-                </Link>
+                <div className="flex flex-wrap gap-3 sm:gap-4">
+                  <a href="tel:+442039960962" className="blur-fade-up bg-white text-black rounded-full font-semibold px-6 sm:px-8 py-2.5 sm:py-3 inline-flex items-center gap-2.5 hover:bg-white/90 transition-colors" style={{ animationDelay: "1100ms" }}>
+                    <span className="soundwave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                    Speak to our AI now
+                  </a>
+                  <Link href="/pricing" className="blur-fade-up liquid-glass rounded-full font-semibold px-6 sm:px-8 py-2.5 sm:py-3 text-white hover:bg-white/5 transition-colors" style={{ animationDelay: "1200ms" }}>
+                    View Pricing
+                  </Link>
+                </div>
               </div>
             </div>
 
