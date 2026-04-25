@@ -86,23 +86,23 @@ export default function AboutPage() {
 
             <div style={{ textAlign: "center" }}>
               <div style={{ width: 120, height: 120, borderRadius: "50%", overflow: "hidden", margin: "0 auto 1.25rem", background: "linear-gradient(135deg, #f4b08b, #db7c54)" }}>
-                <img src="/images/avatars/augusta.webp" alt="Augusta — Co-Founder of Voqal AI" width={120} height={120} style={{ objectFit: "cover", objectPosition: "center 20%", width: "100%", height: "100%" }} />
+                <img src="/images/avatars/charlie-todd.webp" alt="Charlie Todd — Co-Founder of Voqal AI" width={120} height={120} style={{ objectFit: "cover", objectPosition: "center 32%", width: "100%", height: "100%" }} />
               </div>
-              <span style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.65rem" }}>Co-Founder &amp; Operations</span>
-              <h3 style={{ fontWeight: 500, fontSize: "1.25rem", marginBottom: "1rem", color: "#111", letterSpacing: "-0.01em" }}>Augusta</h3>
+              <span style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.65rem" }}>Co-Founder</span>
+              <h3 style={{ fontWeight: 500, fontSize: "1.25rem", marginBottom: "1rem", color: "#111", letterSpacing: "-0.01em" }}>Charlie Todd</h3>
               <p style={{ fontSize: "0.875rem", color: "#555", lineHeight: 1.7 }}>
-                5 years in real estate, bringing operational insight and deep understanding of client-facing communication. Handles client onboarding and voice agent tailoring.
+                International business experience across service-led companies, with a strong understanding of how teams, systems, and customer journeys are set up in the real world. Charlie helps identify where AI can remove friction, improve response times, and turn everyday business processes into measurable growth.
               </p>
             </div>
 
             <div style={{ textAlign: "center" }}>
-              <div style={{ width: 120, height: 120, borderRadius: "50%", margin: "0 auto 1.25rem", background: "linear-gradient(135deg, #f4b08b, #db7c54)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "2.5rem", color: "#fff", letterSpacing: "-0.02em" }}>JK</span>
+              <div style={{ width: 120, height: 120, borderRadius: "50%", overflow: "hidden", margin: "0 auto 1.25rem", background: "linear-gradient(135deg, #f4b08b, #db7c54)" }}>
+                <img src="/images/avatars/augusta.webp" alt="Augusta — Sales Director at Voqal AI" width={120} height={120} style={{ objectFit: "cover", objectPosition: "center 20%", width: "100%", height: "100%" }} />
               </div>
-              <span style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.65rem" }}>Senior Business Consultant</span>
-              <h3 style={{ fontWeight: 500, fontSize: "1.25rem", marginBottom: "1rem", color: "#111", letterSpacing: "-0.01em" }}>Joseph K.</h3>
+              <span style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.65rem" }}>Sales Director</span>
+              <h3 style={{ fontWeight: 500, fontSize: "1.25rem", marginBottom: "1rem", color: "#111", letterSpacing: "-0.01em" }}>Augusta</h3>
               <p style={{ fontSize: "0.875rem", color: "#555", lineHeight: 1.7 }}>
-                Over a decade advising SMEs across healthcare, legal, property, and financial services on growth strategy and operational efficiency. Bridges the gap between business needs and AI capability &mdash; ensuring every voice agent deployment translates to measurable commercial outcomes.
+                5 years in real estate, bringing operational insight and deep understanding of client-facing communication. Leads sales conversations, supports client onboarding, and helps tailor each voice agent around the way customers actually enquire, book, and buy.
               </p>
             </div>
 
