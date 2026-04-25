@@ -62,12 +62,20 @@ export function CookieConsent() {
       <style jsx>{`
         @media (max-width: 640px) {
           .cookie-banner {
-            flex-direction: column !important;
-            gap: 0.75rem !important;
-            padding: 1rem !important;
+            display: grid !important;
+            grid-template-columns: minmax(0, 1fr) auto !important;
+            align-items: center !important;
+            gap: 0.85rem !important;
+            padding: 0.78rem 1rem calc(0.78rem + env(safe-area-inset-bottom)) !important;
+          }
+          .cookie-banner p {
+            font-size: 0.78rem !important;
+            line-height: 1.35 !important;
           }
           .cookie-banner button {
-            width: 100% !important;
+            width: auto !important;
+            min-width: 5.9rem !important;
+            padding: 0.58rem 1rem !important;
           }
         }
       `}</style>
