@@ -202,7 +202,7 @@ export default function Home() {
         </section>
 
         {/* ─── 04 · Industries ─── */}
-        <section id="industries" className="section-padding section-alt container" style={{ textAlign: "center" }}>
+        <section id="industries" className="home-industries-section section-padding section-alt container" style={{ textAlign: "center" }}>
           <Reveal>
             <span className="section-label">04 &mdash; Who We Serve</span>
             <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "1.5rem" }}>
