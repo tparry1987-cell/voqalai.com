@@ -19,17 +19,19 @@ export default function TermsPage() {
     <>
       <Navbar variant="light" />
 
-      <section className="section-padding section-white container" style={{ paddingTop: "12rem" }}>
+      <section className="section-padding section-white container" style={{ paddingTop: "10rem" }}>
         <Reveal>
-          <span className="section-label">Legal</span>
-          <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            Terms &amp; <span className="italic-accent">Conditions.</span>
-          </h1>
-          <p className="body-text">Last updated: February 2026</p>
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <span className="section-label">Legal</span>
+            <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+              Terms &amp; <span className="italic-accent">Conditions.</span>
+            </h1>
+            <p className="body-text" style={{ marginTop: "0.5rem" }}>Last updated: February 2026</p>
+          </div>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div style={{ marginTop: "4rem", maxWidth: 800 }} className="legal-content">
+          <div style={{ marginTop: "4rem" }} className="legal-content">
             <h2>1. Agreement to Terms</h2>
             <p>By accessing or using the services provided by Voqal AI Ltd (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), a company registered in England &amp; Wales (Company No. 17080303) with registered office at 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use our services.</p>
 
@@ -85,8 +87,8 @@ export default function TermsPage() {
             <h2>11. Contact Us</h2>
             <p>For questions about these Terms and Conditions, please contact us:</p>
             <p>
-              Email: <a href="mailto:info@voqalai.com" className="text-link">info@voqalai.com</a><br />
-              Phone: <a href="tel:+442039960962" className="text-link">+44 20 3996 0962</a> (UK) / <a href="tel:+13322641587" className="text-link">+1 (332) 264-1587</a> (US)
+              Email: <a href="mailto:info@voqalai.com">info@voqalai.com</a><br />
+              Phone: <a href="tel:+442039960962">+44 20 3996 0962</a> (UK) / <a href="tel:+13322641587">+1 (332) 264-1587</a> (US)
             </p>
           </div>
         </Reveal>

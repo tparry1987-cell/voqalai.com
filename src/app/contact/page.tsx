@@ -3,13 +3,14 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
+import Link from "next/link";
 
 const contactSchema = [
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Voqal AI",
-    "description": "Book a free demo or get in touch with Voqal AI. AI receptionist setup within 24 hours. No contracts.",
+    "description": "Get in touch with Voqal AI. Personalised AI receptionist demo within 24 hours. No contracts.",
     "url": "https://voqalai.com/contact",
     "mainEntity": {
       "@type": "Organization",
@@ -37,77 +38,67 @@ export default function ContactPage() {
       ))}
       <Navbar variant="light" />
 
-      <section className="section-padding section-white container" style={{ paddingTop: "12rem" }}>
+      <section className="section-padding section-white container" style={{ paddingTop: "10rem" }}>
         <Reveal>
-          <div style={{ textAlign: "center", marginBottom: "5rem" }}>
-            <span className="section-label">Get Started</span>
-            <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 600, margin: "0 auto 2rem" }}>
-              Request <span className="italic-accent">Demonstration.</span>
+          <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto" }}>
+            <span className="section-label">Get in touch</span>
+            <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", maxWidth: 700, margin: "0 auto 1.5rem" }}>
+              Speak to the team, <span className="italic-accent">not a bot.</span>
             </h1>
-            <p className="body-text" style={{ maxWidth: 500, margin: "0 auto" }}>
-              Fill in the form and our team will send you a personalised voice agent demo within 24 hours.
+            <p className="body-text" style={{ maxWidth: 560, margin: "0 auto" }}>
+              Pick the channel that suits you. We reply to every enquiry within 24 hours &mdash; usually much sooner.
             </p>
           </div>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="form-card" style={{ maxWidth: 700, margin: "0 auto" }}>
-            <form name="demo" method="POST" action="/thank-you" data-netlify="true">
-              <input type="hidden" name="form-name" value="demo" />
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div>
-                  <label className="form-label">Name</label>
-                  <input type="text" name="name" required className="form-input" placeholder="Your name" />
-                </div>
-                <div>
-                  <label className="form-label">Business</label>
-                  <input type="text" name="business" className="form-input" placeholder="Business name" />
-                </div>
-              </div>
-
-              <div style={{ marginTop: "2rem" }}>
-                <label className="form-label">Email</label>
-                <input type="email" name="email" required className="form-input" placeholder="you@business.co.uk" />
-              </div>
-
-              <div style={{ marginTop: "2rem" }}>
-                <label className="form-label">Phone</label>
-                <input type="tel" name="phone" className="form-input" placeholder="+44..." />
-              </div>
-
-              <div style={{ marginTop: "2rem" }}>
-                <label className="form-label">Tell us about your needs</label>
-                <textarea name="message" rows={4} className="form-textarea" placeholder="How can we help?" />
-              </div>
-
-              <button type="submit" className="btn-accent w-full rounded-full" style={{ marginTop: "2.5rem", padding: "1rem", fontSize: "1rem" }}>
-                Request Demo
-              </button>
-            </form>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5" style={{ maxWidth: 1080, margin: "4rem auto 0" }}>
+            <div className="service-card" style={{ padding: "2rem" }}>
+              <div style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", fontWeight: 600, color: "var(--accent)", marginBottom: "0.85rem" }}>United Kingdom</div>
+              <div style={{ fontSize: "1.35rem", fontWeight: 500, color: "#111", marginBottom: "0.25rem", letterSpacing: "-0.015em" }}>020 3996 0962</div>
+              <div style={{ fontSize: "0.85rem", color: "#888", marginBottom: "1.25rem" }}>24/7 &mdash; speak to our AI receptionist</div>
+              <a href="tel:+442039960962" className="text-link">Call now &rarr;</a>
+            </div>
+            <div className="service-card" style={{ padding: "2rem" }}>
+              <div style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", fontWeight: 600, color: "var(--accent)", marginBottom: "0.85rem" }}>United States</div>
+              <div style={{ fontSize: "1.35rem", fontWeight: 500, color: "#111", marginBottom: "0.25rem", letterSpacing: "-0.015em" }}>+1 (332) 264-1587</div>
+              <div style={{ fontSize: "0.85rem", color: "#888", marginBottom: "1.25rem" }}>24/7 &mdash; speak to our AI receptionist</div>
+              <a href="tel:+13322641587" className="text-link">Call now &rarr;</a>
+            </div>
+            <div className="service-card" style={{ padding: "2rem" }}>
+              <div style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", fontWeight: 600, color: "var(--accent)", marginBottom: "0.85rem" }}>Email</div>
+              <div style={{ fontSize: "1.35rem", fontWeight: 500, color: "#111", marginBottom: "0.25rem", letterSpacing: "-0.015em" }}>info@voqalai.com</div>
+              <div style={{ fontSize: "0.85rem", color: "#888", marginBottom: "1.25rem" }}>Reply within 24 hours</div>
+              <a href="mailto:info@voqalai.com" className="text-link">Send email &rarr;</a>
+            </div>
           </div>
         </Reveal>
 
-        {/* Contact info */}
         <Reveal delay={0.2}>
-          <div style={{ marginTop: "5rem", textAlign: "center" }}>
-            <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
-              <div>
-                <span className="form-label" style={{ marginBottom: "0.5rem" }}>UK</span>
-                <a href="tel:+442039960962" style={{ display: "block", fontSize: "1.1rem", color: "var(--text-primary)", fontWeight: 400 }}>020 3996 0962</a>
-              </div>
-              <div style={{ width: 1, height: 40, background: "var(--border-subtle)" }} className="hidden sm:block" />
-              <div>
-                <span className="form-label" style={{ marginBottom: "0.5rem" }}>US</span>
-                <a href="tel:+13322641587" style={{ display: "block", fontSize: "1.1rem", color: "var(--text-primary)", fontWeight: 400 }}>+1 (332) 264-1587</a>
-              </div>
-              <div style={{ width: 1, height: 40, background: "var(--border-subtle)" }} className="hidden sm:block" />
-              <div>
-                <span className="form-label" style={{ marginBottom: "0.5rem" }}>Email</span>
-                <a href="mailto:info@voqalai.com" style={{ display: "block", fontSize: "1.1rem", color: "var(--text-primary)", fontWeight: 400 }}>info@voqalai.com</a>
-              </div>
+          <div style={{ maxWidth: 960, margin: "4rem auto 0" }}>
+            <div style={{ background: "var(--bg-footer)", color: "#fff", borderRadius: "16px", padding: "3rem", textAlign: "center" }}>
+              <div style={{ fontSize: "0.7rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", fontWeight: 500, marginBottom: "1rem" }}>Prefer a personalised demo?</div>
+              <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 400, letterSpacing: "-0.025em", color: "#fff", lineHeight: 1.2, marginBottom: "1rem" }}>
+                We&rsquo;ll build you a demo in <span className="italic-accent" style={{ color: "var(--accent-light)" }}>24 hours.</span>
+              </h2>
+              <p style={{ color: "rgba(255,255,255,0.65)", maxWidth: 520, margin: "0 auto 2rem", lineHeight: 1.6 }}>
+                Tell us about your business and we&rsquo;ll build a bespoke AI receptionist you can call and test before deciding anything.
+              </p>
+              <Link href="/book" style={{ background: "#fff", color: "#111", borderRadius: "999px", padding: "0.9rem 2rem", fontWeight: 600, fontSize: "0.95rem", textDecoration: "none", display: "inline-block" }}>
+                Book Free Demo &rarr;
+              </Link>
             </div>
+          </div>
+        </Reveal>
 
+        <Reveal delay={0.25}>
+          <div style={{ marginTop: "4rem", textAlign: "center", fontSize: "0.85rem", color: "#888" }}>
+            <div style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", fontWeight: 600, color: "#999", marginBottom: "0.5rem" }}>Registered office</div>
+            <p style={{ lineHeight: 1.7 }}>
+              Voqal AI Ltd &middot; Company No. 17080303<br />
+              71&ndash;75 Shelton Street, Covent Garden, London, WC2H 9JQ<br />
+              <span style={{ color: "#aaa" }}>Operating from Manchester &middot; Serving UK &amp; US</span>
+            </p>
           </div>
         </Reveal>
       </section>

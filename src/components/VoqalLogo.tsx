@@ -1,13 +1,13 @@
 export function VoqalLogo({ className = "", variant = "dark" }: { className?: string; variant?: "dark" | "light" }) {
-  const textFill = variant === "dark" ? "#f0ece6" : "#1A1A2E";
-  const dividerStroke = variant === "dark" ? "rgba(255,255,255,0.1)" : "rgba(26,26,46,0.08)";
+  const textFill = variant === "dark" ? "#f0ece6" : "#111111";
+  const dividerStroke = variant === "dark" ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)";
 
   return (
     <svg viewBox="0 0 295 65" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       <defs>
         <linearGradient id="wf-grad" x1="0" y1="15" x2="0" y2="75">
-          <stop offset="0%" stopColor="#A0FCA2" />
-          <stop offset="100%" stopColor="#87FB89" />
+          <stop offset="0%" stopColor="#f4b08b" />
+          <stop offset="100%" stopColor="#db7c54" />
         </linearGradient>
       </defs>
       <rect x="0" y="27" width="8" height="22" rx="4" fill="url(#wf-grad)">
@@ -31,9 +31,9 @@ export function VoqalLogo({ className = "", variant = "dark" }: { className?: st
         <animate attributeName="y" values="29;34.85;29" dur="1.2s" begin="0.15s" repeatCount="indefinite" />
       </rect>
       <line x1="76" y1="12" x2="76" y2="64" stroke={dividerStroke} strokeWidth="1" />
-      <text x="94" y="52" fontFamily="'Geist Sans', system-ui, sans-serif" fontWeight="400" fontStyle="italic" fontSize="52" fill={textFill} letterSpacing="1">Voqal</text>
-      <text x="230" y="52" fontFamily="'Geist Sans', sans-serif" fontWeight="300" fontSize="48" fill="#87FB89" letterSpacing="2">Ai</text>
-      <circle cx="282" cy="47" r="4" fill="#87FB89">
+      <text x="94" y="52" fontFamily="'Instrument Serif', Georgia, serif" fontWeight="400" fontStyle="italic" fontSize="52" fill={textFill} letterSpacing="1">Voqal</text>
+      <text x="230" y="52" fontFamily="'Inter', sans-serif" fontWeight="500" fontSize="48" fill="#db7c54" letterSpacing="2">Ai</text>
+      <circle cx="282" cy="47" r="4" fill="#db7c54">
         <animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite" />
       </circle>
     </svg>

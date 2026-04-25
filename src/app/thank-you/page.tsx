@@ -28,7 +28,7 @@ export default function ThankYouPage() {
               Thank <span className="italic-accent">You.</span>
             </h1>
             <p className="body-text" style={{ maxWidth: 500, margin: "1rem auto 0" }}>
-              Your demonstration request has been received. Our engineering team will be in touch within 48 hours to set up your personalised voice agent testing environment.
+              Your demonstration request has been received. Our engineering team will be in touch within 24 hours to set up your personalised voice agent testing environment.
             </p>
           </div>
         </Reveal>

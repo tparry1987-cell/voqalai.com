@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import "@fontsource/geist-sans/400.css";
-import "@fontsource/geist-sans/500.css";
-import "@fontsource/geist-sans/600.css";
-import "@fontsource/geist-sans/700.css";
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/instrument-serif/400.css";
+import "@fontsource/instrument-serif/400-italic.css";
 import "./globals.css";
 import { CalEmbed } from "@/components/CalEmbed";
 import { CookieConsent } from "@/components/CookieConsent";
@@ -346,6 +349,11 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://dashboard.retellai.com" />
         <link rel="preconnect" href="https://app.cal.com" />
+        <script
+          type="text/javascript"
+          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          async
+        />
         {structuredData.map((data, i) => (
           <script
             key={i}
