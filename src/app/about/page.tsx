@@ -91,7 +91,7 @@ export default function AboutPage() {
               <span style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.65rem" }}>Co-Founder</span>
               <h3 style={{ fontWeight: 500, fontSize: "1.25rem", marginBottom: "1rem", color: "#111", letterSpacing: "-0.01em" }}>Charlie Todd</h3>
               <p style={{ fontSize: "0.875rem", color: "#555", lineHeight: 1.7 }}>
-                International business experience across service-led companies, with a strong understanding of how teams, systems, and customer journeys are set up in the real world. Charlie helps identify where AI can remove friction, improve response times, and turn everyday business processes into measurable growth.
+                Charlie&rsquo;s passion is identifying opportunities to streamline with AI. With international business experience and a strong understanding of how companies operate day to day, he helps clients spot where automation can remove friction, improve response times, and create measurable growth.
               </p>
             </div>
 
