@@ -18,7 +18,15 @@ export default function Home() {
       {/* ═══ CINEMATIC HERO — fixed backdrop ═══ */}
       <section className="home-hero" aria-label="Hero">
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <video autoPlay loop muted playsInline className="hero-video">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          poster="/images/mobile-hero-still-2x.jpg"
+          className="hero-video"
+        >
           <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4" type="video/mp4" />
         </video>
         <div className="bottom-blur" />

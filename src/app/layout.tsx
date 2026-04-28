@@ -347,6 +347,13 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className="h-full antialiased scroll-smooth">
       <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/mobile-hero-still-2x.jpg"
+          media="(max-width: 767px)"
+          fetchPriority="high"
+        />
         <link rel="preconnect" href="https://dashboard.retellai.com" />
         <link rel="preconnect" href="https://app.cal.com" />
         <script
