@@ -356,6 +356,7 @@ export default function RootLayout({
         />
         <link rel="preconnect" href="https://dashboard.retellai.com" />
         <link rel="preconnect" href="https://app.cal.com" />
+        <link rel="llms" href="https://voqalai.com/llms.txt" type="text/plain" />
         <script
           type="text/javascript"
           src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"

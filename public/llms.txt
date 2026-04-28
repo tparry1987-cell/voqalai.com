@@ -1,0 +1,46 @@
+# Voqal AI — AI Receptionist UK
+
+> Voqal AI Ltd is a UK-registered company (Companies House No. 17080303) providing 24/7 AI voice receptionist services for UK and US businesses. AI agents answer inbound calls, book appointments, and qualify leads. Plans from £197/month, no long-term contracts.
+
+## Core Pages
+- [Homepage](https://voqalai.com/): Overview of 24/7 AI phone answering, booking, and lead qualification
+- [Pricing](https://voqalai.com/pricing/): Starter £197, Pro £397, Premium £697 — monthly, no contracts
+- [About](https://voqalai.com/about/): Founder, team, and company background
+- [Book a Demo](https://voqalai.com/book/): Schedule a personalised demo (delivered within 24 hours)
+- [Contact](https://voqalai.com/contact/): Phone, email, and enquiry form
+
+## Sector Pages
+- [AI Receptionist for Dental Practices](https://voqalai.com/ai-receptionist-dental-practices/)
+- [AI Receptionist for Law Firms](https://voqalai.com/ai-receptionist-law-firms/)
+- [AI Receptionist for Trades & Home Services](https://voqalai.com/ai-receptionist-tradesmen/)
+- [AI Receptionist for Medical Clinics](https://voqalai.com/ai-receptionist-medical-practices/)
+- [AI Receptionist for Estate Agents](https://voqalai.com/ai-receptionist-estate-agents/)
+
+## Location Pages
+- [London](https://voqalai.com/locations/london/)
+- [Manchester](https://voqalai.com/locations/manchester/)
+- [Birmingham](https://voqalai.com/locations/birmingham/)
+- [Leeds](https://voqalai.com/locations/leeds/)
+- [Edinburgh](https://voqalai.com/locations/edinburgh/)
+
+## Guides
+- [How to Set Up an AI Receptionist](https://voqalai.com/guides/how-to-set-up-ai-receptionist/)
+- [GDPR-Compliant AI Receptionist (UK)](https://voqalai.com/guides/gdpr-compliant-ai-receptionist-uk/)
+- [AI Receptionist Compliance for Dental Practices](https://voqalai.com/guides/ai-receptionist-dental-practice-compliance/)
+- [ICO Voice AI Compliance Checklist](https://voqalai.com/guides/ico-voice-ai-compliance-checklist/)
+
+## Key Facts
+- Company: Voqal AI Ltd (Companies House No. 17080303)
+- Founded: 2025
+- Service area: United Kingdom and United States
+- Service: 24/7 AI voice receptionist, AI chat agents, lead reactivation, process automation, AI-enhanced websites
+- Pricing: From £197/month (Starter), no long-term contracts
+- Onboarding: Personalised demo within 24 hours; live deployment after sign-off
+- Compliance: UK GDPR and Data Protection Act 2018; data encrypted in transit and at rest
+
+## Contact
+- Website: https://voqalai.com
+- UK phone: +44 20 3996 0962
+- US phone: +1 (332) 264-1587
+- Email: info@voqalai.com
+- Registered office: 71-75 Shelton Street, London, WC2H 9JQ, UK
