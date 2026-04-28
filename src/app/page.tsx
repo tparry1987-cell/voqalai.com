@@ -37,17 +37,21 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-content-row">
               <div className="hero-copy">
+                <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>
+                  AI Receptionist for UK Businesses &mdash; 24/7 Phone Answering
+                </h1>
+
                 <div className="hero-kicker blur-fade-up" style={{ animationDelay: "250ms" }}>
                   <span />
                   A new era for modern business
                 </div>
 
-                <h1 className="hero-title blur-fade-up" style={{ animationDelay: "400ms" }}>
+                <div className="hero-title blur-fade-up" style={{ animationDelay: "400ms" }} aria-hidden="true">
                   The world is changing.
-                </h1>
-                <h2 className="hero-subtitle blur-fade-up serif-italic" style={{ animationDelay: "600ms" }}>
+                </div>
+                <div className="hero-subtitle blur-fade-up serif-italic" style={{ animationDelay: "600ms" }} aria-hidden="true">
                   Time to step through.
-                </h2>
+                </div>
 
                 <p className="hero-lede blur-fade-up" style={{ animationDelay: "800ms" }}>
                   Your AI receptionist. Every call answered, every lead captured &mdash; 24/7, in under two seconds.
@@ -226,19 +230,28 @@ export default function Home() {
           <Reveal className="home-industries-grid-wrap" delay={0.15}>
             <div className="sector-grid">
               {[
-                { name: "Dental Practices", benefit: "Reduce no-shows with automated appointment confirmations", Icon: Stethoscope },
-                { name: "Law Firms", benefit: "Qualify new enquiries by case type before they reach a fee earner", Icon: Scale },
-                { name: "Trades & Home Services", benefit: "Capture every job lead while you’re on-site", Icon: Wrench },
-                { name: "Medical Clinics", benefit: "Triage patient enquiries after hours and route urgent cases", Icon: HeartPulse },
-                { name: "Estate Agents", benefit: "Book viewings instantly and capture buyer requirements 24/7", Icon: HomeIcon },
-                { name: "Accountancy Firms", benefit: "Handle tax-deadline call surges without temporary staff", Icon: Calculator },
-              ].map(({ name, benefit, Icon }) => (
-                <div key={name} className="sector-tile">
-                  <Icon className="sector-icon" size={22} strokeWidth={1.5} />
-                  <strong>{name}</strong>
-                  <span>{benefit}</span>
-                </div>
-              ))}
+                { name: "Dental Practices", benefit: "Reduce no-shows with automated appointment confirmations", Icon: Stethoscope, href: "/ai-receptionist-dental-practices/" },
+                { name: "Law Firms", benefit: "Qualify new enquiries by case type before they reach a fee earner", Icon: Scale, href: "/ai-receptionist-law-firms/" },
+                { name: "Trades & Home Services", benefit: "Capture every job lead while you’re on-site", Icon: Wrench, href: "/ai-receptionist-tradesmen/" },
+                { name: "Medical Clinics", benefit: "Triage patient enquiries after hours and route urgent cases", Icon: HeartPulse, href: "/ai-receptionist-medical-practices/" },
+                { name: "Estate Agents", benefit: "Book viewings instantly and capture buyer requirements 24/7", Icon: HomeIcon, href: "/ai-receptionist-estate-agents/" },
+                { name: "Accountancy Firms", benefit: "Handle tax-deadline call surges without temporary staff", Icon: Calculator, href: null },
+              ].map(({ name, benefit, Icon, href }) => {
+                const inner = (
+                  <>
+                    <Icon className="sector-icon" size={22} strokeWidth={1.5} />
+                    <strong>{name}</strong>
+                    <span>{benefit}</span>
+                  </>
+                );
+                return href ? (
+                  <Link key={name} href={href} className="sector-tile" style={{ textDecoration: "none", color: "inherit", display: "flex", flexDirection: "column" }}>
+                    {inner}
+                  </Link>
+                ) : (
+                  <div key={name} className="sector-tile">{inner}</div>
+                );
+              })}
             </div>
           </Reveal>
         </section>
