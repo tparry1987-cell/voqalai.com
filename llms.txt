@@ -1,0 +1,19 @@
+# Voqal AI
+
+> Voqal AI is a UK-based AI Receptionist service providing 24/7 phone answering, appointment booking, and lead qualification for dental practices, law firms, and trades businesses. Plans start from £197/month with no contracts.
+
+## Key Pages
+
+- [Home](https://voqalai.com/): Overview of AI receptionist services
+- [Pricing](https://voqalai.com/pricing/): Transparent monthly pricing plans
+- [How It Works](https://voqalai.com/how-it-works/): Step-by-step onboarding process
+- [Industries](https://voqalai.com/industries/): Sector-specific use cases (dental, legal, trades)
+- [FAQ](https://voqalai.com/faq/): Common questions about AI receptionists
+
+## About
+
+Voqal AI serves UK SMEs that cannot afford to miss inbound calls. The service uses voice AI agents and chat agents to handle calls, qualify leads, and book appointments automatically.
+
+## Contact
+
+https://voqalai.com/contact/

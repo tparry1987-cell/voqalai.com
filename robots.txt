@@ -1,5 +1,7 @@
+# AI Content Summary
 User-agent: *
 Allow: /
+Allow: /llms.txt
 Disallow: /thank-you.html
 
 # AI Search Engine Crawlers — explicitly permitted
