@@ -48,6 +48,34 @@ const aboutSchema = [
   },
   {
     "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Augusta Steffy",
+    "jobTitle": "Sales Director",
+    "url": "https://voqalai.com/about",
+    "worksFor": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
+    "knowsAbout": [
+      "real estate sales",
+      "client onboarding",
+      "AI voice agents",
+      "customer communication"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adrian Wilkinson",
+    "jobTitle": "Strategic Partner",
+    "url": "https://voqalai.com/about",
+    "affiliation": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
+    "knowsAbout": [
+      "business operations",
+      "AI implementation",
+      "international business",
+      "process improvement"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://voqalai.com/" },
@@ -124,10 +152,10 @@ export default function AboutPage() {
 
             <div style={{ textAlign: "center" }}>
               <div style={{ width: 120, height: 120, borderRadius: "50%", overflow: "hidden", margin: "0 auto 1.25rem", background: "linear-gradient(135deg, #f4b08b, #db7c54)" }}>
-                <img src="/images/avatars/augusta.webp" alt="Augusta — Sales Director at Voqal AI" width={120} height={120} style={{ objectFit: "cover", objectPosition: "center 20%", width: "100%", height: "100%" }} />
+                <img src="/images/avatars/augusta.webp" alt="Augusta Steffy — Sales Director at Voqal AI" width={120} height={120} style={{ objectFit: "cover", objectPosition: "center 20%", width: "100%", height: "100%" }} />
               </div>
               <span style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--accent)", fontWeight: 600, display: "block", marginBottom: "0.65rem" }}>Sales Director</span>
-              <h3 style={{ fontWeight: 500, fontSize: "1.25rem", marginBottom: "1rem", color: "#111", letterSpacing: "-0.01em" }}>Augusta</h3>
+              <h3 style={{ fontWeight: 500, fontSize: "1.25rem", marginBottom: "1rem", color: "#111", letterSpacing: "-0.01em" }}>Augusta Steffy</h3>
               <p style={{ fontSize: "0.875rem", color: "#555", lineHeight: 1.7 }}>
                 5 years in real estate, bringing operational insight and deep understanding of client-facing communication. Leads sales conversations, supports client onboarding, and helps tailor each voice agent around the way customers actually enquire, book, and buy.
               </p>
