@@ -11,13 +11,40 @@ const aboutSchema = [
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Voqal AI",
-    "description": "Voqal AI Ltd builds AI voice agents for UK and US businesses. Founded by Thomas Parry, registered in England & Wales (Company No. 17080303).",
+    "description": "Voqal AI Ltd builds AI voice agents for UK and US businesses. Co-founded by Thomas Parry and Charlie Todd, registered in England & Wales (Company No. 17080303).",
     "url": "https://voqalai.com/about",
     "mainEntity": {
       "@type": "Organization",
       "name": "Voqal AI",
-      "url": "https://voqalai.com"
+      "url": "https://voqalai.com",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Thomas Parry",
+          "jobTitle": "Founder & CEO",
+          "sameAs": "https://www.linkedin.com/in/tom-parry-698bbb29a"
+        },
+        {
+          "@type": "Person",
+          "name": "Charlie Todd",
+          "jobTitle": "Co-Founder"
+        }
+      ]
     }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Charlie Todd",
+    "jobTitle": "Co-Founder",
+    "url": "https://voqalai.com/about",
+    "worksFor": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
+    "knowsAbout": [
+      "AI voice agents",
+      "business automation",
+      "process improvement",
+      "international business operations"
+    ]
   },
   {
     "@context": "https://schema.org",
