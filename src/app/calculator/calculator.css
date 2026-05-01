@@ -397,6 +397,9 @@
 .calc-root .calc-try-field input, .calc-root .calc-try-field select, .calc-root .calc-try-field textarea { font-family: var(--calc-font-sans); font-size: 1rem; padding: 0.85rem 1rem; border: 1px solid var(--calc-border-line); border-radius: 12px; background: white; outline: none; transition: all 0.2s ease; color: var(--calc-text-primary); resize: vertical; }
 .calc-root .calc-try-field textarea { min-height: 70px; }
 .calc-root .calc-try-field input:focus, .calc-root .calc-try-field select:focus, .calc-root .calc-try-field textarea:focus { border-color: var(--calc-accent); box-shadow: 0 0 0 4px rgba(219,124,84,0.12); }
+.calc-root .calc-try-field input.calc-try-input-error { border-color: #c1432f; background: #fff7f5; }
+.calc-root .calc-try-field input.calc-try-input-error:focus { border-color: #c1432f; box-shadow: 0 0 0 4px rgba(193,67,47,0.12); }
+.calc-root .calc-try-error { font-size: 0.8rem; color: #c1432f; margin: 0.1rem 0 0; line-height: 1.4; }
 .calc-root .calc-try-submit { margin-top: 0.5rem; padding: 1rem 1.5rem; background: var(--calc-accent); color: white; border: 0; border-radius: 999px; font-family: var(--calc-font-sans); font-size: 1rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.25s var(--calc-ease-out); }
 .calc-root .calc-try-submit:hover { background: var(--calc-accent-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(219,124,84,0.25); }
 .calc-root .calc-try-fineprint { font-size: 0.8rem; color: var(--calc-text-soft); margin-top: 0.25rem; line-height: 1.5; }

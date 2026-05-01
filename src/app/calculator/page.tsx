@@ -315,6 +315,7 @@ export default function CalculatorPage() {
   const [trySmsLetter, setTrySmsLetter] = useState("V");
   const [trySmsName, setTrySmsName] = useState("Voqal AI");
   const [trySmsStatus, setTrySmsStatus] = useState("Ready when you are");
+  const [tryErrors, setTryErrors] = useState<{ name?: string; business?: string }>({});
 
   // ===== Hero + pitch chat refs =====
   const heroThreadRef = useRef<HTMLDivElement>(null);
@@ -543,6 +544,15 @@ export default function CalculatorPage() {
 
   const onTrySubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const errors: { name?: string; business?: string } = {};
+    if (!tryName.trim()) errors.name = "Please enter your first name.";
+    if (!tryBusiness.trim()) errors.business = "Please enter your business name.";
+    setTryErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      const firstInvalid = errors.name ? "try-name" : "try-business";
+      document.getElementById(firstInvalid)?.focus();
+      return;
+    }
     playMockDemo();
   };
 
@@ -909,14 +919,34 @@ export default function CalculatorPage() {
               <span className="calc-eyebrow reveal">Try Voqal live</span>
               <h2 className="calc-heading-lg reveal reveal-delay-1">Watch your dormant leads <span className="calc-italic">come back to life</span>.</h2>
               <p className="reveal reveal-delay-2">Tell us about your business. We&apos;ll show you exactly how Voqal would text one of your sleeping leads — using your business name, your services, your tone.</p>
-              <form className="calc-try-form reveal reveal-delay-3" onSubmit={onTrySubmit}>
+              <form className="calc-try-form reveal reveal-delay-3" onSubmit={onTrySubmit} noValidate>
                 <div className="calc-try-field">
                   <label htmlFor="try-name">Your first name</label>
-                  <input type="text" id="try-name" placeholder="Tom" required value={tryName} onChange={(e) => setTryName(e.target.value)} />
+                  <input
+                    type="text"
+                    id="try-name"
+                    placeholder="Tom"
+                    value={tryName}
+                    onChange={(e) => { setTryName(e.target.value); if (tryErrors.name) setTryErrors({ ...tryErrors, name: undefined }); }}
+                    aria-invalid={!!tryErrors.name}
+                    aria-describedby={tryErrors.name ? "try-name-error" : undefined}
+                    className={tryErrors.name ? "calc-try-input-error" : undefined}
+                  />
+                  {tryErrors.name && <p id="try-name-error" className="calc-try-error">{tryErrors.name}</p>}
                 </div>
                 <div className="calc-try-field">
                   <label htmlFor="try-business">Business name</label>
-                  <input type="text" id="try-business" placeholder="Northwest Electrical" required value={tryBusiness} onChange={(e) => setTryBusiness(e.target.value)} />
+                  <input
+                    type="text"
+                    id="try-business"
+                    placeholder="Northwest Electrical"
+                    value={tryBusiness}
+                    onChange={(e) => { setTryBusiness(e.target.value); if (tryErrors.business) setTryErrors({ ...tryErrors, business: undefined }); }}
+                    aria-invalid={!!tryErrors.business}
+                    aria-describedby={tryErrors.business ? "try-business-error" : undefined}
+                    className={tryErrors.business ? "calc-try-input-error" : undefined}
+                  />
+                  {tryErrors.business && <p id="try-business-error" className="calc-try-error">{tryErrors.business}</p>}
                 </div>
                 <div className="calc-try-field">
                   <label htmlFor="try-industry">What does your business do?</label>
