@@ -72,15 +72,19 @@ export default function BookPage() {
               <>
                 {/* Hidden static form for Netlify Forms detection during build.
                     The real submission is the React form below. */}
-                <form name="demo" data-netlify="true" hidden>
+                <form name="demo" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
                   <input name="name" />
                   <input name="email" />
                   <input name="website" />
                   <textarea name="message" />
+                  <input name="bot-field" />
                 </form>
 
                 <form onSubmit={handleSubmit} className="form-card" name="demo">
                   <input type="hidden" name="form-name" value="demo" />
+                  <p hidden>
+                    <label>Don&rsquo;t fill this out: <input name="bot-field" /></label>
+                  </p>
 
                   <div style={{ display: "grid", gap: "1.5rem" }}>
                     <div>

@@ -36,45 +36,71 @@ export function CookieConsent() {
       className="cookie-banner"
     >
       <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.875rem", margin: 0, flex: 1, maxWidth: 640, lineHeight: 1.5 }}>
-        We use cookies to improve your experience. By continuing, you agree to our{" "}
+        We use cookies to improve your experience. See our{" "}
         <Link href="/privacy" style={{ color: "#f4b08b", textDecoration: "underline", textUnderlineOffset: "3px" }}>Privacy Policy</Link>.
       </p>
-      <button
-        onClick={() => {
-          localStorage.setItem("cookieConsent", "accepted");
-          setVisible(false);
-        }}
-        style={{
-          background: "#fff",
-          color: "#111",
-          border: "none",
-          padding: "0.55rem 1.5rem",
-          borderRadius: "999px",
-          fontSize: "0.85rem",
-          fontWeight: 600,
-          cursor: "pointer",
-          whiteSpace: "nowrap",
-          fontFamily: "inherit",
-        }}
-      >
-        Accept
-      </button>
+      <div className="cookie-actions" style={{ display: "flex", gap: "0.6rem", flexShrink: 0 }}>
+        <button
+          onClick={() => {
+            localStorage.setItem("cookieConsent", "rejected");
+            setVisible(false);
+          }}
+          style={{
+            background: "transparent",
+            color: "rgba(255,255,255,0.85)",
+            border: "1px solid rgba(255,255,255,0.25)",
+            padding: "0.55rem 1.5rem",
+            borderRadius: "999px",
+            fontSize: "0.85rem",
+            fontWeight: 600,
+            cursor: "pointer",
+            whiteSpace: "nowrap",
+            fontFamily: "inherit",
+          }}
+        >
+          Reject
+        </button>
+        <button
+          onClick={() => {
+            localStorage.setItem("cookieConsent", "accepted");
+            setVisible(false);
+          }}
+          style={{
+            background: "#fff",
+            color: "#111",
+            border: "none",
+            padding: "0.55rem 1.5rem",
+            borderRadius: "999px",
+            fontSize: "0.85rem",
+            fontWeight: 600,
+            cursor: "pointer",
+            whiteSpace: "nowrap",
+            fontFamily: "inherit",
+          }}
+        >
+          Accept
+        </button>
+      </div>
       <style jsx>{`
         @media (max-width: 640px) {
           .cookie-banner {
             display: grid !important;
-            grid-template-columns: minmax(0, 1fr) auto !important;
-            align-items: center !important;
-            gap: 0.85rem !important;
+            grid-template-columns: minmax(0, 1fr) !important;
+            align-items: stretch !important;
+            gap: 0.7rem !important;
             padding: 0.78rem 1rem calc(0.78rem + env(safe-area-inset-bottom)) !important;
           }
           .cookie-banner p {
             font-size: 0.78rem !important;
             line-height: 1.35 !important;
           }
+          .cookie-actions {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 0.5rem !important;
+          }
           .cookie-banner button {
-            width: auto !important;
-            min-width: 5.9rem !important;
+            width: 100% !important;
             padding: 0.58rem 1rem !important;
           }
         }
