@@ -3,11 +3,45 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+const GA_ID = "G-G2DTKVZ1VT";
+
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+function loadGoogleAnalytics() {
+  if (typeof window === "undefined" || document.getElementById("ga-consent-loader")) {
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer?.push(arguments);
+  };
+  window.gtag("js", new Date());
+  window.gtag("config", GA_ID, { anonymize_ip: true });
+
+  const script = document.createElement("script");
+  script.id = "ga-consent-loader";
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script);
+}
+
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("cookieConsent")) {
+    const consent = localStorage.getItem("cookieConsent");
+
+    if (consent === "accepted") {
+      loadGoogleAnalytics();
+    }
+
+    if (!consent) {
       // Show on next frame for smooth slide-in
       requestAnimationFrame(() => setVisible(true));
     }
@@ -63,6 +97,7 @@ export function CookieConsent() {
         <button
           onClick={() => {
             localStorage.setItem("cookieConsent", "accepted");
+            loadGoogleAnalytics();
             setVisible(false);
           }}
           style={{

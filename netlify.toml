@@ -248,12 +248,13 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
+    X-XSS-Protection = "0"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://app.cal.com https://dashboard.retellai.com https://cdn.retellai.com https://*.trustpilot.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://*.retellai.com https://*.trustpilot.com; frame-src https://app.cal.com https://www.googletagmanager.com https://*.retellai.com https://*.trustpilot.com; connect-src 'self' https://www.google-analytics.com https://app.cal.com https://*.retellai.com https://*.trustpilot.com; font-src 'self'; media-src 'self' https://d8j0ntlcm91z4.cloudfront.net;"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://app.cal.com https://dashboard.retellai.com https://cdn.retellai.com https://*.trustpilot.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.retellai.com https://*.trustpilot.com; frame-src https://app.cal.com https://www.googletagmanager.com https://*.retellai.com https://*.trustpilot.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://app.cal.com https://*.retellai.com https://*.trustpilot.com; font-src 'self'; media-src 'self' https://d8j0ntlcm91z4.cloudfront.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; manifest-src 'self'; upgrade-insecure-requests;"
 
 [[headers]]
   for = "/_next/static/*"
