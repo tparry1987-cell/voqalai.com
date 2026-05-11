@@ -156,40 +156,41 @@
 
 [[redirects]]
   from = "/integrations.html"
-  to = "/#services"
+  to = "/about/"
   status = 301
 
 [[redirects]]
   from = "/integrations/*"
-  to = "/#services"
+  to = "/about/"
   status = 301
 
-# Industry pages → about (industries section)
+# Industry pages → matching new clean URLs (preserve SEO equity)
 [[redirects]]
   from = "/ai-receptionist-dental-practices.html"
-  to = "/about/"
+  to = "/ai-receptionist-dental-practices/"
   status = 301
 
 [[redirects]]
   from = "/ai-receptionist-law-firms.html"
-  to = "/about/"
+  to = "/ai-receptionist-law-firms/"
   status = 301
 
 [[redirects]]
   from = "/ai-receptionist-medical-practices.html"
-  to = "/about/"
+  to = "/ai-receptionist-medical-practices/"
   status = 301
 
 [[redirects]]
   from = "/ai-receptionist-tradesmen.html"
-  to = "/about/"
+  to = "/ai-receptionist-tradesmen/"
   status = 301
 
 [[redirects]]
   from = "/ai-receptionist-estate-agents.html"
-  to = "/about/"
+  to = "/ai-receptionist-estate-agents/"
   status = 301
 
+# Old industry pages without a direct match → tradesmen (closest fit)
 [[redirects]]
   from = "/ai-receptionist-accountants.html"
   to = "/about/"
@@ -234,10 +235,10 @@
   to = "/"
   status = 301
 
-# Missing industry page redirects
+# Old industry pages without a direct match → closest topical fit
 [[redirects]]
   from = "/ai-receptionist-electricians.html"
-  to = "/about/"
+  to = "/ai-receptionist-tradesmen/"
   status = 301
 
 [[redirects]]
