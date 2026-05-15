@@ -10,7 +10,7 @@ const auditSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Voqal AI Opportunity Audit",
-    "description": "Paid AI consulting audit for UK and US businesses. We diagnose AI opportunities, quantify the ROI, and deliver a slide-deck Opportunities Report. Two tiers: Standard at £497, Strategic at £4,997.",
+    "description": "Paid AI consulting audit for UK and US businesses. We diagnose AI opportunities, quantify the ROI, and deliver a slide-deck Opportunities Report. Standard Audit at £497; Strategic AI Audit for larger or multi-site operations is scoped and quoted after a short intake.",
     "provider": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
     "areaServed": [
       { "@type": "Country", "name": "United Kingdom" },
@@ -20,8 +20,7 @@ const auditSchema = [
       "@type": "OfferCatalog",
       "name": "AI Audit Plans",
       "itemListElement": [
-        { "@type": "Offer", "name": "Standard Audit", "description": "60-minute audit call, slide-deck Opportunities Report with 3-5 AI tool recommendations and ROI numbers, 30-minute live presentation. Delivered within 7 working days.", "price": "497", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31", "url": "https://voqalai.com/audit" },
-        { "@type": "Offer", "name": "Strategic AI Audit", "description": "Multi-day engagement, stakeholder interviews, process mapping, custom mini PoC for the highest-ROI opportunity, quarterly check-ins for 6 months. Designed for enterprise.", "price": "4997", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31", "url": "https://voqalai.com/audit" }
+        { "@type": "Offer", "name": "Standard Audit", "description": "60-minute audit call, slide-deck Opportunities Report with 3-5 AI tool recommendations and ROI numbers, 30-minute live presentation. Delivered within 7 working days.", "price": "497", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31", "url": "https://voqalai.com/audit" }
       ]
     }
   },
@@ -35,12 +34,25 @@ const auditSchema = [
   }
 ];
 
-const auditTiers = [
+type AuditTier = {
+  name: string;
+  price: string;
+  interval: string;
+  byline: string;
+  features: string[];
+  delivery: string;
+  featured: boolean;
+  tag?: string;
+  ctaLabel: string;
+  ctaHref: string;
+};
+
+const auditTiers: AuditTier[] = [
   {
     name: "Standard Audit",
     price: "£497",
     interval: "one-off",
-    byline: "For UK & US businesses ready to act on AI",
+    byline: "For owner-led businesses running it themselves",
     features: [
       "15-minute discovery call",
       "Pre-audit intake form (10 questions)",
@@ -53,22 +65,26 @@ const auditTiers = [
     delivery: "Delivered within 7 working days",
     featured: true,
     tag: "Most chosen",
+    ctaLabel: "Book the discovery call",
+    ctaHref: "/book",
   },
   {
     name: "Strategic AI Audit",
-    price: "£4,997",
-    interval: "one-off",
-    byline: "For enterprises evaluating £20k+ in AI implementation",
+    price: "Bespoke",
+    interval: "scoped to your business",
+    byline: "For larger teams, multiple sites, or complex operations",
     features: [
-      "Everything in Standard, plus:",
       "Multi-day engagement (or one full day on-site)",
-      "Stakeholder interviews — 3 to 5 people",
+      "Stakeholder interviews across departments",
       "Process mapping — before/after workflow diagrams",
       "Custom mini PoC built for your highest-ROI opportunity",
       "Quarterly check-ins for 6 months post-delivery",
+      "Direct line to a Voqal partner, not a junior advisor",
     ],
-    delivery: "Delivered within 21 working days",
+    delivery: "Scoped and quoted within 2 working days",
     featured: false,
+    ctaLabel: "Tell us about your business",
+    ctaHref: "/audit/enquire",
   },
 ];
 
@@ -86,7 +102,7 @@ const faqs = [
   { q: "Do I have to use Voqal to implement what you recommend?", a: "No. The Opportunities Report is yours. Most clients move forward with us for the voice agent piece because that's our specialty, but the rest of the recommendations are vendor-agnostic. We tell you what to build, not who has to build it." },
   { q: "Who runs the audit?", a: "Tom Parry (Founder & CEO) for UK warm-network audits. Adrian Wilkinson (Strategic Partner) for enterprise and Reciprocal-tier engagements. Charlie Todd (Co-Founder) for UAE and international audits." },
   { q: "How quickly can I book?", a: "Discovery call within 24 hours. Audit call within 7 working days of the discovery call. Report delivered within 7 working days of the audit call. Total: ~2 weeks from first email to Opportunities Report in your hands." },
-  { q: "Can the audit cost be credited against an implementation?", a: "Yes. If you move forward with a Voqal build or retainer within 30 days of the audit, the audit fee (£497 or £4,997) is credited 100% against your first invoice." },
+  { q: "Can the audit cost be credited against an implementation?", a: "Yes. If you move forward with a Voqal build or retainer within 30 days of the audit, your audit fee is credited 100% against your first invoice — whether you paid the £497 Standard fee or a scoped Strategic fee." },
 ];
 
 export default function AuditPage() {
@@ -211,8 +227,8 @@ export default function AuditPage() {
                     <span>{t.delivery}</span>
                   </li>
                 </ul>
-                <Link href="/book" className={t.featured ? "btn" : "btn-outline"} style={{ textAlign: "center", display: "block" }}>
-                  Book the discovery call
+                <Link href={t.ctaHref} className={t.featured ? "btn" : "btn-outline"} style={{ textAlign: "center", display: "block" }}>
+                  {t.ctaLabel}
                 </Link>
               </div>
             ))}

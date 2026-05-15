@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+  Netlify Forms build-time detection stub.
+  Required because our React forms are rendered client-side and Netlify's
+  form parser scans static HTML in the publish directory at deploy time.
+  Mirror every field in the live form here, by name.
+-->
+<html>
+  <body>
+    <form name="audit-enquiry" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="business" />
+      <select name="headcount"></select>
+      <select name="revenue"></select>
+      <input type="text" name="sites" />
+      <textarea name="what"></textarea>
+      <input type="text" name="role" />
+      <textarea name="headache"></textarea>
+      <textarea name="ai-tools"></textarea>
+      <select name="budget"></select>
+      <select name="timing"></select>
+      <input type="text" name="bot-field" />
+    </form>
+  </body>
+</html>
