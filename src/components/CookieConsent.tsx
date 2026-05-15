@@ -77,6 +77,7 @@ export function CookieConsent() {
         <button
           onClick={() => {
             localStorage.setItem("cookieConsent", "rejected");
+            window.dispatchEvent(new Event("cookieconsent:change"));
             setVisible(false);
           }}
           style={{
@@ -98,6 +99,7 @@ export function CookieConsent() {
           onClick={() => {
             localStorage.setItem("cookieConsent", "accepted");
             loadGoogleAnalytics();
+            window.dispatchEvent(new Event("cookieconsent:change"));
             setVisible(false);
           }}
           style={{
