@@ -7,6 +7,7 @@ import "@fontsource/inter/700.css";
 import "@fontsource/instrument-serif/400.css";
 import "@fontsource/instrument-serif/400-italic.css";
 import "./globals.css";
+import "./cognitra.css";
 import { CalEmbed } from "@/components/CalEmbed";
 import { CookieConsent } from "@/components/CookieConsent";
 import { PostHogProvider } from "@/components/PostHogProvider";
