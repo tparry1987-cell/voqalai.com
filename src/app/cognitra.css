@@ -47,40 +47,102 @@
 /* ──────────────────────────────────────────────────────────────────
    Buttons
    ────────────────────────────────────────────────────────────────── */
+/* Buttons — all selectors use a./button. variants so they win specificity
+   against the global `.cog-redesign a { color: inherit }` rule. */
+
+a.cog-btn-primary,
+button.cog-btn-primary,
 .cog-btn-primary {
-  background: #1a1a1a; color: #fff; border: 1px solid #1a1a1a;
-  border-radius: 9999px; padding: 12px 32px;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #1a1a1a;
+  border-radius: 9999px;
+  padding: 12px 32px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: background 0.22s ease, color 0.22s ease;
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
-.cog-btn-primary:hover { background: var(--cog-copper); border-color: var(--cog-copper); }
+a.cog-btn-primary:hover,
+button.cog-btn-primary:hover,
+.cog-btn-primary:hover {
+  background: var(--cog-copper);
+  border-color: var(--cog-copper);
+  color: #fff;
+}
 
+a.cog-btn-secondary,
+button.cog-btn-secondary,
 .cog-btn-secondary {
-  background: transparent; color: #1a1a1a; border: 1px solid #1a1a1a;
-  border-radius: 9999px; padding: 12px 32px;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  background: transparent;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  border-radius: 9999px;
+  padding: 12px 32px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: background 0.22s ease, color 0.22s ease;
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
-.cog-btn-secondary:hover { background: #1a1a1a; color: #fff; }
+a.cog-btn-secondary:hover,
+button.cog-btn-secondary:hover,
+.cog-btn-secondary:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
 
+a.cog-btn-light,
+button.cog-btn-light,
 .cog-btn-light {
-  background: #fff; color: #111; border: 1px solid #fff;
-  border-radius: 9999px; padding: 12px 32px;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  background: #fff;
+  color: #111;
+  border: 1px solid #fff;
+  border-radius: 9999px;
+  padding: 12px 32px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: background 0.22s ease, color 0.22s ease;
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
-.cog-btn-light:hover { background: var(--cog-copper); color: #fff; border-color: var(--cog-copper); }
+a.cog-btn-light:hover,
+button.cog-btn-light:hover,
+.cog-btn-light:hover {
+  background: var(--cog-copper);
+  color: #fff;
+  border-color: var(--cog-copper);
+}
 
-.cog-btn-ghost-light {
-  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.45);
-  border-radius: 9999px; padding: 12px 32px;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+.cog-btn-ghost-light,
+a.cog-btn-ghost-light,
+button.cog-btn-ghost-light {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 9999px;
+  padding: 12px 32px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
-  display: inline-flex; align-items: center; gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
+a.cog-btn-ghost-light:hover,
+button.cog-btn-ghost-light:hover,
 .cog-btn-ghost-light:hover { background: #fff; color: #111; border-color: #fff; }
 
 /* ──────────────────────────────────────────────────────────────────
