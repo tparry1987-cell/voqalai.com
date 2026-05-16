@@ -1,61 +1,71 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
+import { Check } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Reveal } from "@/components/Reveal";
-import Link from "next/link";
+import FadeUp from "@/components/FadeUp";
 
 export default function ThankYouPage() {
   useEffect(() => {
-    if (typeof window !== "undefined" && window.Cal) {
-      window.Cal("inline", {
-        elementOrSelector: "#cal-embed",
-        calLink: "voqalai/discovery",
-      });
+    if (typeof window === "undefined") return;
+    // Cal global is declared elsewhere in the app — call defensively.
+    const w = window as unknown as { Cal?: (action: string, params?: Record<string, unknown>) => void };
+    if (w.Cal) {
+      w.Cal("inline", { elementOrSelector: "#cal-embed", calLink: "voqalai/discovery" });
     }
   }, []);
 
   return (
-    <>
-      <Navbar variant="light" />
+    <div className="cog-redesign" style={{ background: "#C5C5C5", minHeight: "100vh" }}>
+      <Navbar />
 
-      <section className="section-padding section-white container" style={{ paddingTop: "12rem" }}>
-        <Reveal>
-          <div style={{ textAlign: "center" }}>
-            <span className="section-label">Request Received</span>
-            <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              Thank <span className="italic-accent">You.</span>
-            </h1>
-            <p className="body-text" style={{ maxWidth: 500, margin: "1rem auto 0" }}>
-              Your demonstration request has been received. Our engineering team will be in touch within 24 hours to set up your personalised voice agent testing environment.
-            </p>
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5", paddingTop: 160, paddingBottom: 60, textAlign: "center" }}>
+        <FadeUp delay={0}>
+          <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(219,124,84,0.18)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 28 }}>
+            <Check size={32} color="var(--cog-copper)" strokeWidth={2.5} />
           </div>
-        </Reveal>
+        </FadeUp>
+        <FadeUp delay={0.1} style={{ fontSize: 11, letterSpacing: "0.18em", color: "#666", textTransform: "uppercase", marginBottom: 22 }}>
+          Request Received
+        </FadeUp>
+        <FadeUp delay={0.2}>
+          <h1 className="cog-h-display" style={{ fontSize: "clamp(40px, 6vw, 84px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 24px" }}>
+            THANK <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>you.</span>
+          </h1>
+        </FadeUp>
+        <FadeUp delay={0.35}>
+          <p style={{ fontSize: 16, lineHeight: 1.65, color: "#3a3a3a", maxWidth: 540, margin: "0 auto 28px" }}>
+            Your demonstration request has been received. Our engineering team will be in touch within 24 hours to set up your personalised voice agent testing environment.
+          </p>
+        </FadeUp>
+        <FadeUp delay={0.5}>
+          <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", marginBottom: 36 }}>
+            <a href="tel:+442039960962" className="cog-btn-primary">
+              <span className="cog-soundwave" aria-hidden><span /><span /><span /><span /></span>
+              Speak now — call Alice
+            </a>
+            <Link href="/" className="cog-btn-secondary">Back to home</Link>
+          </div>
+        </FadeUp>
       </section>
 
-      <section className="section-padding section-alt container" style={{ paddingTop: "2rem" }}>
-        <Reveal>
-          <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-            <span className="section-label">Skip the Wait</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              Book a Call <span className="italic-accent">Now.</span>
-            </h2>
-            <p className="body-text" style={{ maxWidth: 500, margin: "0 auto" }}>
-              Want to speak sooner? Pick a time that works for you and we&rsquo;ll call you directly.
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <div id="cal-embed" style={{ maxWidth: 700, margin: "0 auto" }} />
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <Link href="/" className="text-link">&larr; Return to homepage</Link>
-          </div>
-        </Reveal>
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5", paddingTop: 0, paddingBottom: 100 }}>
+        <FadeUp delay={0}>
+          <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 16px", textAlign: "center" }}>
+            Skip the wait — <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>book a call now.</span>
+          </h2>
+          <p style={{ fontSize: 14, color: "#3a3a3a", textAlign: "center", maxWidth: 500, margin: "0 auto 28px" }}>
+            Want to speak sooner? Pick a time that works for you and we&apos;ll call you directly.
+          </p>
+        </FadeUp>
+        <FadeUp delay={0.15}>
+          <div id="cal-embed" style={{ maxWidth: 720, margin: "0 auto" }} />
+        </FadeUp>
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }

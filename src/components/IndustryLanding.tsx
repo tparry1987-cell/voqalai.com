@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Plus, Minus, Check } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Reveal } from "@/components/Reveal";
-import Link from "next/link";
-import { Phone } from "lucide-react";
+import FadeUp from "@/components/FadeUp";
 
 export type IndustryData = {
   slug: string;
@@ -22,35 +24,30 @@ export type IndustryData = {
   faqs: { q: string; a: string }[];
 };
 
+const OTHER_INDUSTRIES: Array<{ slug: string; shortName: string }> = [
+  { slug: "ai-receptionist-dental-practices", shortName: "Dental Practices" },
+  { slug: "ai-receptionist-law-firms", shortName: "Law Firms" },
+  { slug: "ai-receptionist-tradesmen", shortName: "Tradesmen" },
+  { slug: "ai-receptionist-estate-agents", shortName: "Estate Agents" },
+  { slug: "ai-receptionist-medical-practices", shortName: "Medical Practices" },
+];
+
 export function IndustryLanding({ data }: { data: IndustryData }) {
   const url = `https://voqalai.com/${data.slug}/`;
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: data.metaTitle,
     serviceType: "AI Voice Receptionist",
-    provider: {
-      "@type": "Organization",
-      name: "Voqal AI",
-      url: "https://voqalai.com",
-    },
+    provider: { "@type": "Organization", name: "Voqal AI", url: "https://voqalai.com" },
     areaServed: { "@type": "Country", name: "United Kingdom" },
     description: data.metaDescription,
     url,
-    audience: {
-      "@type": "BusinessAudience",
-      audienceType: data.industryName,
-    },
-    offers: {
-      "@type": "Offer",
-      price: "197",
-      priceCurrency: "GBP",
-      availability: "https://schema.org/InStock",
-      url: "https://voqalai.com/pricing",
-    },
+    audience: { "@type": "BusinessAudience", audienceType: data.industryName },
+    offers: { "@type": "Offer", price: "197", priceCurrency: "GBP", availability: "https://schema.org/InStock", url: "https://voqalai.com/pricing" },
   };
-
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -59,7 +56,6 @@ export function IndustryLanding({ data }: { data: IndustryData }) {
       { "@type": "ListItem", position: 2, name: data.industryName, item: url },
     ],
   };
-
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -71,162 +67,166 @@ export function IndustryLanding({ data }: { data: IndustryData }) {
   };
 
   return (
-    <>
+    <div className="cog-redesign" style={{ background: "#C5C5C5", minHeight: "100vh" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Navbar variant="light" />
+      <Navbar />
 
-      {/* Hero */}
-      <section className="section-padding section-white container" style={{ paddingTop: "10rem" }}>
-        <Reveal>
-          <div style={{ textAlign: "center", maxWidth: 800, margin: "0 auto" }}>
-            <span className="section-label">Industry &middot; {data.industryName}</span>
-            <h1 className="heading" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", marginBottom: "1.5rem" }}>
-              AI Receptionist for <span className="italic-accent">{data.heroAccent}</span>
-            </h1>
-            <p className="body-text" style={{ maxWidth: 680, margin: "0 auto 2.5rem" }}>
+      {/* Hero — dark */}
+      <section id="industry-hero" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#1a1a1a", color: "#fff", paddingTop: 140, paddingBottom: 80 }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.18em", color: "rgba(255,255,255,0.55)", textTransform: "uppercase", marginBottom: 22 }}>
+          AI Receptionist · {data.industryName}
+        </FadeUp>
+        <FadeUp delay={0.1}>
+          <h1 className="cog-h-display" style={{ fontSize: "clamp(36px, 5vw, 72px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#fff", margin: "0 0 28px", maxWidth: 1100 }}>
+            AI receptionist for<br />
+            <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper-light)" }}>{data.heroAccent}</span>
+          </h1>
+        </FadeUp>
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start" }}>
+          <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 580 }}>
+            <FadeUp as="p" delay={0.25} style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.85)", margin: "0 0 28px" }}>
               {data.intro}
-            </p>
-            <div className="cta-row" style={{ justifyContent: "center" }}>
-              <Link href="/book" className="hero-cta btn-accent" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "1rem 2.5rem", borderRadius: "9999px", fontWeight: 600 }}>
-                <Phone className="w-5 h-5" /> Book Free Demo
-              </Link>
-              <Link href="/pricing" className="btn-outline" style={{ padding: "1rem 2.5rem", borderRadius: "9999px", fontWeight: 600 }}>View Pricing</Link>
-            </div>
+            </FadeUp>
+            <FadeUp delay={0.4} style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+              <a href="tel:+442039960962" className="cog-btn-light">
+                <span className="cog-soundwave" aria-hidden><span /><span /><span /><span /></span>
+                Speak to our AI
+              </a>
+              <Link href="/book" className="cog-btn-ghost-light">Book Free Demo</Link>
+            </FadeUp>
           </div>
-        </Reveal>
-      </section>
-
-      {/* Problem */}
-      <section className="section-padding section-alt container">
-        <Reveal>
-          <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
-            <span className="section-label">The Problem</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "1.5rem" }}>
-              Every missed call is <span className="italic-accent">lost revenue.</span>
-            </h2>
-            <p className="body-text" style={{ maxWidth: 640, margin: "0 auto" }}>
+          <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460 }}>
+            <FadeUp as="p" delay={0.35} style={{ fontSize: 13, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", margin: 0, paddingTop: 8 }}>
               {data.problem}
-            </p>
+            </FadeUp>
           </div>
-        </Reveal>
+        </div>
       </section>
 
-      {/* Benefits */}
-      <section className="section-padding section-white container">
-        <Reveal>
-          <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
-            <span className="section-label">Why {data.industryName} Choose Voqal</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "1.5rem" }}>
-              A receptionist built for <span className="italic-accent">your sector.</span>
-            </h2>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <div className="home-service-grid" style={{ marginTop: "4rem" }}>
-            {data.benefits.map((b, i) => (
-              <div key={i} className="service-card">
-                <div className="icon">{["I.", "II.", "III.", "IV."][i] ?? "V."}</div>
-                <h3>{b.title}</h3>
-                <p>{b.body}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Use Cases */}
-      <section className="section-padding section-alt container">
-        <Reveal>
-          <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
-            <span className="section-label">What It Handles</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "1.5rem" }}>
-              Calls handled <span className="italic-accent">end-to-end.</span>
-            </h2>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <div className="home-steps-grid" style={{ marginTop: "4rem", maxWidth: 1000, margin: "4rem auto 0" }}>
-            {data.useCases.map((u, i) => (
-              <div key={i} className="protocol-step">
-                <div className="step-number">{String(i + 1).padStart(2, "0")}</div>
-                <h3>{u.title}</h3>
-                <p>{u.body}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Evidence */}
-      <section className="section-padding section-white container" style={{ textAlign: "center" }}>
-        <Reveal>
-          <span className="section-label">The Evidence</span>
-          <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
-            The data behind <span className="italic-accent">AI receptionists.</span>
+      {/* Benefits — grey */}
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>THE BENEFITS</FadeUp>
+        <FadeUp delay={0.1}>
+          <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", maxWidth: 720, margin: "0 0 48px" }}>
+            Built for the way <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>{data.industryName.toLowerCase()} run.</span>
           </h2>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <div className="home-stats-grid" style={{ maxWidth: 1080, margin: "0 auto" }}>
-            {data.evidence.map((s, i) => (
-              <div key={i} style={{ textAlign: "center" }}>
-                <div className="stat-number">{s.stat}</div>
-                <div className="stat-label">{s.label}</div>
+        </FadeUp>
+        <div className="cog-cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}>
+          {data.benefits.map((b, i) => (
+            <FadeUp key={b.title} delay={0.15 + i * 0.08}>
+              <div style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, padding: "28px 32px", height: "100%", background: "rgba(255,255,255,0.2)" }}>
+                <Check size={22} strokeWidth={1.8} style={{ color: "var(--cog-copper)", marginBottom: 16 }} />
+                <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "0 0 12px" }}>{b.title}</h3>
+                <p style={{ fontSize: 13, lineHeight: 1.65, color: "#3a3a3a", margin: 0 }}>{b.body}</p>
               </div>
-            ))}
-          </div>
-        </Reveal>
+            </FadeUp>
+          ))}
+        </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding section-alt container">
-        <Reveal>
-          <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
-            <span className="section-label">Questions</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              {data.industryName} &middot; <span className="italic-accent">FAQs.</span>
-            </h2>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.15}>
-          <div style={{ marginTop: "3rem", maxWidth: 800, marginInline: "auto" }}>
-            {data.faqs.map((faq, i) => (
-              <details key={i} className="faq-item" style={{ marginBottom: "0.75rem" }}>
-                <summary className="faq-question" style={{ cursor: "pointer", listStyle: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span>{faq.q}</span>
-                  <span className="faq-icon">+</span>
-                </summary>
-                <div className="faq-answer"><p>{faq.a}</p></div>
-              </details>
-            ))}
-          </div>
-        </Reveal>
+      {/* Use Cases — dark grey */}
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#2e2e2e", color: "#fff" }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "rgba(255,255,255,0.55)", marginBottom: 20 }}>USE CASES</FadeUp>
+        <FadeUp delay={0.1}>
+          <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#fff", maxWidth: 720, margin: "0 0 48px" }}>
+            What it actually <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper-light)" }}>handles.</span>
+          </h2>
+        </FadeUp>
+        <div className="cog-cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
+          {data.useCases.map((u, i) => (
+            <FadeUp key={u.title} delay={0.15 + i * 0.08}>
+              <div style={{ border: "1px solid rgba(255,255,255,0.15)", borderRadius: 20, padding: "28px 32px", height: "100%" }}>
+                <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--cog-copper-light)", fontWeight: 600, marginBottom: 12, textTransform: "uppercase" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <h3 style={{ fontSize: 17, fontWeight: 600, color: "#fff", margin: "0 0 10px" }}>{u.title}</h3>
+                <p style={{ fontSize: 13, lineHeight: 1.65, color: "rgba(255,255,255,0.7)", margin: 0 }}>{u.body}</p>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ backgroundColor: "var(--bg-footer)", padding: "8rem 0", textAlign: "center" }}>
-        <div className="container">
-          <Reveal>
-            <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 300, letterSpacing: "-0.03em", color: "#fff", lineHeight: 1.2, marginBottom: "1.5rem" }}>
-              Ready for a {data.industryNameLower} <span className="italic-accent" style={{ color: "var(--accent-light)" }}>that never misses?</span>
-            </h2>
-            <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.55)", marginBottom: "3rem", maxWidth: 540, margin: "0 auto 3rem" }}>
-              From &pound;197/month, no contracts. Personalised demo within 24 hours.
-            </p>
-            <div className="cta-row" style={{ justifyContent: "center" }}>
-              <Link href="/book" style={{ background: "#fff", color: "#111", padding: "0.9rem 2.5rem", fontSize: "0.95rem", fontWeight: 600, letterSpacing: "0.02em", borderRadius: "9999px", textDecoration: "none" }}>Book Free Demo</Link>
-              <Link href="/pricing" style={{ background: "transparent", border: "1.5px solid rgba(255,255,255,0.4)", color: "#fff", padding: "0.9rem 2.5rem", fontSize: "0.95rem", fontWeight: 600, letterSpacing: "0.02em", borderRadius: "9999px", textDecoration: "none" }}>View Pricing</Link>
-            </div>
-          </Reveal>
+      {/* Evidence — grey */}
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>THE EVIDENCE</FadeUp>
+        <FadeUp delay={0.1}>
+          <h2 className="cog-h-display" style={{ fontSize: "clamp(26px, 3vw, 42px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 48px" }}>
+            The numbers behind it.
+          </h2>
+        </FadeUp>
+        <div className="cog-stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 32 }}>
+          {data.evidence.map((s, i) => (
+            <FadeUp key={s.stat + i} delay={0.15 + i * 0.08}>
+              <div>
+                <div className="cog-italic" style={{ fontSize: "clamp(36px, 3.5vw, 52px)", color: "var(--cog-copper)", lineHeight: 1, marginBottom: 14 }}>{s.stat}</div>
+                <div style={{ fontSize: 12, lineHeight: 1.55, color: "#3a3a3a" }}>{s.label}</div>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ — grey */}
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>FREQUENTLY ASKED</FadeUp>
+        <FadeUp delay={0.1}>
+          <h2 className="cog-h-display" style={{ fontSize: "clamp(26px, 3vw, 42px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 32px" }}>
+            Common questions.
+          </h2>
+        </FadeUp>
+        <div style={{ maxWidth: 820 }}>
+          {data.faqs.map((faq, i) => {
+            const isOpen = openFaq === i;
+            return (
+              <FadeUp key={faq.q} delay={0.05 * i}>
+                <button onClick={() => setOpenFaq(isOpen ? null : i)} style={{
+                  width: "100%", background: "transparent",
+                  borderTop: i === 0 ? "1px solid rgba(0,0,0,0.18)" : "none",
+                  borderBottom: "1px solid rgba(0,0,0,0.18)",
+                  borderLeft: "none", borderRight: "none",
+                  padding: "20px 0", textAlign: "left",
+                  display: "flex", justifyContent: "space-between", alignItems: "center",
+                  gap: 24, color: "#1a1a1a",
+                }}>
+                  <span style={{ fontSize: 14, fontWeight: 500 }}>{faq.q}</span>
+                  {isOpen ? <Minus size={16} style={{ color: "var(--cog-copper)" }} /> : <Plus size={16} style={{ color: "#666" }} />}
+                </button>
+                <motion.div initial={false} animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }} transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }} style={{ overflow: "hidden" }}>
+                  <p style={{ padding: "0 0 22px", fontSize: 13, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 720, margin: 0 }}>{faq.a}</p>
+                </motion.div>
+              </FadeUp>
+            );
+          })}
+        </div>
+        <FadeUp delay={0.5} style={{ marginTop: 60 }}>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <Link href="/book" className="cog-btn-primary">Book Free Demo</Link>
+            <Link href="/pricing" className="cog-btn-secondary">View Pricing</Link>
+          </div>
+        </FadeUp>
+      </section>
+
+      {/* Other industries strip */}
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5", paddingTop: 0 }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>OTHER INDUSTRIES WE SERVE</FadeUp>
+        <div className="cog-industries-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
+          {OTHER_INDUSTRIES.filter((x) => x.slug !== data.slug).map(({ slug, shortName }) => (
+            <FadeUp key={slug} delay={0.1}>
+              <Link href={`/${slug}/`} style={{ display: "block", border: "1px solid rgba(0,0,0,0.18)", borderRadius: 14, padding: "20px 22px", background: "rgba(255,255,255,0.15)", color: "#1a1a1a" }}>
+                <div style={{ fontSize: 11, letterSpacing: "0.12em", color: "var(--cog-copper)", fontWeight: 600, textTransform: "uppercase", marginBottom: 6 }}>
+                  AI Receptionist
+                </div>
+                <div style={{ fontSize: 15, fontWeight: 500 }}>{shortName} →</div>
+              </Link>
+            </FadeUp>
+          ))}
         </div>
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }

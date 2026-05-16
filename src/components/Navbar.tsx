@@ -1,142 +1,215 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
-  { label: "Voice Agents", href: "/#services" },
+  { label: "Voice Agents", href: "/#offering" },
   { label: "Industries", href: "/#industries" },
-  { label: "Reactivation", href: "/calculator" },
+  { label: "Lead Reactivation", href: "/calculator" },
   { label: "Audit", href: "/audit" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
 ];
 
-/**
- * Navbar variants:
- *  - "glass" — for home hero only (sits inside the fixed cinematic hero, dark backdrop)
- *  - "light" — for all inner pages (white pill nav always visible)
- *
- * On "glass" variant, a secondary "sticky white nav" fades in on scroll past hero,
- * so users always have a way to navigate once they leave the hero.
- */
-export function Navbar({ variant = "light" }: { variant?: "glass" | "light" }) {
-  const [scrollShow, setScrollShow] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const isGlass = variant === "glass";
+const DARK_SECTION_IDS = ["hero", "industries", "crew", "industry-hero"];
+
+function useSectionTone(defaultTone: "dark" | "light") {
+  const [tone, setTone] = useState<"dark" | "light">(defaultTone);
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (!isGlass) return;
+    setTone(defaultTone);
     const onScroll = () => {
-      setScrollShow(window.scrollY > window.innerHeight * 0.65);
+      const probeY = 80;
+      const els = document.elementsFromPoint(window.innerWidth / 2, probeY);
+      const section = els.find((el) => {
+        if (el.tagName !== "SECTION" && el.tagName !== "FOOTER") return false;
+        const cs = getComputedStyle(el);
+        return cs.position !== "fixed";
+      });
+      if (!section) {
+        setTone(defaultTone);
+        return;
+      }
+      const id = (section as HTMLElement).id;
+      if (DARK_SECTION_IDS.includes(id) || section.tagName === "FOOTER") {
+        setTone("light");
+      } else {
+        setTone("dark");
+      }
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [isGlass]);
+  }, [pathname, defaultTone]);
 
-  const SerifLogo = (
-    <>
-      <span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic" }} className="text-xl leading-none">Voqal</span>
-      <span className="text-lg font-semibold leading-none" style={{ color: "var(--accent)" }}>Ai</span>
-    </>
-  );
+  return tone;
+}
 
-  const LargeSerifLogo = (
-    <>
-      <span style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic" }} className="text-3xl leading-none">Voqal</span>
-      <span className="text-3xl font-semibold leading-none -ml-1" style={{ color: "var(--accent-light)" }}>Ai</span>
-    </>
-  );
+export function Navbar({ variant = "light" }: { variant?: "glass" | "light" }) {
+  // Pages that start with a fixed cinematic hero default to "light" nav tone
+  const defaultTone = variant === "glass" ? "light" : "dark";
+  const tone = useSectionTone(defaultTone);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  if (isGlass) {
-    // Hero dark nav (inside fixed hero) + scroll-triggered sticky white pill
-    return (
-      <>
-        <nav className="hero-nav">
-          <Link href="/" className="hero-logo blur-fade-up" style={{ animationDelay: "0ms" }}>
-            {LargeSerifLogo}
-          </Link>
-          <div className="hero-nav-links">
-            {links.map((l, i) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="blur-fade-up hero-nav-link"
-                style={{ animationDelay: `${100 + i * 50}ms` }}
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
-          <Link
-            href="/book"
-            className="blur-fade-up liquid-glass hero-book-link"
-            style={{ animationDelay: "350ms" }}
-          >
-            Book Free Demo
-          </Link>
-        </nav>
+  const color = tone === "light" ? "#ffffff" : "#1a1a1a";
+  const border = tone === "light" ? "rgba(255,255,255,0.18)" : "rgba(0,0,0,0.18)";
+  const phoneBg = tone === "light" ? "#ffffff" : "#1a1a1a";
+  const phoneFg = tone === "light" ? "#1a1a1a" : "#ffffff";
 
-        {/* Sticky white pill nav — appears after scrolling past hero */}
-        <div className={`sticky-nav ${scrollShow ? "show" : ""}`} aria-label="Primary">
-          <div className="sticky-nav-inner text-sm">
-            <Link href="/" className="flex items-center gap-1.5">{SerifLogo}</Link>
-            <div className="hidden md:flex items-center gap-6 font-medium" style={{ color: "#555" }}>
-              {links.map((l) => (
-                <Link key={l.href} href={l.href} className="hover:text-black transition-colors">{l.label}</Link>
-              ))}
-            </div>
-            <a href="tel:+442039960962" className="bg-black text-white text-sm font-semibold rounded-full px-4 py-2 hover:bg-gray-800 transition-colors">
-              020 3996 0962
-            </a>
-          </div>
-        </div>
-
-        {/* Mobile menu (only shows in glass mode on small screens) */}
-        {mobileOpen && (
-          <div className="liquid-glass mt-2 rounded-2xl p-5 mx-auto" style={{ maxWidth: 900 }}>
-            {links.map((l) => (
-              <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block py-2 text-white/80 text-sm">{l.label}</Link>
-            ))}
-            <Link href="/book" onClick={() => setMobileOpen(false)} className="block mt-2 btn-accent rounded-full px-6 py-2.5 text-sm text-center">Book Demo</Link>
-          </div>
-        )}
-      </>
-    );
-  }
-
-  // "light" variant — white pill nav for all inner pages
   return (
-    <nav className="pill-nav" aria-label="Primary">
-      <div className="pill-nav-inner text-sm">
-        <Link href="/" className="flex items-center gap-1.5">{SerifLogo}</Link>
-        <div className="hidden md:flex items-center gap-6 font-medium" style={{ color: "#555" }}>
-          {links.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:text-black transition-colors">{l.label}</Link>
-          ))}
-        </div>
-        <a href="tel:+442039960962" className="bg-black text-white text-sm font-semibold rounded-full px-4 py-2 hover:bg-gray-800 transition-colors">
-          020 3996 0962
-        </a>
-        <button
-          className="md:hidden ml-2 p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-          style={{ color: "#111" }}
+    <nav
+      className="cog-nav-bar"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        background: "transparent",
+        borderBottom: `1px solid ${border}`,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "16px 32px",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+        transition: "border-color 0.3s ease",
+      }}
+    >
+      {/* Brand */}
+      <Link
+        href="/"
+        style={{
+          display: "inline-flex",
+          alignItems: "baseline",
+          gap: 1,
+          color,
+          transition: "color 0.3s ease",
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "'Instrument Serif', Georgia, serif",
+            fontStyle: "italic",
+            fontSize: 22,
+            lineHeight: 1,
+          }}
         >
-          <span className="block w-5 h-0.5 mb-1" style={{ background: "#111" }} />
-          <span className="block w-5 h-0.5 mb-1" style={{ background: "#111" }} />
-          <span className="block w-5 h-0.5" style={{ background: "#111" }} />
-        </button>
+          Voqal
+        </span>
+        <span style={{ fontSize: 18, fontWeight: 700, lineHeight: 1, color: "var(--cog-copper)" }}>
+          Ai
+        </span>
+      </Link>
+
+      {/* Center links */}
+      <div className="cog-nav-links-row" style={{ display: "flex", gap: 28 }}>
+        {links.map((l) => (
+          <Link
+            key={l.label}
+            href={l.href}
+            className="cog-nav-link"
+            style={{
+              fontSize: 12,
+              letterSpacing: "0.02em",
+              color,
+              fontWeight: 500,
+              transition: "opacity 0.22s ease, color 0.22s ease",
+            }}
+          >
+            {l.label}
+          </Link>
+        ))}
       </div>
 
+      {/* Right phone CTA */}
+      <div className="cog-nav-phone-wrap">
+        <a
+          href="tel:+442039960962"
+          style={{
+            background: phoneBg,
+            color: phoneFg,
+            border: `1px solid ${phoneBg}`,
+            borderRadius: 9999,
+            padding: "10px 18px",
+            fontSize: 12,
+            fontWeight: 600,
+            letterSpacing: "0.02em",
+            transition: "background 0.22s, color 0.22s, border-color 0.22s",
+            whiteSpace: "nowrap",
+            display: "inline-block",
+          }}
+        >
+          020 3996 0962
+        </a>
+      </div>
+
+      {/* Mobile hamburger */}
+      <button
+        className="cog-nav-hamburger"
+        onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label="Toggle menu"
+        style={{
+          display: "none",
+          background: "transparent",
+          border: "none",
+          padding: 8,
+          cursor: "pointer",
+        }}
+      >
+        <span style={{ display: "block", width: 22, height: 2, background: color, marginBottom: 4 }} />
+        <span style={{ display: "block", width: 22, height: 2, background: color, marginBottom: 4 }} />
+        <span style={{ display: "block", width: 22, height: 2, background: color }} />
+      </button>
+
+      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="mt-2 p-5 rounded-2xl bg-white border border-black/10 shadow-lg md:hidden mx-4" style={{ maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
+        <div
+          style={{
+            position: "absolute",
+            top: "100%",
+            left: 16,
+            right: 16,
+            background: "#fff",
+            border: "1px solid rgba(0,0,0,0.18)",
+            borderRadius: 16,
+            padding: 20,
+            marginTop: 8,
+            boxShadow: "0 12px 40px rgba(0,0,0,0.18)",
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+          }}
+        >
           {links.map((l) => (
-            <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="block py-2.5 text-sm text-gray-700 hover:text-black">{l.label}</Link>
+            <Link
+              key={l.label}
+              href={l.href}
+              onClick={() => setMobileOpen(false)}
+              style={{ padding: "10px 4px", fontSize: 14, color: "#1a1a1a" }}
+            >
+              {l.label}
+            </Link>
           ))}
-          <Link href="/book" onClick={() => setMobileOpen(false)} className="block mt-3 btn rounded-full text-center">Book Free Demo</Link>
+          <a
+            href="tel:+442039960962"
+            style={{
+              marginTop: 8,
+              padding: "12px 16px",
+              borderRadius: 9999,
+              background: "#1a1a1a",
+              color: "#fff",
+              textAlign: "center",
+              fontSize: 12,
+              fontWeight: 600,
+              letterSpacing: "0.02em",
+            }}
+          >
+            020 3996 0962
+          </a>
         </div>
       )}
     </nav>

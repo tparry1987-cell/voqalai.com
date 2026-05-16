@@ -1,373 +1,444 @@
 "use client";
 
-import { Star, Stethoscope, Scale, Wrench, HeartPulse, Home as HomeIcon, Calculator } from "lucide-react";
+import Link from "next/link";
+import { Stethoscope, Scale, Wrench, HeartPulse, Home as HomeIcon, Calculator } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Reveal } from "@/components/Reveal";
-import { TrustpilotWidget } from "@/components/TrustpilotWidget";
-import Link from "next/link";
+import FadeUp from "@/components/FadeUp";
 
-const integrations = [
-  "OpenAI", "Anthropic", "Gemini", "Retell", "ElevenLabs",
-  "Vapi", "Twilio", "Telnyx", "n8n", "Zapier", "HubSpot", "Cal.com",
+const HERO_VIDEO =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_135830_bb6491d1-9b66-4aec-9722-13b4dfe3fb46.mp4";
+
+const SERVICE_CARDS = [
+  {
+    video:
+      "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_220333_48163edc-995f-4513-9f44-48dbb07a7329.mp4",
+    title: "Voice AI Agents",
+    text: "Our voice agents answer calls in under two seconds, 24/7. They handle booking, FAQs, lead qualification, and urgent routing — custom-trained on your business so every caller gets the right answer from the first ring.",
+    tag: "I.",
+  },
+  {
+    video:
+      "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221040_e6ba7c5a-864e-46e9-871e-341a176a7e3e.mp4",
+    title: "Lead Reactivation",
+    text: "Most businesses have hundreds of dormant contacts sitting untouched. Our AI reactivates them with natural SMS conversations and you only pay when a lead converts. Zero upfront cost.",
+    tag: "II.",
+  },
+  {
+    video:
+      "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221104_fb538584-5b87-495f-952e-09ddd5a1792a.mp4",
+    title: "Process Automation",
+    text: "Eliminate redundant data entry by connecting your phone, CRM, calendar, and workflow tools into a single pipeline. Every call outcome flows into the right system without your team lifting a finger.",
+    tag: "III.",
+  },
+];
+
+const INDUSTRIES = [
+  { name: "Dental Practices", benefit: "Reduce no-shows with automated appointment confirmations.", Icon: Stethoscope, slug: "ai-receptionist-dental-practices" },
+  { name: "Law Firms", benefit: "Qualify new enquiries by case type before they reach a fee earner.", Icon: Scale, slug: "ai-receptionist-law-firms" },
+  { name: "Trades & Home Services", benefit: "Capture every job lead while you're on-site.", Icon: Wrench, slug: "ai-receptionist-tradesmen" },
+  { name: "Medical Clinics", benefit: "Triage patient enquiries after hours and route urgent cases.", Icon: HeartPulse, slug: "ai-receptionist-medical-practices" },
+  { name: "Estate Agents", benefit: "Book viewings instantly and capture buyer requirements 24/7.", Icon: HomeIcon, slug: "ai-receptionist-estate-agents" },
+  { name: "Accountancy Firms", benefit: "Handle tax-deadline call surges without temporary staff.", Icon: Calculator, slug: null as string | null },
+];
+
+const EVIDENCE = [
+  { n: "< 2s", l: "Answer time — every call, day or night." },
+  { n: "67%", l: "Of customers hang up when they can't reach a real person. (Forbes, 2023)" },
+  { n: "21×", l: "More likely to convert when answered in five minutes. (MIT / InsideSales.com)" },
+  { n: "80%", l: "Of voicemail callers won't leave a message. (PATLive, 2023)" },
+  { n: "£25K", l: "Average UK receptionist salary. Voqal AI from £197/mo." },
+  { n: "5.5M", l: "UK SMEs rely on inbound phone calls. (FSB, 2024)" },
+  { n: "91M", l: "Active UK mobile subscriptions. (Ofcom, 2024)" },
+  { n: "$80B", l: "Conversational-AI savings projected by 2026. (Gartner)" },
 ];
 
 export default function Home() {
   return (
-    <>
-      {/* ═══ CINEMATIC HERO — fixed backdrop ═══ */}
-      <section className="home-hero" aria-label="Hero">
-        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          poster="/images/mobile-hero-still-2x.jpg"
-          className="hero-video"
-        >
-          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4" type="video/mp4" />
-        </video>
-        <div className="bottom-blur" />
+    <div className="cog-redesign" id="top" style={{ position: "relative", background: "#C5C5C5", minHeight: "100vh" }}>
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100vh",
+          objectFit: "cover",
+          zIndex: 0,
+        }}
+      >
+        <source src={HERO_VIDEO} type="video/mp4" />
+      </video>
 
-        <div className="hero-stage">
-          <Navbar variant="glass" />
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100vh",
+          zIndex: 0,
+          pointerEvents: "none",
+          background: "linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0) 55%)",
+        }}
+      />
 
-          <div className="hero-content">
-            <div className="hero-content-row">
-              <div className="hero-copy">
-                <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>
-                  AI Receptionist for UK Businesses &mdash; 24/7 Phone Answering
-                </h1>
+      <Navbar variant="glass" />
 
-                <div className="hero-kicker blur-fade-up" style={{ animationDelay: "250ms" }}>
-                  <span />
-                  A new era for modern business
-                </div>
+      {/* ════════ SECTION 1 — HERO ════════ */}
+      <section id="hero" style={{ position: "relative", zIndex: 1, height: "100vh", display: "flex", alignItems: "center", padding: "70px 32px 80px 32px" }}>
+        <div className="cog-hero-left speakable-hero" style={{ maxWidth: 760 }}>
+          <FadeUp as="div" delay={0.1} style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", marginBottom: 32, display: "inline-flex", alignItems: "center", gap: 12 }}>
+            <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--cog-copper)" }} />
+            Global AI Systems
+          </FadeUp>
 
-                <div className="hero-title blur-fade-up" style={{ animationDelay: "400ms" }} aria-hidden="true">
-                  The world is changing.
-                </div>
-                <div className="hero-subtitle blur-fade-up serif-italic" style={{ animationDelay: "600ms" }} aria-hidden="true">
-                  Time to step through.
-                </div>
+          <FadeUp as="h1" delay={0.3} className="cog-h-display" style={{ fontSize: "clamp(30px, 3.8vw, 56px)", fontWeight: 600, lineHeight: 1.08, letterSpacing: "-0.025em", color: "#fff", margin: "0 0 24px", maxWidth: 700 }}>
+            Helping businesses embrace AI.
+          </FadeUp>
 
-                <p className="hero-lede blur-fade-up" style={{ animationDelay: "800ms" }}>
-                  Your AI receptionist. Every call answered, every lead captured &mdash; 24/7, in under two seconds.
-                </p>
+          <FadeUp as="p" delay={0.55} style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.85)", maxWidth: 540, margin: "0 0 24px" }}>
+            Voice agents, automations, and intelligent systems designed to integrate seamlessly into the way your business already works.
+          </FadeUp>
 
-                <div className="hero-proof blur-fade-up" style={{ animationDelay: "950ms" }}>
-                  <div><span /><span>&lt; 2s answer</span></div>
-                  <div><span /><span>24/7 &middot; 365</span></div>
-                  <div><span /><span>Demo in 24 hours</span></div>
-                  <div><span /><span>No contracts</span></div>
-                </div>
+          <FadeUp as="p" delay={0.7} className="cog-italic" style={{ fontSize: "clamp(18px, 1.6vw, 22px)", color: "var(--cog-copper-light)", lineHeight: 1.4, letterSpacing: "-0.005em", margin: "0 0 44px", maxWidth: 480 }}>
+            From AI curious to AI native.
+          </FadeUp>
 
-                <div className="hero-cta-row">
-                  <a href="tel:+442039960962" className="hero-primary-cta blur-fade-up" style={{ animationDelay: "1100ms" }}>
-                    <span className="soundwave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
-                    Speak to our AI now
-                  </a>
-                  <Link href="/pricing" className="hero-secondary-cta blur-fade-up liquid-glass" style={{ animationDelay: "1200ms" }}>
-                    View Pricing
-                  </Link>
-                </div>
-              </div>
+          <FadeUp delay={0.95}>
+            <div className="cog-hero-buttons" style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "wrap" }}>
+              <Link href="/book" className="cog-btn-ghost-light" style={{ paddingInline: 28 }}>
+                Hear it in action →
+              </Link>
+              <a
+                href="tel:+442039960962"
+                style={{ fontSize: 12, letterSpacing: "0.04em", color: "rgba(255,255,255,0.7)", borderBottom: "1px solid rgba(255,255,255,0.3)", paddingBottom: 2 }}
+              >
+                or call 020 3996 0962
+              </a>
             </div>
-
-            {/* Works-with marquee */}
-            <div className="hero-marquee blur-fade-up" style={{ animationDelay: "1550ms" }}>
-              <div className="hero-marquee-row">
-                <span>Works with</span>
-                <div className="hero-marquee-mask marquee-mask">
-                  <div className="hero-marquee-track animate-marquee">
-                    {[...integrations, ...integrations].map((name, i) => (
-                      <span key={i}>{name}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
-      {/* ═══ SCROLLING WHITE CONTENT (overlays fixed hero) ═══ */}
-      <div className="relative" style={{ marginTop: "100vh", backgroundColor: "var(--bg-primary)", zIndex: 30 }}>
+      {/* ════════ SECTION 2 — STATEMENT (grey solid) ════════ */}
+      <section id="statement" className="cog-section-pad-lg speakable-why" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
+          002 / 006 — The Problem
+        </FadeUp>
 
-        {/* ─── 01 · The Problem ─── */}
-        <section className="section-padding section-white container" style={{ paddingTop: "7rem" }}>
-          <Reveal>
-            <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
-              <span className="section-label">01 &mdash; The Problem</span>
-              <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "1.5rem" }}>
-                Every missed call is <span className="italic-accent">lost revenue.</span>
-              </h2>
-              <p className="body-text" style={{ maxWidth: 560, margin: "0 auto" }}>
-                UK businesses lose tens of thousands of pounds a year to calls that ring out. Voqal AI answers every one of them &mdash; in under two seconds, 24/7.
-              </p>
-            </div>
-          </Reveal>
+        <h2
+          className="cog-h-display"
+          style={{
+            fontSize: "clamp(32px, 4.5vw, 64px)",
+            fontWeight: 700,
+            lineHeight: 1.05,
+            letterSpacing: "-0.02em",
+            textTransform: "uppercase",
+            color: "#1a1a1a",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "0.25em",
+            margin: "0 0 32px",
+            maxWidth: 900,
+          }}
+        >
+          {["EVERY", "MISSED", "CALL", "IS", "LOST"].map((w, i) => (
+            <FadeUp key={w + i} as="span" delay={0.15 + i * 0.1} y={36}>
+              {w}
+            </FadeUp>
+          ))}
+          <FadeUp
+            as="span"
+            delay={0.65}
+            y={36}
+            className="cog-italic"
+            style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}
+          >
+            revenue.
+          </FadeUp>
+        </h2>
 
-          <Reveal delay={0.15}>
-            <div className="why-grid" style={{ marginTop: "4rem" }}>
-              <div className="why-tile">
-                <div className="why-number">67%</div>
-                <h3>Hang up &amp; walk away</h3>
-                <p>Of customers hang up when they can&rsquo;t reach a real person &mdash; and go straight to a competitor. <span className="why-source">Forbes, 2023</span></p>
-              </div>
-              <div className="why-tile">
-                <div className="why-number">62%</div>
-                <h3>Won&rsquo;t leave voicemail</h3>
-                <p>Of callers sent to voicemail hang up without leaving a message. Voicemail is a dead end. <span className="why-source">PATLive, 2023</span></p>
-              </div>
-              <div className="why-tile">
-                <div className="why-number">&lt; 2s</div>
-                <h3>Answered, every time</h3>
-                <p>Voqal AI picks up in under two seconds, around the clock &mdash; no hold music, no missed calls, no excuses.</p>
-              </div>
-            </div>
-          </Reveal>
-        </section>
-
-        {/* ─── 02 · Services ─── */}
-        <section id="services" className="section-padding section-alt container">
-          <Reveal>
-            <div style={{ textAlign: "center", maxWidth: 700, margin: "0 auto" }}>
-              <span className="section-label">02 &mdash; What We Do</span>
-              <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "1.5rem" }}>
-                Intelligent <span className="italic-accent">capabilities.</span>
-              </h2>
-              <p className="body-text" style={{ maxWidth: "none", margin: "0 auto" }}>
-                With 5.5 million UK SMEs relying on phone calls (FSB, 2024), every missed call is lost revenue. 80% of callers sent to voicemail will not leave a message (PATLive, 2023) &mdash; they simply move on to the next business in their search results.
-              </p>
-              <p className="body-text" style={{ marginTop: "1rem", maxWidth: "none", margin: "1rem auto 0" }}>
-                Our AI voice agents answer every call, book appointments, and qualify leads &mdash; 24/7. Leads contacted within five minutes are 21&times; more likely to convert (MIT / InsideSales.com).
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <div className="home-service-grid" style={{ marginTop: "4rem" }}>
-              <Link href="/pricing" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
-                <div className="icon">I.</div>
-                <h3>Voice AI Agents</h3>
-                <p>Our voice AI agents answer calls in under two seconds, 24 hours a day, 365 days a year. They handle appointment booking, FAQ responses, lead qualification, rescheduling, and urgent call routing &mdash; all without human intervention. Each agent is custom-trained on your business knowledge, services, and tone of voice, so callers receive accurate, personalised answers from the first ring.</p>
-                <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>View pricing &rarr;</span>
-              </Link>
-
-              <div className="service-card">
-                <div className="icon">II.</div>
-                <h3>AI Chat Agents</h3>
-                <p>Turn website visitors into booked appointments with an AI chat widget that works around the clock. Embedded on your site via a single script tag, the agent answers business-specific questions, captures contact details, and feeds qualified leads directly into your CRM or calendar &mdash; converting passive browsing into active pipeline without any manual follow-up.</p>
-              </div>
-
-              <Link href="/pricing#lead-reactivation" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
-                <div className="icon">III.</div>
-                <h3>Lead Reactivation</h3>
-                <p>Most businesses have hundreds of dormant contacts sitting untouched in their CRM. Our AI outreach reactivates those leads with natural voice conversations, identifying who is ready to buy now. You pay nothing upfront &mdash; we only charge when a lead meets your conversion criteria. Typical reactivation rates run 15&ndash;20%, compared with 2&ndash;5% from manual follow-up.</p>
-                <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>Learn more &rarr;</span>
-              </Link>
-
-              <Link href="/about" className="service-card block" style={{ textDecoration: "none", color: "inherit" }}>
-                <div className="icon">IV.</div>
-                <h3>Process Automation</h3>
-                <p>Eliminate redundant data entry by connecting your phone system, CRM, calendar, and workflow tools into a single automated pipeline. Using integrations with Zapier, HubSpot, Calendly, and 6,000+ other applications, we ensure that every call outcome &mdash; booked appointment, qualified lead, or follow-up task &mdash; flows into the right system without your team lifting a finger.</p>
-                <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>About our team &rarr;</span>
-              </Link>
-
-              <Link href="/book" className="service-card home-service-wide block" style={{ textDecoration: "none", color: "inherit" }}>
-                <div className="icon">V.</div>
-                <h3>AI-Enhanced Websites</h3>
-                <p>Your website should generate leads while you sleep, not just sit there looking pretty. We design and build professional sites with voice agents, intelligent chat, lead capture, and smart automations woven in from day one &mdash; not bolted on as afterthoughts. From real estate to trades, our clients get sites that actively convert visitors into booked appointments around the clock.</p>
-                <span className="text-link" style={{ marginTop: 12, display: "inline-block" }}>Get in touch &rarr;</span>
-              </Link>
-            </div>
-          </Reveal>
-        </section>
-
-        {/* ─── 03 · How It Works ─── */}
-        <section className="section-padding section-white container" style={{ textAlign: "center" }}>
-          <Reveal>
-            <span className="section-label">03 &mdash; How We Work</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "5rem" }}>
-              How it <span className="italic-accent">works.</span>
-            </h2>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <div className="home-steps-grid" style={{ textAlign: "left", maxWidth: 1000, margin: "0 auto" }}>
-              {[
-                { step: "01", title: "We learn your business", desc: "Share your FAQs, opening hours, services, and how you want calls handled. We use this to train your AI receptionist on your specific business." },
-                { step: "02", title: "We build your AI agent", desc: "Our team builds your custom voice agent. You get a personalised demo within 24 hours — call it and hear it live before going ahead." },
-                { step: "03", title: "You go live", desc: "Once you’re happy, we connect it to your phone system. Your AI receptionist starts answering calls alongside your team instantly." },
-              ].map((p) => (
-                <div key={p.step} className="protocol-step">
-                  <div className="step-number">{p.step}</div>
-                  <h3>{p.title}</h3>
-                  <p>{p.desc}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </section>
-
-        <div className="home-industries-divider" />
-
-        {/* ─── 04 · Industries ─── */}
-        <section id="industries" className="home-industries-section">
-          <Reveal className="home-industries-heading">
-            <span className="section-label">04 &mdash; Who We Serve</span>
-            <h2>
-              Built for <span className="italic-accent">every sector.</span>
-            </h2>
-            <p>
-              Our voice agents adapt to the language, workflows, and compliance requirements of your industry. Each deployment is custom-trained on sector-specific terminology so callers get accurate answers on the first call.
-            </p>
-          </Reveal>
-
-          <Reveal className="home-industries-grid-wrap" delay={0.15}>
-            <div className="sector-grid">
-              {[
-                { name: "Dental Practices", benefit: "Reduce no-shows with automated appointment confirmations", Icon: Stethoscope, href: "/ai-receptionist-dental-practices/" },
-                { name: "Law Firms", benefit: "Qualify new enquiries by case type before they reach a fee earner", Icon: Scale, href: "/ai-receptionist-law-firms/" },
-                { name: "Trades & Home Services", benefit: "Capture every job lead while you’re on-site", Icon: Wrench, href: "/ai-receptionist-tradesmen/" },
-                { name: "Medical Clinics", benefit: "Triage patient enquiries after hours and route urgent cases", Icon: HeartPulse, href: "/ai-receptionist-medical-practices/" },
-                { name: "Estate Agents", benefit: "Book viewings instantly and capture buyer requirements 24/7", Icon: HomeIcon, href: "/ai-receptionist-estate-agents/" },
-                { name: "Accountancy Firms", benefit: "Handle tax-deadline call surges without temporary staff", Icon: Calculator, href: null },
-              ].map(({ name, benefit, Icon, href }) => {
-                const inner = (
-                  <>
-                    <Icon className="sector-icon" size={22} strokeWidth={1.5} />
-                    <strong>{name}</strong>
-                    <span>{benefit}</span>
-                  </>
-                );
-                return href ? (
-                  <Link key={name} href={href} className="sector-tile" style={{ textDecoration: "none", color: "inherit", display: "flex", flexDirection: "column" }}>
-                    {inner}
-                  </Link>
-                ) : (
-                  <div key={name} className="sector-tile">{inner}</div>
-                );
-              })}
-            </div>
-          </Reveal>
-        </section>
-
-        {/* ─── 05 · The Evidence ─── */}
-        <section className="speakable-stats section-padding section-white container" style={{ textAlign: "center" }}>
-          <Reveal>
-            <span className="section-label">05 &mdash; The Evidence</span>
-            <h2 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "3rem" }}>
-              The data behind <span className="italic-accent">AI receptionists.</span>
-            </h2>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <div className="home-stats-grid" style={{ maxWidth: 1080, margin: "0 auto" }}>
-              {[
-                { n: "80%", l: "Of callers sent to voicemail will not leave a message and will call a competitor instead (PATLive, 2023)" },
-                { n: "21×", l: "Increase in lead conversion when calls are answered within 5 minutes (MIT & InsideSales.com)" },
-                { n: "£25K", l: "Average UK receptionist salary per year (ONS ASHE, 2024). AI costs under £2,400/yr — a 90% saving" },
-                { n: "5.5M", l: "Private-sector businesses in the UK, the vast majority relying on inbound phone calls (FSB, 2024)" },
-              ].map((s, i) => (
-                <div key={i} style={{ textAlign: "center" }}>
-                  <div className="stat-number">{s.n}</div>
-                  <div className="stat-label">{s.l}</div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </section>
-
-        {/* ─── 06 · Real Reviews ─── */}
-        <section className="section-padding section-alt container" style={{ textAlign: "center" }}>
-          <Reveal>
-            <span className="section-label">What Our Clients Say</span>
-            <h2 className="heading" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", marginBottom: "1.5rem" }}>
-              Real results, <span className="italic-accent">real reviews.</span>
-            </h2>
-            <p className="body-text" style={{ maxWidth: 520, margin: "0 auto 3rem" }}>
-              Don&rsquo;t just take our word for it &mdash; hear from a client who trusted us to build their AI-enhanced website.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <div className="home-reviews-grid" style={{ maxWidth: 840, margin: "0 auto 3rem" }}>
-              {/* Trustpilot review */}
-              <div style={{ padding: "2rem", borderRadius: "16px", border: "1px solid var(--border-subtle)", textAlign: "left", display: "flex", flexDirection: "column", justifyContent: "space-between", background: "var(--bg-white)" }}>
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
-                    <span style={{ fontSize: "0.7rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "#00b67a", background: "rgba(0,182,122,0.08)", padding: "0.3rem 0.65rem", borderRadius: "4px" }}>AI-Enhanced Website</span>
-                  </div>
-                  <div style={{ display: "flex", gap: "0.2rem", marginBottom: "1rem" }}>
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5" style={{ fill: "#00b67a", color: "#00b67a" }} />
-                    ))}
-                  </div>
-                  <blockquote className="italic-accent" style={{ fontSize: "1.05rem", color: "#111", lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
-                    &ldquo;Thomas worked on my AI web solution for my real estate business selling Cypriot property. Outstanding work from start to finish giving great insight.&rdquo;
-                  </blockquote>
-                </div>
-                <div style={{ marginTop: "1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontSize: "0.85rem", color: "#555" }}>Adrian Wilkinson</span>
-                  <a href="https://www.trustpilot.com/review/voqalai.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.8rem", color: "#00b67a", textDecoration: "none", fontWeight: 500 }}>Trustpilot &rarr;</a>
-                </div>
-              </div>
-
-              {/* LinkedIn recommendation */}
-              <div style={{ padding: "2rem", borderRadius: "16px", border: "1px solid var(--border-subtle)", textAlign: "left", display: "flex", flexDirection: "column", justifyContent: "space-between", background: "var(--bg-white)" }}>
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
-                    <span style={{ fontSize: "0.7rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "#0a66c2", background: "rgba(10,102,194,0.08)", padding: "0.3rem 0.65rem", borderRadius: "4px" }}>AI-Enhanced Website</span>
-                  </div>
-                  <div style={{ display: "flex", gap: "0.2rem", marginBottom: "1rem" }}>
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5" style={{ fill: "#0a66c2", color: "#0a66c2" }} />
-                    ))}
-                  </div>
-                  <blockquote className="italic-accent" style={{ fontSize: "1.05rem", color: "#111", lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
-                    &ldquo;Tom worked on my AI web solution for Cyprus property. Excellent work with incredible content on schedule.&rdquo;
-                  </blockquote>
-                </div>
-                <div style={{ marginTop: "1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontSize: "0.85rem", color: "#555" }}>Adrian Wilkinson</span>
-                  <span style={{ fontSize: "0.8rem", color: "#0a66c2", fontWeight: 500 }}>LinkedIn</span>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.25}>
-            <a href="https://www.trustpilot.com/review/voqalai.com" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.95rem", color: "#00b67a", textDecoration: "none", fontWeight: 500, marginBottom: "2rem" }}>
-              Read our reviews on Trustpilot &rarr;
-            </a>
-            <TrustpilotWidget />
-          </Reveal>
-        </section>
-
-        {/* ─── 07 · CTA Banner ─── */}
-        <section style={{ backgroundColor: "var(--bg-footer)", padding: "8rem 0", textAlign: "center" }}>
-          <div className="container">
-            <Reveal>
-              <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 300, letterSpacing: "-0.03em", color: "#fff", lineHeight: 1.2, marginBottom: "1.5rem" }}>
-                Ready to stop losing <span className="italic-accent" style={{ color: "var(--accent-light)" }}>revenue?</span>
-              </h2>
-              <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.55)", marginBottom: "3rem", maxWidth: 540, margin: "0 auto 3rem" }}>
-                A UK receptionist costs &pound;22,000&ndash;&pound;28,000 per year (ONS ASHE, 2024). Our AI starts from &pound;197/month &mdash; no contracts, personalised demo within 24 hours.
-              </p>
-              <div className="cta-row">
-                <Link href="/book" style={{ background: "#fff", color: "#111", padding: "0.9rem 2.5rem", fontSize: "0.95rem", fontWeight: 600, letterSpacing: "0.02em", borderRadius: "9999px", textDecoration: "none" }}>Book Free Demo</Link>
-                <Link href="/pricing" style={{ background: "transparent", border: "1.5px solid rgba(255,255,255,0.4)", color: "#fff", padding: "0.9rem 2.5rem", fontSize: "0.95rem", fontWeight: 600, letterSpacing: "0.02em", borderRadius: "9999px", textDecoration: "none" }}>View Pricing</Link>
-              </div>
-            </Reveal>
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", maxWidth: 1200 }}>
+          <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460 }}>
+            <FadeUp as="p" delay={0.8} style={{ fontSize: 16, lineHeight: 1.7, color: "#3a3a3a", margin: 0 }}>
+              UK businesses lose tens of thousands a year to calls that ring out. Voqal AI answers every one in under two seconds, around the clock — no hold music, no voicemail, no excuses.
+            </FadeUp>
           </div>
-        </section>
+          <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, display: "flex", gap: 32, flexWrap: "wrap", paddingTop: 4 }}>
+            {[
+              ["67%", "Hang up when they can't reach a real person."],
+              ["80%", "Won't leave a voicemail."],
+              ["< 2s", "Voqal AI picks up."],
+            ].map(([n, t], i) => (
+              <FadeUp key={n} delay={0.95 + i * 0.08}>
+                <div className="cog-italic" style={{ fontSize: 38, lineHeight: 1, color: "var(--cog-copper)", marginBottom: 6 }}>
+                  {n}
+                </div>
+                <div style={{ fontSize: 12, lineHeight: 1.5, color: "#3a3a3a", maxWidth: 140 }}>{t}</div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
 
-        <Footer />
-      </div>
-    </>
+        <FadeUp delay={1.25} style={{ marginTop: 48 }}>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <a href="#offering" className="cog-btn-primary">See what we build</a>
+            <Link href="/pricing" className="cog-btn-secondary">View Pricing</Link>
+          </div>
+        </FadeUp>
+      </section>
+
+      {/* ════════ SECTION 3 — OFFERING ════════ */}
+      <section id="offering" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
+          003 / 006 — Offering
+        </FadeUp>
+
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 40 }}>
+          <div className="cog-services-head-col" style={{ width: "32%" }}>
+            <h2
+              className="cog-h-display"
+              style={{
+                fontSize: "clamp(26px, 3vw, 42px)",
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: "-0.01em",
+                textTransform: "uppercase",
+                color: "#1a1a1a",
+                maxWidth: 360,
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.25em",
+                margin: 0,
+              }}
+            >
+              {["EXPLORE", "WHAT", "WE", "OFFER"].map((w, i) => (
+                <FadeUp key={w} as="span" delay={0.1 + i * 0.1} y={28}>
+                  {w}
+                </FadeUp>
+              ))}
+            </h2>
+          </div>
+          <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
+            <FadeUp as="p" delay={0.25} style={{ fontSize: 14, lineHeight: 1.65, color: "#3a3a3a", maxWidth: 460, margin: 0 }}>
+              We engineer end-to-end AI systems for ambitious modern businesses — voice agents, lead reactivation, and the workflow plumbing that connects it all to the tools you already use.
+            </FadeUp>
+          </div>
+        </div>
+
+        <div className="cog-cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, gridAutoRows: "1fr" }}>
+          {SERVICE_CARDS.map((card, i) => (
+            <FadeUp key={card.title} delay={0.4 + i * 0.15}>
+              <article
+                style={{
+                  background: "transparent",
+                  border: "1px solid rgba(0,0,0,0.18)",
+                  borderRadius: 20,
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  paddingTop: 16,
+                  height: "100%",
+                }}
+              >
+                <div style={{ width: "auto", aspectRatio: "4 / 3", position: "relative", overflow: "hidden", marginInline: 16, borderRadius: 12 }}>
+                  {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                  <video autoPlay muted loop playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", borderRadius: 12 }}>
+                    <source src={card.video} type="video/mp4" />
+                  </video>
+                </div>
+                <div style={{ padding: "24px 28px 28px 28px" }}>
+                  <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--cog-copper)", fontWeight: 600, marginBottom: 10 }}>
+                    {card.tag}
+                  </div>
+                  <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "0 0 14px" }}>{card.title}</h3>
+                  <p style={{ fontSize: 13, lineHeight: 1.6, color: "#3a3a3a", margin: 0 }}>{card.text}</p>
+                </div>
+              </article>
+            </FadeUp>
+          ))}
+        </div>
+
+        <FadeUp delay={0.9} style={{ marginTop: 32 }}>
+          <div className="cog-cards-grid" style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, padding: "28px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
+            <div>
+              <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--cog-copper)", fontWeight: 600, marginBottom: 10 }}>IV.</div>
+              <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "0 0 10px" }}>AI Chat Agents</h3>
+              <p style={{ fontSize: 13, lineHeight: 1.6, color: "#3a3a3a", margin: 0 }}>
+                Turn website visitors into booked appointments. An AI widget that answers business-specific questions, captures details, and feeds qualified leads into your CRM or calendar — around the clock.
+              </p>
+            </div>
+            <div>
+              <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--cog-copper)", fontWeight: 600, marginBottom: 10 }}>V.</div>
+              <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "0 0 10px" }}>AI-Enhanced Websites</h3>
+              <p style={{ fontSize: 13, lineHeight: 1.6, color: "#3a3a3a", margin: 0 }}>
+                Sites that generate leads while you sleep. Voice agents, chat, capture, and automations woven in from day one — not bolted on as afterthoughts. From real estate to trades.
+              </p>
+            </div>
+          </div>
+        </FadeUp>
+      </section>
+
+      {/* ════════ SECTION 4 — INDUSTRIES (transparent — fixed hero video shows through) ════════ */}
+      <section id="industries" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "transparent", color: "#fff" }}>
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            pointerEvents: "none",
+            zIndex: -1,
+            background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.55) 100%)",
+          }}
+        />
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "rgba(255,255,255,0.6)", marginBottom: 20 }}>
+          004 / 006 — Case
+        </FadeUp>
+
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 40 }}>
+          <div className="cog-services-head-col" style={{ width: "32%" }}>
+            <h2
+              className="cog-h-display"
+              style={{
+                fontSize: "clamp(26px, 3vw, 42px)",
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: "-0.01em",
+                textTransform: "uppercase",
+                color: "#fff",
+                maxWidth: 380,
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.25em",
+                margin: 0,
+              }}
+            >
+              {["BUILT", "FOR", "EVERY", "SECTOR"].map((w, i) => (
+                <FadeUp key={w} as="span" delay={0.1 + i * 0.1} y={28}>
+                  {w}
+                </FadeUp>
+              ))}
+            </h2>
+          </div>
+          <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
+            <FadeUp as="p" delay={0.3} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.7)", maxWidth: 460, margin: 0 }}>
+              Our voice agents adapt to the language, workflows and compliance requirements of your industry. Each deployment is custom-trained on sector-specific terminology so callers get accurate answers on the first call.
+            </FadeUp>
+          </div>
+        </div>
+
+        <div className="cog-industries-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+          {INDUSTRIES.map(({ name, benefit, Icon, slug }, i) => {
+            const inner = (
+              <div
+                style={{
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  borderRadius: 20,
+                  padding: "28px 28px 32px",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  minHeight: 200,
+                  transition: "border-color 0.25s ease",
+                  cursor: slug ? "pointer" : "default",
+                }}
+              >
+                <Icon size={22} strokeWidth={1.4} style={{ color: "var(--cog-copper-light)" }} />
+                <div>
+                  <h3 style={{ fontSize: 18, fontWeight: 600, color: "#fff", margin: "20px 0 8px" }}>{name}</h3>
+                  <p style={{ fontSize: 13, lineHeight: 1.6, color: "rgba(255,255,255,0.65)", margin: 0 }}>{benefit}</p>
+                </div>
+              </div>
+            );
+            return (
+              <FadeUp key={name} delay={0.3 + i * 0.08}>
+                {slug ? <Link href={`/${slug}/`} style={{ display: "block", height: "100%", color: "inherit", textDecoration: "none" }}>{inner}</Link> : inner}
+              </FadeUp>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ════════ SECTION 5 — EVIDENCE (grey solid) ════════ */}
+      <section id="evidence" className="cog-section-pad-lg speakable-stats" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
+          <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666" }}>
+            005 / 006 — The Evidence
+          </FadeUp>
+          <FadeUp delay={0.05} style={{ flex: 1, height: 1, background: "rgba(0,0,0,0.18)", maxWidth: 280 }}>{""}</FadeUp>
+        </div>
+
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 56 }}>
+          <div className="cog-services-head-col" style={{ width: "40%" }}>
+            <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: 0, maxWidth: 420 }}>
+              The data behind <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>AI receptionists.</span>
+            </h2>
+          </div>
+          <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
+            <FadeUp as="p" delay={0.2} style={{ fontSize: 14, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 480, margin: 0 }}>
+              Independent research from the FSB, ONS, Forbes, PATLive, MIT, Ofcom and Gartner — the numbers that explain why answering every call within seconds is no longer optional.
+            </FadeUp>
+          </div>
+        </div>
+
+        <div className="cog-stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+          {EVIDENCE.map((s, i) => (
+            <FadeUp key={s.n + i} delay={0.1 + i * 0.06}>
+              <div
+                style={{
+                  border: "1px solid rgba(0,0,0,0.18)",
+                  borderRadius: 16,
+                  padding: "24px 22px",
+                  height: "100%",
+                  background: "rgba(255,255,255,0.18)",
+                }}
+              >
+                <div className="cog-italic" style={{ fontSize: "clamp(36px, 3.5vw, 52px)", color: "var(--cog-copper)", lineHeight: 1, marginBottom: 12 }}>
+                  {s.n}
+                </div>
+                <div style={{ fontSize: 12, lineHeight: 1.55, color: "#3a3a3a" }}>{s.l}</div>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
+      {/* ════════ SECTION 6 — CTA ════════ */}
+      <section id="cta" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5", paddingTop: 0 }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
+          006 / 006 — Connect
+        </FadeUp>
+
+        <FadeUp delay={0.15}>
+          <h2 className="cog-h-display" style={{ fontSize: "clamp(32px, 5vw, 72px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", maxWidth: 1100, margin: "0 0 28px" }}>
+            READY TO STOP<br />
+            LOSING <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>revenue?</span>
+          </h2>
+        </FadeUp>
+
+        <FadeUp delay={0.3}>
+          <p style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", maxWidth: 480, margin: "0 0 28px" }}>
+            A UK receptionist costs £22,000–£28,000 a year (ONS ASHE, 2024). Voqal AI starts from £197/month — no contracts, personalised demo within 24 hours.
+          </p>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <a href="tel:+442039960962" className="cog-btn-primary">
+              <span className="cog-soundwave" aria-hidden><span /><span /><span /><span /></span>
+              Speak to our AI
+            </a>
+            <Link href="/book" className="cog-btn-secondary">Book a Demo</Link>
+            <Link href="/calculator" className="cog-btn-secondary">Cost calculator</Link>
+          </div>
+        </FadeUp>
+      </section>
+
+      <Footer />
+    </div>
   );
 }

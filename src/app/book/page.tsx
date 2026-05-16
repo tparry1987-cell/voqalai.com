@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
 import { ArrowRight, Phone, Check } from "lucide-react";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import FadeUp from "@/components/FadeUp";
 
 export default function BookPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -23,11 +23,10 @@ export default function BookPage() {
     setSubmitting(true);
 
     const data = new FormData(form);
-    const name = (data.get("name") as string || "").trim();
+    const name = ((data.get("name") as string) || "").trim();
     setFirstName(name.split(/\s+/)[0] || "there");
 
     try {
-      // Netlify Forms — POST URL-encoded form data to the current page
       const body = new URLSearchParams();
       data.forEach((value, key) => {
         body.append(key, value.toString());
@@ -38,121 +37,111 @@ export default function BookPage() {
         body: body.toString(),
       });
     } catch (err) {
-      // Even if the Netlify POST fails (e.g. in dev), still show thank-you.
-      // Real submissions are captured on production via Netlify's form detection.
       console.error("Form submit error (non-fatal for UX):", err);
     }
     setSubmitted(true);
   };
 
   return (
-    <>
-      <Navbar variant="light" />
+    <div className="cog-redesign" style={{ background: "#C5C5C5", minHeight: "100vh" }}>
+      <Navbar />
 
-      {/* Hero */}
-      <section className="section-padding section-white container" style={{ paddingTop: "10rem", paddingBottom: "3rem" }}>
-        <Reveal>
-          <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto" }}>
-            <span className="section-label">Book a Demo</span>
-            <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "1.5rem" }}>
-              Hear your AI <span className="italic-accent">receptionist.</span>
+      {/* Hidden static form for Netlify Forms detection during build. */}
+      <form name="demo" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <input name="name" />
+        <input name="email" />
+        <input name="website" />
+        <textarea name="message" />
+        <input name="bot-field" />
+      </form>
+
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5", paddingTop: 140, paddingBottom: 40 }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.18em", color: "#666", textTransform: "uppercase", marginBottom: 22 }}>
+          Book a Demo · Voqal AI
+        </FadeUp>
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start" }}>
+          <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 640 }}>
+            <h1 className="cog-h-display" style={{ fontSize: "clamp(36px, 5vw, 72px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: 0 }}>
+              HEAR YOUR AI<br />
+              <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>receptionist.</span>
             </h1>
-            <p className="body-text" style={{ maxWidth: 520, margin: "0 auto" }}>
-              Tell us a little about your business and we&rsquo;ll build a personalised demo. You&rsquo;ll receive a call from your own AI receptionist within 24 hours &mdash; no contracts, no obligation.
-            </p>
           </div>
-        </Reveal>
+          <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, paddingTop: 12 }}>
+            <FadeUp as="p" delay={0.3} style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", margin: 0 }}>
+              Tell us a little about your business and we&apos;ll build a personalised demo. You&apos;ll receive a call from your own AI receptionist within 24 hours — no contracts, no obligation.
+            </FadeUp>
+          </div>
+        </div>
       </section>
 
-      {/* Form / success */}
-      <section className="section-padding section-white container" style={{ paddingTop: 0, paddingBottom: "6rem" }}>
-        <Reveal delay={0.1}>
-          <div style={{ maxWidth: 620, margin: "0 auto" }}>
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5", paddingTop: 0, paddingBottom: 100 }}>
+        <FadeUp delay={0.15}>
+          <div style={{ maxWidth: 640, marginLeft: 0, background: "rgba(255,255,255,0.35)", border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, padding: 36 }}>
             {!submitted ? (
               <>
-                {/* Hidden static form for Netlify Forms detection during build.
-                    The real submission is the React form below. */}
-                <form name="demo" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-                  <input name="name" />
-                  <input name="email" />
-                  <input name="website" />
-                  <textarea name="message" />
-                  <input name="bot-field" />
-                </form>
-
-                <form onSubmit={handleSubmit} className="form-card" name="demo">
+                <form onSubmit={handleSubmit} name="demo" style={{ display: "grid", gap: 20 }}>
                   <input type="hidden" name="form-name" value="demo" />
                   <p hidden>
-                    <label>Don&rsquo;t fill this out: <input name="bot-field" /></label>
+                    <label>Don&apos;t fill this out: <input name="bot-field" /></label>
                   </p>
+                  <Field label="Your name" name="name" type="text" required placeholder="Tom Parry" />
+                  <Field label="Email" name="email" type="email" required placeholder="you@business.com" />
+                  <Field label="Business website" name="website" type="url" placeholder="https://yourbusiness.com" />
+                  <Field label="Anything we should know?" name="message" textarea placeholder="Opening hours, typical call volume, or questions your AI should handle…" optional />
 
-                  <div style={{ display: "grid", gap: "1.5rem" }}>
-                    <div>
-                      <label htmlFor="name" className="form-label">Your name</label>
-                      <input id="name" name="name" type="text" required autoComplete="name" className="form-input" placeholder="Tom Parry" />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="form-label">Email</label>
-                      <input id="email" name="email" type="email" required autoComplete="email" className="form-input" placeholder="you@business.com" />
-                    </div>
-                    <div>
-                      <label htmlFor="website" className="form-label">Business website</label>
-                      <input id="website" name="website" type="url" autoComplete="url" className="form-input" placeholder="https://yourbusiness.com" />
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="form-label">
-                        Anything we should know? <span style={{ color: "#bbb", textTransform: "none", letterSpacing: "normal", fontSize: "0.7rem", fontWeight: 400, marginLeft: "0.5rem" }}>Optional</span>
-                      </label>
-                      <textarea id="message" name="message" rows={4} className="form-textarea" placeholder="Opening hours, typical call volume, or questions your AI should handle…" />
-                    </div>
-                  </div>
-
-                  <button type="submit" disabled={submitting} className="btn rounded-full" style={{ width: "100%", marginTop: "2rem", padding: "1rem", fontSize: "0.95rem", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
-                    {submitting ? "Sending…" : (
-                      <>
-                        Send My Details
-                        <ArrowRight className="w-4 h-4" />
-                      </>
-                    )}
+                  <button type="submit" disabled={submitting} className="cog-btn-primary" style={{ width: "100%", justifyContent: "center", padding: "14px", fontSize: 12, marginTop: 8 }}>
+                    {submitting ? "Sending…" : (<>Send my details <ArrowRight size={14} /></>)}
                   </button>
-
-                  <p style={{ marginTop: "1rem", fontSize: "0.75rem", color: "#999", textAlign: "center", lineHeight: 1.6 }}>
-                    By submitting, you agree to our <Link href="/privacy" style={{ textDecoration: "underline", color: "inherit" }}>privacy policy</Link>. We reply within 24 hours. No spam, ever.
+                  <p style={{ fontSize: 11, color: "#888", textAlign: "center", lineHeight: 1.6, margin: 0 }}>
+                    By submitting, you agree to our <Link href="/privacy" style={{ textDecoration: "underline", color: "#1a1a1a" }}>privacy policy</Link>. We reply within 24 hours. No spam, ever.
                   </p>
                 </form>
 
-                <div style={{ marginTop: "2.5rem", textAlign: "center", fontSize: "0.9rem", color: "#888" }}>
+                <div style={{ marginTop: 28, textAlign: "center", fontSize: 13, color: "#666" }}>
                   Prefer to speak now?{" "}
-                  <a href="tel:+442039960962" style={{ fontWeight: 600, color: "#111" }}>
-                    Call 020 3996 0962 &rarr;
-                  </a>
+                  <a href="tel:+442039960962" style={{ color: "var(--cog-copper)", fontWeight: 600 }}>Call 020 3996 0962 →</a>
                 </div>
               </>
             ) : (
-              <div className="form-card" style={{ textAlign: "center" }}>
-                <div style={{ width: "56px", height: "56px", borderRadius: "50%", background: "rgba(219,124,84,0.1)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.5rem" }}>
-                  <Check className="w-7 h-7" style={{ color: "var(--accent)" }} strokeWidth={2.5} />
+              <div style={{ textAlign: "center", padding: "40px 16px" }}>
+                <div style={{ width: 56, height: 56, borderRadius: "50%", background: "rgba(219,124,84,0.18)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 24 }}>
+                  <Check size={28} color="var(--cog-copper)" strokeWidth={2.5} />
                 </div>
-                <h2 className="heading" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", marginBottom: "0.85rem" }}>
-                  Thanks, <span className="italic-accent">{firstName}</span>.
+                <h2 className="cog-h-display" style={{ fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "-0.01em", color: "#1a1a1a", margin: "0 0 14px" }}>
+                  Thanks, <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>{firstName}.</span>
                 </h2>
-                <p style={{ color: "#555", lineHeight: 1.7, maxWidth: 420, margin: "0 auto 2rem" }}>
-                  We&rsquo;ve got your details. Expect a personalised AI receptionist demo in your inbox within 24 hours &mdash; usually sooner.
+                <p style={{ color: "#3a3a3a", lineHeight: 1.7, maxWidth: 420, margin: "0 auto 28px" }}>
+                  We&apos;ve got your details. Expect a personalised AI receptionist demo in your inbox within 24 hours — usually sooner.
                 </p>
-                <div className="cta-row">
-                  <a href="tel:+442039960962" className="btn rounded-full" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
-                    <Phone className="w-4 h-4" />
-                    Call Alice now
-                  </a>
-                  <Link href="/" className="btn-outline">Back to home</Link>
+                <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
+                  <a href="tel:+442039960962" className="cog-btn-primary"><Phone size={14} /> Call Alice now</a>
+                  <Link href="/" className="cog-btn-secondary">Back to home</Link>
                 </div>
               </div>
             )}
           </div>
-        </Reveal>
+        </FadeUp>
       </section>
 
       <Footer />
-    </>
+    </div>
+  );
+}
+
+function Field({ label, name, type = "text", required, placeholder, textarea, optional }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string; textarea?: boolean; optional?: boolean }) {
+  return (
+    <div>
+      <label htmlFor={name} style={{ display: "block", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#1a1a1a", fontWeight: 600, marginBottom: 8 }}>
+        {label}
+        {optional && <span style={{ color: "#888", fontSize: 10, letterSpacing: "normal", textTransform: "none", fontWeight: 400, marginLeft: 8 }}>Optional</span>}
+      </label>
+      {textarea ? (
+        <textarea id={name} name={name} rows={4} placeholder={placeholder}
+          style={{ width: "100%", padding: "12px 16px", background: "#fff", border: "1px solid rgba(0,0,0,0.18)", borderRadius: 12, fontFamily: "inherit", fontSize: 14, lineHeight: 1.55, color: "#1a1a1a", resize: "vertical" }} />
+      ) : (
+        <input id={name} name={name} type={type} required={required} placeholder={placeholder}
+          style={{ width: "100%", padding: "12px 16px", background: "#fff", border: "1px solid rgba(0,0,0,0.18)", borderRadius: 12, fontFamily: "inherit", fontSize: 14, color: "#1a1a1a" }} />
+      )}
+    </div>
   );
 }
