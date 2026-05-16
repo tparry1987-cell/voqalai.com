@@ -4,7 +4,10 @@
    existing pages that don't opt in.
    ────────────────────────────────────────────────────────────────── */
 
-@import url('https://db.onlinewebfonts.com/c/e66905e07608167a84e6ad52f638c3c6?family=Helvetica+Now+Var');
+/* Font stack uses Inter (loaded via @fontsource in layout.tsx) with
+   Helvetica fallbacks. CSP blocks external CSS imports, so we don't
+   pull Helvetica Now Var directly. Inter is visually similar and
+   already self-hosted. */
 
 :root {
   --cog-bg-gray: #C5C5C5;
@@ -21,7 +24,7 @@
 
 /* Apply the cog-redesign font stack via a body class set per redesigned page */
 .cog-redesign {
-  font-family: 'Helvetica Now Var', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background: var(--cog-bg-gray);
   color: var(--cog-ink);
   -webkit-font-smoothing: antialiased;
@@ -116,7 +119,7 @@
 .cog-nav-link:hover { opacity: 0.55; }
 
 .cog-h-display {
-  font-family: 'Helvetica Now Var', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* ──────────────────────────────────────────────────────────────────
