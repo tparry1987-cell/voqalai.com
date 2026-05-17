@@ -31,11 +31,14 @@ export default function BookPage() {
       data.forEach((value, key) => {
         body.append(key, value.toString());
       });
-      await fetch("/", {
+      const response = await fetch(form.action || "/thank-you/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: body.toString(),
       });
+      if (!response.ok) {
+        throw new Error(`Netlify form submission failed with ${response.status}`);
+      }
     } catch (err) {
       console.error("Form submit error (non-fatal for UX):", err);
     }
@@ -47,7 +50,16 @@ export default function BookPage() {
       <Navbar />
 
       {/* Hidden static form for Netlify Forms detection during build. */}
-      <form name="demo" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <form
+        name="demo"
+        method="POST"
+        action="/thank-you/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="hidden" name="form-name" value="demo" />
+        <input type="hidden" name="subject" value="New Voqal AI demo request" />
         <input name="name" />
         <input name="email" />
         <input name="website" />
@@ -62,13 +74,18 @@ export default function BookPage() {
         <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start" }}>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 640 }}>
             <h1 className="cog-h-display" style={{ fontSize: "clamp(36px, 5vw, 72px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: 0 }}>
-              HEAR YOUR AI<br />
-              <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>receptionist.</span>
+              YOUR DEMO,<br />
+              <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>in 24 hours.</span>
             </h1>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, paddingTop: 12 }}>
-            <FadeUp as="p" delay={0.3} style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", margin: 0 }}>
-              Tell us a little about your business and we&apos;ll build a personalised demo. You&apos;ll receive a call from your own AI receptionist within 24 hours — no contracts, no obligation.
+            <FadeUp as="div" delay={0.3} style={{ fontSize: 15, lineHeight: 1.8, color: "#1a1a1a", margin: 0 }}>
+              <div>Drop your details below.</div>
+              <div>We&apos;ll build your AI receptionist.</div>
+              <div>You&apos;ll be on a real call with it tomorrow.</div>
+            </FadeUp>
+            <FadeUp as="p" delay={0.5} style={{ fontSize: 13, lineHeight: 1.6, color: "#5a5a5a", margin: "20px 0 0" }}>
+              No contracts. No commitment. No card.
             </FadeUp>
           </div>
         </div>
@@ -79,8 +96,17 @@ export default function BookPage() {
           <div style={{ maxWidth: 640, marginLeft: 0, background: "rgba(255,255,255,0.35)", border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, padding: 36 }}>
             {!submitted ? (
               <>
-                <form onSubmit={handleSubmit} name="demo" style={{ display: "grid", gap: 20 }}>
+                <form
+                  onSubmit={handleSubmit}
+                  name="demo"
+                  method="POST"
+                  action="/thank-you/"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  style={{ display: "grid", gap: 20 }}
+                >
                   <input type="hidden" name="form-name" value="demo" />
+                  <input type="hidden" name="subject" value="New Voqal AI demo request" />
                   <p hidden>
                     <label>Don&apos;t fill this out: <input name="bot-field" /></label>
                   </p>

@@ -94,7 +94,7 @@ export function IndustryLanding({ data }: { data: IndustryData }) {
                 <span className="cog-soundwave" aria-hidden><span /><span /><span /><span /></span>
                 Speak to our AI
               </a>
-              <Link href="/book" className="cog-btn-ghost-light">Book Free Demo</Link>
+              <Link href="/book" className="cog-btn-ghost-light">Book free demo — 24h</Link>
             </FadeUp>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460 }}>
@@ -203,7 +203,7 @@ export function IndustryLanding({ data }: { data: IndustryData }) {
         </div>
         <FadeUp delay={0.5} style={{ marginTop: 60 }}>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <Link href="/book" className="cog-btn-primary">Book Free Demo</Link>
+            <Link href="/book" className="cog-btn-primary">Book free demo — 24h</Link>
             <Link href="/pricing" className="cog-btn-secondary">View Pricing</Link>
           </div>
         </FadeUp>

@@ -113,7 +113,7 @@ export default function Home() {
           <FadeUp delay={0.95}>
             <div className="cog-hero-buttons" style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "wrap" }}>
               <Link href="/book" className="cog-btn-ghost-light" style={{ paddingInline: 28 }}>
-                Hear it in action →
+                Get my demo in 24 hours →
               </Link>
               <a
                 href="tel:+442039960962"
