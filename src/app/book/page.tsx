@@ -82,7 +82,8 @@ export default function BookPage() {
             <FadeUp as="div" delay={0.3} style={{ fontSize: 15, lineHeight: 1.8, color: "#1a1a1a", margin: 0 }}>
               <div>Drop your details below.</div>
               <div>We&apos;ll build your AI receptionist.</div>
-              <div>You&apos;ll be on a real call with it tomorrow.</div>
+              <div>We&apos;ll email you the demo link within 24 hours.</div>
+              <div>Click it whenever — speak to your AI live.</div>
             </FadeUp>
             <FadeUp as="p" delay={0.5} style={{ fontSize: 13, lineHeight: 1.6, color: "#5a5a5a", margin: "20px 0 0" }}>
               No contracts. No commitment. No card.
@@ -119,7 +120,7 @@ export default function BookPage() {
                     {submitting ? "Sending…" : (<>Send my details <ArrowRight size={14} /></>)}
                   </button>
                   <p style={{ fontSize: 11, color: "#888", textAlign: "center", lineHeight: 1.6, margin: 0 }}>
-                    By submitting, you agree to our <Link href="/privacy" style={{ textDecoration: "underline", color: "#1a1a1a" }}>privacy policy</Link>. We reply within 24 hours. No spam, ever.
+                    By submitting, you agree to our <Link href="/privacy" style={{ textDecoration: "underline", color: "#1a1a1a" }}>privacy policy</Link>. Your demo link arrives by email within 24 hours. No spam, ever.
                   </p>
                 </form>
 
@@ -137,7 +138,7 @@ export default function BookPage() {
                   Thanks, <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>{firstName}.</span>
                 </h2>
                 <p style={{ color: "#3a3a3a", lineHeight: 1.7, maxWidth: 420, margin: "0 auto 28px" }}>
-                  We&apos;ve got your details. Expect a personalised AI receptionist demo in your inbox within 24 hours — usually sooner.
+                  We&apos;ve got your details. Your demo link will land in your inbox within 24 hours — usually sooner. Click it whenever you&apos;re ready to speak to your AI.
                 </p>
                 <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
                   <a href="tel:+442039960962" className="cog-btn-primary"><Phone size={14} /> Call Alice now</a>

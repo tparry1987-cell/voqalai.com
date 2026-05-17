@@ -37,7 +37,7 @@ export default function ThankYouPage() {
         </FadeUp>
         <FadeUp delay={0.35}>
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "#3a3a3a", maxWidth: 540, margin: "0 auto 28px" }}>
-            Your demonstration request has been received. Our engineering team will be in touch within 24 hours to set up your personalised voice agent testing environment.
+            We&apos;ve got your details. We&apos;ll build your personalised AI receptionist and email you the demo link within 24 hours. Click the link whenever you&apos;re ready to speak to your AI — live.
           </p>
         </FadeUp>
         <FadeUp delay={0.5}>
