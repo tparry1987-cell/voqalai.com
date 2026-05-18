@@ -29,7 +29,32 @@ function loadGoogleAnalytics() {
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   document.head.appendChild(script);
+
+  // Tel: link clicks — GA4 enhanced measurement doesn't catch these.
+  document.addEventListener("click", (e) => {
+    const link = (e.target as HTMLElement)?.closest?.("a[href^='tel:']") as HTMLAnchorElement | null;
+    if (!link) return;
+    window.gtag?.("event", "phone_click", {
+      phone_number: link.getAttribute("href")?.replace("tel:", ""),
+      link_text: link.innerText?.trim().slice(0, 80),
+    });
+  });
+
+  // Cal.com booking confirmations — embed posts {type: 'CAL:bookingSuccessful'}.
+  window.addEventListener("message", (e) => {
+    const data = e.data;
+    if (!data || typeof data !== "object") return;
+    if (data.type === "CAL:bookingSuccessful" || data.action === "bookingSuccessful") {
+      window.gtag?.("event", "generate_lead", {
+        method: "cal_booking",
+        value: 0,
+        currency: "GBP",
+      });
+    }
+  });
 }
+
+const CONSENT_ACCEPTED_VALUES = new Set(["accepted", "true"]);
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
@@ -37,7 +62,7 @@ export function CookieConsent() {
   useEffect(() => {
     const consent = localStorage.getItem("cookieConsent");
 
-    if (consent === "accepted") {
+    if (consent && CONSENT_ACCEPTED_VALUES.has(consent)) {
       loadGoogleAnalytics();
     }
 

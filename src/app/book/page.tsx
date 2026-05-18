@@ -42,6 +42,11 @@ export default function BookPage() {
     } catch (err) {
       console.error("Form submit error (non-fatal for UX):", err);
     }
+    window.gtag?.("event", "generate_lead", {
+      method: "demo_form",
+      value: 0,
+      currency: "GBP",
+    });
     setSubmitted(true);
   };
 
