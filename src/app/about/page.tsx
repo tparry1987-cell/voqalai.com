@@ -166,7 +166,7 @@ export default function AboutPage() {
           <div className="cog-cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, maxWidth: 900, marginBottom: 60 }}>
             {[
               ["Registered", "Voqal AI Ltd", "Company No. 17080303"],
-              ["Based", "London, UK", "Serving businesses globally"],
+              ["Based", "Manchester, UK", "Serving businesses globally"],
               ["Contact", "020 3996 0962", "info@voqalai.com"],
             ].map(([k, v1, v2]) => (
               <div key={k} style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 14, padding: "18px 22px" }}>
