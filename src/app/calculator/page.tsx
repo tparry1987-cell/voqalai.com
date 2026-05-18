@@ -101,8 +101,8 @@ export default function CalculatorPage() {
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 640 }}>
             <h1 className="cog-h-display" style={{ fontSize: "clamp(36px, 5vw, 72px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: 0 }}>
               STOP CHASING<br />
-              FRESH LEADS. <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>Wake up</span><br />
-              THE ONES YOU HAVE.
+              FRESH LEADS.<br />
+              <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>Wake up</span> THE ONES YOU HAVE.
             </h1>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, paddingTop: 12 }}>
