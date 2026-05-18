@@ -11,17 +11,14 @@ const pricingSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Voqal AI Receptionist",
-    "description": "AI voice receptionist service for UK and US businesses. 24/7 call answering, appointment booking, lead qualification, and CRM integration.",
+    "description": "AI voice receptionist service for businesses worldwide. 24/7 call answering, appointment booking, lead qualification, and CRM integration.",
     "provider": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
-    "areaServed": [
-      { "@type": "Country", "name": "United Kingdom" },
-      { "@type": "Country", "name": "United States" }
-    ],
+    "areaServed": "Worldwide",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "AI Receptionist Plans",
       "itemListElement": [
-        { "@type": "Offer", "name": "Starter", "description": "200 minutes/month, 1 AI flow, 1 UK phone number, basic call routing.", "price": "197", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31", "url": "https://voqalai.com/pricing" },
+        { "@type": "Offer", "name": "Starter", "description": "200 minutes/month, 1 AI flow, 1 business phone number, basic call routing.", "price": "197", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31", "url": "https://voqalai.com/pricing" },
         { "@type": "Offer", "name": "Pro", "description": "500 minutes/month, full booking flow, calendar and CRM integration.", "price": "397", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31", "url": "https://voqalai.com/pricing" },
         { "@type": "Offer", "name": "Premium", "description": "1,000 minutes/month, multi-flow handling, advanced call routing.", "price": "697", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31", "url": "https://voqalai.com/pricing" },
         { "@type": "Offer", "name": "Business", "description": "2,500 minutes/month, custom multi-flow handling, priority support with dedicated channel.", "price": "997", "priceCurrency": "GBP", "priceValidUntil": "2026-12-31", "url": "https://voqalai.com/pricing" }
@@ -39,7 +36,7 @@ const pricingSchema = [
 ];
 
 const managedTiers = [
-  { name: "Starter",  price: "£197", byline: "200 minutes / month",  features: ["1 receptionist flow", "Basic knowledge base", "1 UK phone number", "Standard support"], overage: "£0.20/min" },
+  { name: "Starter",  price: "£197", byline: "200 minutes / month",  features: ["1 receptionist flow", "Basic knowledge base", "1 business phone number", "Standard support"], overage: "£0.20/min" },
   { name: "Pro",      price: "£397", byline: "500 minutes / month",  features: ["Full booking flow", "Calendar & CRM integrations", "Comprehensive KB", "Standard support"], overage: "£0.18/min", featured: true },
   { name: "Premium",  price: "£697", byline: "1,000 minutes / month",features: ["Multi-flow agent", "CRM + QA monitoring", "Advanced routing", "Priority support"], overage: "£0.15/min" },
   { name: "Business", price: "£997", byline: "2,500 minutes / month",features: ["Custom multi-flow", "CRM + QA + workflows", "Advanced routing", "Dedicated channel"], overage: "£0.15/min" },
@@ -74,7 +71,7 @@ export default function PricingPage() {
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, paddingTop: 12 }}>
             <FadeUp as="p" delay={0.3} style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", margin: "0 0 24px" }}>
-              No contracts. No lock-ins. Personalised demo within 24 hours. A full-time UK receptionist costs £22,000–£28,000 a year — our AI starts at a fraction of that.
+              No contracts. No lock-ins. Personalised demo within 24 hours. Traditional front-desk cover is expensive and limited by hours — our AI starts at a fraction of that and works around the clock.
             </FadeUp>
             <FadeUp delay={0.45}>
               <div style={{ display: "inline-flex", background: "#fff", border: "1px solid rgba(0,0,0,0.18)", borderRadius: 999, padding: 4, gap: 4 }}>
@@ -155,8 +152,31 @@ export default function PricingPage() {
 
         <FadeUp delay={0.5} style={{ marginTop: 60, maxWidth: 720 }}>
           <p style={{ fontSize: 14, lineHeight: 1.7, color: "#3a3a3a", margin: 0 }}>
-            A full-time UK receptionist costs £22,000–£28,000 per year (ONS ASHE, 2024). US receptionists average $40,800 per year (Bureau of Labor Statistics, 2024) — Voqal AI starts at a fraction of that, with zero hold times and full 24/7 coverage.
+            Whether you operate locally, internationally, or across multiple time zones, Voqal AI gives you consistent 24/7 front-desk coverage at a fraction of the cost of traditional staffing, with zero hold times and instant response.
           </p>
+        </FadeUp>
+
+        <FadeUp delay={0.55} style={{ marginTop: 40, maxWidth: 720 }}>
+          <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "#666", textTransform: "uppercase", marginBottom: 14 }}>
+            The fine print
+          </div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+            <li style={{ fontSize: 13, lineHeight: 1.65, color: "#3a3a3a" }}>
+              Prices exclude VAT.
+            </li>
+            <li style={{ fontSize: 13, lineHeight: 1.65, color: "#3a3a3a" }}>
+              Managed plans are billed monthly in advance. Overage minutes are billed monthly in arrears at the per-minute rate shown on each plan.
+            </li>
+            <li style={{ fontSize: 13, lineHeight: 1.65, color: "#3a3a3a" }}>
+              Managed plans are rolling-monthly with no contract and can be cancelled with 30 days&rsquo; written notice.
+            </li>
+            <li style={{ fontSize: 13, lineHeight: 1.65, color: "#3a3a3a" }}>
+              Custom pricing available for multi-location, high-volume, or bespoke workflow clients — <Link href="/contact" style={{ color: "var(--cog-copper)", textDecoration: "underline" }}>get in touch</Link>.
+            </li>
+            <li style={{ fontSize: 13, lineHeight: 1.65, color: "#3a3a3a" }}>
+              A Data Processing Agreement is available on request for clients whose customers&rsquo; personal data is processed by our AI agents.
+            </li>
+          </ul>
         </FadeUp>
       </section>
 

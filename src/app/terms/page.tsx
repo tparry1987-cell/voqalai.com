@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions - Voqal AI Service Agreement",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     title: "Terms & Conditions | Voqal AI",
     description: "Terms and Conditions for Voqal AI. Read our terms of service, payment terms, and service level agreements.",
     url: "https://voqalai.com/terms",
+    images: [defaultOpenGraphImage],
   },
 };
 
@@ -26,7 +28,7 @@ export default function TermsPage() {
             <h1 className="heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
               Terms &amp; <span className="italic-accent">Conditions.</span>
             </h1>
-            <p className="body-text" style={{ marginTop: "0.5rem" }}>Last updated: February 2026</p>
+            <p className="body-text" style={{ marginTop: "0.5rem" }}>Last updated: May 2026</p>
           </div>
         </Reveal>
 
@@ -57,9 +59,11 @@ export default function TermsPage() {
 
             <h2>4. Payment Terms</h2>
             <ul>
+              <li>Managed service plans are billed monthly in advance. Build &amp; Handover fees are billed on agreed milestones</li>
+              <li>Overage minutes on managed plans are billed monthly in arrears at the per-minute rate stated on the pricing page</li>
               <li>All invoices are due within 14 days of issuance</li>
+              <li>All prices exclude VAT. VAT will be added to invoices at the prevailing rate where Voqal AI Ltd is required to charge it</li>
               <li>We reserve the right to suspend services for overdue accounts</li>
-              <li>Fees are non-refundable unless otherwise agreed in writing</li>
             </ul>
 
             <h2>5. Intellectual Property</h2>
@@ -78,13 +82,21 @@ export default function TermsPage() {
             <h2>8. Limitation of Liability</h2>
             <p>Voqal AI shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services. Our total liability shall not exceed the fees paid by the client in the preceding 12-month period.</p>
 
-            <h2>9. Termination</h2>
-            <p>Either party may terminate the agreement with 30 days&rsquo; written notice. Voqal AI reserves the right to terminate immediately in cases of material breach by the client.</p>
+            <h2>9. Cancellation &amp; Refunds</h2>
+            <ul>
+              <li>Managed service plans are rolling-monthly with no minimum term. Either party may cancel with 30 days&rsquo; written notice to <a href="mailto:info@voqalai.com">info@voqalai.com</a>. Service continues, and the standard monthly fee remains payable, through the notice period</li>
+              <li>Monthly subscription fees already paid for the current billing period are non-refundable. No further charges are taken after the notice period ends</li>
+              <li>Build &amp; Handover engagements may be cancelled in writing at any time. Fees for work already completed up to the cancellation date remain payable; any unstarted milestones are not charged</li>
+              <li>Voqal AI Ltd reserves the right to terminate immediately in cases of material breach, non-payment, or unlawful use of the service</li>
+            </ul>
 
-            <h2>10. Governing Law</h2>
+            <h2>10. Data Processing</h2>
+            <p>When Voqal AI Ltd processes personal data on a client&rsquo;s behalf (for example, callers&rsquo; names, phone numbers, or appointment details handled by an AI agent), Voqal AI Ltd acts as a data processor and the client acts as the data controller under UK GDPR. A Data Processing Agreement (DPA) setting out roles, security measures, sub-processors, and data subject rights is available on request — please email <a href="mailto:info@voqalai.com">info@voqalai.com</a>. Our handling of personal data we collect directly (for example, from website forms or sales enquiries) is described in our <a href="/privacy">Privacy Policy</a>.</p>
+
+            <h2>11. Governing Law</h2>
             <p>These terms shall be governed by and construed in accordance with the laws of the United Kingdom. Any disputes shall be resolved through good-faith negotiation or, failing that, through the courts of England and Wales.</p>
 
-            <h2>11. Contact Us</h2>
+            <h2>12. Contact Us</h2>
             <p>For questions about these Terms and Conditions, please contact us:</p>
             <p>
               Email: <a href="mailto:info@voqalai.com">info@voqalai.com</a><br />
