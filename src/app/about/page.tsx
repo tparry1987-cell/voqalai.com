@@ -106,12 +106,13 @@ export default function AboutPage() {
         <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start" }}>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 640 }}>
             <h1 className="cog-h-display" style={{ fontSize: "clamp(36px, 5vw, 72px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: 0 }}>
-              THE TEAM BEHIND <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>your voice agent.</span>
+              THE TEAM BEHIND <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>your AI transformation.</span>
             </h1>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, paddingTop: 12 }}>
-            <FadeUp as="p" delay={0.3} style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", margin: 0 }}>
-              Voqal AI Ltd builds bespoke voice agents for businesses worldwide. Founded in the UK and working with companies globally, we eliminate friction through continuous availability, intelligent automation, and customer communication that keeps moving.
+            <FadeUp as="div" delay={0.3} style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", margin: 0 }}>
+              <p style={{ margin: "0 0 16px" }}>From voice AI and automations to integrations and intelligent workflows, we help businesses adopt practical AI systems that improve operations, customer experience, and efficiency.</p>
+              <p style={{ margin: 0, fontWeight: 600, color: "#1a1a1a" }}>Guiding businesses from AI curious to AI native.</p>
             </FadeUp>
           </div>
         </div>
