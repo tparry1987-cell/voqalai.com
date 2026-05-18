@@ -203,7 +203,7 @@ export default function CalculatorPage() {
       <section id="sms" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
         <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>SMS Templates</FadeUp>
         <FadeUp delay={0.1}>
-          <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 28px", maxWidth: 720 }}>
+          <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 28px", whiteSpace: "nowrap" }}>
             This is what we&apos;d <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, fontSize: "1.4em", lineHeight: 1, color: "var(--cog-copper)" }}>actually send.</span>
           </h2>
         </FadeUp>
