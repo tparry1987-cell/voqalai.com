@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Stethoscope, Scale, Wrench, HeartPulse, Home as HomeIcon, Calculator } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -13,6 +14,7 @@ const SERVICE_CARDS = [
   {
     video:
       "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_220333_48163edc-995f-4513-9f44-48dbb07a7329.mp4",
+    poster: "/images/offering-voice-ai.jpg",
     title: "Voice AI Agents",
     text: "Our voice agents answer calls in under two seconds, 24/7. They handle booking, FAQs, lead qualification, and urgent routing — custom-trained on your business so every caller gets the right answer from the first ring.",
     tag: "I.",
@@ -20,6 +22,7 @@ const SERVICE_CARDS = [
   {
     video:
       "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221040_e6ba7c5a-864e-46e9-871e-341a176a7e3e.mp4",
+    poster: "/images/offering-lead-reactivation.jpg",
     title: "Lead Reactivation",
     text: "Most businesses have hundreds of dormant contacts sitting untouched. Our AI reactivates them with natural SMS conversations and you only pay when a lead converts. Zero upfront cost.",
     tag: "II.",
@@ -27,6 +30,7 @@ const SERVICE_CARDS = [
   {
     video:
       "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221104_fb538584-5b87-495f-952e-09ddd5a1792a.mp4",
+    poster: "/images/offering-process-automation.jpg",
     title: "Process Automation",
     text: "Eliminate redundant data entry by connecting your phone, CRM, calendar, and workflow tools into a single pipeline. Every call outcome flows into the right system without your team lifting a finger.",
     tag: "III.",
@@ -54,14 +58,45 @@ const EVIDENCE = [
 ];
 
 export default function Home() {
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const playHeroVideo = () => {
+      const video = heroVideoRef.current;
+      if (!video) return;
+
+      video.muted = true;
+      video.playsInline = true;
+      void video.play().catch(() => {
+        // Some mobile browsers pause autoplay in low-power or data-saver modes.
+      });
+    };
+
+    playHeroVideo();
+    window.addEventListener("pageshow", playHeroVideo);
+    document.addEventListener("visibilitychange", playHeroVideo);
+
+    return () => {
+      window.removeEventListener("pageshow", playHeroVideo);
+      document.removeEventListener("visibilitychange", playHeroVideo);
+    };
+  }, []);
+
   return (
     <div className="cog-redesign" id="top" style={{ position: "relative", background: "#C5C5C5", minHeight: "100vh" }}>
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video
+        ref={heroVideoRef}
+        className="hero-video"
         autoPlay
         muted
         loop
         playsInline
+        preload="auto"
+        controls={false}
+        disablePictureInPicture
+        controlsList="nodownload noplaybackrate noremoteplayback"
+        poster="/images/hero-video-poster.jpg"
         style={{
           position: "fixed",
           top: 0,
@@ -74,6 +109,8 @@ export default function Home() {
       >
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>
+
+      <div className="hero-mobile-poster" aria-hidden="true" />
 
       <div
         style={{
@@ -167,7 +204,7 @@ export default function Home() {
         <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", maxWidth: 1200 }}>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460 }}>
             <FadeUp as="p" delay={0.8} style={{ fontSize: 16, lineHeight: 1.7, color: "#3a3a3a", margin: 0 }}>
-              UK businesses lose tens of thousands a year to calls that ring out. Voqal AI answers every one in under two seconds, around the clock — no hold music, no voicemail, no excuses.
+              Businesses lose revenue every day to calls that ring out. Voqal AI answers every one in under two seconds, around the clock — no hold music, no voicemail, no excuses.
             </FadeUp>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, display: "flex", gap: 32, flexWrap: "wrap", paddingTop: 4 }}>
@@ -247,9 +284,28 @@ export default function Home() {
                   height: "100%",
                 }}
               >
-                <div style={{ width: "auto", aspectRatio: "4 / 3", position: "relative", overflow: "hidden", marginInline: 16, borderRadius: 12 }}>
+                <div className="offering-media-frame">
+                  <img
+                    className="offering-media-poster"
+                    src={card.poster}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                  />
                   {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                  <video autoPlay muted loop playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", borderRadius: 12 }}>
+                  <video
+                    className="offering-media-video"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    controls={false}
+                    disablePictureInPicture
+                    controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
+                    poster={card.poster}
+                  >
                     <source src={card.video} type="video/mp4" />
                   </video>
                 </div>
@@ -281,6 +337,37 @@ export default function Home() {
                 Sites that generate leads while you sleep. Voice agents, chat, capture, and automations woven in from day one — not bolted on as afterthoughts. From real estate to trades.
               </p>
             </div>
+          </div>
+        </FadeUp>
+
+        <FadeUp delay={1.05} style={{ marginTop: 24 }}>
+          <div
+            className="cog-services-head-row"
+            style={{
+              border: "1px solid rgba(0,0,0,0.18)",
+              borderRadius: 20,
+              padding: "28px 32px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 32,
+              background: "rgba(255,255,255,0.22)",
+            }}
+          >
+            <div style={{ maxWidth: 680 }}>
+              <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--cog-copper)", fontWeight: 600, marginBottom: 10, textTransform: "uppercase" }}>
+                AI Opportunity Audit
+              </div>
+              <h3 style={{ fontSize: "clamp(22px, 2.4vw, 34px)", fontWeight: 700, lineHeight: 1.08, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 12px" }}>
+                Not sure where AI actually fits?
+              </h3>
+              <p style={{ fontSize: 14, lineHeight: 1.65, color: "#3a3a3a", margin: 0 }}>
+                We can audit your business, map the workflows where AI can create the most leverage, and show you what to automate first — from customer communication to internal operations.
+              </p>
+            </div>
+            <Link href="/audit/" className="cog-btn-primary" style={{ flexShrink: 0, whiteSpace: "nowrap" }}>
+              Explore the audit
+            </Link>
           </div>
         </FadeUp>
       </section>
