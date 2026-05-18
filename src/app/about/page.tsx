@@ -155,11 +155,13 @@ export default function AboutPage() {
         </FadeUp>
         <FadeUp delay={0.1}>
           <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.6vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", maxWidth: 720, margin: "0 0 20px" }}>
-            Every business deserves a <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>world-class front door.</span>
+            Every business deserves access to <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>world-class AI.</span>
           </h2>
         </FadeUp>
-        <FadeUp as="p" delay={0.2} style={{ fontSize: 15, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 640, margin: "0 0 60px" }}>
-          A missed call used to mean a lost customer — and for most small businesses, it still does. We build the kind of receptionist most companies can&apos;t afford: available every hour, trained on every detail, and ready to answer in under two seconds.
+        <FadeUp as="div" delay={0.2} style={{ fontSize: 15, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 680, margin: "0 0 60px" }}>
+          <p style={{ margin: "0 0 16px" }}>We help companies bring AI into the real world.</p>
+          <p style={{ margin: "0 0 16px" }}>From voice AI and lead response systems to automations, integrations, and intelligent workflows, we design practical AI solutions that save time, capture more opportunities, and help businesses run smarter.</p>
+          <p style={{ margin: 0, fontWeight: 600, color: "#1a1a1a" }}>Powerful technology. Simple to use. Built for real businesses.</p>
         </FadeUp>
 
         <FadeUp delay={0.3}>
