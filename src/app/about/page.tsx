@@ -13,7 +13,7 @@ const aboutSchema = [
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Voqal AI",
-    "description": "Voqal AI Ltd builds AI voice agents for UK and US businesses. Co-founded by Thomas Parry and Charlie Todd, registered in England & Wales (Company No. 17080303).",
+    "description": "Voqal AI Ltd builds AI voice agents for businesses worldwide. Co-founded by Thomas Parry and Charlie Todd, registered in England & Wales (Company No. 17080303).",
     "url": "https://voqalai.com/about",
     "mainEntity": {
       "@type": "Organization",
@@ -29,28 +29,37 @@ const aboutSchema = [
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Charlie Todd",
-    "jobTitle": "Co-Founder",
+    "jobTitle": "Co-Founder & COO",
     "url": "https://voqalai.com/about",
     "worksFor": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
-    "knowsAbout": ["AI voice agents", "business automation", "process improvement", "international business operations"]
+    "knowsAbout": ["AI strategy", "business operations", "growth", "international company setup"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joe Kemp",
+    "jobTitle": "AI Integration Consultant",
+    "url": "https://voqalai.com/about",
+    "worksFor": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
+    "knowsAbout": ["AI integration", "SME operations", "professional services", "AI voice agents"]
   },
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Augusta Steffy",
-    "jobTitle": "Sales Director",
+    "jobTitle": "Director of Client Experience",
     "url": "https://voqalai.com/about",
     "worksFor": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
-    "knowsAbout": ["real estate sales", "client onboarding", "AI voice agents", "customer communication"]
+    "knowsAbout": ["client onboarding", "customer communication", "AI implementation", "client support"]
   },
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Adrian Wilkinson",
-    "jobTitle": "Strategic Partner",
+    "jobTitle": "Strategic Partnerships Director",
     "url": "https://voqalai.com/about",
     "affiliation": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
-    "knowsAbout": ["business operations", "AI implementation", "international business", "process improvement"]
+    "knowsAbout": ["strategic partnerships", "AI automation", "customer experience", "business operations"]
   },
   {
     "@context": "https://schema.org",
@@ -63,10 +72,11 @@ const aboutSchema = [
 ];
 
 const CREW = [
-  { name: "Thomas Parry", role: "Founder & CEO", bio: "15 years in B2B/B2C sales and business communications. Specialises in AI voice, telephony integration, and making sure no business call goes unanswered.", img: "/images/avatars/tom.webp", linkedin: "https://www.linkedin.com/in/tom-parry-698bbb29a" },
-  { name: "Charlie Todd", role: "Co-Founder", bio: "Identifies where automation removes friction. International operations experience, with a sharp eye for the everyday tasks AI can absorb without the team noticing.", img: "/images/avatars/charlie-todd.webp" },
-  { name: "Augusta Steffy", role: "Sales Director", bio: "Five years in real estate. Leads client conversations and onboarding, and shapes each voice agent around the way customers actually enquire, book and buy.", img: "/images/avatars/augusta.webp", imgPosition: "center 18%" },
-  { name: "Adrian Wilkinson", role: "Strategic Partner", bio: "Three decades operating businesses worldwide. Knows where AI adds real impact in real operations — and where it doesn't belong.", img: "/images/avatars/adrian-wilkinson.webp" },
+  { name: "Thomas Parry", role: "Founder & CEO", bio: "Tom founded Voqal AI with a vision of helping businesses move from AI curious to AI native. Focused on intelligent systems, automation, and modern business operations, he works closely with companies to integrate AI in ways that improve efficiency, communication, and long-term growth.", img: "/images/avatars/tom.webp", linkedin: "https://www.linkedin.com/in/tom-parry-698bbb29a" },
+  { name: "Charlie Todd", role: "Co-Founder & COO", bio: "Charlie works alongside Tom shaping Voqal AI's strategy, growth, and direction. With experience in business operations and international company setup, he helps companies identify where AI can improve efficiency, workflows, and scalability.", img: "/images/avatars/charlie-todd.webp" },
+  { name: "Augusta Steffy", role: "Director of Client Experience", bio: "Augusta focuses on client onboarding, communication, and ongoing support, helping businesses feel confident as they begin integrating AI into their operations.", img: "/images/avatars/augusta.webp", imgPosition: "center 18%" },
+  { name: "Adrian Wilkinson", role: "Strategic Partnerships Director", bio: "Adrian works closely with businesses to identify opportunities where AI and automation can improve customer experience, communication, and day-to-day operations.", img: "/images/avatars/adrian-wilkinson.webp" },
+  { name: "Joe Kemp", role: "AI Integration Consultant", bio: "Joe has worked with businesses across recruitment, HR, employment law, and professional services. At Voqal AI, he helps companies across sectors integrate AI naturally into existing workflows to improve communication, streamline processes, and operate more efficiently.", img: "/images/avatars/joe-kemp.webp" },
   { name: "Dev Team", role: "Engineering", bio: "Conversational AI, real-time voice synthesis, and telephony infrastructure. They build, test and deploy every voice agent — from model tuning to CRM integration.", img: null as string | null },
 ];
 
@@ -75,7 +85,7 @@ const FAQS = [
   { q: "Will callers know they're speaking to an AI?", a: "Our agents disclose they're AI when asked, but sound natural and conversational. They use your tone of voice and know your services inside out. Many callers happily complete bookings without realising." },
   { q: "Do I need a long-term contract?", a: "No. All managed plans are month-to-month. Cancel any time with no exit fees." },
   { q: "Is my data safe?", a: "Voqal AI Ltd (No. 17080303) processes all data in compliance with UK GDPR and the Data Protection Act 2018. Call data is encrypted in transit and at rest." },
-  { q: "What industries do you serve?", a: "Dental, medical, law, estate agents, tradesmen, accountancy and many more across the UK and US — any service business relying on inbound calls." },
+  { q: "What industries do you serve?", a: "Dental, medical, law, estate agents, trades, accountancy, professional services and many more — anywhere a business relies on inbound calls, bookings, enquiries, or repeatable customer communication." },
   { q: "Can the AI handle multiple calls at once?", a: "Yes. Unlike a human receptionist, our voice agents answer multiple simultaneous calls with zero wait time. Every caller gets an immediate response." },
 ];
 
@@ -101,7 +111,7 @@ export default function AboutPage() {
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, paddingTop: 12 }}>
             <FadeUp as="p" delay={0.3} style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", margin: 0 }}>
-              Voqal AI Ltd builds bespoke voice agents for UK and US businesses. With 5.5 million UK SMEs relying on inbound phone calls (FSB, 2024), phone communication remains the backbone of British commerce. We eliminate friction through continuous availability.
+              Voqal AI Ltd builds bespoke voice agents for businesses worldwide. Founded in the UK and working with companies globally, we eliminate friction through continuous availability, intelligent automation, and customer communication that keeps moving.
             </FadeUp>
           </div>
         </div>
@@ -111,7 +121,7 @@ export default function AboutPage() {
         <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "rgba(255,255,255,0.6)", marginBottom: 28 }}>
           THE PEOPLE
         </FadeUp>
-        <div className="cog-crew-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16 }}>
+        <div className="cog-crew-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
           {CREW.map((m, i) => (
             <FadeUp key={m.name} delay={0.15 + i * 0.08}>
               <div style={{ border: "1px solid rgba(255,255,255,0.15)", borderRadius: 20, padding: "24px 22px", height: "100%", display: "flex", flexDirection: "column" }}>
@@ -156,7 +166,7 @@ export default function AboutPage() {
           <div className="cog-cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, maxWidth: 900, marginBottom: 60 }}>
             {[
               ["Registered", "Voqal AI Ltd", "Company No. 17080303"],
-              ["Based", "Manchester, UK", "Serving UK & US"],
+              ["Based", "London, UK", "Serving businesses globally"],
               ["Contact", "020 3996 0962", "info@voqalai.com"],
             ].map(([k, v1, v2]) => (
               <div key={k} style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 14, padding: "18px 22px" }}>
