@@ -92,7 +92,7 @@ export function Footer() {
         <FooterCol
           title="PRODUCT"
           links={[
-            ["Voice Agents", "/#offering"],
+            ["Voice Agents", "/voice-agents"],
             ["Industries", "/#industries"],
             ["Lead Reactivation", "/calculator"],
             ["Audit", "/audit"],
