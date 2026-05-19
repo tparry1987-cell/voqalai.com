@@ -186,9 +186,29 @@ export default function Home() {
         <div className="cog-help-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
           {HELP_CARDS.map(({ title, text, Icon, href }, i) => (
             <FadeUp key={title} delay={0.15 + i * 0.08}>
-              <Link href={href} className="cog-help-card" style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, padding: "28px 28px 30px", minHeight: 220, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", color: "inherit", textDecoration: "none", background: "rgba(255,255,255,0.14)" }}>
-                <div className="cog-help-icon-wrap" style={{ width: 46, height: 46, borderRadius: 14, border: "1px solid rgba(0,0,0,0.14)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--cog-copper)", background: "rgba(255,255,255,0.2)" }}>
-                  <Icon className="cog-help-icon" size={21} strokeWidth={1.6} />
+              <Link
+                href={href}
+                className="cog-help-card"
+                style={{
+                  border: "1px solid rgba(0,0,0,0.18)",
+                  borderRadius: 20,
+                  padding: "28px 28px 30px",
+                  minHeight: 240,
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  color: "inherit",
+                  textDecoration: "none",
+                  background: "rgba(255,255,255,0.14)",
+                }}
+              >
+                <div className="cog-symbol" style={{ ["--symbol-delay" as string]: `${i * 0.35}s` }}>
+                  <span className="cog-symbol-ring" aria-hidden />
+                  <span className="cog-symbol-orbit cog-symbol-orbit-a" aria-hidden />
+                  <span className="cog-symbol-orbit cog-symbol-orbit-b" aria-hidden />
+                  <span className="cog-symbol-glow" aria-hidden />
+                  <Icon className="cog-symbol-icon" size={28} strokeWidth={1.45} />
                 </div>
                 <div>
                   <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "24px 0 10px" }}>{title}</h3>
