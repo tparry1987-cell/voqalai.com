@@ -59,6 +59,17 @@ const outcomes = [
   ["Better coverage", "The same standard of response is available at lunch, after hours, weekends, and busy periods."],
 ];
 
+const evidence = [
+  { n: "< 2s", l: "Answer time — every call, day or night." },
+  { n: "67%", l: "Of customers hang up when they can't reach a real person. (Forbes, 2023)" },
+  { n: "21×", l: "More likely to convert when answered in five minutes. (MIT / InsideSales.com)" },
+  { n: "80%", l: "Of voicemail callers won't leave a message. (PATLive, 2023)" },
+  { n: "£25K", l: "Average UK receptionist salary. Voqal AI from £197/mo." },
+  { n: "5.5M", l: "UK SMEs rely on inbound phone calls. (FSB, 2024)" },
+  { n: "91M", l: "Active UK mobile subscriptions. (Ofcom, 2024)" },
+  { n: "$80B", l: "Conversational-AI savings projected by 2026. (Gartner)" },
+];
+
 export default function VoiceAgentsPage() {
   return (
     <div className="cog-redesign" style={{ background: "#C5C5C5", minHeight: "100vh" }}>
@@ -194,21 +205,66 @@ export default function VoiceAgentsPage() {
         </div>
       </section>
 
-      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
+      <section id="evidence" className="cog-section-pad-lg speakable-stats" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
+          <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666" }}>
+            005 / 006 — The Evidence
+          </FadeUp>
+          <FadeUp delay={0.05} style={{ flex: 1, height: 1, background: "rgba(0,0,0,0.18)", maxWidth: 280 }}>{""}</FadeUp>
+        </div>
+
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 56 }}>
+          <div className="cog-services-head-col" style={{ width: "40%" }}>
+            <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: 0, maxWidth: 420 }}>
+              The data behind <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>AI receptionists.</span>
+            </h2>
+          </div>
+          <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
+            <FadeUp as="p" delay={0.2} style={{ fontSize: 14, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 480, margin: 0 }}>
+              Independent research from the FSB, ONS, Forbes, PATLive, MIT, Ofcom and Gartner — the numbers that explain why answering every call within seconds is no longer optional.
+            </FadeUp>
+          </div>
+        </div>
+
+        <div className="cog-stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+          {evidence.map((s, i) => (
+            <FadeUp key={s.n + i} delay={0.1 + i * 0.06}>
+              <div
+                style={{
+                  border: "1px solid rgba(0,0,0,0.18)",
+                  borderRadius: 16,
+                  padding: "24px 22px",
+                  height: "100%",
+                  background: "rgba(255,255,255,0.18)",
+                }}
+              >
+                <div className="cog-italic" style={{ fontSize: "clamp(36px, 3.5vw, 52px)", color: "var(--cog-copper)", lineHeight: 1, marginBottom: 12 }}>
+                  {s.n}
+                </div>
+                <div style={{ fontSize: 12, lineHeight: 1.55, color: "#3a3a3a" }}>{s.l}</div>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5", paddingTop: 0 }}>
         <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "center" }}>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 760 }}>
-            <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>Ready to hear it?</FadeUp>
+            <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>006 / 006 — Connect</FadeUp>
             <FadeUp as="h2" delay={0.1} className="cog-h-display" style={{ fontSize: "clamp(32px, 5vw, 72px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 24px" }}>
-              Build a voice agent around your business.
+              READY TO STOP<br />
+              LOSING <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>revenue?</span>
             </FadeUp>
             <FadeUp as="p" delay={0.2} style={{ fontSize: 15, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 560, margin: 0 }}>
-              Tell us how your calls work today. We will show you where a voice agent can save time, capture more opportunities, and improve the way customers reach you.
+              A UK receptionist costs £22,000–£28,000 a year (ONS ASHE, 2024). Voqal AI starts from £197/month — no contracts, personalised demo within 24 hours.
             </FadeUp>
           </div>
           <FadeUp delay={0.3}>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-              <Link href="/book/" className="cog-btn-primary">Book a Demo</Link>
-              <Link href="/pricing/" className="cog-btn-secondary">View Pricing</Link>
+              <a href="tel:+442039960962" className="cog-btn-primary">Speak to our AI</a>
+              <Link href="/book/" className="cog-btn-secondary">Book a Demo</Link>
+              <Link href="/calculator/" className="cog-btn-secondary">Cost calculator</Link>
             </div>
           </FadeUp>
         </div>

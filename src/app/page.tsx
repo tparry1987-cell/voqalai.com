@@ -46,17 +46,6 @@ const INDUSTRIES = [
   { name: "Accountancy Firms", benefit: "Streamline client communication, appointment booking, and enquiry handling during busy periods.", Icon: Calculator, slug: null as string | null },
 ];
 
-const EVIDENCE = [
-  { n: "< 2s", l: "Answer time — every call, day or night." },
-  { n: "67%", l: "Of customers hang up when they can't reach a real person. (Forbes, 2023)" },
-  { n: "21×", l: "More likely to convert when answered in five minutes. (MIT / InsideSales.com)" },
-  { n: "80%", l: "Of voicemail callers won't leave a message. (PATLive, 2023)" },
-  { n: "£25K", l: "Average UK receptionist salary. Voqal AI from £197/mo." },
-  { n: "5.5M", l: "UK SMEs rely on inbound phone calls. (FSB, 2024)" },
-  { n: "91M", l: "Active UK mobile subscriptions. (Ofcom, 2024)" },
-  { n: "$80B", l: "Conversational-AI savings projected by 2026. (Gartner)" },
-];
-
 export default function Home() {
   const heroVideoRef = useRef<HTMLVideoElement>(null);
 
@@ -166,7 +155,7 @@ export default function Home() {
       {/* ════════ SECTION 2 — STATEMENT (grey solid) ════════ */}
       <section id="statement" className="cog-section-pad-lg speakable-why" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
         <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
-          002 / 006 — The Problem
+          002 / 005 — The Shift
         </FadeUp>
 
         <h2
@@ -185,39 +174,39 @@ export default function Home() {
             maxWidth: 900,
           }}
         >
-          {["EVERY", "MISSED", "CALL", "IS", "LOST"].map((w, i) => (
+          {["AI", "SHOULD", "WORK", "IN", "THE", "REAL", "WORLD"].map((w, i) => (
             <FadeUp key={w + i} as="span" delay={0.15 + i * 0.1} y={36}>
               {w}
             </FadeUp>
           ))}
           <FadeUp
             as="span"
-            delay={0.65}
+            delay={0.85}
             y={36}
             className="cog-italic"
             style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}
           >
-            revenue.
+            not just in decks.
           </FadeUp>
         </h2>
 
         <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", maxWidth: 1200 }}>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460 }}>
             <FadeUp as="p" delay={0.8} style={{ fontSize: 16, lineHeight: 1.7, color: "#3a3a3a", margin: 0 }}>
-              Businesses lose revenue every day to calls that ring out. Voqal AI answers every one in under two seconds, around the clock — no hold music, no voicemail, no excuses.
+              Voqal AI helps companies turn AI from a vague opportunity into practical systems that improve response times, reduce repetitive work, and connect cleanly with the tools already running the business.
             </FadeUp>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, display: "flex", gap: 32, flexWrap: "wrap", paddingTop: 4 }}>
             {[
-              ["67%", "Hang up when they can't reach a real person."],
-              ["80%", "Won't leave a voicemail."],
-              ["< 2s", "Voqal AI picks up."],
+              ["Voice", "AI agents for calls, enquiries, and customer communication."],
+              ["Workflow", "Automations that remove manual steps and handoffs."],
+              ["Systems", "Integrations that make AI useful inside daily operations."],
             ].map(([n, t], i) => (
               <FadeUp key={n} delay={0.95 + i * 0.08}>
-                <div className="cog-italic" style={{ fontSize: 38, lineHeight: 1, color: "var(--cog-copper)", marginBottom: 6 }}>
+                <div className="cog-italic" style={{ fontSize: "clamp(28px, 3vw, 38px)", lineHeight: 1, color: "var(--cog-copper)", marginBottom: 6 }}>
                   {n}
                 </div>
-                <div style={{ fontSize: 12, lineHeight: 1.5, color: "#3a3a3a", maxWidth: 140 }}>{t}</div>
+                <div style={{ fontSize: 12, lineHeight: 1.5, color: "#3a3a3a", maxWidth: 170 }}>{t}</div>
               </FadeUp>
             ))}
           </div>
@@ -226,7 +215,7 @@ export default function Home() {
         <FadeUp delay={1.25} style={{ marginTop: 48 }}>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
             <a href="#offering" className="cog-btn-primary">See what we build</a>
-            <Link href="/pricing" className="cog-btn-secondary">View Pricing</Link>
+            <Link href="/audit" className="cog-btn-secondary">Explore the audit</Link>
           </div>
         </FadeUp>
       </section>
@@ -234,7 +223,7 @@ export default function Home() {
       {/* ════════ SECTION 3 — OFFERING ════════ */}
       <section id="offering" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
         <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
-          003 / 006 — Offering
+          003 / 005 — Offering
         </FadeUp>
 
         <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 40 }}>
@@ -385,7 +374,7 @@ export default function Home() {
           }}
         />
         <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "rgba(255,255,255,0.6)", marginBottom: 20 }}>
-          004 / 006 — Case
+          004 / 005 — Case
         </FadeUp>
 
         <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 40 }}>
@@ -457,74 +446,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════ SECTION 5 — EVIDENCE (grey solid) ════════ */}
-      <section id="evidence" className="cog-section-pad-lg speakable-stats" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 20 }}>
-          <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666" }}>
-            005 / 006 — The Evidence
-          </FadeUp>
-          <FadeUp delay={0.05} style={{ flex: 1, height: 1, background: "rgba(0,0,0,0.18)", maxWidth: 280 }}>{""}</FadeUp>
-        </div>
-
-        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 56 }}>
-          <div className="cog-services-head-col" style={{ width: "40%" }}>
-            <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: 0, maxWidth: 420 }}>
-              The data behind <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>AI receptionists.</span>
-            </h2>
-          </div>
-          <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
-            <FadeUp as="p" delay={0.2} style={{ fontSize: 14, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 480, margin: 0 }}>
-              Independent research from the FSB, ONS, Forbes, PATLive, MIT, Ofcom and Gartner — the numbers that explain why answering every call within seconds is no longer optional.
-            </FadeUp>
-          </div>
-        </div>
-
-        <div className="cog-stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
-          {EVIDENCE.map((s, i) => (
-            <FadeUp key={s.n + i} delay={0.1 + i * 0.06}>
-              <div
-                style={{
-                  border: "1px solid rgba(0,0,0,0.18)",
-                  borderRadius: 16,
-                  padding: "24px 22px",
-                  height: "100%",
-                  background: "rgba(255,255,255,0.18)",
-                }}
-              >
-                <div className="cog-italic" style={{ fontSize: "clamp(36px, 3.5vw, 52px)", color: "var(--cog-copper)", lineHeight: 1, marginBottom: 12 }}>
-                  {s.n}
-                </div>
-                <div style={{ fontSize: 12, lineHeight: 1.55, color: "#3a3a3a" }}>{s.l}</div>
-              </div>
-            </FadeUp>
-          ))}
-        </div>
-      </section>
-
-      {/* ════════ SECTION 6 — CTA ════════ */}
+      {/* ════════ SECTION 5 — CTA ════════ */}
       <section id="cta" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5", paddingTop: 0 }}>
         <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
-          006 / 006 — Connect
+          005 / 005 — Connect
         </FadeUp>
 
         <FadeUp delay={0.15}>
           <h2 className="cog-h-display" style={{ fontSize: "clamp(32px, 5vw, 72px)", fontWeight: 700, lineHeight: 1.02, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", maxWidth: 1100, margin: "0 0 28px" }}>
-            READY TO STOP<br />
-            LOSING <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>revenue?</span>
+            READY TO BUILD<br />
+            PRACTICAL <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>AI?</span>
           </h2>
         </FadeUp>
 
         <FadeUp delay={0.3}>
           <p style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", maxWidth: 480, margin: "0 0 28px" }}>
-            A UK receptionist costs £22,000–£28,000 a year (ONS ASHE, 2024). Voqal AI starts from £197/month — no contracts, personalised demo within 24 hours.
+            Tell us where your team loses time, leads, or momentum. We will show you the AI systems that make sense first — from voice agents to automations, integrations, and intelligent workflows.
           </p>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <a href="tel:+442039960962" className="cog-btn-primary">
-              <span className="cog-soundwave" aria-hidden><span /><span /><span /><span /></span>
-              Speak to our AI
-            </a>
-            <Link href="/book" className="cog-btn-secondary">Book a Demo</Link>
-            <Link href="/calculator" className="cog-btn-secondary">Cost calculator</Link>
+            <Link href="/book" className="cog-btn-primary">Book a Demo</Link>
+            <Link href="/voice-agents" className="cog-btn-secondary">Explore Voice Agents</Link>
+            <Link href="/audit" className="cog-btn-secondary">AI Opportunity Audit</Link>
           </div>
         </FadeUp>
       </section>
