@@ -12,8 +12,7 @@ const HERO_VIDEO =
 
 // The 3 cinematic symbol stills + matching motion plates we reuse across
 // the 6-card grid. The bottom row repeats them rotated by one column so no
-// symbol sits directly under itself, and skips the video so the same motion
-// isn't visible twice on screen at once.
+// symbol sits directly under itself.
 const SYMBOL_VOICE = "/images/offering-voice-ai.jpg";
 const SYMBOL_LEAD = "/images/offering-lead-reactivation.jpg";
 const SYMBOL_FLOW = "/images/offering-process-automation.jpg";
@@ -27,42 +26,42 @@ const HELP_CARDS = [
     text: "Handle calls, bookings, enquiries, and customer communication 24/7.",
     href: "/voice-agents/",
     symbol: SYMBOL_VOICE,
-    video: VIDEO_VOICE as string | null,
+    video: VIDEO_VOICE,
   },
   {
     title: "Lead Reactivation",
     text: "Re-engage old leads automatically through intelligent outreach and follow-up.",
     href: "/calculator/",
     symbol: SYMBOL_LEAD,
-    video: VIDEO_LEAD as string | null,
+    video: VIDEO_LEAD,
   },
   {
     title: "Workflow Automation",
     text: "Remove repetitive admin and streamline day-to-day operations.",
     href: "/audit/",
     symbol: SYMBOL_FLOW,
-    video: VIDEO_FLOW as string | null,
+    video: VIDEO_FLOW,
   },
   {
     title: "CRM & System Integrations",
     text: "Connect AI directly into the tools your business already uses.",
     href: "/audit/",
     symbol: SYMBOL_FLOW,
-    video: null as string | null,
+    video: VIDEO_FLOW,
   },
   {
     title: "AI Consultation & Audits",
     text: "Identify where AI can create the biggest operational impact.",
     href: "/audit/",
     symbol: SYMBOL_VOICE,
-    video: null as string | null,
+    video: VIDEO_VOICE,
   },
   {
     title: "AI Websites & Interfaces",
     text: "Modern AI-powered experiences designed to improve engagement and conversion.",
     href: "/book/",
     symbol: SYMBOL_LEAD,
-    video: null as string | null,
+    video: VIDEO_LEAD,
   },
 ];
 
@@ -213,23 +212,21 @@ export default function Home() {
                     loading="lazy"
                     decoding="async"
                   />
-                  {video && (
-                    // eslint-disable-next-line jsx-a11y/media-has-caption
-                    <video
-                      className="offering-media-video"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      controls={false}
-                      disablePictureInPicture
-                      controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
-                      poster={symbol}
-                    >
-                      <source src={video} type="video/mp4" />
-                    </video>
-                  )}
+                  {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                  <video
+                    className="offering-media-video"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    controls={false}
+                    disablePictureInPicture
+                    controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
+                    poster={symbol}
+                  >
+                    <source src={video} type="video/mp4" />
+                  </video>
                 </div>
                 <div style={{ padding: "24px 28px 28px 28px" }}>
                   <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "0 0 10px" }}>{title}</h3>
