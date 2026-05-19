@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Bot, Cable, ClipboardCheck, MonitorSmartphone, RefreshCcw, Stethoscope, Scale, Wrench, HeartPulse, Home as HomeIcon, Calculator, Workflow } from "lucide-react";
+import { Stethoscope, Scale, Wrench, HeartPulse, Home as HomeIcon, Calculator } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import FadeUp from "@/components/FadeUp";
@@ -10,53 +10,58 @@ import FadeUp from "@/components/FadeUp";
 const HERO_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_135830_bb6491d1-9b66-4aec-9722-13b4dfe3fb46.mp4";
 
+// The 3 cinematic symbol stills + matching motion plates we reuse across
+// the 6-card grid. The bottom row repeats them rotated by one column so no
+// symbol sits directly under itself, and skips the video so the same motion
+// isn't visible twice on screen at once.
+const SYMBOL_VOICE = "/images/offering-voice-ai.jpg";
+const SYMBOL_LEAD = "/images/offering-lead-reactivation.jpg";
+const SYMBOL_FLOW = "/images/offering-process-automation.jpg";
+const VIDEO_VOICE = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_220333_48163edc-995f-4513-9f44-48dbb07a7329.mp4";
+const VIDEO_LEAD = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221040_e6ba7c5a-864e-46e9-871e-341a176a7e3e.mp4";
+const VIDEO_FLOW = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221104_fb538584-5b87-495f-952e-09ddd5a1792a.mp4";
+
 const HELP_CARDS = [
   {
     title: "AI Voice Agents",
     text: "Handle calls, bookings, enquiries, and customer communication 24/7.",
-    Icon: Bot,
     href: "/voice-agents/",
-    symbol: "/images/offering-voice-ai.jpg",
-    video: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_220333_48163edc-995f-4513-9f44-48dbb07a7329.mp4",
+    symbol: SYMBOL_VOICE,
+    video: VIDEO_VOICE as string | null,
   },
   {
     title: "Lead Reactivation",
     text: "Re-engage old leads automatically through intelligent outreach and follow-up.",
-    Icon: RefreshCcw,
     href: "/calculator/",
-    symbol: "/images/offering-lead-reactivation.jpg",
-    video: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221040_e6ba7c5a-864e-46e9-871e-341a176a7e3e.mp4",
+    symbol: SYMBOL_LEAD,
+    video: VIDEO_LEAD as string | null,
   },
   {
     title: "Workflow Automation",
     text: "Remove repetitive admin and streamline day-to-day operations.",
-    Icon: Workflow,
     href: "/audit/",
-    symbol: "/images/offering-process-automation.jpg",
-    video: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221104_fb538584-5b87-495f-952e-09ddd5a1792a.mp4",
+    symbol: SYMBOL_FLOW,
+    video: VIDEO_FLOW as string | null,
   },
   {
     title: "CRM & System Integrations",
     text: "Connect AI directly into the tools your business already uses.",
-    Icon: Cable,
     href: "/audit/",
-    symbol: null as string | null,
+    symbol: SYMBOL_FLOW,
     video: null as string | null,
   },
   {
     title: "AI Consultation & Audits",
     text: "Identify where AI can create the biggest operational impact.",
-    Icon: ClipboardCheck,
     href: "/audit/",
-    symbol: null as string | null,
+    symbol: SYMBOL_VOICE,
     video: null as string | null,
   },
   {
     title: "AI Websites & Interfaces",
     text: "Modern AI-powered experiences designed to improve engagement and conversion.",
-    Icon: MonitorSmartphone,
     href: "/book/",
-    symbol: null as string | null,
+    symbol: SYMBOL_LEAD,
     video: null as string | null,
   },
 ];
@@ -196,42 +201,34 @@ export default function Home() {
         </div>
 
         <div className="cog-help-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, gridAutoRows: "1fr" }}>
-          {HELP_CARDS.map(({ title, text, Icon, href, symbol, video }, i) => (
+          {HELP_CARDS.map(({ title, text, href, symbol, video }, i) => (
             <FadeUp key={title} delay={0.15 + i * 0.08}>
               <Link href={href} className="cog-help-card" style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, paddingTop: 16, height: "100%", display: "flex", flexDirection: "column", color: "inherit", textDecoration: "none", background: "rgba(255,255,255,0.14)", overflow: "hidden" }}>
                 <div className="offering-media-frame">
-                  {symbol ? (
-                    <>
-                      <img
-                        className="offering-media-poster"
-                        src={symbol}
-                        alt=""
-                        aria-hidden="true"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                      {video && (
-                        // eslint-disable-next-line jsx-a11y/media-has-caption
-                        <video
-                          className="offering-media-video"
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          preload="auto"
-                          controls={false}
-                          disablePictureInPicture
-                          controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
-                          poster={symbol}
-                        >
-                          <source src={video} type="video/mp4" />
-                        </video>
-                      )}
-                    </>
-                  ) : (
-                    <div className="cog-help-icon-fallback">
-                      <Icon className="cog-help-icon" size={64} strokeWidth={1.1} />
-                    </div>
+                  <img
+                    className="offering-media-poster"
+                    src={symbol}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {video && (
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
+                    <video
+                      className="offering-media-video"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      controls={false}
+                      disablePictureInPicture
+                      controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
+                      poster={symbol}
+                    >
+                      <source src={video} type="video/mp4" />
+                    </video>
                   )}
                 </div>
                 <div style={{ padding: "24px 28px 28px 28px" }}>
