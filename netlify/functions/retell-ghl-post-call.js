@@ -69,15 +69,22 @@ exports.handler = async (event) => {
   const [firstName, ...rest] = name.split(/\s+/);
   const lastName = rest.join(" ") || "";
 
+  const ghlHeaders = {
+    Authorization: `Bearer ${token}`,
+    Version: "2021-07-28",
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  };
+
+  // Step 1: upsert the contact WITHOUT tags. Sending a tags array on upsert
+  // replaces all existing tags on the contact, which clobbers in-call tags
+  // like voqal-call-booked set by book_appointment earlier in the same call.
+  let contactId;
+  let wasNew = false;
   try {
     const resp = await fetch(`${GHL_BASE}/contacts/upsert`, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Version: "2021-07-28",
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
+      headers: ghlHeaders,
       body: JSON.stringify({
         locationId,
         firstName: firstName || undefined,
@@ -87,10 +94,8 @@ exports.handler = async (event) => {
         companyName: company || undefined,
         website: website || undefined,
         source: "Voqal AI inbound call",
-        tags,
       }),
     });
-
     const data = await resp.json();
     if (!resp.ok) {
       return jsonResp(200, {
@@ -99,18 +104,40 @@ exports.handler = async (event) => {
         call_id: call.call_id,
       });
     }
-
-    return jsonResp(200, {
-      ok: true,
-      contact_id: data.contact?.id || data.id,
-      created: data.new === true || data.contact?.new === true,
-      call_id: call.call_id,
-      request_type: requestType,
-      summary_saved: !!summary,
-    });
+    contactId = data.contact?.id || data.id;
+    wasNew = data.new === true || data.contact?.new === true;
   } catch (err) {
     return jsonResp(200, { ok: false, error: `Upsert error: ${err.message}` });
   }
+
+  if (!contactId) {
+    return jsonResp(200, { ok: false, error: "Upsert returned no contact ID", call_id: call.call_id });
+  }
+
+  // Step 2: add tags via the additive endpoint, which merges with existing.
+  let tagsAdded = false;
+  if (tags.length > 0) {
+    try {
+      const tagResp = await fetch(`${GHL_BASE}/contacts/${contactId}/tags`, {
+        method: "POST",
+        headers: ghlHeaders,
+        body: JSON.stringify({ tags }),
+      });
+      tagsAdded = tagResp.ok;
+    } catch (err) {
+      // Tag failure is non-fatal — contact is saved, just without the new tags.
+    }
+  }
+
+  return jsonResp(200, {
+    ok: true,
+    contact_id: contactId,
+    created: wasNew,
+    tags_added: tagsAdded,
+    call_id: call.call_id,
+    request_type: requestType,
+    summary_saved: !!summary,
+  });
 };
 
 function jsonResp(statusCode, body) {
