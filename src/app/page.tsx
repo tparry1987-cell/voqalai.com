@@ -16,36 +16,48 @@ const HELP_CARDS = [
     text: "Handle calls, bookings, enquiries, and customer communication 24/7.",
     Icon: Bot,
     href: "/voice-agents/",
+    symbol: "/images/offering-voice-ai.jpg",
+    video: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_220333_48163edc-995f-4513-9f44-48dbb07a7329.mp4",
   },
   {
     title: "Lead Reactivation",
     text: "Re-engage old leads automatically through intelligent outreach and follow-up.",
     Icon: RefreshCcw,
     href: "/calculator/",
+    symbol: "/images/offering-lead-reactivation.jpg",
+    video: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221040_e6ba7c5a-864e-46e9-871e-341a176a7e3e.mp4",
   },
   {
     title: "Workflow Automation",
     text: "Remove repetitive admin and streamline day-to-day operations.",
     Icon: Workflow,
     href: "/audit/",
+    symbol: "/images/offering-process-automation.jpg",
+    video: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221104_fb538584-5b87-495f-952e-09ddd5a1792a.mp4",
   },
   {
     title: "CRM & System Integrations",
     text: "Connect AI directly into the tools your business already uses.",
     Icon: Cable,
     href: "/audit/",
+    symbol: null as string | null,
+    video: null as string | null,
   },
   {
     title: "AI Consultation & Audits",
     text: "Identify where AI can create the biggest operational impact.",
     Icon: ClipboardCheck,
     href: "/audit/",
+    symbol: null as string | null,
+    video: null as string | null,
   },
   {
     title: "AI Websites & Interfaces",
     text: "Modern AI-powered experiences designed to improve engagement and conversion.",
     Icon: MonitorSmartphone,
     href: "/book/",
+    symbol: null as string | null,
+    video: null as string | null,
   },
 ];
 
@@ -183,15 +195,47 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="cog-help-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
-          {HELP_CARDS.map(({ title, text, Icon, href }, i) => (
+        <div className="cog-help-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, gridAutoRows: "1fr" }}>
+          {HELP_CARDS.map(({ title, text, Icon, href, symbol, video }, i) => (
             <FadeUp key={title} delay={0.15 + i * 0.08}>
-              <Link href={href} className="cog-help-card" style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, padding: "28px 28px 30px", minHeight: 220, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", color: "inherit", textDecoration: "none", background: "rgba(255,255,255,0.14)" }}>
-                <div className="cog-help-icon-wrap" style={{ width: 46, height: 46, borderRadius: 14, border: "1px solid rgba(0,0,0,0.14)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--cog-copper)", background: "rgba(255,255,255,0.2)" }}>
-                  <Icon className="cog-help-icon" size={21} strokeWidth={1.6} />
+              <Link href={href} className="cog-help-card" style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, paddingTop: 16, height: "100%", display: "flex", flexDirection: "column", color: "inherit", textDecoration: "none", background: "rgba(255,255,255,0.14)", overflow: "hidden" }}>
+                <div className="offering-media-frame">
+                  {symbol ? (
+                    <>
+                      <img
+                        className="offering-media-poster"
+                        src={symbol}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      {video && (
+                        // eslint-disable-next-line jsx-a11y/media-has-caption
+                        <video
+                          className="offering-media-video"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="auto"
+                          controls={false}
+                          disablePictureInPicture
+                          controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
+                          poster={symbol}
+                        >
+                          <source src={video} type="video/mp4" />
+                        </video>
+                      )}
+                    </>
+                  ) : (
+                    <div className="cog-help-icon-fallback">
+                      <Icon className="cog-help-icon" size={64} strokeWidth={1.1} />
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "24px 0 10px" }}>{title}</h3>
+                <div style={{ padding: "24px 28px 28px 28px" }}>
+                  <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "0 0 10px" }}>{title}</h3>
                   <p style={{ fontSize: 13, lineHeight: 1.6, color: "#3a3a3a", margin: 0 }}>{text}</p>
                 </div>
               </Link>

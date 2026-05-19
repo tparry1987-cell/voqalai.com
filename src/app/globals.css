@@ -1487,6 +1487,22 @@
   animation-delay: 1.4s;
 }
 
+/* Fallback symbol slot — used while we wait on the matching Higgsfield
+   stills for CRM / Audits / Websites. Sits in the same .offering-media-frame
+   so layout stays consistent with the 3 cards that already have symbols. */
+.cog-help-icon-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cog-copper);
+  background:
+    radial-gradient(120% 120% at 50% 50%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.08) 60%, transparent 100%),
+    linear-gradient(135deg, rgba(0,0,0,0.04), rgba(0,0,0,0.01));
+  filter: drop-shadow(0 0 18px rgba(214, 152, 96, 0.18));
+}
+
 @keyframes cogIconFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-3px); }
