@@ -38,12 +38,12 @@ const SERVICE_CARDS = [
 ];
 
 const INDUSTRIES = [
-  { name: "Dental Practices", benefit: "Reduce no-shows with automated appointment confirmations.", Icon: Stethoscope, slug: "ai-receptionist-dental-practices" },
-  { name: "Law Firms", benefit: "Qualify new enquiries by case type before they reach a fee earner.", Icon: Scale, slug: "ai-receptionist-law-firms" },
-  { name: "Trades & Home Services", benefit: "Capture every job lead while you're on-site.", Icon: Wrench, slug: "ai-receptionist-tradesmen" },
-  { name: "Medical Clinics", benefit: "Triage patient enquiries after hours and route urgent cases.", Icon: HeartPulse, slug: "ai-receptionist-medical-practices" },
-  { name: "Estate Agents", benefit: "Book viewings instantly and capture buyer requirements 24/7.", Icon: HomeIcon, slug: "ai-receptionist-estate-agents" },
-  { name: "Accountancy Firms", benefit: "Handle tax-deadline call surges without temporary staff.", Icon: Calculator, slug: null as string | null },
+  { name: "Dental Practices", benefit: "Reduce no-shows, automate confirmations, and handle patient enquiries more efficiently.", Icon: Stethoscope, slug: "ai-receptionist-dental-practices" },
+  { name: "Law Firms", benefit: "Qualify enquiries, route cases faster, and improve client response times.", Icon: Scale, slug: "ai-receptionist-law-firms" },
+  { name: "Trades & Home Services", benefit: "Capture every lead, automate follow-ups, and respond while your team are on-site.", Icon: Wrench, slug: "ai-receptionist-tradesmen" },
+  { name: "Medical Clinics", benefit: "Handle patient communication, triage enquiries, and support after-hours response.", Icon: HeartPulse, slug: "ai-receptionist-medical-practices" },
+  { name: "Estate Agents", benefit: "Book viewings instantly, qualify leads, and engage buyers 24/7.", Icon: HomeIcon, slug: "ai-receptionist-estate-agents" },
+  { name: "Accountancy Firms", benefit: "Streamline client communication, appointment booking, and enquiry handling during busy periods.", Icon: Calculator, slug: null as string | null },
 ];
 
 const EVIDENCE = [
@@ -406,7 +406,7 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              {["BUILT", "FOR", "EVERY", "SECTOR"].map((w, i) => (
+              {["PRACTICAL", "AI", "FOR", "REAL", "BUSINESSES"].map((w, i) => (
                 <FadeUp key={w} as="span" delay={0.1 + i * 0.1} y={28}>
                   {w}
                 </FadeUp>
@@ -414,8 +414,12 @@ export default function Home() {
             </h2>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
-            <FadeUp as="p" delay={0.3} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.7)", maxWidth: 460, margin: 0 }}>
-              Our voice agents adapt to the language, workflows and compliance requirements of your industry. Each deployment is custom-trained on sector-specific terminology so callers get accurate answers on the first call.
+            <FadeUp as="div" delay={0.3} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.7)", maxWidth: 560, margin: 0 }}>
+              <p style={{ margin: "0 0 14px" }}>Every business operates differently.</p>
+              <p style={{ margin: "0 0 14px" }}>That&apos;s why we build AI systems around the way your business actually works — from voice AI and lead response systems to automations, integrations, and intelligent workflows.</p>
+              <p style={{ margin: "0 0 14px" }}>Our solutions are designed to improve response times, remove repetitive work, enhance customer experience, and help businesses operate more efficiently.</p>
+              <p style={{ margin: "0 0 16px", color: "rgba(255,255,255,0.86)", fontWeight: 600 }}>Guiding businesses from AI curious to AI native.</p>
+              <p className="cog-italic" style={{ margin: 0, color: "var(--cog-copper-light)", fontSize: 16 }}>AI systems built around how your business operates.</p>
             </FadeUp>
           </div>
         </div>
