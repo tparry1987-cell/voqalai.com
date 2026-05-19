@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Stethoscope, Scale, Wrench, HeartPulse, Home as HomeIcon, Calculator } from "lucide-react";
+import { Bot, Cable, ClipboardCheck, MonitorSmartphone, RefreshCcw, Stethoscope, Scale, Wrench, HeartPulse, Home as HomeIcon, Calculator, Workflow } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import FadeUp from "@/components/FadeUp";
@@ -10,30 +10,42 @@ import FadeUp from "@/components/FadeUp";
 const HERO_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_135830_bb6491d1-9b66-4aec-9722-13b4dfe3fb46.mp4";
 
-const SERVICE_CARDS = [
+const HELP_CARDS = [
   {
-    video:
-      "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_220333_48163edc-995f-4513-9f44-48dbb07a7329.mp4",
-    poster: "/images/offering-voice-ai.jpg",
-    title: "Voice AI Agents",
-    text: "Our voice agents answer calls in under two seconds, 24/7. They handle booking, FAQs, lead qualification, and urgent routing — custom-trained on your business so every caller gets the right answer from the first ring.",
-    tag: "I.",
+    title: "AI Voice Agents",
+    text: "Handle calls, bookings, enquiries, and customer communication 24/7.",
+    Icon: Bot,
+    href: "/voice-agents/",
   },
   {
-    video:
-      "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221040_e6ba7c5a-864e-46e9-871e-341a176a7e3e.mp4",
-    poster: "/images/offering-lead-reactivation.jpg",
     title: "Lead Reactivation",
-    text: "Most businesses have hundreds of dormant contacts sitting untouched. Our AI reactivates them with natural SMS conversations and you only pay when a lead converts. Zero upfront cost.",
-    tag: "II.",
+    text: "Re-engage old leads automatically through intelligent outreach and follow-up.",
+    Icon: RefreshCcw,
+    href: "/calculator/",
   },
   {
-    video:
-      "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260513_221104_fb538584-5b87-495f-952e-09ddd5a1792a.mp4",
-    poster: "/images/offering-process-automation.jpg",
-    title: "Process Automation",
-    text: "Eliminate redundant data entry by connecting your phone, CRM, calendar, and workflow tools into a single pipeline. Every call outcome flows into the right system without your team lifting a finger.",
-    tag: "III.",
+    title: "Workflow Automation",
+    text: "Remove repetitive admin and streamline day-to-day operations.",
+    Icon: Workflow,
+    href: "/audit/",
+  },
+  {
+    title: "CRM & System Integrations",
+    text: "Connect AI directly into the tools your business already uses.",
+    Icon: Cable,
+    href: "/audit/",
+  },
+  {
+    title: "AI Consultation & Audits",
+    text: "Identify where AI can create the biggest operational impact.",
+    Icon: ClipboardCheck,
+    href: "/audit/",
+  },
+  {
+    title: "AI Websites & Interfaces",
+    text: "Modern AI-powered experiences designed to improve engagement and conversion.",
+    Icon: MonitorSmartphone,
+    href: "/book/",
   },
 ];
 
@@ -125,11 +137,11 @@ export default function Home() {
           </FadeUp>
 
           <FadeUp as="h1" delay={0.3} className="cog-h-display" style={{ fontSize: "clamp(30px, 3.8vw, 56px)", fontWeight: 600, lineHeight: 1.08, letterSpacing: "-0.025em", color: "#fff", margin: "0 0 24px", maxWidth: 700 }}>
-            Helping businesses embrace AI.
+            We Help Businesses Evolve With AI
           </FadeUp>
 
           <FadeUp as="p" delay={0.55} style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.85)", maxWidth: 540, margin: "0 0 24px" }}>
-            Voice agents, automations, and intelligent systems designed to integrate seamlessly into the way your business already works.
+            From voice AI and automations to intelligent integrations and operational workflows, we help businesses implement practical AI systems that save time, improve customer experience, and create operational leverage.
           </FadeUp>
 
           <FadeUp as="p" delay={0.7} className="cog-italic" style={{ fontSize: "clamp(18px, 1.6vw, 22px)", color: "var(--cog-copper-light)", lineHeight: 1.4, letterSpacing: "-0.005em", margin: "0 0 44px", maxWidth: 480 }}>
@@ -152,99 +164,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════ SECTION 2 — STATEMENT (grey solid) ════════ */}
-      <section id="statement" className="cog-section-pad-lg speakable-why" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
-        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
-          002 / 005 — The Shift
-        </FadeUp>
-
-        <h2
-          className="cog-h-display"
-          style={{
-            fontSize: "clamp(32px, 4.5vw, 64px)",
-            fontWeight: 700,
-            lineHeight: 1.05,
-            letterSpacing: "-0.02em",
-            textTransform: "uppercase",
-            color: "#1a1a1a",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "0.25em",
-            margin: "0 0 32px",
-            maxWidth: 900,
-          }}
-        >
-          {["AI", "SHOULD", "WORK", "IN", "THE", "REAL", "WORLD"].map((w, i) => (
-            <FadeUp key={w + i} as="span" delay={0.15 + i * 0.1} y={36}>
-              {w}
-            </FadeUp>
-          ))}
-          <FadeUp
-            as="span"
-            delay={0.85}
-            y={36}
-            className="cog-italic"
-            style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}
-          >
-            not just in decks.
-          </FadeUp>
-        </h2>
-
-        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", maxWidth: 1200 }}>
-          <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460 }}>
-            <FadeUp as="p" delay={0.8} style={{ fontSize: 16, lineHeight: 1.7, color: "#3a3a3a", margin: 0 }}>
-              Voqal AI helps companies turn AI from a vague opportunity into practical systems that improve response times, reduce repetitive work, and connect cleanly with the tools already running the business.
-            </FadeUp>
-          </div>
-          <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, display: "flex", gap: 32, flexWrap: "wrap", paddingTop: 4 }}>
-            {[
-              ["Voice", "AI agents for calls, enquiries, and customer communication."],
-              ["Workflow", "Automations that remove manual steps and handoffs."],
-              ["Systems", "Integrations that make AI useful inside daily operations."],
-            ].map(([n, t], i) => (
-              <FadeUp key={n} delay={0.95 + i * 0.08}>
-                <div className="cog-italic" style={{ fontSize: "clamp(28px, 3vw, 38px)", lineHeight: 1, color: "var(--cog-copper)", marginBottom: 6 }}>
-                  {n}
-                </div>
-                <div style={{ fontSize: 12, lineHeight: 1.5, color: "#3a3a3a", maxWidth: 170 }}>{t}</div>
-              </FadeUp>
-            ))}
-          </div>
-        </div>
-
-        <FadeUp delay={1.25} style={{ marginTop: 48 }}>
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <a href="#offering" className="cog-btn-primary">See what we build</a>
-            <Link href="/audit" className="cog-btn-secondary">Explore the audit</Link>
-          </div>
-        </FadeUp>
-      </section>
-
-      {/* ════════ SECTION 3 — OFFERING ════════ */}
+      {/* ════════ SECTION 2 — WHAT WE HELP WITH ════════ */}
       <section id="offering" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
         <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
-          003 / 005 — Offering
+          002 / 005 — Capabilities
         </FadeUp>
 
         <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 40 }}>
-          <div className="cog-services-head-col" style={{ width: "32%" }}>
+          <div className="cog-services-head-col" style={{ width: "40%" }}>
+            <h2 className="cog-h-display" style={{ fontSize: "clamp(30px, 4vw, 56px)", fontWeight: 700, lineHeight: 1.04, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: 0, maxWidth: 560 }}>
+              What We Help Businesses With
+            </h2>
+          </div>
+          <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
+            <FadeUp as="p" delay={0.2} style={{ fontSize: 15, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 440, margin: 0 }}>
+              Practical AI systems designed around the way your business operates.
+            </FadeUp>
+          </div>
+        </div>
+
+        <div className="cog-help-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
+          {HELP_CARDS.map(({ title, text, Icon, href }, i) => (
+            <FadeUp key={title} delay={0.15 + i * 0.08}>
+              <Link href={href} className="cog-help-card" style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, padding: "28px 28px 30px", minHeight: 220, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", color: "inherit", textDecoration: "none", background: "rgba(255,255,255,0.14)" }}>
+                <div className="cog-help-icon-wrap" style={{ width: 46, height: 46, borderRadius: 14, border: "1px solid rgba(0,0,0,0.14)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--cog-copper)", background: "rgba(255,255,255,0.2)" }}>
+                  <Icon className="cog-help-icon" size={21} strokeWidth={1.6} />
+                </div>
+                <div>
+                  <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "24px 0 10px" }}>{title}</h3>
+                  <p style={{ fontSize: 13, lineHeight: 1.6, color: "#3a3a3a", margin: 0 }}>{text}</p>
+                </div>
+              </Link>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
+      {/* ════════ SECTION 3 — PRACTICAL AI ════════ */}
+      <section id="statement" className="cog-section-pad-lg speakable-why" style={{ position: "relative", zIndex: 2, background: "#C5C5C5", paddingTop: 0 }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
+          003 / 005 — Approach
+        </FadeUp>
+
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 40 }}>
+          <div className="cog-services-head-col" style={{ width: "40%" }}>
             <h2
               className="cog-h-display"
               style={{
-                fontSize: "clamp(26px, 3vw, 42px)",
+                fontSize: "clamp(30px, 4vw, 56px)",
                 fontWeight: 700,
                 lineHeight: 1.05,
-                letterSpacing: "-0.01em",
+                letterSpacing: "-0.02em",
                 textTransform: "uppercase",
                 color: "#1a1a1a",
-                maxWidth: 360,
+                maxWidth: 560,
                 display: "flex",
                 flexWrap: "wrap",
                 gap: "0.25em",
                 margin: 0,
               }}
             >
-              {["EXPLORE", "WHAT", "WE", "OFFER"].map((w, i) => (
+              {["PRACTICAL", "AI", "FOR", "REAL", "BUSINESSES"].map((w, i) => (
                 <FadeUp key={w} as="span" delay={0.1 + i * 0.1} y={28}>
                   {w}
                 </FadeUp>
@@ -252,82 +232,15 @@ export default function Home() {
             </h2>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
-            <FadeUp as="p" delay={0.25} style={{ fontSize: 14, lineHeight: 1.65, color: "#3a3a3a", maxWidth: 460, margin: 0 }}>
-              We engineer end-to-end AI systems for ambitious modern businesses — voice agents, lead reactivation, and the workflow plumbing that connects it all to the tools you already use.
+            <FadeUp as="div" delay={0.25} style={{ fontSize: 15, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 600, margin: 0 }}>
+              <p style={{ margin: "0 0 14px" }}>Every business operates differently.</p>
+              <p style={{ margin: "0 0 14px" }}>That&apos;s why we build AI systems around the way your business actually works — from voice AI and lead response systems to automations, integrations, and intelligent workflows.</p>
+              <p style={{ margin: "0 0 14px" }}>Our solutions are designed to improve response times, remove repetitive work, enhance customer experience, and help businesses operate more efficiently.</p>
+              <p style={{ margin: "0 0 16px", color: "#1a1a1a", fontWeight: 600 }}>Guiding businesses from AI curious to AI native.</p>
+              <p className="cog-italic" style={{ margin: 0, color: "var(--cog-copper)", fontSize: 18 }}>AI systems built around how your business operates.</p>
             </FadeUp>
           </div>
         </div>
-
-        <div className="cog-cards-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, gridAutoRows: "1fr" }}>
-          {SERVICE_CARDS.map((card, i) => (
-            <FadeUp key={card.title} delay={0.4 + i * 0.15}>
-              <article
-                style={{
-                  background: "transparent",
-                  border: "1px solid rgba(0,0,0,0.18)",
-                  borderRadius: 20,
-                  overflow: "hidden",
-                  display: "flex",
-                  flexDirection: "column",
-                  paddingTop: 16,
-                  height: "100%",
-                }}
-              >
-                <div className="offering-media-frame">
-                  <img
-                    className="offering-media-poster"
-                    src={card.poster}
-                    alt=""
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                  <video
-                    className="offering-media-video"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    controls={false}
-                    disablePictureInPicture
-                    controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"
-                    poster={card.poster}
-                  >
-                    <source src={card.video} type="video/mp4" />
-                  </video>
-                </div>
-                <div style={{ padding: "24px 28px 28px 28px" }}>
-                  <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--cog-copper)", fontWeight: 600, marginBottom: 10 }}>
-                    {card.tag}
-                  </div>
-                  <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "0 0 14px" }}>{card.title}</h3>
-                  <p style={{ fontSize: 13, lineHeight: 1.6, color: "#3a3a3a", margin: 0 }}>{card.text}</p>
-                </div>
-              </article>
-            </FadeUp>
-          ))}
-        </div>
-
-        <FadeUp delay={0.9} style={{ marginTop: 32 }}>
-          <div className="cog-cards-grid" style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, padding: "28px 32px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
-            <div>
-              <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--cog-copper)", fontWeight: 600, marginBottom: 10 }}>IV.</div>
-              <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "0 0 10px" }}>AI Chat Agents</h3>
-              <p style={{ fontSize: 13, lineHeight: 1.6, color: "#3a3a3a", margin: 0 }}>
-                Turn website visitors into booked appointments. An AI widget that answers business-specific questions, captures details, and feeds qualified leads into your CRM or calendar — around the clock.
-              </p>
-            </div>
-            <div>
-              <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--cog-copper)", fontWeight: 600, marginBottom: 10 }}>V.</div>
-              <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "0 0 10px" }}>AI-Enhanced Websites</h3>
-              <p style={{ fontSize: 13, lineHeight: 1.6, color: "#3a3a3a", margin: 0 }}>
-                Sites that generate leads while you sleep. Voice agents, chat, capture, and automations woven in from day one — not bolted on as afterthoughts. From real estate to trades.
-              </p>
-            </div>
-          </div>
-        </FadeUp>
 
         <FadeUp delay={1.05} style={{ marginTop: 24 }}>
           <div
@@ -395,7 +308,7 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              {["PRACTICAL", "AI", "FOR", "REAL", "BUSINESSES"].map((w, i) => (
+              {["BUILT", "AROUND", "YOUR", "BUSINESS"].map((w, i) => (
                 <FadeUp key={w} as="span" delay={0.1 + i * 0.1} y={28}>
                   {w}
                 </FadeUp>
@@ -404,11 +317,9 @@ export default function Home() {
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
             <FadeUp as="div" delay={0.3} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.7)", maxWidth: 560, margin: 0 }}>
-              <p style={{ margin: "0 0 14px" }}>Every business operates differently.</p>
-              <p style={{ margin: "0 0 14px" }}>That&apos;s why we build AI systems around the way your business actually works — from voice AI and lead response systems to automations, integrations, and intelligent workflows.</p>
-              <p style={{ margin: "0 0 14px" }}>Our solutions are designed to improve response times, remove repetitive work, enhance customer experience, and help businesses operate more efficiently.</p>
-              <p style={{ margin: "0 0 16px", color: "rgba(255,255,255,0.86)", fontWeight: 600 }}>Guiding businesses from AI curious to AI native.</p>
-              <p className="cog-italic" style={{ margin: 0, color: "var(--cog-copper-light)", fontSize: 16 }}>AI systems built around how your business operates.</p>
+              <p style={{ margin: "0 0 14px" }}>Different sectors need different call flows, workflows, integrations, and customer journeys.</p>
+              <p style={{ margin: "0 0 14px" }}>We shape each AI system around the realities of the business, so the result feels useful from day one rather than generic.</p>
+              <p className="cog-italic" style={{ margin: 0, color: "var(--cog-copper-light)", fontSize: 16 }}>Operational AI, designed for the way the work actually happens.</p>
             </FadeUp>
           </div>
         </div>
