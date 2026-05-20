@@ -117,7 +117,7 @@ export default function AiWebsitesPage() {
             <div style={{ position: "relative", minHeight: 340, background: "#1a1a1a", overflow: "hidden" }}>
               <img
                 src="/images/adrian-flagship.png"
-                alt="Adrian Wilkinson Luxury Real Estate website"
+                alt="Adrian's Luxury Real Estate website"
                 style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
                 loading="lazy"
                 decoding="async"
@@ -126,7 +126,7 @@ export default function AiWebsitesPage() {
             {/* Detail */}
             <div style={{ padding: "34px 34px 36px", display: "flex", flexDirection: "column", justifyContent: "center", gap: 16 }}>
               <h3 className="cog-h-display" style={{ fontSize: "clamp(22px, 2.4vw, 32px)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.01em", color: "#fff", margin: 0 }}>
-                Adrian Wilkinson Luxury Real Estate
+                Adrian's Luxury Real Estate
               </h3>
               <p style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.7)", margin: 0 }}>
                 A full cinematic website for Adrian&apos;s luxury off-plan property business across Cyprus and Greece, with a live AI chat assistant fielding buyer enquiries around the clock. We built it, he took it live.
@@ -140,7 +140,7 @@ export default function AiWebsitesPage() {
                 <p style={{ fontSize: 14, lineHeight: 1.55, color: "#fff", margin: "0 0 10px", fontStyle: "italic" }}>
                   &ldquo;Thomas worked on my Ai web solution for my real estate business selling Cypriot property. Outstanding work from start to finish giving great insight&rdquo;
                 </p>
-                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)" }}>Adrian Wilkinson · Trustpilot, April 2026</div>
+                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)" }}>Adrian · Trustpilot, April 2026</div>
               </div>
 
               <div style={{ display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center", marginTop: 4 }}>
