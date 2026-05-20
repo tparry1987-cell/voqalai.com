@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Phone, Check } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
@@ -11,6 +11,13 @@ export default function BookPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [firstName, setFirstName] = useState("there");
+  const [demoType, setDemoType] = useState("voice");
+
+  // Preselect the demo type from ?demo= (e.g. the AI Websites page links to /book?demo=website)
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search).get("demo");
+    if (p === "website" || p === "voice") setDemoType(p);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -65,6 +72,7 @@ export default function BookPage() {
       >
         <input type="hidden" name="form-name" value="demo" />
         <input type="hidden" name="subject" value="New Voqal AI demo request" />
+        <input name="demoType" />
         <input name="name" />
         <input name="email" />
         <input name="website" />
@@ -86,9 +94,9 @@ export default function BookPage() {
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, paddingTop: 12 }}>
             <FadeUp as="div" delay={0.3} style={{ fontSize: 15, lineHeight: 1.8, color: "#1a1a1a", margin: 0 }}>
               <div>Drop your details below.</div>
-              <div>We&apos;ll build your AI receptionist.</div>
-              <div>We&apos;ll email you the demo link within 24 hours.</div>
-              <div>Click it whenever — speak to your AI live.</div>
+              <div>We&apos;ll build your demo.</div>
+              <div>We&apos;ll email you the link within 24 hours.</div>
+              <div>Click it whenever — see your AI live.</div>
             </FadeUp>
             <FadeUp as="p" delay={0.5} style={{ fontSize: 13, lineHeight: 1.6, color: "#5a5a5a", margin: "20px 0 0" }}>
               No contracts. No commitment. No card.
@@ -116,6 +124,7 @@ export default function BookPage() {
                   <p hidden>
                     <label>Don&apos;t fill this out: <input name="bot-field" /></label>
                   </p>
+                  <Field label="What would you like a demo of?" name="demoType" required value={demoType} onChange={setDemoType} options={[{ value: "voice", label: "AI Voice Agent" }, { value: "website", label: "AI Website" }]} />
                   <Field label="Your name" name="name" type="text" required placeholder="Tom Parry" />
                   <Field label="Email" name="email" type="email" required placeholder="you@business.com" />
                   <Field label="Business website" name="website" type="url" placeholder="https://yourbusiness.com" />
@@ -160,19 +169,25 @@ export default function BookPage() {
   );
 }
 
-function Field({ label, name, type = "text", required, placeholder, textarea, optional }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string; textarea?: boolean; optional?: boolean }) {
+function Field({ label, name, type = "text", required, placeholder, textarea, optional, options, value, onChange }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string; textarea?: boolean; optional?: boolean; options?: { value: string; label: string }[]; value?: string; onChange?: (v: string) => void }) {
+  const inputStyle = { width: "100%", padding: "12px 16px", background: "#fff", border: "1px solid rgba(0,0,0,0.18)", borderRadius: 12, fontFamily: "inherit", fontSize: 14, color: "#1a1a1a" } as const;
   return (
     <div>
       <label htmlFor={name} style={{ display: "block", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#1a1a1a", fontWeight: 600, marginBottom: 8 }}>
         {label}
         {optional && <span style={{ color: "#888", fontSize: 10, letterSpacing: "normal", textTransform: "none", fontWeight: 400, marginLeft: 8 }}>Optional</span>}
       </label>
-      {textarea ? (
+      {options ? (
+        <select id={name} name={name} required={required} value={value} onChange={(e) => onChange?.(e.target.value)}
+          style={{ ...inputStyle, appearance: "auto" }}>
+          {options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+        </select>
+      ) : textarea ? (
         <textarea id={name} name={name} rows={4} placeholder={placeholder}
-          style={{ width: "100%", padding: "12px 16px", background: "#fff", border: "1px solid rgba(0,0,0,0.18)", borderRadius: 12, fontFamily: "inherit", fontSize: 14, lineHeight: 1.55, color: "#1a1a1a", resize: "vertical" }} />
+          style={{ ...inputStyle, lineHeight: 1.55, resize: "vertical" }} />
       ) : (
         <input id={name} name={name} type={type} required={required} placeholder={placeholder}
-          style={{ width: "100%", padding: "12px 16px", background: "#fff", border: "1px solid rgba(0,0,0,0.18)", borderRadius: 12, fontFamily: "inherit", fontSize: 14, color: "#1a1a1a" }} />
+          style={inputStyle} />
       )}
     </div>
   );

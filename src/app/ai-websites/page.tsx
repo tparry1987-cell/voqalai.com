@@ -94,7 +94,7 @@ export default function AiWebsitesPage() {
 
           <FadeUp delay={0.6}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 18, flexWrap: "wrap" }}>
-              <Link href="/book" className="cog-btn-ghost-light">Book a demo →</Link>
+              <Link href="/book?demo=website" className="cog-btn-ghost-light">Book a demo →</Link>
               <a href="#work" style={{ fontSize: 12, letterSpacing: "0.04em", color: "rgba(255,255,255,0.8)", borderBottom: "1px solid rgba(255,255,255,0.35)", paddingBottom: 2 }}>See what we&apos;ve built</a>
             </div>
           </FadeUp>
@@ -285,7 +285,7 @@ export default function AiWebsitesPage() {
         </FadeUp>
         <FadeUp delay={0.3}>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", margin: "18px 0" }}>
-            <Link href="/book" className="cog-btn-primary">Book a demo</Link>
+            <Link href="/book?demo=website" className="cog-btn-primary">Book a demo</Link>
             <Link href="/contact" className="cog-btn-secondary">Talk to us</Link>
           </div>
         </FadeUp>
