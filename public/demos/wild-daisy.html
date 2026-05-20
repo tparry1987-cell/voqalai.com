@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wild Daisy Fragrances</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ffffff;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="min-h-screen" style="background-color:#fff">
+      <section id="hero" class="relative w-full min-h-screen flex flex-col justify-end overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover" style="z-index:0" id="hero-video">
+          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_142713_322c5ac5-8a5d-413b-be68-4a0e82014264.mp4" type="video/mp4" />
+        </video>
+
+        <header class="hero-anim absolute top-0 left-0 w-full flex items-center justify-between px-5 sm:px-8 py-5 sm:py-6" data-delay="100" data-y="-10" data-duration="1400" style="z-index:40">
+          <div class="font-black text-xs sm:text-sm tracking-widest leading-tight uppercase" style="color:#332023">
+            <div>Wild Daisy</div>
+            <div>Fragrances</div>
+          </div>
+
+          <nav class="flex gap-5 sm:gap-8">
+            <a class="text-xs font-bold tracking-widest uppercase relative group" href="#" style="color:#332023">
+              <span>Shop Now</span>
+              <span class="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" style="background-color:#332023"></span>
+            </a>
+            <a class="text-xs font-bold tracking-widest uppercase relative group" href="#" style="color:#332023">
+              <span>Cart</span>
+              <span class="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" style="background-color:#332023"></span>
+            </a>
+          </nav>
+        </header>
+
+        <div class="hero-anim hidden sm:block absolute right-8 md:right-10" data-delay="1000" data-x="16" data-duration="1600" style="top:50%; transform:translateY(-50%); z-index:20">
+          <span class="text-xl tracking-widest" style="font-family:Georgia, serif; font-style:italic; color:#332023">Scroll</span>
+        </div>
+
+        <div class="hero-anim hidden sm:flex absolute bottom-10 right-10 rounded-2xl items-center gap-2 px-5 py-4" data-delay="1300" data-y="20" data-duration="1400" style="z-index:30; min-width:260px; background-color:#ffffff; box-shadow:0 4px 24px rgba(51,32,35,0.08), 0 1px 4px rgba(51,32,35,0.06)">
+          <div class="flex-shrink-0 overflow-hidden" style="width:60px; height:76px; border-radius:8px">
+            <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260511_143221_81001e13-b71c-4a90-b2d7-abf4e2ec08ff.png&w=1280&q=85" alt="Eau So Fresh" style="width:130%; height:130%; object-fit:contain; display:block; margin-left:-15%; margin-top:-15%">
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-sm font-semibold tracking-wide leading-tight" style="color:#332023">Eau So Fresh</span>
+            <span class="tracking-wide" style="font-size:11px; font-weight:500; margin-top:3px; color:#332023">100 ml / 3.4 oz</span>
+            <button class="text-xs font-bold tracking-widest uppercase self-start leading-tight relative overflow-hidden group" style="margin-top:14px; color:#332023">
+              <span class="relative z-10">Add to Cart</span>
+              <span class="absolute bottom-0 left-0 h-px w-full origin-left transition-transform duration-300 ease-out scale-x-100 group-hover:scale-x-0" style="background-color:#332023"></span>
+              <span class="absolute bottom-0 left-0 h-px w-full origin-right transition-transform duration-300 ease-out delay-150 scale-x-0 group-hover:scale-x-100" style="background-color:#332023; opacity:0.4"></span>
+            </button>
+          </div>
+        </div>
+
+        <div id="slide-index" class="hidden sm:block absolute left-6 md:left-8" style="top:50%; transform:translateY(-50%) translateX(-24px); font-family:'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif; font-style:italic; font-weight:400; font-size:clamp(2.5rem,6.5vw,6rem); line-height:1; letter-spacing:-0.02em; z-index:10; color:#332023; opacity:0">01</div>
+
+        <div class="relative pb-0 sm:pb-12 pl-5 sm:pl-8 pr-0 sm:pr-8" style="z-index:10">
+          <h1 class="font-medium uppercase leading-tight sm:leading-none" style="font-size:clamp(2.2rem,8vw,4rem); letter-spacing:-0.01em">
+            <span class="hero-anim block sm:hidden" data-delay="600" data-y="24" data-duration="1600" style="color:#ffffff; text-shadow:0 2px 16px rgba(0,0,0,0.4)">Sweet Daisy</span>
+            <span class="hero-anim block sm:hidden" data-delay="800" data-y="24" data-duration="1600" style="color:rgba(255,255,255,0.8); text-shadow:0 2px 12px rgba(0,0,0,0.35)">Personal Scent</span>
+            <span class="hero-anim block sm:hidden" data-delay="1000" data-y="24" data-duration="1600" style="color:rgba(255,255,255,0.8); text-shadow:0 2px 12px rgba(0,0,0,0.35)">Finder</span>
+
+            <span class="hero-anim hidden sm:block" data-delay="600" data-y="24" data-duration="1600" style="color:#332023">Sweet Daisy</span>
+            <span class="hero-anim hidden sm:block" data-delay="800" data-y="24" data-duration="1600" style="color:#B0A2A1">Personal Scent</span>
+            <span class="hero-anim hidden sm:block" data-delay="1000" data-y="24" data-duration="1600" style="color:#B0A2A1">Finder</span>
+          </h1>
+
+          <div class="hero-anim sm:hidden flex items-center gap-3 mt-4 mr-5 mb-8 px-4 py-4 rounded-2xl" data-delay="1300" data-y="20" data-duration="1400" style="background-color:#ffffff; box-shadow:0 4px 24px rgba(51,32,35,0.08), 0 1px 4px rgba(51,32,35,0.06)">
+            <div class="flex-shrink-0 overflow-hidden" style="width:56px; height:70px; border-radius:6px">
+              <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260511_143221_81001e13-b71c-4a90-b2d7-abf4e2ec08ff.png&w=1280&q=85" alt="Eau So Fresh" style="width:130%; height:130%; object-fit:contain; display:block; margin-left:-15%; margin-top:-15%">
+            </div>
+
+            <div class="flex flex-col flex-1">
+              <span class="text-sm font-semibold tracking-wide leading-tight" style="color:#332023">Eau So Fresh</span>
+              <span class="tracking-wide" style="font-size:11px; font-weight:500; margin-top:3px; color:#332023">100 ml / 3.4 oz</span>
+              <button class="text-xs font-bold tracking-widest uppercase self-start leading-tight relative overflow-hidden group" style="margin-top:12px; color:#332023">
+                <span class="relative z-10">Add to Cart</span>
+                <span class="absolute bottom-0 left-0 h-px w-full origin-left transition-transform duration-300 ease-out scale-x-100 group-hover:scale-x-0" style="background-color:#332023"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative w-full panel-section">
+        <div class="flex flex-col md:grid md:min-h-screen" style="grid-template-columns:1fr 1fr">
+          <div class="product-panel relative flex flex-col px-6 md:px-8 pt-6 md:pt-8 pb-8 md:pb-10" style="background-color:#4BB3ED; min-height:100%">
+            <div class="panel-anim flex items-start justify-between mb-auto" data-delay="0" data-y="12" data-duration="1400">
+              <span class="text-xs font-normal" style="color:#000000">Daisy love</span>
+              <span class="text-xs font-normal" style="color:#000000">Sweet</span>
+            </div>
+
+            <div class="panel-anim flex flex-col items-center py-8" data-delay="300" data-y="40" data-duration="1800" style="flex:1; justify-content:center">
+              <div class="overflow-hidden" style="width:clamp(140px,40%,220px); aspect-ratio:220/340; background-color:#D9D9D9; border-radius:2px; flex-shrink:0">
+                <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260511_151640_5b4a7bf8-4eb2-4a49-aa63-17a9bb642b88.png&w=1280&q=85" alt="Eau So Sweet" style="width:100%; height:100%; object-fit:cover; display:block">
+              </div>
+
+              <div class="panel-anim text-center mt-4" data-delay="600" data-y="10" data-duration="1400">
+                <p class="text-sm font-normal" style="color:#000000">Eau So Sweet</p>
+                <p class="text-xs font-normal mt-1" style="color:#000000">100 ml / 3.3 oz</p>
+              </div>
+            </div>
+
+            <div class="flex items-end justify-between gap-4 flex-wrap">
+              <div class="panel-anim flex flex-col gap-0.5" data-delay="900" data-y="16" data-duration="1400">
+                <div>
+                  <p class="text-xs leading-snug" style="color:#000000; font-weight:400">Fruity top</p>
+                  <p class="text-xs font-bold tracking-widest uppercase leading-snug" style="color:#000000">WHITE RASPBERRIES</p>
+                </div>
+                <div>
+                  <p class="text-xs leading-snug" style="color:#000000; font-weight:400">Floral heart</p>
+                  <p class="text-xs font-bold tracking-widest uppercase leading-snug" style="color:#000000">DAISY TREE PETALS</p>
+                </div>
+                <div>
+                  <p class="text-xs leading-snug" style="color:#000000; font-weight:400">Feminine base</p>
+                  <p class="text-xs font-bold tracking-widest uppercase leading-snug" style="color:#000000">SUGAR MUSKS</p>
+                </div>
+              </div>
+
+              <button class="panel-anim text-xs font-bold tracking-widest uppercase border px-6 py-3 relative group shrink-0" data-delay="1150" data-y="16" data-duration="1400" style="color:#000000; border-color:#000000; background-color:transparent">
+                <span class="relative z-10 group-hover:text-black transition-colors duration-500">SHOP NOW</span>
+                <span class="absolute inset-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" style="background-color:#ffffff"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="hidden md:block relative overflow-hidden" style="background-color:#111; min-height:100%">
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_151802_1bbf9a81-a7cb-4be1-b858-f1cd92b62b96.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="md:hidden relative overflow-hidden" style="height:75vw; background-color:#111">
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_151802_1bbf9a81-a7cb-4be1-b858-f1cd92b62b96.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="relative w-full panel-section">
+        <div class="flex flex-col-reverse md:grid md:min-h-screen" style="grid-template-columns:1fr 1fr">
+          <div class="hidden md:block relative overflow-hidden" style="background-color:#111; min-height:100%">
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_151818_65bb22c5-33ae-4e23-85ea-0a3dd89957c2.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="md:hidden relative overflow-hidden" style="height:75vw; background-color:#111">
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+              <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_151818_65bb22c5-33ae-4e23-85ea-0a3dd89957c2.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="product-panel relative flex flex-col px-6 md:px-8 pt-6 md:pt-8 pb-8 md:pb-10" style="background-color:#BDE84F; min-height:100%">
+            <div class="panel-anim flex items-start justify-between mb-auto" data-delay="0" data-y="12" data-duration="1400">
+              <span class="text-xs font-normal" style="color:#000000">Daisy wild</span>
+              <span class="text-xs font-normal" style="color:#000000">Playful</span>
+            </div>
+
+            <div class="panel-anim flex flex-col items-center py-8" data-delay="300" data-y="40" data-duration="1800" style="flex:1; justify-content:center">
+              <div class="overflow-hidden" style="width:clamp(140px,40%,220px); aspect-ratio:220/340; background-color:#D9D9D9; border-radius:2px; flex-shrink:0">
+                <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260511_151621_4fba6892-ed21-4c2e-8cb3-0bd2ec2abefa.png&w=1280&q=85" alt="Eau So Extra" style="width:100%; height:100%; object-fit:cover; display:block">
+              </div>
+
+              <div class="panel-anim text-center mt-4" data-delay="600" data-y="10" data-duration="1400">
+                <p class="text-sm font-normal" style="color:#000000">Eau So Extra</p>
+                <p class="text-xs font-normal mt-1" style="color:#000000">100 ml / 3.3 oz</p>
+              </div>
+            </div>
+
+            <div class="flex items-end justify-between gap-4 flex-wrap">
+              <div class="panel-anim flex flex-col gap-0.5" data-delay="900" data-y="16" data-duration="1400">
+                <div>
+                  <p class="text-xs leading-snug" style="color:#000000; font-weight:700">Top</p>
+                  <p class="text-xs font-bold tracking-widest uppercase leading-snug" style="color:#000000">BANANA BLOSSOM ACCORD</p>
+                </div>
+                <div>
+                  <p class="text-xs leading-snug" style="color:#000000; font-weight:700">Heart</p>
+                  <p class="text-xs font-bold tracking-widest uppercase leading-snug" style="color:#000000">CHOCOLATE DAISY ACCORD</p>
+                </div>
+                <div>
+                  <p class="text-xs leading-snug" style="color:#000000; font-weight:700">Base</p>
+                  <p class="text-xs font-bold tracking-widest uppercase leading-snug" style="color:#000000">VETIVER OIL</p>
+                </div>
+              </div>
+
+              <button class="panel-anim text-xs font-bold tracking-widest uppercase border px-6 py-3 relative group shrink-0" data-delay="1150" data-y="16" data-duration="1400" style="color:#000000; border-color:#000000; background-color:transparent">
+                <span class="relative z-10 group-hover:text-black transition-colors duration-500">SHOP NOW</span>
+                <span class="absolute inset-0 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" style="background-color:#ffffff"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
+      function setInitial(el) {
+        var y = Number(el.dataset.y || 20);
+        var x = Number(el.dataset.x || 0);
+        var translateFrom = y !== 0 ? 'translateY(' + y + 'px)' : x !== 0 ? 'translateX(' + x + 'px)' : 'none';
+        el.style.opacity = '0';
+        el.style.transform = translateFrom;
+      }
+
+      function show(el) {
+        var delay = Number(el.dataset.delay || 0);
+        var duration = Number(el.dataset.duration || 1600);
+        el.style.transition = 'opacity ' + duration + 'ms ' + EASE + ' ' + delay + 'ms, transform ' + duration + 'ms ' + EASE + ' ' + delay + 'ms';
+        el.style.opacity = '1';
+        el.style.transform = 'translate(0,0)';
+      }
+
+      document.querySelectorAll('.hero-anim, .panel-anim').forEach(setInitial);
+
+      var heroVideo = document.getElementById('hero-video');
+      if (heroVideo) heroVideo.playbackRate = 1;
+
+      setTimeout(function () {
+        document.querySelectorAll('.hero-anim').forEach(show);
+
+        var slideIndex = document.getElementById('slide-index');
+        if (slideIndex) {
+          slideIndex.style.opacity = '1';
+          slideIndex.style.transform = 'translateY(-50%) translateX(0)';
+          slideIndex.style.transition = 'opacity 1600ms ' + EASE + ' 500ms, transform 1600ms ' + EASE + ' 500ms';
+        }
+      }, 200);
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.querySelectorAll('.panel-anim').forEach(show);
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.panel-section').forEach(function (section) {
+        observer.observe(section);
+      });
+    })();
+  </script>
+</body>
+</html>

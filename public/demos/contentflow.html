@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ContentFlow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    html, body { margin: 0; padding: 0; }
+
+    @keyframes spin-ring { to { transform: rotate(360deg); } }
+    .spin-ring { animation: spin-ring 1.4s linear infinite; transform-origin: center; transform-box: fill-box; }
+
+    @keyframes slide-in-right { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+    .dashboard-animate { opacity: 0; animation: slide-in-right 0.9s ease-out 1.2s forwards; }
+
+    @keyframes progress-fill { 0% { stroke-dashoffset: 88; } }
+    .progress-ring-fill { animation: progress-fill 1.2s ease-out 2s both; }
+
+    @keyframes popup-card-in { 0% { opacity: 0; transform: translateY(16px) scale(0.96); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+    .popup-card-animate { opacity: 0; animation: popup-card-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    .gradient-border-btn { position: relative; background: #fff; }
+    .gradient-border-btn::before {
+      content: "";
+      position: absolute; inset: 0;
+      border-radius: 9999px;
+      padding: 1.5px;
+      background: linear-gradient(135deg, #F59E0B, #3B82F6);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="min-h-[200vh]">
+
+  <!-- Video background (fixed behind everything) -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none" style="z-index: 0;">
+    <div id="video-zoom" class="absolute inset-0 will-change-transform" style="transform-origin: center center;">
+      <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260417_061226_74f0749c-a22d-42b3-895e-5d6203bc741c.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-6">
+    <div class="flex items-center gap-4 md:gap-8 bg-white/70 backdrop-blur-sm border border-gray-200/80 rounded-full pl-4 pr-2.5 md:pl-5 md:pr-2.5 py-2.5 shadow-sm">
+      <svg width="28" height="28" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M 128 192 C 92.654 192 64 220.654 64 256 L 0 256 C 0 185.308 57.308 128 128 128 Z M 256 128 C 256 198.692 198.692 256 128 256 L 128 192 C 163.346 192 192 163.346 192 128 Z M 128 64 C 92.654 64 64 92.654 64 128 L 0 128 C 0 57.308 57.308 0 128 0 Z M 256 0 C 256 70.692 198.692 128 128 128 L 128 64 C 163.346 64 192 35.346 192 0 Z" fill="#000"/></svg>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150">Features</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150">Workflows</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150">Resources</a>
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-150">Pricing</a>
+      </div>
+      <button class="gradient-border-btn text-sm font-semibold text-gray-900 rounded-full px-5 py-2 hover:bg-gray-50 shadow-sm">Get started</button>
+    </div>
+  </nav>
+
+  <div class="relative" style="z-index: 10;">
+
+    <!-- Hero -->
+    <section id="hero" class="relative flex flex-col items-center justify-start px-4 sm:px-6 pt-32 sm:pt-36 md:pt-40 text-center min-h-screen will-change-transform" style="z-index: 10;">
+      <h1 class="text-[2.25rem] sm:text-[3rem] md:text-[3.75rem] leading-none tracking-tighter font-medium text-gray-900 max-w-2xl">
+        <span class="text-zinc-400">A New Way</span><br />
+        to Manage Your<br />
+        Content Flow
+      </h1>
+      <p class="mt-8 text-base text-gray-500 max-w-sm leading-relaxed">Take full control of your publishing workflow <br /> with our unified content management platform.</p>
+
+      <!-- PopupCard stack -->
+      <div class="flex flex-col items-center gap-3 mt-10 sm:mt-16 w-full px-4 sm:px-0">
+
+        <div class="popup-card-animate flex items-center gap-3 sm:gap-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/60 px-4 sm:px-6 py-3 sm:py-4 w-full max-w-[380px]" style="animation-delay: 0ms;">
+          <svg width="24" height="24" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0"><path d="M 128 192 C 92.654 192 64 220.654 64 256 L 0 256 C 0 185.308 57.308 128 128 128 Z M 256 128 C 256 198.692 198.692 256 128 256 L 128 192 C 163.346 192 192 163.346 192 128 Z M 128 64 C 92.654 64 64 92.654 64 128 L 0 128 C 0 57.308 57.308 0 128 0 Z M 256 0 C 256 70.692 198.692 128 128 128 L 128 64 C 163.346 64 192 35.346 192 0 Z" fill="#000"/></svg>
+          <span class="text-xs sm:text-sm font-medium text-gray-700 flex-1 whitespace-nowrap">Your All-in-One Content Studio</span>
+          <svg class="spin-ring flex-shrink-0" width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="g0" x1="14" y1="3" x2="25" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#F59E0B"/><stop offset="1" stop-color="#3B82F6"/></linearGradient></defs><circle cx="14" cy="14" r="11" stroke="#E5E7EB" stroke-width="3" fill="none"/><path d="M14 3 A11 11 0 0 1 25 14" stroke="url(#g0)" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+        </div>
+
+        <div class="popup-card-animate flex items-center gap-3 sm:gap-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/60 px-4 sm:px-6 py-3 sm:py-4 w-full max-w-[380px]" style="animation-delay: 150ms;">
+          <svg class="w-6 h-6 text-emerald-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
+          <span class="text-xs sm:text-sm font-medium text-gray-700 flex-1 whitespace-nowrap">Multi-Channel Publishing Hub</span>
+          <svg class="spin-ring flex-shrink-0" width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="g1" x1="14" y1="3" x2="25" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#10B981"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs><circle cx="14" cy="14" r="11" stroke="#E5E7EB" stroke-width="3" fill="none"/><path d="M14 3 A11 11 0 0 1 25 14" stroke="url(#g1)" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+        </div>
+
+        <div class="popup-card-animate flex items-center gap-3 sm:gap-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/60 px-4 sm:px-6 py-3 sm:py-4 w-full max-w-[380px]" style="animation-delay: 300ms;">
+          <svg class="w-6 h-6 text-blue-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span class="text-xs sm:text-sm font-medium text-gray-700 flex-1 whitespace-nowrap">Role-Based Access &amp; Approvals</span>
+          <svg class="spin-ring flex-shrink-0" width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="g2" x1="14" y1="3" x2="25" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#3B82F6"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs><circle cx="14" cy="14" r="11" stroke="#E5E7EB" stroke-width="3" fill="none"/><path d="M14 3 A11 11 0 0 1 25 14" stroke="url(#g2)" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+        </div>
+
+        <div class="popup-card-animate flex items-center gap-3 sm:gap-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/60 px-4 sm:px-6 py-3 sm:py-4 w-full max-w-[380px]" style="animation-delay: 450ms;">
+          <svg class="w-6 h-6 text-amber-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+          <span class="text-xs sm:text-sm font-medium text-gray-700 flex-1 whitespace-nowrap">Advanced Content Analytics</span>
+          <svg class="spin-ring flex-shrink-0" width="28" height="28" viewBox="0 0 28 28" fill="none"><defs><linearGradient id="g3" x1="14" y1="3" x2="25" y2="14" gradientUnits="userSpaceOnUse"><stop stop-color="#F59E0B"/><stop offset="1" stop-color="#EF4444"/></linearGradient></defs><circle cx="14" cy="14" r="11" stroke="#E5E7EB" stroke-width="3" fill="none"/><path d="M14 3 A11 11 0 0 1 25 14" stroke="url(#g3)" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Showcase -->
+    <section id="showcase2" class="relative min-h-screen flex items-center justify-center px-6 md:px-16 lg:px-24 will-change-transform" style="z-index: 20; transform-origin: center top;">
+      <div class="relative w-full max-w-7xl mx-auto rounded-2xl sm:rounded-3xl overflow-hidden min-h-[480px] sm:min-h-[560px] md:min-h-[680px]">
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
+          <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260415_154932_f36efd90-557d-4cfb-add6-79336918bd53.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute inset-0 z-[1] bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col md:flex-row items-end md:items-stretch h-full min-h-[480px] sm:min-h-[560px] md:min-h-[680px]">
+          <!-- Left half -->
+          <div class="flex flex-col justify-end p-4 sm:p-5 md:p-8 md:w-1/2">
+            <h2 class="text-2xl sm:text-3xl md:text-[2.75rem] font-medium text-gray-900 md:text-white md:leading-[1.15] leading-tight tracking-tighter">Your Content Engine,<br />Faster and Clearer</h2>
+            <p class="mt-5 text-sm md:text-base text-gray-600 md:text-white/70 leading-relaxed max-w-md">Get live performance data, editorial analytics, and the clarity you need to publish confidently every single time.</p>
+          </div>
+
+          <!-- Right half -->
+          <div class="flex items-end justify-end md:w-1/2 mt-auto origin-bottom-right scale-[0.75] sm:scale-[0.85] md:scale-100">
+            <!-- Dashboard -->
+            <div class="dashboard-animate bg-white rounded-tl-2xl shadow-xl border border-gray-100 p-4 sm:p-6 md:p-8 w-full max-w-xl flex flex-col gap-4 sm:gap-6">
+              <!-- Top row -->
+              <div class="flex flex-col sm:flex-row items-start sm:justify-between gap-3 sm:gap-0">
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-xs sm:text-sm text-gray-400 font-medium">Total Reach</div>
+                    <div class="text-xl sm:text-3xl font-bold text-gray-900 tracking-tight">498,098 <span class="text-xs sm:text-sm text-gray-400 font-normal">views</span></div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-black"></span><span class="text-xs text-gray-500">Published</span></div>
+                  <div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-gray-300"></span><span class="text-xs text-gray-500">In Draft</span></div>
+                  <span class="text-xs font-medium text-gray-700 bg-gray-100 rounded-md px-2.5 py-1">Monthly</span>
+                </div>
+              </div>
+
+              <!-- Chart -->
+              <div class="w-full">
+                <svg id="chart" viewBox="0 0 400 180" class="w-full" style="height:auto;"></svg>
+              </div>
+
+              <!-- Top Channels -->
+              <div>
+                <h3 class="text-sm font-semibold text-gray-700 mb-4">Top Channels</h3>
+                <div id="channels" class="flex flex-col gap-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // ── Scroll progress hook ──
+    var videoZoom = document.getElementById('video-zoom');
+    var hero = document.getElementById('hero');
+    var showcase = document.getElementById('showcase2');
+
+    function clamp(v, a, b) { return Math.min(Math.max(v, a), b); }
+
+    function update() {
+      var p = Math.min(window.scrollY / window.innerHeight, 1);
+
+      // Background zoom 1 → 1.3
+      videoZoom.style.transform = 'scale(' + (1 + p * 0.3) + ')';
+
+      // Hero fade + drift
+      var heroOpacity = Math.max(1 - p * 2.5, 0);
+      hero.style.opacity = heroOpacity;
+      hero.style.transform = 'translateY(' + (p * -60) + 'px)';
+      hero.style.pointerEvents = heroOpacity < 0.1 ? 'none' : 'auto';
+
+      // Showcase fade/scale in (0.35 → 0.75)
+      var t = clamp((p - 0.35) / (0.75 - 0.35), 0, 1);
+      showcase.style.opacity = t;
+      showcase.style.transform = 'scale(' + (0.88 + t * 0.12) + ')';
+    }
+
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(function () { update(); ticking = false; }); ticking = true; }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+
+    // ── Chart ──
+    (function () {
+      var data = [['Mon',18000],['Tue',22000],['Wed',19000],['Thu',25000],['Fri',21000],['Sat',32000],['Sun',28000]];
+      var W = 400, H = 180, padTop = 10, padBottom = 30, maxVal = 40000;
+      var plotH = H - padTop - padBottom;
+      var n = data.length;
+      function X(i) { return (i / (n - 1)) * W; }
+      function Y(v) { return padTop + (1 - v / maxVal) * plotH; }
+      var baseline = H - padBottom;
+      var pts = data.map(function (d, i) { return { x: X(i), y: Y(d[1]) }; });
+
+      function smooth(p) {
+        var d = 'M ' + p[0].x + ',' + p[0].y;
+        for (var i = 0; i < p.length - 1; i++) {
+          var xm = (p[i].x + p[i + 1].x) / 2, ym = (p[i].y + p[i + 1].y) / 2;
+          var c1 = (xm + p[i].x) / 2, c2 = (xm + p[i + 1].x) / 2;
+          d += ' Q ' + c1 + ',' + p[i].y + ' ' + xm + ',' + ym;
+          d += ' Q ' + c2 + ',' + p[i + 1].y + ' ' + p[i + 1].x + ',' + p[i + 1].y;
+        }
+        return d;
+      }
+      var linePath = smooth(pts);
+      var areaPath = linePath + ' L ' + pts[n - 1].x + ',' + baseline + ' L ' + pts[0].x + ',' + baseline + ' Z';
+
+      var ns = 'http://www.w3.org/2000/svg';
+      var svg = document.getElementById('chart');
+      var html = '';
+      html += '<defs><linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F2937" stop-opacity="0.08"/><stop offset="1" stop-color="#1F2937" stop-opacity="0"/></linearGradient></defs>';
+
+      // grid lines + y labels
+      [0, 10000, 20000, 30000, 40000].forEach(function (v) {
+        var y = Y(v);
+        html += '<line x1="0" y1="' + y + '" x2="' + W + '" y2="' + y + '" stroke="#E5E7EB" stroke-width="0.5" stroke-dasharray="4 3"/>';
+        var label = v === 0 ? '0' : (v / 1000) + 'k';
+        html += '<text x="22" y="' + (y + 3) + '" text-anchor="end" fill="#9CA3AF" font-size="9" font-family="Inter">' + label + '</text>';
+      });
+
+      // area
+      html += '<path id="chartArea" d="' + areaPath + '" fill="url(#chartGrad)" opacity="0"/>';
+      // line
+      html += '<path id="chartLine" d="' + linePath + '" fill="none" stroke="#1F2937" stroke-width="2" stroke-linecap="round"/>';
+
+      // x labels
+      data.forEach(function (d, i) {
+        var hl = i === 5;
+        html += '<text x="' + X(i) + '" y="' + (H - 8) + '" text-anchor="middle" font-size="9" font-family="Inter" fill="' + (hl ? '#111827' : '#9CA3AF') + '" font-weight="' + (hl ? '600' : '400') + '">' + d[0] + '</text>';
+      });
+
+      // highlight (Sat, index 5)
+      var hx = X(5), hy = Y(32000);
+      html += '<line x1="' + hx + '" y1="' + hy + '" x2="' + hx + '" y2="' + baseline + '" stroke="#1F2937" stroke-dasharray="3 2"/>';
+      html += '<circle id="chartDot" cx="' + hx + '" cy="' + hy + '" r="0" fill="#fff" stroke="#1F2937" stroke-width="2"/>';
+      html += '<g id="chartTip" opacity="0"><rect x="' + (hx - 48) + '" y="' + (hy - 32) + '" width="96" height="22" rx="6" fill="#1F2937"/>' +
+              '<text x="' + (hx - 38) + '" y="' + (hy - 17) + '" font-size="9" font-family="Inter" fill="#fff">32,104</text>' +
+              '<text x="' + (hx + 8) + '" y="' + (hy - 17) + '" font-size="9" font-family="Inter" fill="#34D399">+6,488</text></g>';
+
+      svg.innerHTML = html;
+
+      // animations
+      var line = document.getElementById('chartLine');
+      var len = line.getTotalLength();
+      line.style.strokeDasharray = len;
+      line.style.strokeDashoffset = len;
+      requestAnimationFrame(function () {
+        line.style.transition = 'stroke-dashoffset 1.8s ease-out';
+        line.style.strokeDashoffset = '0';
+      });
+      var area = document.getElementById('chartArea');
+      setTimeout(function () { area.style.transition = 'opacity 1s ease'; area.style.opacity = '1'; }, 800);
+      var dot = document.getElementById('chartDot');
+      setTimeout(function () { dot.style.transition = 'r 0.4s ease-out'; dot.setAttribute('r', '5'); }, 1600);
+      var tip = document.getElementById('chartTip');
+      tip.style.transform = 'translateY(4px)';
+      tip.style.transformBox = 'fill-box';
+      setTimeout(function () { tip.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; tip.style.opacity = '1'; tip.style.transform = 'translateY(0)'; }, 1800);
+    })();
+
+    // ── Top Channels + progress rings ──
+    (function () {
+      var channels = [
+        { sym: 'BLG', name: 'Blog Posts', val: '12,461', change: '+4.20%', positive: true, color: '#F59E0B' },
+        { sym: 'SOC', name: 'Social Media', val: '8,932', change: '-1.05%', positive: false, color: '#3B82F6' },
+        { sym: 'NWS', name: 'Newsletters', val: '5,718', change: '+2.87%', positive: true, color: '#10B981' },
+      ];
+      var r = 16, circ = 2 * Math.PI * r;
+      var wrap = document.getElementById('channels');
+      var out = '';
+      channels.forEach(function (ch) {
+        var pct = ch.positive ? 70 : 30;
+        var offset = circ - (pct / 100) * circ;
+        out += '<div class="flex items-center justify-between">' +
+          '<div class="flex items-center gap-3">' +
+            '<div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white font-bold text-xs" style="background-color:' + ch.color + '">' + ch.sym.charAt(0) + '</div>' +
+            '<div class="flex items-baseline gap-2"><span class="font-bold text-gray-900 text-sm">' + ch.sym + '</span><span class="text-gray-400 text-sm hidden sm:inline">' + ch.name + '</span></div>' +
+          '</div>' +
+          '<div class="flex items-center gap-3">' +
+            '<span class="font-semibold text-gray-900 text-sm">' + ch.val + '</span>' +
+            '<span class="text-sm font-medium ' + (ch.positive ? 'text-emerald-500' : 'text-red-500') + '">' + ch.change + '</span>' +
+            '<svg width="40" height="40" viewBox="0 0 40 40" class="hidden sm:block">' +
+              '<circle cx="20" cy="20" r="16" fill="none" stroke="#E5E7EB" stroke-width="3"/>' +
+              '<circle class="progress-ring-fill" cx="20" cy="20" r="16" fill="none" stroke="' + ch.color + '" stroke-width="3" stroke-linecap="round" stroke-dasharray="' + circ + '" stroke-dashoffset="' + offset + '" transform="rotate(-90 20 20)"/>' +
+            '</svg>' +
+          '</div>' +
+        '</div>';
+      });
+      wrap.innerHTML = out;
+    })();
+  </script>
+</body>
+</html>

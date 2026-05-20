@@ -105,6 +105,17 @@
   status = 410
   force = true
 
+# ── Consolidate Manchester location URL onto the dedicated /manchester/ page ──
+[[redirects]]
+  from = "/locations/manchester"
+  to = "/manchester/"
+  status = 301
+
+[[redirects]]
+  from = "/locations/manchester/"
+  to = "/manchester/"
+  status = 301
+
 # ── Old .html URLs → new clean URLs (301 for SEO) ──
 
 # Core pages
@@ -255,7 +266,27 @@
     X-XSS-Protection = "0"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://app.cal.com https://dashboard.retellai.com https://cdn.retellai.com https://*.trustpilot.com https://*.posthog.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.retellai.com https://*.trustpilot.com; frame-src https://app.cal.com https://www.googletagmanager.com https://*.retellai.com https://*.trustpilot.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://app.cal.com https://*.retellai.com https://*.trustpilot.com https://*.posthog.com; font-src 'self'; media-src 'self' https://d8j0ntlcm91z4.cloudfront.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; manifest-src 'self'; upgrade-insecure-requests;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://app.cal.com https://dashboard.retellai.com https://cdn.retellai.com https://*.trustpilot.com https://*.posthog.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline'; style-src-attr 'unsafe-inline'; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.retellai.com https://*.trustpilot.com; frame-src 'self' https://app.cal.com https://www.googletagmanager.com https://*.retellai.com https://*.trustpilot.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://app.cal.com https://*.retellai.com https://*.trustpilot.com https://*.posthog.com; font-src 'self'; media-src 'self' https://d8j0ntlcm91z4.cloudfront.net; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://voqalai.com; frame-ancestors 'none'; manifest-src 'self'; upgrade-insecure-requests;"
+
+[[headers]]
+  for = "/thank-you/"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+
+[[headers]]
+  for = "/forms.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Demo showcase pages (embedded as live previews on /ai-websites and opened
+# full-page). These standalone files use Tailwind CDN, Google Fonts, GSAP and
+# canvas — relaxed CSP scoped ONLY to /demos/*, and same-origin framing allowed
+# so the showcase can embed them. The rest of the site keeps the strict policy.
+[[headers]]
+  for = "/demos/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; img-src 'self' data: https://images.higgs.ai https://d8j0ntlcm91z4.cloudfront.net; font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com https://db.onlinewebfonts.com; media-src 'self' https://d8j0ntlcm91z4.cloudfront.net; connect-src 'self'; frame-ancestors 'self'; object-src 'none'; base-uri 'self';"
 
 [[headers]]
   for = "/_next/static/*"

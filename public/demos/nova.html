@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body: ['Space Grotesk', 'sans-serif']
+          },
+          colors: {
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            'muted-foreground': 'hsl(var(--muted-foreground))',
+            'nav-border': 'hsl(var(--nav-border))',
+            border: 'hsl(var(--border))',
+            card: 'hsl(var(--card))',
+            'card-foreground': 'hsl(var(--card-foreground))',
+            popover: 'hsl(var(--popover))',
+            'popover-foreground': 'hsl(var(--popover-foreground))',
+            primary: 'hsl(var(--primary))',
+            'primary-foreground': 'hsl(var(--primary-foreground))',
+            secondary: 'hsl(var(--secondary))',
+            'secondary-foreground': 'hsl(var(--secondary-foreground))',
+            accent: 'hsl(var(--accent))',
+            'accent-foreground': 'hsl(var(--accent-foreground))',
+            destructive: 'hsl(var(--destructive))',
+            'destructive-foreground': 'hsl(var(--destructive-foreground))',
+            sidebar: 'hsl(var(--sidebar))',
+            'sidebar-foreground': 'hsl(var(--sidebar-foreground))'
+          },
+          borderRadius: {
+            lg: 'var(--radius)',
+            md: 'var(--radius)',
+            sm: 'var(--radius)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --background: 0 0% 0%;
+      --foreground: 0 0% 100%;
+      --muted-foreground: 0 0% 65%;
+      --nav-border: 0 0% 35%;
+      --border: 0 0% 25%;
+      --radius: 0rem;
+      --card: 0 0% 0%;
+      --card-foreground: 0 0% 100%;
+      --popover: 0 0% 0%;
+      --popover-foreground: 0 0% 100%;
+      --primary: 0 0% 100%;
+      --primary-foreground: 0 0% 0%;
+      --secondary: 0 0% 8%;
+      --secondary-foreground: 0 0% 100%;
+      --accent: 0 0% 12%;
+      --accent-foreground: 0 0% 100%;
+      --destructive: 0 0% 100%;
+      --destructive-foreground: 0 0% 0%;
+      --sidebar: 0 0% 0%;
+      --sidebar-foreground: 0 0% 100%;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-radius: 0 !important;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: hsl(var(--background));
+      color: hsl(var(--foreground));
+      font-family: "Space Grotesk", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero-video {
+      object-position: center;
+    }
+
+    @media (max-width: 767px) {
+      .hero-video {
+        object-position: 85% center;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .hero-video {
+        object-position: 75% center;
+      }
+    }
+
+    .vertical-divider {
+      width: 1px;
+      background: hsl(var(--nav-border));
+      align-self: stretch;
+    }
+
+    .segmented-vertical {
+      width: 1px;
+      background: hsl(var(--nav-border));
+      min-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <main class="min-h-screen bg-background text-foreground font-body">
+      <section class="h-screen flex flex-col">
+        <nav class="hidden md:flex items-stretch h-16 border-b border-nav-border">
+          <div class="flex flex-col justify-between flex-1">
+            <div class="flex items-stretch h-full">
+              <a href="#" class="px-4 flex items-center text-sm font-body tracking-wide">Programs</a>
+              <div class="vertical-divider mt-3 mb-3 ml-3"></div>
+              <a href="#" class="px-4 flex items-center text-sm font-body tracking-wide">Systems</a>
+              <div class="vertical-divider mt-3 mb-3 ml-3"></div>
+              <a href="#" class="px-4 flex items-center text-sm font-body tracking-wide">Discover</a>
+            </div>
+            <div class="px-4 mt-1">
+              <div class="h-px bg-nav-border"></div>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-between flex-1">
+            <div class="flex items-center justify-center h-full">
+              <div class="text-2xl font-display font-bold tracking-widest">NOVA</div>
+            </div>
+            <div class="flex gap-4 px-4">
+              <div class="flex-1 h-px bg-nav-border"></div>
+              <div class="flex-1 h-px bg-nav-border"></div>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-between flex-1">
+            <div class="flex items-stretch justify-end h-full">
+              <a href="#" class="px-4 flex items-center text-sm font-body tracking-wide">Search</a>
+              <div class="vertical-divider mt-3 mb-3 mr-3"></div>
+              <button class="px-4 flex items-center" aria-label="Search">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </button>
+              <div class="vertical-divider mt-3 mb-3 mr-3"></div>
+              <button class="px-4 flex items-center" aria-label="Menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 6H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="px-4 mt-1">
+              <div class="h-px bg-nav-border"></div>
+            </div>
+          </div>
+        </nav>
+
+        <nav class="md:hidden h-16 flex items-center justify-between px-5 border-b border-nav-border">
+          <div class="text-2xl font-display font-bold tracking-widest">NOVA</div>
+          <button aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M4 6H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+
+        <div class="relative h-[calc(100vh-4rem)] overflow-hidden">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            class="hero-video absolute inset-0 w-full h-full object-cover"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_031824_0c85e1e9-fe2b-4d52-8cde-25b0c2b5e8a2.mp4"
+          ></video>
+
+          <div class="relative z-10 h-full flex flex-col justify-between px-8 pt-12 pb-24">
+            <div></div>
+
+            <div>
+              <h1 class="text-[4.5rem] md:text-[10rem] lg:text-[12rem] font-display font-black leading-[0.85] tracking-tighter text-foreground">
+                ROCKETS
+              </h1>
+
+              <div class="flex justify-end mt-4">
+                <div class="flex flex-col items-end max-w-3xl">
+                  <p class="text-base md:text-lg font-body text-foreground/90 leading-relaxed text-right">
+                    From precise orbital insertions to deep space trajectories, NOVA's launch systems deliver unmatched performance and dependability, backed by over five decades of proven spaceflight excellence.
+                  </p>
+
+                  <a href="#" class="mt-8 inline-flex items-center bg-foreground text-background pl-5 pr-1.5 py-1.5 font-body text-sm tracking-wide hover:opacity-90 transition-opacity">
+                    <span>View Our Fleet</span>
+                    <span class="ml-4 flex w-10 h-10 items-center justify-center bg-background text-foreground">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7 7H17V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-background text-foreground">
+        <div class="px-8 pt-32 pb-16 flex justify-center">
+          <h2 class="text-[2.5rem] md:text-[6rem] lg:text-[7rem] font-display font-extralight leading-[0.9] tracking-tighter uppercase">
+            <span class="block">ROCKET</span>
+            <span class="block ml-[1.5em] md:ml-[3.5em]">SCIENCE</span>
+          </h2>
+        </div>
+
+        <div class="px-8 pb-32">
+          <div class="flex gap-4 mb-4">
+            <div class="flex-1 h-px bg-nav-border"></div>
+            <div class="flex-1 h-px bg-nav-border"></div>
+            <div class="flex-1 h-px bg-nav-border"></div>
+            <div class="flex-1 h-px bg-nav-border"></div>
+          </div>
+
+          <div class="relative">
+            <div class="hidden lg:block absolute left-0 top-0 bottom-0 ml-3 py-3">
+              <div class="segmented-vertical"></div>
+            </div>
+            <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 py-3">
+              <div class="segmented-vertical"></div>
+            </div>
+            <div class="hidden lg:block absolute right-0 top-0 bottom-0 mr-3 py-3">
+              <div class="segmented-vertical"></div>
+            </div>
+
+            <div class="hidden lg:grid grid-cols-[auto_1fr_auto_1fr_auto] grid-rows-3">
+              <div class="col-start-2 row-start-1 p-12">
+                <h3 class="text-2xl md:text-3xl font-display font-normal mb-6">How do we get to space?</h3>
+                <p class="font-body text-muted-foreground leading-relaxed text-lg">
+                  Every launch begins with controlled violence. Propellant, pressure, structure, and guidance converge into a single upward decision, lifting payloads beyond atmosphere and into the precise orbital paths mission teams require.
+                </p>
+              </div>
+
+              <div class="col-start-4 row-start-1 row-span-2 p-6">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="w-full h-full object-cover"
+                  src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_032431_5e054107-51c0-4162-9f0f-3a40054761ef.mp4"
+                ></video>
+              </div>
+
+              <div class="col-start-2 row-start-2 row-span-2 p-6">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="w-full h-full object-cover"
+                  src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_032535_4ccc152e-0cc8-4ee5-a698-e1a98cea8a1e.mp4"
+                ></video>
+              </div>
+
+              <div class="col-start-4 row-start-3 p-12">
+                <h3 class="text-2xl md:text-3xl font-display font-normal mb-6">Launch vehicles</h3>
+                <p class="font-body text-muted-foreground leading-relaxed text-lg">
+                  NOVA vehicles are designed around modular lift classes, redundant flight computers, and mission specific upper stages, giving operators a clean path from low Earth orbit to deep space deployment.
+                </p>
+              </div>
+            </div>
+
+            <div class="lg:hidden">
+              <article class="p-8 border-b border-nav-border">
+                <h3 class="text-2xl md:text-3xl font-display font-normal mb-6">How do we get to space?</h3>
+                <p class="font-body text-muted-foreground leading-relaxed text-lg">
+                  Every launch begins with controlled violence. Propellant, pressure, structure, and guidance converge into a single upward decision, lifting payloads beyond atmosphere and into the precise orbital paths mission teams require.
+                </p>
+              </article>
+
+              <div class="p-6 border-b border-nav-border">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="w-full aspect-video object-cover"
+                  src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_032431_5e054107-51c0-4162-9f0f-3a40054761ef.mp4"
+                ></video>
+              </div>
+
+              <div class="p-6 border-b border-nav-border">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="w-full aspect-video object-cover"
+                  src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_032535_4ccc152e-0cc8-4ee5-a698-e1a98cea8a1e.mp4"
+                ></video>
+              </div>
+
+              <article class="p-8">
+                <h3 class="text-2xl md:text-3xl font-display font-normal mb-6">Launch vehicles</h3>
+                <p class="font-body text-muted-foreground leading-relaxed text-lg">
+                  NOVA vehicles are designed around modular lift classes, redundant flight computers, and mission specific upper stages, giving operators a clean path from low Earth orbit to deep space deployment.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <div class="flex gap-4 mt-4">
+            <div class="flex-1 h-px bg-nav-border"></div>
+            <div class="flex-1 h-px bg-nav-border"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logoipsum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            schibsted: ['Schibsted Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            noto: ['Noto Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            fustat: ['Fustat', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap');
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      overflow-x: hidden;
+      background: #ffffff;
+    }
+
+    .video-background {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .video-background video {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 115%;
+      height: 115%;
+      object-fit: cover;
+      object-position: center top;
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+
+    .page-shell {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      padding: 16px 120px 80px;
+    }
+
+    .soft-shadow {
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .badge-shadow {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .input-shadow {
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="video-background">
+      <video
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260329_050842_be71947f-f16e-4a14-810c-06e83d23ddb5.mp4"
+      ></video>
+    </div>
+
+    <main class="page-shell">
+      <nav class="flex items-center justify-between font-schibsted">
+        <div class="text-[24px] font-semibold tracking-[-1.44px] text-black">
+          Logoipsum
+        </div>
+
+        <div class="flex items-center gap-9 text-[16px] font-medium tracking-[-0.2px] text-black">
+          <a href="#">Platform</a>
+          <a href="#" class="flex items-center gap-1.5">
+            Features
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#">Projects</a>
+          <a href="#">Community</a>
+          <a href="#">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-3 text-[16px] font-medium tracking-[-0.2px]">
+          <button class="h-11 w-[82px] rounded-full bg-transparent text-black">
+            Sign Up
+          </button>
+          <button class="h-11 w-[101px] rounded-full bg-black text-white">
+            Log In
+          </button>
+        </div>
+      </nav>
+
+      <section class="mt-[60px] min-h-[calc(100vh-140px)] flex flex-col items-center justify-center text-center -translate-y-[50px]">
+        <div class="flex flex-col items-center gap-[34px]">
+          <div class="badge-shadow flex items-center rounded-full bg-[#f8f8f8] p-1 font-inter text-[14px] font-normal">
+            <span class="flex items-center gap-1.5 rounded-full bg-[#0e1311] px-3 py-2 text-white">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8 1.5L9.78 6.22L14.5 8L9.78 9.78L8 14.5L6.22 9.78L1.5 8L6.22 6.22L8 1.5Z" fill="currentColor"/>
+              </svg>
+              New
+            </span>
+            <span class="px-4 py-2 text-black">
+              Discover what's possible
+            </span>
+          </div>
+
+          <h1 class="font-fustat text-[80px] font-bold leading-none tracking-[-4.8px] text-black">
+            Transform Data Quickly
+          </h1>
+
+          <p class="w-[542px] max-w-[736px] font-fustat text-[20px] font-medium leading-[1.45] tracking-[-0.4px] text-[#505050]">
+            Upload your information and get powerful insights right away. Work smarter and achieve goals effortlessly.
+          </p>
+        </div>
+
+        <div class="soft-shadow mt-[44px] h-[200px] w-full max-w-[728px] rounded-[18px] bg-[rgba(0,0,0,0.24)] p-4 text-left backdrop-blur-md">
+          <div class="mb-3 flex items-center justify-between font-schibsted text-[12px] font-medium text-white">
+            <div class="flex items-center gap-3">
+              <span>60/450 credits</span>
+              <button class="rounded-full bg-[rgba(90,225,76,0.89)] px-3 py-1 text-black">
+                Upgrade
+              </button>
+            </div>
+
+            <div class="flex items-center gap-1.5">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M7.1 1.4L8.25 5.05L11.9 6.2L8.25 7.35L7.1 11L5.95 7.35L2.3 6.2L5.95 5.05L7.1 1.4Z" fill="currentColor"/>
+                <path d="M12.25 9.25L12.85 11.15L14.75 11.75L12.85 12.35L12.25 14.25L11.65 12.35L9.75 11.75L11.65 11.15L12.25 9.25Z" fill="currentColor"/>
+              </svg>
+              Powered by GPT-4o
+            </div>
+          </div>
+
+          <div class="input-shadow flex h-[92px] items-center gap-4 rounded-[12px] bg-white px-5">
+            <input
+              class="h-full flex-1 bg-transparent font-schibsted text-[16px] font-medium text-black outline-none placeholder:text-[rgba(0,0,0,0.6)]"
+              placeholder="Type question..."
+            />
+            <button class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-black text-white">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M10 15.5V4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M5.5 9L10 4.5L14.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="mt-3 flex items-center justify-between">
+            <div class="flex items-center gap-2 font-schibsted text-[12px] font-medium text-[#505050]">
+              <button class="flex items-center gap-1.5 rounded-[6px] bg-[#f8f8f8] px-3 py-2">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M6.35 11.85L11.65 6.55C12.45 5.75 12.45 4.45 11.65 3.65C10.85 2.85 9.55 2.85 8.75 3.65L3.45 8.95C2.35 10.05 2.35 11.85 3.45 12.95C4.55 14.05 6.35 14.05 7.45 12.95L12.75 7.65" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Attach
+              </button>
+              <button class="flex items-center gap-1.5 rounded-[6px] bg-[#f8f8f8] px-3 py-2">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M8 9.5C9.1 9.5 10 8.6 10 7.5V3.5C10 2.4 9.1 1.5 8 1.5C6.9 1.5 6 2.4 6 3.5V7.5C6 8.6 6.9 9.5 8 9.5Z" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3.75 7.25C3.75 9.6 5.65 11.5 8 11.5C10.35 11.5 12.25 9.6 12.25 7.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M8 11.5V14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                Voice
+              </button>
+              <button class="flex items-center gap-1.5 rounded-[6px] bg-[#f8f8f8] px-3 py-2">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M7.25 12.25C10.0114 12.25 12.25 10.0114 12.25 7.25C12.25 4.48858 10.0114 2.25 7.25 2.25C4.48858 2.25 2.25 4.48858 2.25 7.25C2.25 10.0114 4.48858 12.25 7.25 12.25Z" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M10.85 10.85L13.75 13.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                Prompts
+              </button>
+            </div>
+
+            <div class="font-schibsted text-[12px] font-medium text-[#505050]">
+              0/3,000
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var video = document.getElementById('heroVideo');
+      var frameId = null;
+      var fadingOutRef = false;
+
+      function currentOpacity() {
+        var value = parseFloat(window.getComputedStyle(video).opacity);
+        return Number.isFinite(value) ? value : 0;
+      }
+
+      function cancelFade() {
+        if (frameId !== null) {
+          cancelAnimationFrame(frameId);
+          frameId = null;
+        }
+      }
+
+      function fadeTo(target, duration, onComplete) {
+        cancelFade();
+
+        var start = currentOpacity();
+        var startTime = null;
+
+        function tick(timestamp) {
+          if (startTime === null) startTime = timestamp;
+
+          var elapsed = timestamp - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          var next = start + (target - start) * progress;
+
+          video.style.opacity = String(next);
+
+          if (progress < 1) {
+            frameId = requestAnimationFrame(tick);
+          } else {
+            frameId = null;
+            video.style.opacity = String(target);
+            if (onComplete) onComplete();
+          }
+        }
+
+        frameId = requestAnimationFrame(tick);
+      }
+
+      function fadeIn() {
+        fadingOutRef = false;
+        fadeTo(1, 250);
+      }
+
+      function fadeOut() {
+        fadingOutRef = true;
+        fadeTo(0, 250);
+      }
+
+      video.addEventListener('loadeddata', function () {
+        fadeIn();
+      });
+
+      video.addEventListener('play', function () {
+        if (currentOpacity() < 1 && !fadingOutRef) {
+          fadeIn();
+        }
+      });
+
+      video.addEventListener('timeupdate', function () {
+        if (!video.duration || fadingOutRef) return;
+
+        var remaining = video.duration - video.currentTime;
+        if (remaining <= 0.55) {
+          fadeOut();
+        }
+      });
+
+      video.addEventListener('ended', function () {
+        cancelFade();
+        video.style.opacity = '0';
+        fadingOutRef = false;
+
+        setTimeout(function () {
+          video.currentTime = 0;
+          var playPromise = video.play();
+
+          if (playPromise && typeof playPromise.then === 'function') {
+            playPromise.then(function () {
+              fadeIn();
+            }).catch(function () {
+              fadeIn();
+            });
+          } else {
+            fadeIn();
+          }
+        }, 100);
+      });
+    })();
+  </script>
+</body>
+</html>

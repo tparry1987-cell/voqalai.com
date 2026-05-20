@@ -59,7 +59,7 @@ const HELP_CARDS = [
   {
     title: "AI Websites & Interfaces",
     text: "Modern AI-powered experiences designed to improve engagement and conversion.",
-    href: "/book/",
+    href: "/ai-websites/",
     symbol: SYMBOL_LEAD,
     video: VIDEO_LEAD,
   },

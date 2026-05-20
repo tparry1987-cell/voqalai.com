@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { label: "Voice Agents", href: "/voice-agents" },
+  { label: "AI Websites", href: "/ai-websites" },
   { label: "Industries", href: "/#industries" },
   { label: "Lead Reactivation", href: "/calculator" },
   { label: "Audit", href: "/audit" },
@@ -13,7 +14,7 @@ const links = [
   { label: "About", href: "/about" },
 ];
 
-const DARK_SECTION_IDS = ["hero", "industries", "crew", "industry-hero"];
+const DARK_SECTION_IDS = ["hero", "industries", "crew", "industry-hero", "work", "showcase", "replaces", "manifesto", "voice"];
 
 function useSectionTone(defaultTone: "dark" | "light") {
   const [tone, setTone] = useState<"dark" | "light">(defaultTone);
