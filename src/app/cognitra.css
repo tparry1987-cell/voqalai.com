@@ -173,7 +173,7 @@ button.cog-btn-ghost-light:hover,
    Section + grid utilities
    ────────────────────────────────────────────────────────────────── */
 .cog-section-pad { padding: 70px 32px 32px 32px; }
-.cog-section-pad-lg { padding: 70px 32px 80px 32px; }
+.cog-section-pad-lg { padding: 56px 32px 64px 32px; }
 
 .cog-nav-link {
   transition: opacity 0.22s ease, color 0.22s ease;
@@ -261,7 +261,7 @@ button.cog-btn-ghost-light:hover,
   .cog-hero-col-left, .cog-hero-col-right { width: 100% !important; gap: 24px !important; }
 
   .cog-section-pad { padding: 90px 18px 32px 18px !important; }
-  .cog-section-pad-lg { padding: 90px 18px 60px 18px !important; }
+  .cog-section-pad-lg { padding: 64px 18px 48px 18px !important; }
 
   .cog-services-head-row { flex-direction: column !important; gap: 16px !important; margin-bottom: 24px !important; }
   .cog-services-head-col { width: 100% !important; }

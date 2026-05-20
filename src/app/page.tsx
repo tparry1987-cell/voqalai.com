@@ -186,7 +186,7 @@ export default function Home() {
           002 / 005 — Capabilities
         </FadeUp>
 
-        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 40 }}>
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 40, alignItems: "flex-start", marginBottom: 28 }}>
           <div className="cog-services-head-col" style={{ width: "40%" }}>
             <h2 className="cog-h-display" style={{ fontSize: "clamp(30px, 4vw, 56px)", fontWeight: 700, lineHeight: 1.04, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: 0, maxWidth: 560 }}>
               What We Help Businesses With
@@ -244,7 +244,7 @@ export default function Home() {
           003 / 005 — Approach
         </FadeUp>
 
-        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 40 }}>
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 40, alignItems: "flex-start", marginBottom: 28 }}>
           <div className="cog-services-head-col" style={{ width: "40%" }}>
             <h2
               className="cog-h-display"
@@ -263,14 +263,14 @@ export default function Home() {
               }}
             >
               {["PRACTICAL", "AI", "FOR", "REAL", "BUSINESSES"].map((w, i) => (
-                <FadeUp key={w} as="span" delay={0.1 + i * 0.1} y={28}>
+                <FadeUp key={w} as="span" delay={0.1 + i * 0.1} y={28} style={w === "AI" ? { color: "var(--cog-copper)" } : undefined}>
                   {w}
                 </FadeUp>
               ))}
             </h2>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, paddingTop: 8 }}>
-            <FadeUp as="div" delay={0.25} style={{ fontSize: 15, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 600, margin: 0 }}>
+            <FadeUp as="div" delay={0.25} style={{ fontSize: 15, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 600, margin: "0 0 0 auto" }}>
               <p style={{ margin: "0 0 14px" }}>Every business operates differently.</p>
               <p style={{ margin: "0 0 14px" }}>That&apos;s why we build AI systems around the way your business actually works — from voice AI and lead response systems to automations, integrations, and intelligent workflows.</p>
               <p style={{ margin: "0 0 14px" }}>Our solutions are designed to improve response times, remove repetitive work, enhance customer experience, and help businesses operate more efficiently.</p>
@@ -328,7 +328,7 @@ export default function Home() {
           004 / 005 — Case
         </FadeUp>
 
-        <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start", marginBottom: 40 }}>
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 40, alignItems: "flex-start", marginBottom: 28 }}>
           <div className="cog-services-head-col" style={{ width: "32%" }}>
             <h2
               className="cog-h-display"
