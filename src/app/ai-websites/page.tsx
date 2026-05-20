@@ -16,16 +16,16 @@ const HERO_VIDEO =
 // scaled-down preview, opening full-page on click.
 // ──────────────────────────────────────────────────────────────────
 const DEMO_BUILDS = [
-  { vertical: "Restaurant Website", note: "Bookings, menu questions and customer enquiries answered 24/7.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a3a5a 100%)", href: "/demos/wanderful.html" },
-  { vertical: "Accountancy Website", note: "Client questions, onboarding enquiries and appointment requests handled automatically.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2f4456 100%)", href: "/demos/rivr.html" },
-  { vertical: "Marketing Agency Website", note: "Project enquiries qualified and discovery calls booked automatically.", tint: "linear-gradient(135deg, #1a1a1a 0%, #234842 100%)", href: "/demos/contentflow.html" },
-  { vertical: "Salon & Beauty Website", note: "Appointments, treatment questions and product enquiries handled instantly.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2f5a4a 100%)", href: "/demos/wild-daisy.html" },
-  { vertical: "Barber Website", note: "Appointment bookings and service questions answered the moment they come in.", tint: "linear-gradient(135deg, #1a1a1a 0%, #56303f 100%)", href: "/demos/velorah-focus-right.html" },
-  { vertical: "Dental Website", note: "Patient questions, appointment requests and new enquiries handled automatically.", tint: "linear-gradient(135deg, #1a1a1a 0%, #33384a 100%)", href: "/demos/logoipsum.html" },
-  { vertical: "Trades Website", note: "Quote requests captured while your team is out on jobs.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a3d1f 100%)", href: "/demos/weblex.html" },
-  { vertical: "Gym Website", note: "Trial bookings, memberships and class questions answered instantly.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a1a4a 100%)", href: "/demos/fearless-vision.html" },
-  { vertical: "Automotive Website", note: "Stock questions, finance enquiries and test drive requests captured live.", tint: "linear-gradient(135deg, #1a1a1a 0%, #222222 100%)", href: "/demos/microvisuals.html" },
-  { vertical: "Law Firm Website", note: "Case enquiries qualified and consultations booked before they reach your desk.", tint: "linear-gradient(135deg, #1a1a1a 0%, #1f2a3a 100%)", href: "/demos/vex.html" },
+  { vertical: "Cinematic video hero", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a3a5a 100%)", href: "/demos/wanderful.html" },
+  { vertical: "Frosted-glass dashboard", tint: "linear-gradient(135deg, #1a1a1a 0%, #2f4456 100%)", href: "/demos/rivr.html" },
+  { vertical: "Animated data dashboard", tint: "linear-gradient(135deg, #1a1a1a 0%, #234842 100%)", href: "/demos/contentflow.html" },
+  { vertical: "Bold product showcase", tint: "linear-gradient(135deg, #1a1a1a 0%, #2f5a4a 100%)", href: "/demos/wild-daisy.html" },
+  { vertical: "Cinematic VHS style", tint: "linear-gradient(135deg, #1a1a1a 0%, #56303f 100%)", href: "/demos/velorah-focus-right.html" },
+  { vertical: "Soft fading-video hero", tint: "linear-gradient(135deg, #1a1a1a 0%, #33384a 100%)", href: "/demos/logoipsum.html" },
+  { vertical: "Full-screen video hero", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a3d1f 100%)", href: "/demos/weblex.html" },
+  { vertical: "Bold animated headline", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a1a4a 100%)", href: "/demos/fearless-vision.html" },
+  { vertical: "Looping video canvas", tint: "linear-gradient(135deg, #1a1a1a 0%, #222222 100%)", href: "/demos/microvisuals.html" },
+  { vertical: "Animated text hero", tint: "linear-gradient(135deg, #1a1a1a 0%, #1f2a3a 100%)", href: "/demos/vex.html" },
 ];
 
 function Badges({ tone = "light" }: { tone?: "light" | "dark" }) {
@@ -155,17 +155,17 @@ export default function AiWebsitesPage() {
       {/* ════════ SECTION 3 — DEMO BUILDS SHOWCASE (dark luxury, live previews) ════════ */}
       <section id="showcase" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#1a1a1a", color: "#fff", paddingTop: 0 }}>
         <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", fontWeight: 600, marginBottom: 16 }}>
-          Demo builds
+          Our websites
         </FadeUp>
         <FadeUp as="h2" delay={0.1} className="cog-h-display" style={{ fontSize: "clamp(26px, 3.4vw, 46px)", fontWeight: 700, lineHeight: 1.06, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#fff", margin: "0 0 12px", maxWidth: 720 }}>
-          A few of the styles we can build
+          Websites we&apos;ve built
         </FadeUp>
-        <FadeUp as="p" delay={0.18} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.6)", maxWidth: 560, margin: "0 0 40px" }}>
-          Design demos built on premium licensed templates, shown to illustrate what we can build for you — not client projects. Each one can ship with the live chat and voice line working.
+        <FadeUp as="p" delay={0.18} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.6)", maxWidth: 580, margin: "0 0 40px" }}>
+          A selection of the websites we&apos;ve built — available now, with plenty more styles to choose from. Every one can ship with live AI chat and a voice line built in.
         </FadeUp>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 24 }}>
-          {DEMO_BUILDS.map(({ vertical, note, tint, href }, i) => {
+          {DEMO_BUILDS.map(({ vertical, tint, href }, i) => {
             const isLive = href !== "#";
             return (
             <FadeUp key={vertical} delay={0.2 + i * 0.07}>
@@ -189,15 +189,14 @@ export default function AiWebsitesPage() {
                   )}
                 </div>
                 <div style={{ padding: "22px 24px 26px" }}>
-                  <h3 style={{ fontSize: 18, fontWeight: 600, color: "#fff", margin: "0 0 8px" }}>{vertical}</h3>
-                  <p style={{ fontSize: 13, lineHeight: 1.6, color: "rgba(255,255,255,0.65)", margin: "0 0 16px" }}>{note}</p>
+                  <h3 style={{ fontSize: 17, fontWeight: 600, color: "#fff", margin: "0 0 16px" }}>{vertical}</h3>
                   <Badges tone="dark" />
                   <span style={{ display: "inline-block", marginTop: 16, fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 600, color: "var(--cog-copper-light)" }}>
-                    Explore the demo →
+                    View website →
                   </span>
                 </div>
                 {isLive && (
-                  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${vertical} demo`} style={{ position: "absolute", inset: 0, zIndex: 2 }} />
+                  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`Open ${vertical} website`} style={{ position: "absolute", inset: 0, zIndex: 2 }} />
                 )}
               </div>
             </FadeUp>
