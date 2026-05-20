@@ -9,6 +9,9 @@ import FadeUp from "@/components/FadeUp";
 
 const HERO_VIDEO =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260514_135830_bb6491d1-9b66-4aec-9722-13b4dfe3fb46.mp4";
+// Mobile-only hero — the AI websites "mountains" clip. Desktop never loads this.
+const MOUNTAIN_VIDEO_MOBILE =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260425_081506_cfddbdab-90d5-49b8-aa1a-8f52de33d335.mp4";
 
 // The 3 cinematic symbol stills + matching motion plates we reuse across
 // the 6-card grid. The bottom row repeats them rotated by one column so no
@@ -76,10 +79,15 @@ const INDUSTRIES = [
 
 export default function Home() {
   const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const heroVideoMobileRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
+
     const playHeroVideo = () => {
-      const video = heroVideoRef.current;
+      // Only the matching video is loaded/played — the mobile clip uses
+      // preload="none", so desktop never downloads it.
+      const video = isMobile() ? heroVideoMobileRef.current : heroVideoRef.current;
       if (!video) return;
 
       video.muted = true;
@@ -127,7 +135,31 @@ export default function Home() {
         <source src={HERO_VIDEO} type="video/mp4" />
       </video>
 
-      <div className="hero-mobile-poster" aria-hidden="true" />
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <video
+        ref={heroVideoMobileRef}
+        className="hero-video-mobile"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="none"
+        controls={false}
+        disablePictureInPicture
+        controlsList="nodownload noplaybackrate noremoteplayback"
+        poster="/images/hero-video-poster.jpg"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100vh",
+          objectFit: "cover",
+          zIndex: 0,
+        }}
+      >
+        <source src={MOUNTAIN_VIDEO_MOBILE} type="video/mp4" />
+      </video>
 
       <div
         style={{

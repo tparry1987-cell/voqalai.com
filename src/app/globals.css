@@ -1053,7 +1053,7 @@
   -webkit-user-select: none;
 }
 
-.hero-mobile-poster {
+.hero-video-mobile {
   display: none;
 }
 
@@ -1505,18 +1505,12 @@
   .cog-redesign > .hero-video {
     display: none !important;
   }
-  .hero-mobile-poster {
+  /* Mobile shows the mountain clip instead of the desktop hero video.
+     Its poster attribute falls back to the still if autoplay is blocked. */
+  .cog-redesign > .hero-video-mobile {
     display: block;
-    position: fixed;
-    inset: 0;
-    width: 100%;
     height: 100dvh;
-    z-index: 0;
     pointer-events: none;
-    background-image: url("/images/hero-video-poster.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
   }
   .home-hero {
     height: 100dvh;
