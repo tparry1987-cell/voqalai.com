@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { MessageSquare, Phone, Sparkles, Zap } from "lucide-react";
+import { MessageSquare, Phone, Inbox } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import FadeUp from "@/components/FadeUp";
@@ -16,24 +16,16 @@ const HERO_VIDEO =
 // scaled-down preview, opening full-page on click.
 // ──────────────────────────────────────────────────────────────────
 const DEMO_BUILDS = [
-  { vertical: "Travel — Wanderful", note: "A cinematic, full-screen travel brand with liquid-glass navigation.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a3a5a 100%)", href: "/demos/wanderful.html" },
-  { vertical: "DeFi — RIVR", note: "A glassmorphism DeFi dashboard hero with fluid-staking UI.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2f4456 100%)", href: "/demos/rivr.html" },
-  { vertical: "SaaS — ContentFlow", note: "A scroll-linked SaaS landing page with a live animated analytics dashboard.", tint: "linear-gradient(135deg, #1a1a1a 0%, #234842 100%)", href: "/demos/contentflow.html" },
-  { vertical: "E-commerce — Wild Daisy", note: "A playful fragrance e-commerce hero with colour-block product panels and scroll reveals.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2f5a4a 100%)", href: "/demos/wild-daisy.html" },
-  { vertical: "Social Media — Velorah VHS", note: "A darker cinematic social post with strong vertical offset, VHS overlays, and RGB text glitch.", tint: "linear-gradient(135deg, #1a1a1a 0%, #56303f 100%)", href: "/demos/velorah-focus-right.html" },
-  { vertical: "AI Platform — Logoipsum", note: "An AI data platform hero with a live query box and a fading video backdrop.", tint: "linear-gradient(135deg, #1a1a1a 0%, #33384a 100%)", href: "/demos/logoipsum.html" },
-  { vertical: "Website Builder — Weblex", note: "A dark full-screen hero with a transparent nav and a seamless looping video.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a3d1f 100%)", href: "/demos/weblex.html" },
-  { vertical: "Creative Studio — Fearless Vision", note: "A bold creative-studio hero with kinetic headline reveals and a purple accent.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a1a4a 100%)", href: "/demos/fearless-vision.html" },
-  { vertical: "AI Imaging — MicroVisuals", note: "An AI image-generation hero with a boomerang video canvas and liquid-glass nav.", tint: "linear-gradient(135deg, #1a1a1a 0%, #222222 100%)", href: "/demos/microvisuals.html" },
-  { vertical: "Ventures — VEX", note: "A venture-studio hero with a kinetic char-by-char headline reveal and liquid-glass UI.", tint: "linear-gradient(135deg, #1a1a1a 0%, #1f2a3a 100%)", href: "/demos/vex.html" },
-];
-
-const OUTCOMES = [
-  "Respond instantly, every time",
-  "Capture every enquiry",
-  "Qualify leads automatically",
-  "Reduce missed opportunities",
-  "Increase booked appointments",
+  { vertical: "Restaurant Website", note: "Bookings, menu questions and customer enquiries answered 24/7.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a3a5a 100%)", href: "/demos/wanderful.html" },
+  { vertical: "Accountancy Website", note: "Client questions, onboarding enquiries and appointment requests handled automatically.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2f4456 100%)", href: "/demos/rivr.html" },
+  { vertical: "Marketing Agency Website", note: "Project enquiries qualified and discovery calls booked automatically.", tint: "linear-gradient(135deg, #1a1a1a 0%, #234842 100%)", href: "/demos/contentflow.html" },
+  { vertical: "Salon & Beauty Website", note: "Appointments, treatment questions and product enquiries handled instantly.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2f5a4a 100%)", href: "/demos/wild-daisy.html" },
+  { vertical: "Barber Website", note: "Appointment bookings and service questions answered the moment they come in.", tint: "linear-gradient(135deg, #1a1a1a 0%, #56303f 100%)", href: "/demos/velorah-focus-right.html" },
+  { vertical: "Dental Website", note: "Patient questions, appointment requests and new enquiries handled automatically.", tint: "linear-gradient(135deg, #1a1a1a 0%, #33384a 100%)", href: "/demos/logoipsum.html" },
+  { vertical: "Trades Website", note: "Quote requests captured while your team is out on jobs.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a3d1f 100%)", href: "/demos/weblex.html" },
+  { vertical: "Gym Website", note: "Trial bookings, memberships and class questions answered instantly.", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a1a4a 100%)", href: "/demos/fearless-vision.html" },
+  { vertical: "Automotive Website", note: "Stock questions, finance enquiries and test drive requests captured live.", tint: "linear-gradient(135deg, #1a1a1a 0%, #222222 100%)", href: "/demos/microvisuals.html" },
+  { vertical: "Law Firm Website", note: "Case enquiries qualified and consultations booked before they reach your desk.", tint: "linear-gradient(135deg, #1a1a1a 0%, #1f2a3a 100%)", href: "/demos/vex.html" },
 ];
 
 function Badges({ tone = "light" }: { tone?: "light" | "dark" }) {
@@ -214,148 +206,91 @@ export default function AiWebsitesPage() {
         </div>
       </section>
 
-      {/* ════════ SECTION 4 — HOW IT'S DIFFERENT (morph back to brand style) ════════ */}
+      {/* ════════ SECTION 4 — STATEMENT (morph back to brand style) ════════ */}
       <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
-        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
-          Why it&apos;s different
+        <FadeUp as="h2" delay={0.05} className="cog-h-display" style={{ fontSize: "clamp(30px, 4.4vw, 60px)", fontWeight: 600, lineHeight: 1.08, letterSpacing: "-0.025em", color: "#1a1a1a", margin: "0 0 32px", maxWidth: 720 }}>
+          Most websites look good.<br />
+          The best ones <span className="cog-italic" style={{ fontWeight: 400, color: "var(--cog-copper)" }}>respond.</span>
         </FadeUp>
-        <FadeUp as="h2" delay={0.1} className="cog-h-display" style={{ fontSize: "clamp(26px, 3.4vw, 46px)", fontWeight: 700, lineHeight: 1.06, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 12px", maxWidth: 760 }}>
-          The website is the front door. The AI is what&apos;s behind it.
+        <FadeUp as="div" delay={0.2} style={{ fontSize: 16, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 600 }}>
+          <p style={{ margin: "0 0 16px" }}>Your website is often the first place a customer decides whether they trust you. Research has found people can form a first impression of a website in around 50 milliseconds, and Stanford&apos;s web credibility work shows design and usability play a major role in whether a site feels trustworthy.</p>
+          <p style={{ margin: "0 0 16px" }}>But looking good is only half the job.</p>
+          <p style={{ margin: "0 0 18px" }}>A modern website should help customers take action. It should answer questions, capture enquiries, book appointments, and make it easy for people to speak to your business when they are ready.</p>
+          <p style={{ margin: 0, color: "#1a1a1a", fontWeight: 600, fontSize: 18 }}>That is what we build.</p>
         </FadeUp>
-        <FadeUp as="p" delay={0.2} style={{ fontSize: 15, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 560, margin: "0 0 44px" }}>
-          Anyone can build you a nice-looking website. We build one that works a shift while you&apos;re asleep.
-        </FadeUp>
+      </section>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}>
+      {/* ════════ SECTION 5 — WHAT MAKES IT DIFFERENT (dark, 3 cards) ════════ */}
+      <section id="capabilities" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#2e2e2e", color: "#fff" }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", marginBottom: 36 }}>
+          What makes it different
+        </FadeUp>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
           {[
-            { Icon: Sparkles, t: "Designs that stop the scroll", b: "Premium, animated hero sections tailored to your brand. The kind of site people screenshot and remember." },
-            { Icon: MessageSquare, t: "A chat assistant that knows your business", b: "Answers questions, qualifies enquiries and books appointments — trained on how you actually operate." },
-            { Icon: Zap, t: "Instant response, every time", b: "No more leads waiting until Monday. Every enquiry is captured and answered the moment it lands." },
+            { Icon: MessageSquare, t: "AI chat built in", b: "A trained assistant that answers common questions, captures details, qualifies enquiries and helps visitors take the next step." },
+            { Icon: Phone, t: "Voice line available", b: "Add a dedicated AI phone line so visitors can call directly from the site and get an instant response." },
+            { Icon: Inbox, t: "Built around lead capture", b: "Forms, calls, chats and bookings can be routed into your inbox, CRM, calendar or follow-up system." },
           ].map(({ Icon, t, b }, i) => (
-            <FadeUp key={t} delay={0.25 + i * 0.1}>
-              <div style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 20, padding: "28px 26px 30px", height: "100%", background: "rgba(255,255,255,0.14)" }}>
-                <Icon size={22} strokeWidth={1.4} style={{ color: "var(--cog-copper)" }} />
-                <h3 style={{ fontSize: 18, fontWeight: 600, color: "#1a1a1a", margin: "20px 0 8px" }}>{t}</h3>
-                <p style={{ fontSize: 13, lineHeight: 1.6, color: "#3a3a3a", margin: 0 }}>{b}</p>
+            <FadeUp key={t} delay={0.15 + i * 0.1}>
+              <div style={{ border: "1px solid rgba(255,255,255,0.15)", borderRadius: 20, padding: "30px 28px 32px", height: "100%" }}>
+                <Icon size={22} strokeWidth={1.5} style={{ color: "var(--cog-copper-light)" }} />
+                <h3 style={{ fontSize: 18, fontWeight: 600, color: "#fff", margin: "20px 0 10px" }}>{t}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.65)", margin: 0 }}>{b}</p>
               </div>
             </FadeUp>
           ))}
         </div>
       </section>
 
-      {/* ════════ SECTION 5 — WHAT THIS REPLACES (pain, dark) ════════ */}
-      <section id="replaces" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#2e2e2e", color: "#fff" }}>
-        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", marginBottom: 28 }}>
-          What it replaces
+      {/* ════════ SECTION 6 — WHY IT MATTERS (grey, stat) ════════ */}
+      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
+          Why it matters
+        </FadeUp>
+        <FadeUp as="h2" delay={0.1} className="cog-h-display" style={{ fontSize: "clamp(26px, 3.6vw, 48px)", fontWeight: 600, lineHeight: 1.08, letterSpacing: "-0.02em", color: "#1a1a1a", margin: "0 0 18px", maxWidth: 680 }}>
+          A better website can change how people see your business.
+        </FadeUp>
+        <FadeUp as="p" delay={0.2} style={{ fontSize: 16, lineHeight: 1.7, color: "#3a3a3a", maxWidth: 600, margin: "0 0 36px" }}>
+          Speed, design and response time all affect whether people stay, trust you and take action. Deloitte and Google found that improving mobile site speed by just 0.1 seconds increased conversions on retail and travel sites.
         </FadeUp>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 40, alignItems: "center" }}>
-          <div className="cog-h-display" style={{ fontSize: "clamp(26px, 3.4vw, 44px)", fontWeight: 600, lineHeight: 1.22, letterSpacing: "-0.01em", color: "rgba(255,255,255,0.55)" }}>
-            {["Missed calls.", "Slow replies.", "Lost leads.", "Contact forms nobody answers.", "Customers waiting until Monday morning."].map((line, i) => (
-              <FadeUp key={line} as="div" delay={0.05 + i * 0.1} y={20}>{line}</FadeUp>
-            ))}
-          </div>
-          <FadeUp as="div" delay={0.6} style={{ alignSelf: "center" }}>
-            <h2 className="cog-h-display" style={{ fontSize: "clamp(30px, 4vw, 52px)", fontWeight: 700, lineHeight: 1.06, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#fff", margin: 0 }}>
-              Your website should <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper-light)" }}>fix that.</span>
-            </h2>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* ════════ SECTION 6 — MANIFESTO SEPARATOR ════════ */}
-      <section id="manifesto" style={{ position: "relative", zIndex: 2, background: "#1a1a1a", color: "#fff", padding: "clamp(80px, 12vw, 160px) 32px", textAlign: "center" }}>
-        <FadeUp as="p" delay={0.05} className="cog-h-display" style={{ fontSize: "clamp(40px, 8vw, 104px)", fontWeight: 700, lineHeight: 1, letterSpacing: "-0.03em", textTransform: "uppercase", margin: 0 }}>
-          One site.<br />
-          Working <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, color: "var(--cog-copper)" }}>three shifts.</span>
-        </FadeUp>
-      </section>
-
-      {/* ════════ SECTION 7 — VOICE LINE SPOTLIGHT (dark) ════════ */}
-      <section id="voice" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#2e2e2e", color: "#fff" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 48, alignItems: "center" }}>
-          <div>
-            <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--cog-copper-light)", fontWeight: 600, marginBottom: 18 }}>
-              The part most agencies can&apos;t do
-            </FadeUp>
-            <FadeUp as="h2" delay={0.1} className="cog-h-display" style={{ fontSize: "clamp(28px, 3.8vw, 52px)", fontWeight: 700, lineHeight: 1.04, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#fff", margin: "0 0 18px", maxWidth: 520 }}>
-              A website people can actually call
-            </FadeUp>
-            <FadeUp as="p" delay={0.2} style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.75)", maxWidth: 480, margin: "0 0 24px" }}>
-              Every site can include a dedicated AI phone line.
-            </FadeUp>
-            <FadeUp as="div" delay={0.3} className="cog-h-display" style={{ fontSize: "clamp(18px, 2vw, 24px)", fontWeight: 500, lineHeight: 1.45, color: "#fff" }}>
-              {["Customers click to call.", "The AI answers instantly.", "It handles questions, captures enquiries, books appointments, and routes urgent jobs automatically."].map((line, i) => (
-                <FadeUp key={line} as="p" delay={0.35 + i * 0.12} y={18} style={{ margin: "0 0 10px", color: i === 2 ? "rgba(255,255,255,0.7)" : "#fff", fontSize: i === 2 ? 15 : undefined, fontWeight: i === 2 ? 400 : 500, lineHeight: i === 2 ? 1.6 : 1.45 }}>
-                  {line}
-                </FadeUp>
-              ))}
-            </FadeUp>
-          </div>
-
-          {/* Click-to-call visual */}
-          <FadeUp delay={0.4} style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ border: "1px solid rgba(255,255,255,0.18)", borderRadius: 24, padding: "40px 36px", background: "rgba(255,255,255,0.04)", textAlign: "center", maxWidth: 340, width: "100%" }}>
-              <div style={{ width: 64, height: 64, borderRadius: 9999, background: "var(--cog-copper)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
-                <Phone size={26} strokeWidth={1.8} style={{ color: "#fff" }} />
+        <FadeUp delay={0.3}>
+          <div style={{ display: "flex", gap: 40, flexWrap: "wrap", alignItems: "flex-end", marginBottom: 38 }}>
+            {[
+              { n: "+8.4%", l: "retail conversions" },
+              { n: "+10.1%", l: "travel conversions" },
+            ].map(({ n, l }) => (
+              <div key={l}>
+                <div className="cog-h-display" style={{ fontSize: "clamp(36px, 5vw, 60px)", fontWeight: 700, color: "var(--cog-copper)", lineHeight: 1, letterSpacing: "-0.02em" }}>{n}</div>
+                <div style={{ fontSize: 13, color: "#5a5a5a", marginTop: 8 }}>{l}</div>
               </div>
-              <div style={{ fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", marginBottom: 8 }}>Tap to talk to the AI</div>
-              <div className="cog-h-display" style={{ fontSize: 26, fontWeight: 700, color: "#fff", letterSpacing: "-0.01em" }}>020 3996 0962</div>
-              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", marginTop: 14 }}>Answered instantly. 24/7.</div>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* ════════ SECTION 8 — REAL BUSINESS OUTCOMES (ROI) ════════ */}
-      <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 48, alignItems: "flex-start" }}>
-          <div>
-            <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>
-              Built for results
-            </FadeUp>
-            <FadeUp as="h2" delay={0.1} className="cog-h-display" style={{ fontSize: "clamp(26px, 3.4vw, 46px)", fontWeight: 700, lineHeight: 1.06, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 18px", maxWidth: 480 }}>
-              Built for real business outcomes
-            </FadeUp>
-            <FadeUp as="p" delay={0.2} style={{ fontSize: 16, lineHeight: 1.65, color: "#3a3a3a", maxWidth: 460, margin: 0 }}>
-              A missed call from Google Ads can cost hundreds. A slow response can lose the booking completely.
-            </FadeUp>
+            ))}
+            <div style={{ fontSize: 12, color: "#8a8a8a", maxWidth: 210, lineHeight: 1.5 }}>from a 0.1-second mobile speed improvement — Deloitte &amp; Google</div>
           </div>
+        </FadeUp>
 
-          <FadeUp as="div" delay={0.25} style={{ paddingTop: 8 }}>
-            <div style={{ fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "#5a5a5a", marginBottom: 18 }}>
-              Voqal AI websites are designed to:
-            </div>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              {OUTCOMES.map((o, i) => (
-                <FadeUp key={o} as="div" delay={0.3 + i * 0.08} y={16} style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 0", borderTop: i === 0 ? "1px solid rgba(0,0,0,0.14)" : undefined, borderBottom: "1px solid rgba(0,0,0,0.14)" }}>
-                  <span style={{ flexShrink: 0, width: 24, height: 24, borderRadius: 9999, background: "var(--cog-copper)", color: "#fff", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700 }}>{i + 1}</span>
-                  <span style={{ fontSize: 16, fontWeight: 500, color: "#1a1a1a" }}>{o}</span>
-                </FadeUp>
-              ))}
-            </div>
-          </FadeUp>
-        </div>
+        <FadeUp as="div" delay={0.4} className="cog-h-display" style={{ fontSize: "clamp(20px, 2.4vw, 30px)", fontWeight: 600, lineHeight: 1.22, letterSpacing: "-0.01em", color: "#1a1a1a", maxWidth: 640 }}>
+          <p style={{ margin: "0 0 6px" }}>So the point is not just to have a prettier website.</p>
+          <p style={{ margin: 0 }}>The point is to create a <span className="cog-italic" style={{ fontWeight: 400, color: "var(--cog-copper)" }}>faster, smarter customer journey.</span></p>
+        </FadeUp>
       </section>
 
-      {/* ════════ SECTION 9 — CTA ════════ */}
+      {/* ════════ SECTION 7 — FINAL CTA ════════ */}
       <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
-        <FadeUp delay={0.05}>
-          <h2 className="cog-h-display" style={{ fontSize: "clamp(30px, 4.5vw, 60px)", fontWeight: 700, lineHeight: 1.04, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#1a1a1a", maxWidth: 820, margin: "0 0 22px" }}>
-            Want one like this?
-          </h2>
+        <FadeUp as="h2" delay={0.05} className="cog-h-display" style={{ fontSize: "clamp(32px, 4.8vw, 64px)", fontWeight: 600, lineHeight: 1.04, letterSpacing: "-0.025em", color: "#1a1a1a", margin: "0 0 22px", maxWidth: 820 }}>
+          Want a website <span className="cog-italic" style={{ fontWeight: 400, color: "var(--cog-copper)" }}>like this?</span>
         </FadeUp>
-        <FadeUp as="p" delay={0.18} style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", maxWidth: 540, margin: "0 0 14px" }}>
-          Pick a style you like, or send us your brand. We&apos;ll build a demo with the chat assistant and voice line already working, so you can try it before you commit.
+        <FadeUp as="p" delay={0.18} style={{ fontSize: 16, lineHeight: 1.65, color: "#3a3a3a", maxWidth: 560, margin: "0 0 8px" }}>
+          Choose a style you like, send us your brand, or let us create something from scratch. We can build a working demo with AI chat and voice options connected, so you can see how it feels before committing.
         </FadeUp>
-        <FadeUp as="p" delay={0.26} style={{ fontSize: 14, lineHeight: 1.6, color: "#5a5a5a", maxWidth: 540, margin: "0 0 28px" }}>
-          Already getting a voice agent with us? Ask about bundling the website in.
-        </FadeUp>
-        <FadeUp delay={0.34}>
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+        <FadeUp delay={0.3}>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", margin: "18px 0" }}>
             <Link href="/book" className="cog-btn-primary">Book a demo</Link>
             <Link href="/contact" className="cog-btn-secondary">Talk to us</Link>
           </div>
+        </FadeUp>
+        <FadeUp as="p" delay={0.4} style={{ fontSize: 13, lineHeight: 1.6, color: "#5a5a5a", maxWidth: 540, margin: 0 }}>
+          Already using a Voqal AI voice agent? Ask about bundling your website into the package.
         </FadeUp>
       </section>
 
