@@ -85,8 +85,8 @@ export default function Home() {
     const isMobile = () => window.matchMedia("(max-width: 767px)").matches;
 
     const playHeroVideo = () => {
-      // Only the matching video is loaded/played — the mobile clip uses
-      // preload="none", so desktop never downloads it.
+      // Play whichever hero video matches the viewport (the other is
+      // hidden via CSS and won't autoplay).
       const video = isMobile() ? heroVideoMobileRef.current : heroVideoRef.current;
       if (!video) return;
 
@@ -143,11 +143,10 @@ export default function Home() {
         muted
         loop
         playsInline
-        preload="none"
+        preload="auto"
         controls={false}
         disablePictureInPicture
         controlsList="nodownload noplaybackrate noremoteplayback"
-        poster="/images/hero-video-poster.jpg"
         style={{
           position: "fixed",
           top: 0,
