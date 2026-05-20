@@ -283,33 +283,39 @@ export default function AiWebsitesPage() {
           Straightforward pricing.
         </FadeUp>
         <FadeUp as="p" delay={0.18} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.6)", maxWidth: 580, margin: "0 0 40px" }}>
-          Three ways to get online, every one built with live AI chat ready to switch on. Not sure which fits? We&apos;ll show you a working demo first.
+          Simple pricing for the website itself. Want AI chat, a voice agent or automation on top? We add that as a bespoke bundle, scoped with you. Not sure which fits? We&apos;ll show you a working demo first.
         </FadeUp>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, alignItems: "stretch" }}>
           {[
             {
-              name: "Launch",
+              name: "Basic",
+              price: "£495",
+              from: true,
+              who: "A clean, modern website to get your business looking sharp.",
+              features: ["Up to 3 pages", "Modern responsive design", "Enquiry / contact form", "Click-to-call button", "Basic SEO setup"],
+              highlight: false,
+              cta: "Book a demo →",
+            },
+            {
+              name: "Pro",
               price: "£997",
-              who: "A clean, fast website to get your business online.",
-              features: ["3–5 pages, built around your brand", "Contact form and lead capture", "AI chat assistant built in", "Set up with Google Analytics"],
-              highlight: false,
-            },
-            {
-              name: "Standard",
-              price: "£2,497",
-              who: "A custom-designed site that works for your business.",
-              features: ["Everything in Launch", "Custom design and copywriting", "Blog / content management", "Online booking + connect your CRM", "AI chat trained on your business"],
+              from: false,
+              who: "A bigger, premium site for businesses that need more.",
+              features: ["Everything in Basic", "Up to 5 pages", "Premium custom design", "Copy polish + clear CTAs", "Lead capture & contact flows", "Launch support"],
               highlight: true,
+              cta: "Book a demo →",
             },
             {
-              name: "Full-Stack",
-              price: "£4,997+",
-              who: "A complete, AI-powered online presence.",
-              features: ["Everything in Standard", "Bespoke design and custom build", "Payments, member areas, integrations", "Voice line ready to add", "Behind-the-scenes automations"],
+              name: "Bespoke",
+              price: "Quoted",
+              from: false,
+              who: "For sites that need AI integration or custom systems.",
+              features: ["AI chat & voice agents", "CRM & booking integrations", "Automation & lead follow-up", "Ecommerce, member areas, stock feeds", "Custom backend builds"],
               highlight: false,
+              cta: "Talk to us →",
             },
-          ].map(({ name, price, who, features, highlight }, i) => (
+          ].map(({ name, price, from, who, features, highlight, cta }, i) => (
             <FadeUp key={name} delay={0.2 + i * 0.1}>
               <div style={{ position: "relative", border: highlight ? "1px solid var(--cog-copper)" : "1px solid rgba(255,255,255,0.15)", borderRadius: 20, padding: "30px 28px 32px", height: "100%", background: highlight ? "rgba(255,255,255,0.05)" : "rgba(255,255,255,0.02)", display: "flex", flexDirection: "column" }}>
                 {highlight && (
@@ -318,7 +324,10 @@ export default function AiWebsitesPage() {
                   </span>
                 )}
                 <div style={{ fontSize: 13, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", fontWeight: 600, marginBottom: 12 }}>{name}</div>
-                <div className="cog-h-display" style={{ fontSize: "clamp(34px, 4vw, 48px)", fontWeight: 700, color: "#fff", lineHeight: 1, letterSpacing: "-0.02em" }}>{price}</div>
+                <div className="cog-h-display" style={{ fontSize: "clamp(34px, 4vw, 48px)", fontWeight: 700, color: "#fff", lineHeight: 1, letterSpacing: "-0.02em" }}>
+                  {from && <span style={{ display: "block", fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.45)", fontWeight: 500, marginBottom: 6 }}>From</span>}
+                  {price}
+                </div>
                 <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.65)", margin: "14px 0 20px" }}>{who}</p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
                   {features.map((f) => (
@@ -329,7 +338,7 @@ export default function AiWebsitesPage() {
                   ))}
                 </ul>
                 <Link href="/book?demo=website" className={highlight ? "cog-btn-primary" : "cog-btn-ghost-light"} style={highlight ? { background: "var(--cog-copper)", borderColor: "var(--cog-copper)" } : undefined}>
-                  Book a demo →
+                  {cta}
                 </Link>
               </div>
             </FadeUp>
@@ -337,7 +346,7 @@ export default function AiWebsitesPage() {
         </div>
 
         <FadeUp as="p" delay={0.5} style={{ fontSize: 13, lineHeight: 1.65, color: "rgba(255,255,255,0.5)", maxWidth: 640, margin: "32px 0 0" }}>
-          Prefer to spread the cost? Ask about our monthly website plans from £99/month, with little or nothing to pay upfront. Every site comes with ongoing care plans from £49/month, ships with a privacy and cookie policy, and is built to modern accessibility standards.
+          Every site ships with a privacy and cookie policy and is built to modern accessibility standards. Want AI chat, a voice agent, CRM or automation added? Tell us what you need and we&apos;ll put together a bespoke bundle.
         </FadeUp>
       </section>
 

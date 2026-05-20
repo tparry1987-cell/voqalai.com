@@ -14,7 +14,7 @@ const links = [
   { label: "About", href: "/about" },
 ];
 
-const DARK_SECTION_IDS = ["hero", "industries", "crew", "industry-hero", "work", "showcase", "capabilities"];
+const DARK_SECTION_IDS = ["hero", "industries", "crew", "industry-hero", "work", "showcase", "capabilities", "pricing"];
 
 function useSectionTone(defaultTone: "dark" | "light") {
   const [tone, setTone] = useState<"dark" | "light">(defaultTone);
