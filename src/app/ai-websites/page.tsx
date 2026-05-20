@@ -89,13 +89,13 @@ export default function AiWebsitesPage() {
           </FadeUp>
 
           <FadeUp as="p" delay={0.45} style={{ fontSize: "clamp(15px, 1.6vw, 18px)", lineHeight: 1.6, color: "rgba(255,255,255,0.85)", maxWidth: 560, margin: "0 auto 30px" }}>
-            Beautiful, AI-powered websites with live chat and a voice agent built in. Scroll to see what we&apos;ve built.
+            Beautiful, AI-powered websites with live chat and a voice agent built in. Scroll to see what we can build.
           </FadeUp>
 
           <FadeUp delay={0.6}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 18, flexWrap: "wrap" }}>
               <Link href="/book?demo=website" className="cog-btn-ghost-light">Book a demo →</Link>
-              <a href="#work" style={{ fontSize: 12, letterSpacing: "0.04em", color: "rgba(255,255,255,0.8)", borderBottom: "1px solid rgba(255,255,255,0.35)", paddingBottom: 2 }}>See what we&apos;ve built</a>
+              <a href="#work" style={{ fontSize: 12, letterSpacing: "0.04em", color: "rgba(255,255,255,0.8)", borderBottom: "1px solid rgba(255,255,255,0.35)", paddingBottom: 2 }}>See what we can build</a>
             </div>
           </FadeUp>
         </div>
@@ -155,13 +155,13 @@ export default function AiWebsitesPage() {
       {/* ════════ SECTION 3 — DEMO BUILDS SHOWCASE (dark luxury, live previews) ════════ */}
       <section id="showcase" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#1a1a1a", color: "#fff", paddingTop: 0 }}>
         <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)", fontWeight: 600, marginBottom: 16 }}>
-          Our websites
+          Showcase
         </FadeUp>
         <FadeUp as="h2" delay={0.1} className="cog-h-display" style={{ fontSize: "clamp(26px, 3.4vw, 46px)", fontWeight: 700, lineHeight: 1.06, letterSpacing: "-0.02em", textTransform: "uppercase", color: "#fff", margin: "0 0 12px", maxWidth: 720 }}>
-          Websites we&apos;ve built
+          What we can build
         </FadeUp>
         <FadeUp as="p" delay={0.18} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.6)", maxWidth: 580, margin: "0 0 40px" }}>
-          A selection of the websites we&apos;ve built — available now, with plenty more styles to choose from. Every one can ship with live AI chat and a voice line built in.
+          Here are some examples of what we can build. Every one can ship with live AI chat and a voice line built in, with plenty more styles to choose from.
         </FadeUp>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 24 }}>
@@ -271,6 +271,73 @@ export default function AiWebsitesPage() {
         <FadeUp as="div" delay={0.4} className="cog-h-display" style={{ fontSize: "clamp(20px, 2.4vw, 30px)", fontWeight: 600, lineHeight: 1.22, letterSpacing: "-0.01em", color: "#1a1a1a", maxWidth: 640 }}>
           <p style={{ margin: "0 0 6px" }}>So the point is not just to have a prettier website.</p>
           <p style={{ margin: 0 }}>The point is to create a <span className="cog-italic" style={{ fontWeight: 400, color: "var(--cog-copper)" }}>faster, smarter customer journey.</span></p>
+        </FadeUp>
+      </section>
+
+      {/* ════════ SECTION 6.5 — PRICING (dark, 3 build tiers) ════════ */}
+      <section id="pricing" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#1a1a1a", color: "#fff" }}>
+        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--cog-copper-light)", fontWeight: 600, marginBottom: 16 }}>
+          Pricing
+        </FadeUp>
+        <FadeUp as="h2" delay={0.1} className="cog-h-display" style={{ fontSize: "clamp(26px, 3.4vw, 46px)", fontWeight: 700, lineHeight: 1.06, letterSpacing: "-0.02em", color: "#fff", margin: "0 0 12px", maxWidth: 720 }}>
+          Straightforward pricing.
+        </FadeUp>
+        <FadeUp as="p" delay={0.18} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.6)", maxWidth: 580, margin: "0 0 40px" }}>
+          Three ways to get online, every one built with live AI chat ready to switch on. Not sure which fits? We&apos;ll show you a working demo first.
+        </FadeUp>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, alignItems: "stretch" }}>
+          {[
+            {
+              name: "Launch",
+              price: "£997",
+              who: "A clean, fast website to get your business online.",
+              features: ["3–5 pages, built around your brand", "Contact form and lead capture", "AI chat assistant built in", "Set up with Google Analytics"],
+              highlight: false,
+            },
+            {
+              name: "Standard",
+              price: "£2,497",
+              who: "A custom-designed site that works for your business.",
+              features: ["Everything in Launch", "Custom design and copywriting", "Blog / content management", "Online booking + connect your CRM", "AI chat trained on your business"],
+              highlight: true,
+            },
+            {
+              name: "Full-Stack",
+              price: "£4,997+",
+              who: "A complete, AI-powered online presence.",
+              features: ["Everything in Standard", "Bespoke design and custom build", "Payments, member areas, integrations", "Voice line ready to add", "Behind-the-scenes automations"],
+              highlight: false,
+            },
+          ].map(({ name, price, who, features, highlight }, i) => (
+            <FadeUp key={name} delay={0.2 + i * 0.1}>
+              <div style={{ position: "relative", border: highlight ? "1px solid var(--cog-copper)" : "1px solid rgba(255,255,255,0.15)", borderRadius: 20, padding: "30px 28px 32px", height: "100%", background: highlight ? "rgba(255,255,255,0.05)" : "rgba(255,255,255,0.02)", display: "flex", flexDirection: "column" }}>
+                {highlight && (
+                  <span style={{ position: "absolute", top: 18, right: 20, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", fontWeight: 600, color: "var(--cog-copper-light)" }}>
+                    Most chosen
+                  </span>
+                )}
+                <div style={{ fontSize: 13, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)", fontWeight: 600, marginBottom: 12 }}>{name}</div>
+                <div className="cog-h-display" style={{ fontSize: "clamp(34px, 4vw, 48px)", fontWeight: 700, color: "#fff", lineHeight: 1, letterSpacing: "-0.02em" }}>{price}</div>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.65)", margin: "14px 0 20px" }}>{who}</p>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
+                  {features.map((f) => (
+                    <li key={f} style={{ fontSize: 14, lineHeight: 1.5, color: "rgba(255,255,255,0.82)", display: "flex", gap: 10 }}>
+                      <span aria-hidden style={{ color: "var(--cog-copper-light)", flexShrink: 0 }}>✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/book?demo=website" className={highlight ? "cog-btn-primary" : "cog-btn-ghost-light"} style={highlight ? { background: "var(--cog-copper)", borderColor: "var(--cog-copper)" } : undefined}>
+                  Book a demo →
+                </Link>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+
+        <FadeUp as="p" delay={0.5} style={{ fontSize: 13, lineHeight: 1.65, color: "rgba(255,255,255,0.5)", maxWidth: 640, margin: "32px 0 0" }}>
+          Prefer to spread the cost? Ask about our monthly website plans from £99/month, with little or nothing to pay upfront. Every site comes with ongoing care plans from £49/month, ships with a privacy and cookie policy, and is built to modern accessibility standards.
         </FadeUp>
       </section>
 
