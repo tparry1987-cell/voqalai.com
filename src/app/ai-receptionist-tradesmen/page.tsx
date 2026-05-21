@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IndustryLanding } from "@/components/IndustryLanding";
 import { trades } from "@/lib/industries";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: trades.metaTitle,
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Voqal AI",
     locale: "en_GB",
+    images: [defaultOpenGraphImage],
   },
 };
 

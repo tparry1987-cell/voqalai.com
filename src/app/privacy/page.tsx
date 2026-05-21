@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - How Voqal AI Protects Your Data",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Voqal AI",
     description: "Learn how Voqal AI collects, uses, and protects your personal information.",
     url: "https://voqalai.com/privacy",
+    images: [defaultOpenGraphImage],
   },
 };
 

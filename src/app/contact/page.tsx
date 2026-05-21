@@ -45,7 +45,7 @@ export default function ContactPage() {
         <div className="cog-services-head-row" style={{ display: "flex", gap: 48, alignItems: "flex-start" }}>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 480 }}>
             <FadeUp as="p" delay={0.25} style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", margin: "0 0 28px" }}>
-              A UK receptionist costs £22,000–£28,000 a year (ONS ASHE, 2024). Voqal AI starts from £197/month — no contracts, personalised demo within 24 hours.
+              Missed calls, slow replies, and manual admin cost businesses revenue every day. Voqal AI starts from £197/month — no contracts, personalised demo within 24 hours.
             </FadeUp>
             <FadeUp delay={0.4} style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 28 }}>
               <a href="tel:+442039960962" className="cog-btn-primary">
@@ -62,10 +62,11 @@ export default function ContactPage() {
           </div>
 
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 520, display: "flex", flexDirection: "column", gap: 14 }}>
-            <FadeUp delay={0.3}><ContactRow Icon={Phone} label="UK" value="020 3996 0962" href="tel:+442039960962" /></FadeUp>
-            <FadeUp delay={0.4}><ContactRow Icon={Phone} label="US" value="+1 (332) 264-1587" href="tel:+13322641587" /></FadeUp>
+            <FadeUp delay={0.3}><ContactRow Icon={Phone} label="Main line" value="020 3996 0962" href="tel:+442039960962" /></FadeUp>
+            <FadeUp delay={0.4}><ContactRow Icon={Phone} label="International" value="+1 (332) 264-1587" href="tel:+13322641587" /></FadeUp>
             <FadeUp delay={0.5}><ContactRow Icon={Mail} label="Email" value="info@voqalai.com" href="mailto:info@voqalai.com" /></FadeUp>
-            <FadeUp delay={0.6}><ContactRow Icon={MapPin} label="Registered" value="71–75 Shelton Street, London WC2H 9JQ" /></FadeUp>
+            <FadeUp delay={0.55}><ContactRow Icon={MapPin} label="Operating from" value="Manchester, United Kingdom" /></FadeUp>
+            <FadeUp delay={0.65}><ContactRow Icon={MapPin} label="Registered office" value="71–75 Shelton Street, London WC2H 9JQ" /></FadeUp>
           </div>
         </div>
       </section>

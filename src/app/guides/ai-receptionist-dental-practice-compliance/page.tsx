@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "AI Receptionist for Dental Practices: UK Compliance Guide 2026 | Voqal AI",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     title: "AI Receptionist for Dental Practices: UK Compliance Guide 2026",
     description: "Complete compliance guide for dental practices using AI receptionists. NHS data protection, GDC standards, and CQC requirements.",
     url: "https://voqalai.com/guides/ai-receptionist-dental-practice-compliance/",
+    images: [defaultOpenGraphImage],
   },
 };
 

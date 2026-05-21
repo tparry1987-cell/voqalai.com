@@ -7,6 +7,27 @@
 -->
 <html>
   <body>
+    <form
+      name="demo"
+      netlify
+      netlify-honeypot="bot-field"
+      hidden
+      method="post"
+      action="/thank-you/"
+    >
+      <input type="hidden" name="form-name" value="demo" />
+      <input type="hidden" name="subject" value="New Voqal AI demo request" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="company" />
+      <input type="url" name="website" />
+      <select name="team-size"></select>
+      <select name="budget"></select>
+      <textarea name="message"></textarea>
+    </form>
+
     <form name="audit-enquiry" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />

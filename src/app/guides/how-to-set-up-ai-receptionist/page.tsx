@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "How to Set Up an AI Receptionist for Your UK Business | Voqal AI",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     title: "How to Set Up an AI Receptionist for Your UK Business",
     description: "Step-by-step guide to setting up an AI receptionist. Configure call handling, appointment booking, and lead qualification in under 24 hours.",
     url: "https://voqalai.com/guides/how-to-set-up-ai-receptionist/",
+    images: [defaultOpenGraphImage],
   },
 };
 

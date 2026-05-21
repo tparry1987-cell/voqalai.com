@@ -13,12 +13,9 @@ const auditSchema = [
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Voqal AI Opportunity Audit",
-    "description": "Paid AI consulting audit for UK and US businesses. We diagnose AI opportunities, quantify the ROI, and deliver a slide-deck Opportunities Report. Standard Audit at £497; Strategic AI Audit for larger or multi-site operations is scoped and quoted after a short intake.",
+    "description": "Paid AI consulting audit for businesses worldwide. We diagnose AI opportunities, quantify the ROI, and deliver a slide-deck Opportunities Report. Standard Audit at £497; Strategic AI Audit for larger or multi-site operations is scoped and quoted after a short intake.",
     "provider": { "@type": "Organization", "name": "Voqal AI", "url": "https://voqalai.com" },
-    "areaServed": [
-      { "@type": "Country", "name": "United Kingdom" },
-      { "@type": "Country", "name": "United States" }
-    ],
+    "areaServed": "Worldwide",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "AI Audit Plans",

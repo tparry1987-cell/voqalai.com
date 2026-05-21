@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "GDPR-Compliant AI Receptionist: UK Business Guide 2026 | Voqal AI",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     title: "GDPR-Compliant AI Receptionist: UK Business Guide 2026",
     description: "Complete UK guide to GDPR compliance for AI voice receptionists. ICO guidelines, data retention, consent requirements.",
     url: "https://voqalai.com/guides/gdpr-compliant-ai-receptionist-uk/",
+    images: [defaultOpenGraphImage],
   },
 };
 

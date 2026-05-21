@@ -97,11 +97,7 @@ const calculatorSchema = [
       name: "Voqal AI",
       url: "https://voqalai.com",
     },
-    areaServed: [
-      { "@type": "Country", name: "United Kingdom" },
-      { "@type": "Country", name: "United States" },
-      { "@type": "Country", name: "United Arab Emirates" },
-    ],
+    areaServed: "Worldwide",
     audience: {
       "@type": "BusinessAudience",
       audienceType: "Small and medium service businesses with dormant CRM leads",

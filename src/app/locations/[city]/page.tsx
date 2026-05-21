@@ -7,7 +7,6 @@ import { Phone } from "lucide-react";
 export async function generateStaticParams() {
   return [
     { city: "london" },
-    { city: "manchester" },
     { city: "birmingham" },
     { city: "edinburgh" },
     { city: "leeds" },

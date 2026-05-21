@@ -15,11 +15,11 @@ import { RetellWidget } from "@/components/RetellWidget";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://voqalai.com"),
-  title: "AI Receptionist UK \u2013 24/7 Phone Answering | Voqal AI",
+  title: "AI Voice Agents for Global Businesses | Voqal AI",
   description:
-    "AI Receptionist UK: 24/7 call answering, booking & lead qualification for dental, legal & trades. No contracts. From \u00a3197/mo.",
+    "AI voice agents, automation, and lead qualification for modern businesses worldwide. UK-based, global delivery. No contracts. From \u00a3197/mo.",
   openGraph: {
-    title: "AI Receptionist UK \u2013 24/7 Phone Answering | Voqal AI",
+    title: "AI Voice Agents for Global Businesses | Voqal AI",
     description:
       "AI voice agents that answer 100% of your calls 24/7. Appointment booking, lead qualification, and voice cloning. From \u00a3197/mo.",
     type: "website",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Receptionist UK \u2013 24/7 Phone Answering | Voqal AI",
+    title: "AI Voice Agents for Global Businesses | Voqal AI",
     description:
-      "AI Receptionist UK: 24/7 call answering, booking & lead qualification. Dental, legal, trades & more. No contracts. From \u00a3197/mo.",
+      "AI voice agents for businesses worldwide. 24/7 call answering, booking, lead qualification, and workflow automation.",
     images: ["/images/hero-forest.jpg"],
   },
   icons: {
@@ -58,7 +58,7 @@ const structuredData = [
     foundingDate: "2025",
     taxID: "17080303",
     description:
-      "AI Receptionist UK: 24/7 AI voice agents that answer calls, book appointments, and qualify leads for UK and US businesses.",
+      "AI voice agents that answer calls, book appointments, qualify leads, and automate workflows for businesses worldwide.",
     url: "https://voqalai.com",
     telephone: "+442039960962",
     email: "info@voqalai.com",
@@ -76,7 +76,7 @@ const structuredData = [
       latitude: 51.5154,
       longitude: -0.1222,
     },
-    areaServed: { "@type": "Country", name: "United Kingdom" },
+    areaServed: "Worldwide",
     priceRange: "\u00a3\u00a3",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -106,14 +106,14 @@ const structuredData = [
         "@type": "ContactPoint",
         telephone: "+442039960962",
         contactType: "customer service",
-        areaServed: "GB",
+        areaServed: "Global",
         availableLanguage: "English",
       },
       {
         "@type": "ContactPoint",
         telephone: "+13322641587",
         contactType: "customer service",
-        areaServed: "US",
+        areaServed: "Global",
         availableLanguage: "English",
       },
     ],
@@ -126,7 +126,7 @@ const structuredData = [
     },
     sameAs: ["https://www.linkedin.com/in/tom-parry-698bbb29a"],
     description:
-      "AI Receptionist UK: 24/7 call answering, appointment booking and lead qualification for 5.5 million UK SMEs (FSB, 2024). Sector-trained for dental, legal, trades and more. Plans from \u00a3197/month, no contracts. Up to 90% cost reduction compared with a full-time UK receptionist earning \u00a322,000\u2013\u00a328,000/year (ONS ASHE, 2024). Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026.",
+      "UK-based AI voice agents and automation for businesses worldwide. Sector-trained for dental, legal, trades, professional services and more. Plans from \u00a3197/month, no contracts. Up to 90% cost reduction compared with traditional front-desk coverage. Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026.",
     foundingDate: "2025",
     founders: [
       {
@@ -156,16 +156,10 @@ const structuredData = [
       "CRM integration",
       "dental practice automation",
       "legal firm call handling",
-      "UK business telephony",
+      "global business telephony",
     ],
-    areaServed: [
-      { "@type": "Country", name: "United Kingdom" },
-      { "@type": "Country", name: "United States" },
-    ],
-    serviceArea: [
-      { "@type": "Country", name: "United Kingdom" },
-      { "@type": "Country", name: "United States" },
-    ],
+    areaServed: "Worldwide",
+    serviceArea: "Worldwide",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "AI Receptionist Plans",
@@ -200,7 +194,7 @@ const structuredData = [
     "@type": "SoftwareApplication",
     name: "Voqal AI Receptionist",
     description:
-      "AI-powered voice receptionist that answers calls 24/7, books appointments, qualifies leads, and integrates with CRMs and calendars for UK and US service businesses.",
+      "AI-powered voice receptionist that answers calls 24/7, books appointments, qualifies leads, and integrates with CRMs and calendars for service businesses worldwide.",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Cloud-hosted (SaaS)",
     url: "https://voqalai.com",
@@ -233,13 +227,13 @@ const structuredData = [
     name: "Voqal AI",
     url: "https://voqalai.com",
     description:
-      "AI Receptionist UK \u2014 24/7 AI phone answering, appointment booking, and lead qualification for UK and US service businesses.",
+      "AI voice agents, 24/7 phone answering, appointment booking, and lead qualification for service businesses worldwide.",
     publisher: { "@type": "Organization", name: "Voqal AI", url: "https://voqalai.com" },
   },
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "AI Receptionist UK \u2013 24/7 Phone Answering | Voqal AI",
+    name: "AI Voice Agents for Global Businesses | Voqal AI",
     url: "https://voqalai.com/",
     speakable: {
       "@type": "SpeakableSpecification",
@@ -263,7 +257,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/mobile-hero-still-2x.jpg"
+          href="/images/hero-video-poster.jpg"
           media="(max-width: 767px)"
           fetchPriority="high"
         />

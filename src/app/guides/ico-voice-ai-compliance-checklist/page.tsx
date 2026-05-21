@@ -3,6 +3,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import Link from "next/link";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "ICO Voice AI Compliance Checklist: 18 Points for UK Businesses | Voqal AI",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     title: "ICO Voice AI Compliance Checklist: 18 Points for UK Businesses",
     description: "Complete 18-point ICO compliance checklist for UK businesses using AI voice systems.",
     url: "https://voqalai.com/guides/ico-voice-ai-compliance-checklist/",
+    images: [defaultOpenGraphImage],
   },
 };
 

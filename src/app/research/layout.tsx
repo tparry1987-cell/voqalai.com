@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "AI Receptionist Research & Guides | Voqal AI",
-  description: "Research, guides and compliance resources for UK businesses considering AI receptionists. GDPR, ICO compliance, setup guides and industry analysis.",
+  description: "Research, guides and compliance resources for businesses considering AI voice agents, automation, GDPR, ICO compliance, setup guides and industry analysis.",
   alternates: { canonical: "https://voqalai.com/research/" },
   openGraph: {
     title: "AI Receptionist Research & Guides | Voqal AI",
-    description: "Research and guides for UK businesses considering AI receptionists.",
+    description: "Research and guides for businesses considering AI voice agents and automation.",
     url: "https://voqalai.com/research/",
+    images: [defaultOpenGraphImage],
   },
 };
 

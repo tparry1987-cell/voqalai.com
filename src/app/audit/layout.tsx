@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "AI Opportunity Audit – From £497 | Voqal AI",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     description:
       "A senior Voqal advisor maps where AI saves time and money in your business. Slide-deck Opportunities Report with quantified ROI. From £497.",
     url: "https://voqalai.com/audit/",
+    images: [defaultOpenGraphImage],
   },
 };
 

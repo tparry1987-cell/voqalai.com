@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: "Contact Voqal AI – Book a Free Demo | Voqal AI",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     title: "Contact Voqal AI – Book a Free Demo",
     description: "Book a free AI receptionist demo within 24 hours. No commitment required.",
     url: "https://voqalai.com/contact/",
+    images: [defaultOpenGraphImage],
   },
 };
 
