@@ -207,7 +207,12 @@
   to = "/about/"
   status = 301
 
-# Blog posts → homepage
+# Blog posts → homepage (specific old posts → closest relevant page first)
+[[redirects]]
+  from = "/blog/receptionist-costs-25k-ai-costs-197.html"
+  to = "/pricing/"
+  status = 301
+
 [[redirects]]
   from = "/blog/*"
   to = "/"
@@ -238,6 +243,12 @@
 [[redirects]]
   from = "/guides/ico-voice-ai-compliance-checklist.html"
   to = "/guides/ico-voice-ai-compliance-checklist/"
+  status = 301
+
+# Old guide without a direct match → closest relevant guide
+[[redirects]]
+  from = "/guides/how-to-integrate-voqal-with-your-crm.html"
+  to = "/guides/how-to-set-up-ai-receptionist/"
   status = 301
 
 # Guide pages — wildcard fallback → homepage

@@ -58,7 +58,7 @@ export const law: IndustryData = {
   industryNameLower: "law firm",
   pluralNoun: "law firms",
   heroAccent: "law firms.",
-  metaTitle: "AI Receptionist for Law Firms UK | Voqal AI",
+  metaTitle: "AI Receptionist for Solicitors & Law Firms UK | Voqal AI",
   metaDescription:
     "AI receptionist for UK solicitors and law firms. Qualifies enquiries by case type, books consultations, and protects fee-earner time. From £197/month.",
   intro:
@@ -162,9 +162,9 @@ export const estate: IndustryData = {
   industryNameLower: "estate agency",
   pluralNoun: "estate agencies",
   heroAccent: "estate agents.",
-  metaTitle: "AI Receptionist for Estate Agents UK | Voqal AI",
+  metaTitle: "AI Receptionist for Estate & Property Agents UK | Voqal AI",
   metaDescription:
-    "AI receptionist for UK estate agents and lettings. Books viewings 24/7, qualifies buyers and tenants, and captures vendor enquiries. From £197/month.",
+    "AI receptionist for UK estate agents, lettings and property. Books viewings 24/7, qualifies buyers and tenants, and captures real-estate and vendor enquiries. From £197/month.",
   intro:
     "Your office is on viewings, your phones are unattended, and a buyer is browsing Rightmove at 9pm. Voqal answers every call, books viewings instantly, qualifies buyers and tenants, and routes vendor valuations to the right negotiator. 24/7 — because property doesn’t sleep.",
   problem:
