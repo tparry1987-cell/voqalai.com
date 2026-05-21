@@ -93,6 +93,7 @@ export function Footer() {
           title="PRODUCT"
           links={[
             ["Voice Agents", "/voice-agents"],
+            ["AI Websites", "/ai-websites"],
             ["Industries", "/#industries"],
             ["Lead Reactivation", "/calculator"],
             ["Audit", "/audit"],
