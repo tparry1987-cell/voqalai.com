@@ -107,13 +107,61 @@ export default function CalculatorPage() {
             </h1>
           </div>
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 460, paddingTop: 12 }}>
-            <FadeUp as="p" delay={0.3} style={{ fontSize: 15, lineHeight: 1.65, color: "#3a3a3a", margin: "0 0 24px" }}>
-              <strong>Real conversations from leads you already paid for.</strong> We only get paid when you do. A 60-second diagnosis of how much revenue is asleep in your CRM — figures update live.
+            <FadeUp delay={0.3}>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}>
+                {[
+                  { id: "trades", label: "Trades" },
+                  { id: "dental", label: "Dental clinic" },
+                  { id: "gym", label: "Gym" },
+                  { id: "coaching", label: "Coaching" },
+                  { id: "agency", label: "Agency" },
+                ].map((p) => (
+                  <button key={p.id} onClick={() => setSmsIndustry(p.id)} style={{
+                    padding: "0.5rem 1rem", borderRadius: 999,
+                    background: smsIndustry === p.id ? "#1a1a1a" : "transparent",
+                    color: smsIndustry === p.id ? "#fff" : "#1a1a1a",
+                    border: "1px solid " + (smsIndustry === p.id ? "#1a1a1a" : "rgba(0,0,0,0.25)"),
+                    fontFamily: "inherit", fontSize: 12, fontWeight: 500, letterSpacing: "0.04em",
+                  }}>{p.label}</button>
+                ))}
+              </div>
             </FadeUp>
-            <FadeUp delay={0.45}>
-              <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <FadeUp delay={0.4}>
+              <div style={{ maxWidth: "100%", background: "#1a1a1a", borderRadius: 28, padding: 24, border: "1px solid rgba(0,0,0,0.18)" }}>
+                <div style={{ borderRadius: 18, background: "#0f0f0f", padding: 20, display: "flex", flexDirection: "column", gap: 14, minHeight: 460 }}>
+                  <div style={{ borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: 14, marginBottom: 4 }}>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>{sms.name}</div>
+                    <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", letterSpacing: "0.04em" }}>+44 7700 900 123</div>
+                  </div>
+                  {sms.messages.map((m, i) => {
+                    if (m.pill) {
+                      return (
+                        <div key={i} style={{ alignSelf: "center", fontSize: 10, letterSpacing: "0.12em", color: "var(--cog-copper-light)", textTransform: "uppercase", padding: "4px 10px", border: "1px solid rgba(244,176,139,0.3)", borderRadius: 999 }}>
+                          {m.pill}
+                        </div>
+                      );
+                    }
+                    const isSent = m.dir === "sent";
+                    return (
+                      <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: isSent ? "flex-end" : "flex-start" }}>
+                        <div style={{
+                          maxWidth: "75%", padding: "10px 14px", borderRadius: 14,
+                          background: isSent ? "var(--cog-copper)" : "rgba(255,255,255,0.08)",
+                          color: isSent ? "#fff" : "rgba(255,255,255,0.95)",
+                          fontSize: 13, lineHeight: 1.45,
+                        }}>{m.text}</div>
+                        {m.time && (
+                          <div style={{ fontSize: 9, color: "rgba(255,255,255,0.4)", marginTop: 4, letterSpacing: "0.04em" }}>{m.time}</div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </FadeUp>
+            <FadeUp delay={0.5}>
+              <div style={{ marginTop: 24 }}>
                 <Link href="/book" className="cog-btn-primary">Book a demo</Link>
-                <a href="#sms" className="cog-btn-secondary">See what we&apos;d send</a>
               </div>
             </FadeUp>
           </div>
@@ -198,72 +246,6 @@ export default function CalculatorPage() {
             </Link>
           </div>
         </div>
-      </section>
-
-      <section id="sms" className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#C5C5C5" }}>
-        <FadeUp delay={0} style={{ fontSize: 11, letterSpacing: "0.08em", color: "#666", marginBottom: 20 }}>SMS Templates</FadeUp>
-        <FadeUp delay={0.1}>
-          <h2 className="cog-h-display" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-0.01em", textTransform: "uppercase", color: "#1a1a1a", margin: "0 0 28px", whiteSpace: "nowrap" }}>
-            This is what we&apos;d <span className="cog-italic" style={{ textTransform: "none", fontWeight: 400, fontSize: "1.4em", lineHeight: 1, color: "var(--cog-copper)" }}>actually send.</span>
-          </h2>
-        </FadeUp>
-        <FadeUp delay={0.15}>
-          <p style={{ fontSize: 14, lineHeight: 1.6, color: "#3a3a3a", maxWidth: 640, margin: "0 0 28px" }}>
-            Real conversations, not bulk blasts. Each message references where that lead actually left off — never a generic template.
-          </p>
-        </FadeUp>
-        <FadeUp delay={0.2}>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 36 }}>
-            {[
-              { id: "trades", label: "Trades" },
-              { id: "dental", label: "Dental clinic" },
-              { id: "gym", label: "Gym" },
-              { id: "coaching", label: "Coaching" },
-              { id: "agency", label: "Agency" },
-            ].map((p) => (
-              <button key={p.id} onClick={() => setSmsIndustry(p.id)} style={{
-                padding: "0.55rem 1.1rem", borderRadius: 999,
-                background: smsIndustry === p.id ? "#1a1a1a" : "transparent",
-                color: smsIndustry === p.id ? "#fff" : "#1a1a1a",
-                border: "1px solid " + (smsIndustry === p.id ? "#1a1a1a" : "rgba(0,0,0,0.25)"),
-                fontFamily: "inherit", fontSize: 12, fontWeight: 500, letterSpacing: "0.04em",
-              }}>{p.label}</button>
-            ))}
-          </div>
-        </FadeUp>
-        <FadeUp delay={0.3}>
-          <div style={{ maxWidth: 480, marginLeft: 0, background: "#1a1a1a", borderRadius: 28, padding: 24, border: "1px solid rgba(0,0,0,0.18)" }}>
-            <div style={{ borderRadius: 18, background: "#0f0f0f", padding: 20, display: "flex", flexDirection: "column", gap: 14, minHeight: 460 }}>
-              <div style={{ borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: 14, marginBottom: 4 }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>{sms.name}</div>
-                <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", letterSpacing: "0.04em" }}>+44 7700 900 123</div>
-              </div>
-              {sms.messages.map((m, i) => {
-                if (m.pill) {
-                  return (
-                    <div key={i} style={{ alignSelf: "center", fontSize: 10, letterSpacing: "0.12em", color: "var(--cog-copper-light)", textTransform: "uppercase", padding: "4px 10px", border: "1px solid rgba(244,176,139,0.3)", borderRadius: 999 }}>
-                      {m.pill}
-                    </div>
-                  );
-                }
-                const isSent = m.dir === "sent";
-                return (
-                  <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: isSent ? "flex-end" : "flex-start" }}>
-                    <div style={{
-                      maxWidth: "75%", padding: "10px 14px", borderRadius: 14,
-                      background: isSent ? "var(--cog-copper)" : "rgba(255,255,255,0.08)",
-                      color: isSent ? "#fff" : "rgba(255,255,255,0.95)",
-                      fontSize: 13, lineHeight: 1.45,
-                    }}>{m.text}</div>
-                    {m.time && (
-                      <div style={{ fontSize: 9, color: "rgba(255,255,255,0.4)", marginTop: 4, letterSpacing: "0.04em" }}>{m.time}</div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </FadeUp>
       </section>
 
       <section className="cog-section-pad-lg" style={{ position: "relative", zIndex: 2, background: "#1a1a1a", color: "#fff" }}>
