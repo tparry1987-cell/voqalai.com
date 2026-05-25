@@ -9,8 +9,6 @@ import "@fontsource/instrument-serif/400-italic.css";
 import "./globals.css";
 import "./cognitra.css";
 import { CalEmbed } from "@/components/CalEmbed";
-import { CookieConsent } from "@/components/CookieConsent";
-import { PostHogProvider } from "@/components/PostHogProvider";
 import { RetellWidget } from "@/components/RetellWidget";
 
 export const metadata: Metadata = {
@@ -278,12 +276,9 @@ export default function RootLayout({
         ))}
       </head>
       <body className="min-h-full flex flex-col">
-        <PostHogProvider>
-          {children}
-          <CalEmbed />
-          <RetellWidget />
-          <CookieConsent />
-        </PostHogProvider>
+        {children}
+        <CalEmbed />
+        <RetellWidget />
       </body>
     </html>
   );
