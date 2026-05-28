@@ -84,14 +84,14 @@ export default function TermsPage() {
 
             <h2>9. Cancellation &amp; Refunds</h2>
             <ul>
-              <li>Managed service plans are rolling-monthly with no minimum term. Either party may cancel with 30 days&rsquo; written notice to <a href="mailto:info@voqalai.com">info@voqalai.com</a>. Service continues, and the standard monthly fee remains payable, through the notice period</li>
+              <li>Managed service plans are rolling-monthly with no minimum term. Either party may cancel with 30 days&rsquo; written notice to <a href="mailto:contact@voqalai.com">contact@voqalai.com</a>. Service continues, and the standard monthly fee remains payable, through the notice period</li>
               <li>Monthly subscription fees already paid for the current billing period are non-refundable. No further charges are taken after the notice period ends</li>
               <li>Build &amp; Handover engagements may be cancelled in writing at any time. Fees for work already completed up to the cancellation date remain payable; any unstarted milestones are not charged</li>
               <li>Voqal AI Ltd reserves the right to terminate immediately in cases of material breach, non-payment, or unlawful use of the service</li>
             </ul>
 
             <h2>10. Data Processing</h2>
-            <p>When Voqal AI Ltd processes personal data on a client&rsquo;s behalf (for example, callers&rsquo; names, phone numbers, or appointment details handled by an AI agent), Voqal AI Ltd acts as a data processor and the client acts as the data controller under UK GDPR. A Data Processing Agreement (DPA) setting out roles, security measures, sub-processors, and data subject rights is available on request — please email <a href="mailto:info@voqalai.com">info@voqalai.com</a>. Our handling of personal data we collect directly (for example, from website forms or sales enquiries) is described in our <a href="/privacy">Privacy Policy</a>.</p>
+            <p>When Voqal AI Ltd processes personal data on a client&rsquo;s behalf (for example, callers&rsquo; names, phone numbers, or appointment details handled by an AI agent), Voqal AI Ltd acts as a data processor and the client acts as the data controller under UK GDPR. A Data Processing Agreement (DPA) setting out roles, security measures, sub-processors, and data subject rights is available on request — please email <a href="mailto:contact@voqalai.com">contact@voqalai.com</a>. Our handling of personal data we collect directly (for example, from website forms or sales enquiries) is described in our <a href="/privacy">Privacy Policy</a>.</p>
 
             <h2>11. Governing Law</h2>
             <p>These terms shall be governed by and construed in accordance with the laws of the United Kingdom. Any disputes shall be resolved through good-faith negotiation or, failing that, through the courts of England and Wales.</p>
@@ -99,7 +99,7 @@ export default function TermsPage() {
             <h2>12. Contact Us</h2>
             <p>For questions about these Terms and Conditions, please contact us:</p>
             <p>
-              Email: <a href="mailto:info@voqalai.com">info@voqalai.com</a><br />
+              Email: <a href="mailto:contact@voqalai.com">contact@voqalai.com</a><br />
               Phone: <a href="tel:+442039960962">+44 20 3996 0962</a> (UK) / <a href="tel:+13322641587">+1 (332) 264-1587</a> (US)
             </p>
           </div>

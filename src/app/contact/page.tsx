@@ -56,7 +56,7 @@ export default function ContactPage() {
             </FadeUp>
             <FadeUp delay={0.5}>
               <p style={{ fontSize: 13, color: "#3a3a3a", lineHeight: 1.7, margin: 0 }}>
-                Prefer to write? Drop us a line at <a href="mailto:info@voqalai.com" style={{ color: "var(--cog-copper)" }}>info@voqalai.com</a>. We reply within one working day, always by a real human.
+                Prefer to write? Drop us a line at <a href="mailto:contact@voqalai.com" style={{ color: "var(--cog-copper)" }}>contact@voqalai.com</a>. We reply within one working day, always by a real human.
               </p>
             </FadeUp>
           </div>
@@ -64,7 +64,7 @@ export default function ContactPage() {
           <div className="cog-services-head-col" style={{ flex: 1, maxWidth: 520, display: "flex", flexDirection: "column", gap: 14 }}>
             <FadeUp delay={0.3}><ContactRow Icon={Phone} label="Main line" value="020 3996 0962" href="tel:+442039960962" /></FadeUp>
             <FadeUp delay={0.4}><ContactRow Icon={Phone} label="International" value="+1 (332) 264-1587" href="tel:+13322641587" /></FadeUp>
-            <FadeUp delay={0.5}><ContactRow Icon={Mail} label="Email" value="info@voqalai.com" href="mailto:info@voqalai.com" /></FadeUp>
+            <FadeUp delay={0.5}><ContactRow Icon={Mail} label="Email" value="contact@voqalai.com" href="mailto:contact@voqalai.com" /></FadeUp>
             <FadeUp delay={0.55}><ContactRow Icon={MapPin} label="Operating from" value="Manchester, United Kingdom" /></FadeUp>
             <FadeUp delay={0.65}><ContactRow Icon={MapPin} label="Registered office" value="71–75 Shelton Street, London WC2H 9JQ" /></FadeUp>
           </div>

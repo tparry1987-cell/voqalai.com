@@ -92,7 +92,7 @@ export default function PrivacyPage() {
             <h2>8. Contact Us</h2>
             <p>If you have questions about this Privacy Policy or wish to exercise your rights, please contact us:</p>
             <p>
-              Email: <Link href="mailto:info@voqalai.com">info@voqalai.com</Link><br />
+              Email: <Link href="mailto:contact@voqalai.com">contact@voqalai.com</Link><br />
               Phone: <Link href="tel:+442039960962">+44 20 3996 0962</Link> (UK) / <Link href="tel:+13322641587">+1 (332) 264-1587</Link> (US)
             </p>
           </div>

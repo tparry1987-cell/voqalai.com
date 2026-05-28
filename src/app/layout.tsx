@@ -59,7 +59,7 @@ const structuredData = [
       "AI voice agents that answer calls, book appointments, qualify leads, and automate workflows for businesses worldwide.",
     url: "https://voqalai.com",
     telephone: "+442039960962",
-    email: "info@voqalai.com",
+    email: "contact@voqalai.com",
     image: "https://voqalai.com/images/hero-forest.jpg",
     address: {
       "@type": "PostalAddress",

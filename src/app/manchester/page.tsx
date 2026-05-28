@@ -84,7 +84,7 @@ export default function ManchesterPage() {
       name: "Voqal AI",
       url: "https://voqalai.com",
       telephone: "+44 20 3996 0962",
-      email: "info@voqalai.com",
+      email: "contact@voqalai.com",
     },
     description:
       "24/7 AI voice receptionist for Manchester businesses. Handles call answering, appointment booking, lead qualification, and missed-call follow-up by SMS.",
@@ -413,7 +413,7 @@ export default function ManchesterPage() {
               </Link>
             </div>
             <p style={{ marginTop: "2rem", fontSize: 14, color: "#666" }}>
-              Voqal AI · Operating from Manchester, United Kingdom · 020 3996 0962 · info@voqalai.com
+              Voqal AI · Operating from Manchester, United Kingdom · 020 3996 0962 · contact@voqalai.com
             </p>
           </div>
         </Reveal>

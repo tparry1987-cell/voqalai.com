@@ -81,5 +81,5 @@ For clients who want to own their Retell AI account and pay Retell directly for 
 - Pricing page (human-readable): https://voqalai.com/pricing/
 - UK phone: +44 20 3996 0962
 - US phone: +1 (332) 264-1587
-- Email: info@voqalai.com
+- Email: contact@voqalai.com
 - Book demo: https://voqalai.com/book/

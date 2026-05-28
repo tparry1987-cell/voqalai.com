@@ -170,7 +170,7 @@ export default function AboutPage() {
             {[
               ["Registered", "Voqal AI Ltd", "Company No. 17080303"],
               ["Based", "Manchester, UK", "Serving businesses globally"],
-              ["Contact", "020 3996 0962", "info@voqalai.com"],
+              ["Contact", "020 3996 0962", "contact@voqalai.com"],
             ].map(([k, v1, v2]) => (
               <div key={k} style={{ border: "1px solid rgba(0,0,0,0.18)", borderRadius: 14, padding: "18px 22px" }}>
                 <div style={{ fontSize: 10, letterSpacing: "0.18em", color: "#888", textTransform: "uppercase", marginBottom: 6 }}>{k}</div>
