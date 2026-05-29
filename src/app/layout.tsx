@@ -13,13 +13,13 @@ import { RetellWidget } from "@/components/RetellWidget";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://voqalai.com"),
-  title: "AI Voice Agents for Global Businesses | Voqal AI",
+  title: "AI Voice Agents, Websites & Automation | Voqal AI",
   description:
-    "AI voice agents, automation, and lead qualification for modern businesses worldwide. UK-based, global delivery. No contracts. From \u00a3197/mo.",
+    "Voqal AI builds practical AI systems for business \u2014 voice agents, AI websites, lead reactivation, automation and integrations. UK-based, global delivery.",
   openGraph: {
-    title: "AI Voice Agents for Global Businesses | Voqal AI",
+    title: "AI Voice Agents, Websites & Automation | Voqal AI",
     description:
-      "AI voice agents that answer 100% of your calls 24/7. Appointment booking, lead qualification, and voice cloning. From \u00a3197/mo.",
+      "Practical AI systems built around how your business actually works \u2014 voice agents, AI websites, lead reactivation and automation. UK-based, global delivery.",
     type: "website",
     url: "https://voqalai.com/",
     siteName: "Voqal AI",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Voice Agents for Global Businesses | Voqal AI",
+    title: "AI Voice Agents, Websites & Automation | Voqal AI",
     description:
-      "AI voice agents for businesses worldwide. 24/7 call answering, booking, lead qualification, and workflow automation.",
+      "Practical AI systems for business — voice agents, AI websites, lead reactivation, automation and integrations. UK-based, global delivery.",
     images: ["/images/hero-forest.jpg"],
   },
   icons: {
@@ -56,7 +56,7 @@ const structuredData = [
     foundingDate: "2025",
     taxID: "17080303",
     description:
-      "AI voice agents that answer calls, book appointments, qualify leads, and automate workflows for businesses worldwide.",
+      "Voqal AI builds practical AI systems for businesses worldwide — AI voice agents, AI websites, lead reactivation, workflow automation, CRM integrations and AI audits.",
     url: "https://voqalai.com",
     telephone: "+442039960962",
     email: "contact@voqalai.com",
@@ -122,9 +122,9 @@ const structuredData = [
       postalCode: "WC2H 9JQ",
       addressCountry: "GB",
     },
-    sameAs: ["https://www.linkedin.com/in/tom-parry-698bbb29a"],
+    sameAs: ["https://www.linkedin.com/company/110916511/"],
     description:
-      "UK-based AI voice agents and automation for businesses worldwide. Sector-trained for dental, legal, trades, professional services and more. Plans from \u00a3197/month, no contracts. Up to 90% cost reduction compared with traditional front-desk coverage. Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026.",
+      "UK-based AI systems for businesses worldwide \u2014 AI voice agents, AI websites, lead reactivation, workflow automation, CRM integrations and AI audits. Sector-trained for dental, legal, trades, professional services and more. Plans from \u00a3197/month, no contracts. Up to 90% cost reduction compared with traditional front-desk coverage. Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026.",
     foundingDate: "2025",
     founders: [
       {
@@ -148,6 +148,10 @@ const structuredData = [
       "AI voice agents",
       "AI receptionists",
       "conversational AI",
+      "AI websites",
+      "lead reactivation",
+      "workflow automation",
+      "AI consultation and audits",
       "appointment booking automation",
       "lead qualification",
       "call handling automation",
@@ -221,17 +225,49 @@ const structuredData = [
   },
   {
     "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://voqalai.com/#service",
+    name: "AI Systems for Business — Voice, Websites, Automation & Integration",
+    serviceType: [
+      "AI voice agents",
+      "AI receptionist",
+      "AI websites",
+      "lead reactivation",
+      "workflow automation",
+      "CRM and system integration",
+      "AI consultation and audits",
+    ],
+    description:
+      "Voqal AI builds practical AI systems for businesses — AI voice agents, AI websites, lead reactivation, workflow automation, CRM integrations and AI audits. UK-based, serving businesses worldwide. Plans from £197/month, no contracts.",
+    provider: { "@id": "https://voqalai.com/#organization" },
+    areaServed: ["United Kingdom", "Worldwide"],
+    url: "https://voqalai.com",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Voqal AI Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Voice Agents", description: "Handle calls, bookings, enquiries, and customer communication 24/7." } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lead Reactivation", description: "Re-engage old leads automatically through intelligent SMS outreach and follow-up." } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Workflow Automation", description: "Remove repetitive admin and streamline day-to-day operations." } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "CRM & System Integrations", description: "Connect AI directly into the tools your business already uses." } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Consultation & Audits", description: "Identify where AI can create the biggest operational impact." } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Websites & Interfaces", description: "Modern AI-powered websites with live chat and a voice agent built in." } },
+      ],
+    },
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Voqal AI",
     url: "https://voqalai.com",
     description:
-      "AI voice agents, 24/7 phone answering, appointment booking, and lead qualification for service businesses worldwide.",
+      "Practical AI systems for businesses worldwide — AI voice agents, AI websites, lead reactivation, workflow automation, CRM integrations and AI audits.",
     publisher: { "@type": "Organization", name: "Voqal AI", url: "https://voqalai.com" },
   },
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "AI Voice Agents for Global Businesses | Voqal AI",
+    name: "AI Voice Agents, Websites & Automation | Voqal AI",
     url: "https://voqalai.com/",
     speakable: {
       "@type": "SpeakableSpecification",

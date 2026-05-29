@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { defaultOpenGraphImage } from "@/lib/metadata";
 
 export const metadata: Metadata = {
-  title: "FAQ – Setting Up Your AI Receptionist | Voqal AI",
-  description: "Frequently asked questions about Voqal AI. Setup time, pricing, integrations, compliance, and how our AI voice agents work for businesses worldwide.",
+  title: "FAQ – Voqal AI Services, Setup & Pricing | Voqal AI",
+  description: "Frequently asked questions about Voqal AI. Services, setup time, pricing, integrations, compliance, and how our AI systems work for businesses worldwide.",
   alternates: { canonical: "https://voqalai.com/faq/" },
   openGraph: {
     title: "FAQ | Voqal AI",

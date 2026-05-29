@@ -6,7 +6,7 @@
 
 ## Product
 
-**24/7 AI voice receptionist for businesses worldwide.** Answers inbound calls in under 2 seconds, books appointments into connected calendars, qualifies leads, syncs to CRMs. Industry-trained for dental, medical, legal, trades, estate agents, accountancy, professional services and more.
+**Practical AI systems for businesses worldwide.** Voqal AI builds AI voice agents, AI websites, lead reactivation, workflow automation, CRM integrations, and AI audits. The flagship 24/7 AI voice receptionist answers inbound calls in under 2 seconds, books appointments into connected calendars, qualifies leads, and syncs to CRMs. Industry-trained for dental, medical, legal, trades, estate agents, accountancy, professional services and more.
 
 ## Managed Service — Monthly, no contracts
 
