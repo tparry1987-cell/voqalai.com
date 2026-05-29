@@ -55,19 +55,12 @@ const websiteTiers = [
   { name: "Full-Stack",  price: "£4,997", pre: "from", suffix: "one-off", byline: "The complete build, wired for your AI stack",          features: ["Everything in Standard", "Membership / login & payments", "Custom backend & integrations", "Voice-ready & chat-ready setup", "Automation wired in"], cta: "Talk to us", ctaHref: "/contact" },
 ];
 
-const websiteExtras = [
-  { name: "Care plan",        price: "from £49/mo",  note: "Free for your first 3 months with any build, then from £49/mo. Hosting, security, backups and edits." },
-  { name: "AI chat assistant",price: "£69/mo",       note: "Trained on your business, answers enquiries on your site 24/7. £79/mo on its own." },
-  { name: "AI voice agent",   price: "from £169/mo", note: "Answers your calls and books jobs, including out of hours. £197/mo on its own — save £336 a year." },
-  { name: "Automation",       price: "from £129/mo", note: "Lead follow-up, CRM and the everyday glue between your tools. £150/mo on its own." },
-];
-
 const auditTiers = [
   { name: "Standard Audit",     price: "£497",   suffix: "one-off", byline: "For owner-led businesses running it themselves",       features: ["60-minute audit call with a senior advisor", "Slide-deck Opportunities Report — 3 to 5 AI recommendations", "Quantified ROI: hours + £ saved per year", "90-day implementation roadmap", "Credited 100% if you implement with us"], featured: true },
   { name: "Strategic AI Audit", price: "Bespoke", suffix: "",       byline: "For larger teams, multiple sites, or complex operations", features: ["Multi-day engagement or full day on-site", "Stakeholder interviews across departments", "Process mapping — before/after diagrams", "Custom mini PoC for your highest-ROI opportunity", "Quarterly check-ins for 6 months"], cta: "Talk to us", ctaHref: "/contact" },
 ];
 
-function ServiceTierBlock({ eyebrow, heading, blurb, detailHref, detailLabel, tiers, columns, footnote, extrasLabel, extras }: {
+function ServiceTierBlock({ eyebrow, heading, blurb, detailHref, detailLabel, tiers, columns, footnote }: {
   eyebrow: string;
   heading: React.ReactNode;
   blurb: string;
@@ -76,8 +69,6 @@ function ServiceTierBlock({ eyebrow, heading, blurb, detailHref, detailLabel, ti
   tiers: { name: string; price: string; pre?: string; suffix: string; byline: string; features: string[]; featured?: boolean; cta?: string; ctaHref?: string }[];
   columns: number;
   footnote?: string;
-  extrasLabel?: string;
-  extras?: { name: string; price: string; note: string }[];
 }) {
   return (
     <div style={{ marginTop: 72 }}>
@@ -146,27 +137,6 @@ function ServiceTierBlock({ eyebrow, heading, blurb, detailHref, detailLabel, ti
         <FadeUp as="p" delay={0.45} style={{ fontSize: 13, lineHeight: 1.6, color: "#666", margin: "18px 0 0" }}>
           {footnote}
         </FadeUp>
-      )}
-
-      {extras && extras.length > 0 && (
-        <>
-          <FadeUp delay={0.5} style={{ fontSize: 11, letterSpacing: "0.18em", color: "#666", textTransform: "uppercase", margin: "40px 0 16px" }}>
-            {extrasLabel}
-          </FadeUp>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
-            {extras.map((e, i) => (
-              <FadeUp key={e.name} delay={0.5 + i * 0.06}>
-                <div style={{ border: "1px solid rgba(0,0,0,0.14)", borderRadius: 14, padding: "18px 20px", height: "100%", background: "rgba(255,255,255,0.4)" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 10, marginBottom: 8 }}>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a" }}>{e.name}</span>
-                    <span className="cog-italic" style={{ fontSize: 19, color: "var(--cog-copper)", whiteSpace: "nowrap" }}>{e.price}</span>
-                  </div>
-                  <p style={{ fontSize: 12, lineHeight: 1.55, color: "#3a3a3a", margin: 0 }}>{e.note}</p>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
-        </>
       )}
     </div>
   );
@@ -289,8 +259,6 @@ export default function PricingPage() {
           tiers={websiteTiers}
           columns={4}
           footnote="Just need a single page to get online? One-page sites from £495."
-          extrasLabel="Add on as you grow"
-          extras={websiteExtras}
         />
 
         <ServiceTierBlock
