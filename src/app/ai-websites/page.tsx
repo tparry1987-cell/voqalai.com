@@ -283,35 +283,44 @@ export default function AiWebsitesPage() {
           Straightforward pricing.
         </FadeUp>
         <FadeUp as="p" delay={0.18} style={{ fontSize: 14, lineHeight: 1.65, color: "rgba(255,255,255,0.6)", maxWidth: 580, margin: "0 0 40px" }}>
-          Simple pricing for the website itself. Want AI chat, a voice agent or automation on top? We add that as a bespoke bundle, scoped with you. Not sure which fits? We&apos;ll show you a working demo first.
+          Clear pricing to get your business online. Every build includes a care plan from £49/mo (hosting, updates, edits). Add AI chat, a voice agent and automations whenever you&apos;re ready, priced below. Not sure which fits? We&apos;ll show you a working demo first.
         </FadeUp>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, alignItems: "stretch" }}>
           {[
             {
-              name: "Basic",
-              price: "£495",
+              name: "Launch Lite",
+              price: "£695",
               from: true,
-              who: "A clean, modern website to get your business looking sharp.",
-              features: ["Up to 3 pages", "Modern responsive design", "Enquiry / contact form", "Click-to-call button", "Basic SEO setup"],
+              who: "Get your business online fast and looking sharp, on one of our templates.",
+              features: ["2 pages — home + contact", "Smart Voqal template design", "Mobile-responsive & fast", "Contact form & click-to-call", "Your details, hours & location set up"],
               highlight: false,
               cta: "Book a demo →",
             },
             {
-              name: "Pro",
+              name: "Launch",
               price: "£997",
+              from: true,
+              who: "A clean, modern site shaped around your brand, built to bring in enquiries.",
+              features: ["Up to 3 pages", "Design tailored to your brand", "Enquiry & contact form", "Click-to-call button", "Basic SEO setup", "Launch support"],
+              highlight: false,
+              cta: "Book a demo →",
+            },
+            {
+              name: "Standard",
+              price: "£2,497",
               from: false,
-              who: "A bigger, premium site for businesses that need more.",
-              features: ["Everything in Basic", "Up to 5 pages", "Premium custom design", "Copy polish + clear CTAs", "Lead capture & contact flows", "Launch support"],
+              who: "A bigger, premium site with booking, your branding and copy done properly.",
+              features: ["Everything in Launch", "Up to 10 pages + blog / CMS", "Premium custom design & copywriting", "Booking & lead-capture flows", "CRM integration", "Full on-page SEO"],
               highlight: true,
               cta: "Book a demo →",
             },
             {
-              name: "Bespoke",
-              price: "Quoted",
-              from: false,
-              who: "For sites that need AI integration or custom systems.",
-              features: ["AI chat & voice agents", "CRM & booking integrations", "Automation & lead follow-up", "Ecommerce, member areas, stock feeds", "Custom backend builds"],
+              name: "Full-Stack",
+              price: "£4,997",
+              from: true,
+              who: "The complete build: membership, payments and the wiring for your full AI stack.",
+              features: ["Everything in Standard", "Membership / login & payments", "Custom backend & integrations", "Voice-ready & chat-ready setup", "Automation wired in", "Scoped bespoke with you"],
               highlight: false,
               cta: "Talk to us →",
             },
@@ -345,8 +354,31 @@ export default function AiWebsitesPage() {
           ))}
         </div>
 
-        <FadeUp as="p" delay={0.5} style={{ fontSize: 13, lineHeight: 1.65, color: "rgba(255,255,255,0.5)", maxWidth: 640, margin: "32px 0 0" }}>
-          Every site ships with a privacy and cookie policy and is built to modern accessibility standards. Want AI chat, a voice agent, CRM or automation added? Tell us what you need and we&apos;ll put together a bespoke bundle.
+        <FadeUp as="p" delay={0.46} style={{ fontSize: 13, lineHeight: 1.6, color: "rgba(255,255,255,0.5)", maxWidth: 640, margin: "20px 0 0" }}>
+          Just need a single page to get online? One-page sites from £495.
+        </FadeUp>
+
+        <FadeUp as="h3" delay={0.5} style={{ fontSize: 13, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--cog-copper-light)", fontWeight: 600, margin: "44px 0 18px" }}>
+          Add on as you grow
+        </FadeUp>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: 16, alignItems: "stretch" }}>
+          {[
+            { name: "Care plan", price: "from £49/mo", note: "Free for your first 3 months with any build, then from £49/mo. Hosting, security, backups and edits." },
+            { name: "AI chat assistant", price: "£69/mo", note: "£79/mo on its own. Trained on your business, answers enquiries on your site 24/7." },
+            { name: "AI voice agent", price: "from £169/mo", note: "£197/mo on its own. Save £336 a year. Answers your calls and books jobs, including out of hours." },
+            { name: "Automation", price: "from £129/mo", note: "£150/mo on its own. Lead follow-up, CRM and the everyday glue between your tools." },
+          ].map(({ name, price, note }, i) => (
+            <FadeUp key={name} delay={0.5 + i * 0.06}>
+              <div style={{ border: "1px solid rgba(255,255,255,0.15)", borderRadius: 14, padding: "18px 20px", height: "100%", background: "rgba(255,255,255,0.02)" }}>
+                <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", marginBottom: 6 }}>{name}</div>
+                <div className="cog-h-display" style={{ fontSize: 22, fontWeight: 700, color: "var(--cog-copper-light)", letterSpacing: "-0.01em" }}>{price}</div>
+                <p style={{ fontSize: 13, lineHeight: 1.5, color: "rgba(255,255,255,0.6)", margin: "8px 0 0" }}>{note}</p>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+        <FadeUp as="p" delay={0.8} style={{ fontSize: 13, lineHeight: 1.65, color: "rgba(255,255,255,0.5)", maxWidth: 640, margin: "28px 0 0" }}>
+          These are your prices as a Voqal website client, cheaper than buying them on their own. Every site ships with a privacy and cookie policy and is built to modern accessibility standards.
         </FadeUp>
       </section>
 
