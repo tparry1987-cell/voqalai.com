@@ -34,7 +34,7 @@ const HELP_CARDS = [
   {
     title: "Lead Reactivation",
     text: "Re-engage old leads automatically through intelligent outreach and follow-up.",
-    href: "/calculator/",
+    href: "/lead-reactivation/",
     symbol: SYMBOL_LEAD,
     video: VIDEO_LEAD,
   },
@@ -180,18 +180,20 @@ export default function Home() {
         <div className="cog-hero-left speakable-hero" style={{ maxWidth: 760 }}>
           <FadeUp as="div" delay={0.1} style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", marginBottom: 32, display: "inline-flex", alignItems: "center", gap: 12 }}>
             <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--cog-copper)" }} />
-            Global AI Systems
+            Practical AI for everyday business
           </FadeUp>
 
           <FadeUp as="h1" delay={0.3} className="cog-h-display" style={{ fontSize: "clamp(30px, 3.8vw, 56px)", fontWeight: 600, lineHeight: 1.08, letterSpacing: "-0.025em", color: "#fff", margin: "0 0 24px", maxWidth: 700 }}>
-            We Help Businesses Evolve With AI
+            The boring jobs that quietly lose you money. Handled by AI.
           </FadeUp>
 
           <FadeUp as="p" delay={0.55} style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.85)", maxWidth: 540, margin: "0 0 24px" }}>
-            From voice AI and automations to intelligent integrations and operational workflows, we help businesses implement practical AI systems that save time, improve customer experience, and create operational leverage.
+            Answering calls. Chasing old leads. Booking the job. Updating the spreadsheet. We build the voice agents and automations that take care of the everyday things, so you don&apos;t have to.
           </FadeUp>
 
           <FadeUp as="p" delay={0.7} className="cog-italic" style={{ fontSize: "clamp(18px, 1.6vw, 22px)", color: "var(--cog-copper-light)", lineHeight: 1.4, letterSpacing: "-0.005em", margin: "0 0 44px", maxWidth: 480 }}>
+            AI-native websites, built to win work, not just look good.
+            <br />
             From AI curious to AI native.
           </FadeUp>
 

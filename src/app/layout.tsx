@@ -74,7 +74,7 @@ const structuredData = [
       latitude: 51.5154,
       longitude: -0.1222,
     },
-    areaServed: "Worldwide",
+    areaServed: ["Manchester", "Greater Manchester", "United Kingdom", "Worldwide"],
     priceRange: "\u00a3\u00a3",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -122,7 +122,10 @@ const structuredData = [
       postalCode: "WC2H 9JQ",
       addressCountry: "GB",
     },
-    sameAs: ["https://www.linkedin.com/company/110916511/"],
+    sameAs: [
+      "https://www.linkedin.com/company/110916511/",
+      "https://maps.google.com/?cid=13478635982727674063",
+    ],
     description:
       "UK-based AI systems for businesses worldwide \u2014 AI voice agents, AI websites, lead reactivation, workflow automation, CRM integrations and AI audits. Sector-trained for dental, legal, trades, professional services and more. Plans from \u00a3197/month, no contracts. Up to 90% cost reduction compared with traditional front-desk coverage. Gartner (2022) projects $80 billion in contact-centre savings from conversational AI by 2026.",
     foundingDate: "2025",

@@ -264,7 +264,7 @@ export default function VoiceAgentsPage() {
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
               <a href="tel:+442039960962" className="cog-btn-primary">Speak to our AI</a>
               <Link href="/book/" className="cog-btn-secondary">Book a Demo</Link>
-              <Link href="/calculator/" className="cog-btn-secondary">Cost calculator</Link>
+              <Link href="/lead-reactivation/" className="cog-btn-secondary">Cost calculator</Link>
             </div>
           </FadeUp>
         </div>

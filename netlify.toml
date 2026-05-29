@@ -152,8 +152,21 @@
 # Pages that existed but now redirect to closest match
 [[redirects]]
   from = "/lead-reactivation.html"
-  to = "/pricing/#lead-reactivation"
+  to = "/lead-reactivation/"
   status = 301
+
+# /calculator renamed to /lead-reactivation (2026-05-29) — preserve link equity
+[[redirects]]
+  from = "/calculator"
+  to = "/lead-reactivation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/calculator/*"
+  to = "/lead-reactivation/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/locations.html"

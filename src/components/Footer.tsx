@@ -95,7 +95,7 @@ export function Footer() {
             ["Voice Agents", "/voice-agents"],
             ["AI Websites", "/ai-websites"],
             ["Industries", "/#industries"],
-            ["Lead Reactivation", "/calculator"],
+            ["Lead Reactivation", "/lead-reactivation"],
             ["Audit", "/audit"],
             ["Pricing", "/pricing"],
           ]}

@@ -8,7 +8,7 @@ const links = [
   { label: "Voice Agents", href: "/voice-agents" },
   { label: "AI Websites", href: "/ai-websites" },
   { label: "Industries", href: "/#industries" },
-  { label: "Lead Reactivation", href: "/calculator" },
+  { label: "Lead Reactivation", href: "/lead-reactivation" },
   { label: "Audit", href: "/audit" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },

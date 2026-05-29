@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     "wake up dormant leads",
     "dormant CRM leads",
   ],
-  alternates: { canonical: "https://voqalai.com/calculator/" },
+  alternates: { canonical: "https://voqalai.com/lead-reactivation/" },
   openGraph: {
     title: "Revenue Recovery Calculator – Wake Up Your Dormant Leads | Voqal AI",
     description:
       "60-second diagnosis of revenue trapped in your dormant CRM leads. AI-powered SMS reactivation. £0 setup, £50 per booked call. We only get paid when you do.",
-    url: "https://voqalai.com/calculator/",
+    url: "https://voqalai.com/lead-reactivation/",
     type: "website",
     siteName: "Voqal AI",
     locale: "en_GB",
@@ -56,9 +56,9 @@ const calculatorSchema = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://voqalai.com/calculator/#webpage",
+    "@id": "https://voqalai.com/lead-reactivation/#webpage",
     name: "Revenue Recovery Calculator – Lead Reactivation",
-    url: "https://voqalai.com/calculator/",
+    url: "https://voqalai.com/lead-reactivation/",
     description:
       "Interactive calculator that estimates how much revenue is trapped in dormant CRM leads, paired with a live demo of AI-powered SMS lead reactivation.",
     isPartOf: { "@id": "https://voqalai.com/#website" },
@@ -67,7 +67,7 @@ const calculatorSchema = [
     potentialAction: [
       {
         "@type": "ReadAction",
-        target: ["https://voqalai.com/calculator/"],
+        target: ["https://voqalai.com/lead-reactivation/"],
       },
     ],
     speakable: {
@@ -80,13 +80,13 @@ const calculatorSchema = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://voqalai.com/" },
-      { "@type": "ListItem", position: 2, name: "Revenue Recovery Calculator", item: "https://voqalai.com/calculator/" },
+      { "@type": "ListItem", position: 2, name: "Revenue Recovery Calculator", item: "https://voqalai.com/lead-reactivation/" },
     ],
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://voqalai.com/calculator/#lead-reactivation-service",
+    "@id": "https://voqalai.com/lead-reactivation/#lead-reactivation-service",
     name: "AI SMS Lead Reactivation",
     serviceType: "Lead reactivation and dormant CRM follow-up",
     description:
@@ -115,7 +115,7 @@ const calculatorSchema = [
         unitText: "per confirmed booking",
       },
       availability: "https://schema.org/InStock",
-      url: "https://voqalai.com/calculator/",
+      url: "https://voqalai.com/lead-reactivation/",
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -140,7 +140,7 @@ const calculatorSchema = [
     name: "Voqal AI Revenue Recovery Calculator",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    url: "https://voqalai.com/calculator/",
+    url: "https://voqalai.com/lead-reactivation/",
     description:
       "Interactive calculator that estimates revenue locked in dormant CRM leads and demonstrates a live AI SMS reactivation conversation.",
     offers: {
