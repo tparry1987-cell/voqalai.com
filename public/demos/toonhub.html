@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOONHUB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { margin: 0; font-family: 'Inter', sans-serif; }
+    .font-anton { font-family: 'Anton', sans-serif; }
+
+    .carousel-item {
+      position: absolute;
+      aspect-ratio: 0.6 / 1;
+      transition:
+        transform 650ms cubic-bezier(0.4, 0, 0.2, 1),
+        filter 650ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 650ms cubic-bezier(0.4, 0, 0.2, 1),
+        left 650ms cubic-bezier(0.4, 0, 0.2, 1),
+        height 650ms cubic-bezier(0.4, 0, 0.2, 1),
+        bottom 650ms cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform, filter, opacity;
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    .nav-btn {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 150ms ease, background-color 150ms ease;
+    }
+    .nav-btn:hover {
+      transform: scale(1.08);
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .discover-link { opacity: 0.95; transition: opacity 200ms ease; text-decoration: none; }
+    .discover-link:hover { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div id="app" class="relative w-full overflow-hidden" style="background-color: #F4845F; transition: background-color 650ms cubic-bezier(0.4, 0, 0.2, 1); font-family: 'Inter', sans-serif;">
+    <div class="relative w-full" style="height: 100vh; overflow: hidden;">
+
+      <!-- 1. Grain overlay -->
+      <div class="absolute inset-0 pointer-events-none" style="z-index: 50; opacity: 0.4; background-size: 200px 200px; background-repeat: repeat; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E&quot;);"></div>
+
+      <!-- 2. Giant ghost text -->
+      <div class="absolute inset-x-0 flex items-center justify-center pointer-events-none select-none font-anton" style="z-index: 2; top: 18%; font-size: clamp(90px, 28vw, 380px); font-weight: 900; color: #fff; line-height: 1; text-transform: uppercase; letter-spacing: -0.02em; white-space: nowrap;">
+        3D SHAPE
+      </div>
+
+      <!-- 3. Brand label -->
+      <div class="absolute top-6 left-4 sm:left-8 text-xs font-semibold uppercase" style="z-index: 60; color: #fff; opacity: 0.9; letter-spacing: 0.18em;">
+        TOONHUB
+      </div>
+
+      <!-- 4. Carousel -->
+      <div class="absolute inset-0" style="z-index: 3;">
+        <div class="carousel-item" id="item-0"><img src="assets/toonhub/1.webp" alt="" draggable="false" /></div>
+        <div class="carousel-item" id="item-1"><img src="assets/toonhub/2.webp" alt="" draggable="false" /></div>
+        <div class="carousel-item" id="item-2"><img src="assets/toonhub/3.webp" alt="" draggable="false" /></div>
+        <div class="carousel-item" id="item-3"><img src="assets/toonhub/4.webp" alt="" draggable="false" /></div>
+      </div>
+
+      <!-- 5. Bottom-left text + nav -->
+      <div class="absolute bottom-6 left-4 sm:bottom-20 sm:left-24" style="z-index: 60; max-width: 320px;">
+        <p class="font-bold uppercase tracking-widest mb-2 sm:mb-3 text-base sm:text-[22px]" style="color: #fff; opacity: 0.95; letter-spacing: 0.02em;">
+          TOONHUB FIGURINES
+        </p>
+        <p class="hidden sm:block text-xs sm:text-sm mb-4 sm:mb-5" style="color: #fff; opacity: 0.85; line-height: 1.6;">
+          The artwork is stunning, shipped fully prepared. The finish is a vision, the 3D craft is flawless. Many thanks! Wishing you the win. Order now.
+        </p>
+        <div class="flex gap-3">
+          <button class="nav-btn w-12 h-12 sm:w-16 sm:h-16" aria-label="Previous" onclick="navigate('prev')">
+            <!-- lucide ArrowLeft -->
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          </button>
+          <button class="nav-btn w-12 h-12 sm:w-16 sm:h-16" aria-label="Next" onclick="navigate('next')">
+            <!-- lucide ArrowRight -->
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 6. Bottom-right link -->
+      <a href="#" class="discover-link absolute bottom-6 right-4 sm:bottom-20 sm:right-10 flex items-center font-anton" style="z-index: 60; font-size: clamp(20px, 4vw, 56px); font-weight: 400; color: #fff; letter-spacing: -0.02em; line-height: 1; text-transform: uppercase;">
+        DISCOVER IT
+        <svg class="w-5 h-5 sm:w-8 sm:h-8 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    var IMAGES = [
+      { src: 'assets/toonhub/1.webp', bg: '#F4845F', panel: '#F79B7F' },
+      { src: 'assets/toonhub/2.webp', bg: '#6BBF7A', panel: '#85CC92' },
+      { src: 'assets/toonhub/3.webp', bg: '#E882B4', panel: '#ED9DC4' },
+      { src: 'assets/toonhub/4.webp', bg: '#6EB5FF', panel: '#8DC4FF' }
+    ];
+
+    // Preload all images
+    IMAGES.forEach(function (im) { var i = new Image(); i.src = im.src; });
+
+    var activeIndex = 0;
+    var isAnimating = false;
+    var isMobile = window.innerWidth < 640;
+    var app = document.getElementById('app');
+
+    function styleFor(role) {
+      if (role === 'center') return {
+        left: '50%',
+        transform: 'translateX(-50%) scale(' + (isMobile ? 1.25 : 1.68) + ')',
+        filter: 'blur(0px)',
+        opacity: '1',
+        zIndex: '20',
+        height: isMobile ? '60%' : '92%',
+        bottom: isMobile ? '22%' : '0'
+      };
+      if (role === 'left') return {
+        left: isMobile ? '20%' : '30%',
+        transform: 'translateX(-50%) scale(1)',
+        filter: 'blur(2px)',
+        opacity: '0.85',
+        zIndex: '10',
+        height: isMobile ? '16%' : '28%',
+        bottom: isMobile ? '32%' : '12%'
+      };
+      if (role === 'right') return {
+        left: isMobile ? '80%' : '70%',
+        transform: 'translateX(-50%) scale(1)',
+        filter: 'blur(2px)',
+        opacity: '0.85',
+        zIndex: '10',
+        height: isMobile ? '16%' : '28%',
+        bottom: isMobile ? '32%' : '12%'
+      };
+      return { // back
+        left: '50%',
+        transform: 'translateX(-50%) scale(1)',
+        filter: 'blur(4px)',
+        opacity: '1',
+        zIndex: '5',
+        height: isMobile ? '13%' : '22%',
+        bottom: isMobile ? '32%' : '12%'
+      };
+    }
+
+    function applyLayout() {
+      var roles = {};
+      roles[activeIndex] = 'center';
+      roles[(activeIndex + 3) % 4] = 'left';
+      roles[(activeIndex + 1) % 4] = 'right';
+      roles[(activeIndex + 2) % 4] = 'back';
+      for (var i = 0; i < 4; i++) {
+        var el = document.getElementById('item-' + i);
+        var s = styleFor(roles[i]);
+        for (var k in s) el.style[k] = s[k];
+      }
+      app.style.backgroundColor = IMAGES[activeIndex].bg;
+    }
+
+    function navigate(dir) {
+      if (isAnimating) return;
+      isAnimating = true;
+      activeIndex = dir === 'next' ? (activeIndex + 1) % 4 : (activeIndex + 3) % 4;
+      applyLayout();
+      setTimeout(function () { isAnimating = false; }, 650);
+    }
+
+    window.addEventListener('resize', function () {
+      isMobile = window.innerWidth < 640;
+      applyLayout();
+    });
+
+    applyLayout();
+  </script>
+</body>
+</html>
