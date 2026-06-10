@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velar.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+    body {
+      margin: 0;
+      background: #f5f0ea;
+      overflow-x: clip;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-syne { font-family: 'Syne', sans-serif; }
+
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .type-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1.1em;
+      border-radius: 2px;
+      background: #fff;
+      margin-left: 4px;
+      vertical-align: -0.15em;
+      animation: blink 0.7s step-end infinite;
+    }
+    .type-letter { visibility: hidden; }
+    .type-letter.shown { visibility: visible; }
+
+    /* Nav hamburger lines */
+    .nav-line { display: block; width: 28px; height: 1px; background: currentColor; transition: width 0.3s ease; }
+    .nav-burger:hover .nav-line-top { width: 20px; }
+
+    .mobile-link { font-family: 'Syne', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; color: #000; transition: color 0.2s ease; text-decoration: none; }
+    .mobile-link:hover { color: #6b7280; }
+
+    /* Hero type */
+    .hero-text-block { opacity: 0; transform: translateY(-28px); }
+    .hero-text-block.shown { opacity: 1; transform: translateY(0); transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s; }
+    .hero-own-the, .hero-extraordinary { font-family: 'Syne', sans-serif; font-weight: 800; text-transform: uppercase; color: #000; letter-spacing: -0.03em; line-height: 1; }
+
+    @media (max-width: 639px) {
+      .hero-subtitle-desktop { display: none !important; }
+      .hero-subtitle-mobile  { display: block !important; }
+      .hero-text-block { padding-top: 90px !important; }
+      .hero-heading-top { justify-content: flex-start !important; }
+      .hero-own-the { font-size: 7.5vw !important; }
+      .hero-extraordinary { font-size: 14.5vw !important; white-space: normal !important; word-break: break-word !important; line-height: 0.9 !important; }
+    }
+    @media (min-width: 640px) and (max-width: 1023px) {
+      .hero-subtitle-desktop { display: none !important; }
+      .hero-subtitle-mobile  { display: block !important; }
+      .hero-text-block { padding-top: 110px !important; }
+      .hero-heading-top { justify-content: flex-start !important; }
+      .hero-own-the { font-size: 5.5vw !important; }
+      .hero-extraordinary { font-size: 11vw !important; white-space: normal !important; word-break: break-word !important; line-height: 0.9 !important; }
+    }
+    @media (min-width: 1024px) {
+      .hero-subtitle-desktop { display: block !important; }
+      .hero-subtitle-mobile  { display: none !important; }
+      .hero-text-block { padding-top: calc(28vh - 50px) !important; }
+      .hero-own-the { font-size: 3vw !important; }
+      .hero-extraordinary { font-size: clamp(52px, 6.5vw, 9vw) !important; white-space: nowrap !important; line-height: 0.88 !important; }
+    }
+
+    /* Section 5 — dark statement */
+    .s2-statement {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: #e8e4df;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+      white-space: nowrap;
+      font-size: clamp(22px, 2.6vw, 42px);
+    }
+    .s2-inner-wrap { max-width: 1200px; margin: 0 auto; padding-left: 25%; }
+    .s2-stats-row { margin-top: clamp(48px, 6vw, 80px); display: flex; }
+    .s2-stat { flex: 1; }
+    .s2-stat + .s2-stat { border-left: 1px solid rgba(255,255,255,0.2); padding-left: clamp(20px, 2.5vw, 40px); }
+    .s2-num { font-family: 'Inter', sans-serif; font-weight: 300; color: #fff; font-size: clamp(36px, 4.5vw, 72px); line-height: 1.1; }
+    .s2-label { font-family: 'Inter', sans-serif; font-weight: 400; color: rgba(255,255,255,0.6); font-size: clamp(12px, 1.1vw, 16px); margin-top: clamp(4px, 0.5vw, 8px); letter-spacing: 0.01em; }
+    @media (max-width: 767px) {
+      .s2-inner-wrap { padding-left: 0; }
+      .s2-statement { white-space: normal; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .s2-inner-wrap { padding-left: 15%; }
+      .s2-section { min-height: 70vh; }
+    }
+
+    /* Section 6 — gallery */
+    .s3-gallery-section { position: relative; z-index: 25; margin-top: -100vh; background: #1a1a1a; height: 100vh; overflow: hidden; }
+    .s3-ticker-wrap { position: absolute; inset: 0; display: flex; align-items: center; overflow: hidden; z-index: 0; pointer-events: none; }
+    .ticker-track { display: flex; }
+    .ticker-track span {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(100px, 14vw, 220px);
+      color: #fff;
+      white-space: nowrap;
+      letter-spacing: -0.02em;
+      user-select: none;
+      padding-right: 0.3em;
+    }
+    .s3-gallery-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; height: 100%; padding: clamp(24px, 4vw, 60px); }
+    .gallery-expand-row { display: flex; gap: 6px; height: 70%; max-width: 1200px; width: 100%; }
+    .gallery-expand-item { flex: 1 1 0%; height: 100%; border-radius: 12px; overflow: hidden; cursor: pointer; transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .gallery-expand-item:hover { flex: 4; }
+    .gallery-expand-item video { width: 100%; height: 100%; object-fit: cover; }
+
+    @media (max-width: 1023px) {
+      .s3-gallery-section { height: auto; min-height: 100vh; overflow: visible; }
+      .s3-ticker-wrap { position: sticky; top: 0; height: 100vh; width: 100%; margin-bottom: -100vh; }
+      .s3-gallery-content { height: auto; align-items: flex-start; padding: 80px 16px 60px; }
+      .gallery-expand-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; height: auto; width: 100%; max-width: 700px; }
+      .gallery-expand-item { flex: none; height: auto; aspect-ratio: 4/5; border-radius: 10px; transition: transform 0.3s ease; }
+      .gallery-expand-item:hover { flex: none; transform: scale(1.02); }
+      .gallery-expand-item:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: calc(50% - 4px); justify-self: center; }
+    }
+    @media (max-width: 479px) {
+      .s3-gallery-content { padding: 60px 12px 48px; }
+      .gallery-expand-row { gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ SECTION 1 — PRELOADER ════════ -->
+  <div id="preloader" class="fixed inset-0 flex items-center justify-center" style="z-index: 100; background: #213138; transform: translateY(0); transition: transform 1.5s cubic-bezier(0.45, 0, 0.15, 1);">
+    <div class="font-syne" style="font-size: 2.6rem; color: #fff; letter-spacing: -0.02em;">
+      <span class="type-letter" style="font-weight: 700;">V</span><span class="type-letter" style="font-weight: 700;">e</span><span class="type-letter" style="font-weight: 700;">l</span><span class="type-letter" style="font-weight: 700;">a</span><span class="type-letter" style="font-weight: 700;">r</span><span class="type-letter" style="font-weight: 900;">.</span><span id="typeCursor" class="type-cursor"></span>
+    </div>
+  </div>
+
+  <!-- ════════ SECTION 2 — FIXED NAV ════════ -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 lg:px-16 py-5 md:py-6" style="color: #213138; transition: color 0.35s ease;">
+    <div class="font-syne text-xl" style="font-weight: 700;">Velar<span style="font-weight: 900;">.</span></div>
+    <button id="burger" class="nav-burger flex flex-col gap-2 items-end" aria-label="Menu" style="color: inherit;">
+      <span id="burgerLines" class="contents">
+        <span class="nav-line nav-line-top"></span>
+        <span class="nav-line"></span>
+      </span>
+      <svg id="burgerX" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobileMenu" class="hidden fixed inset-0 z-40 flex flex-col items-center justify-center gap-8" style="background: #f5f0ea;">
+    <a href="#" class="mobile-link text-4xl font-light tracking-widest">Residences</a>
+    <a href="#" class="mobile-link text-4xl font-light tracking-widest">Story</a>
+    <a href="#" class="mobile-link text-4xl font-light tracking-widest">Listings</a>
+    <a href="#" class="mobile-link text-4xl font-light tracking-widest">Inquire</a>
+  </div>
+
+  <!-- ════════ SECTION 3 — HERO ════════ -->
+  <section id="hero" style="position: relative; min-height: 100vh; overflow: visible; background-image: url('https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260603_073200_7082add5-f1f8-4873-8696-d6f78a44089b.png&w=1920&q=85'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+    <div id="heroText" class="hero-text-block" style="position: relative; z-index: 10;">
+      <div class="hero-heading-top flex items-end justify-between px-6 md:px-10 lg:px-16" style="margin-bottom: -0.04em;">
+        <div class="hero-own-the">LIVE IN</div>
+        <p class="hero-subtitle-desktop font-syne text-right" style="font-weight: 700; font-size: clamp(10px, 0.95vw, 14px); max-width: 300px; opacity: 0.7; line-height: 1.6; margin-bottom: 0.2em; letter-spacing: 0.02em;">
+          Stately homes built with vision,<br />scope, and architectural finesse.
+        </p>
+      </div>
+      <div style="overflow: hidden;">
+        <div class="hero-extraordinary px-6 md:px-10 lg:px-16">IRREPLACEABLE</div>
+      </div>
+      <p class="hero-subtitle-mobile font-syne px-6" style="display: none; font-weight: 600; font-size: clamp(12px, 3vw, 15px); opacity: 0.65; margin-top: 0.9em;">
+        Premium real estate with vision,<br />depth, and architectural clarity.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════ SECTION 4 — SCROLL-DRIVEN HOUSE ════════ -->
+  <div id="houseWrap" style="position: fixed; z-index: 22; pointer-events: none; will-change: transform; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; min-width: 1400px;">
+    <div id="houseInner" style="transform: translateY(102vh);">
+      <img id="houseImg" src="assets/velar/building.webp" alt="" aria-hidden="true" style="width: 100%; display: block;" />
+    </div>
+  </div>
+
+  <!-- ════════ SECTION 5 — DARK STATEMENT + STATS ════════ -->
+  <div id="darkWrap" style="position: relative; height: 200vh; z-index: 20;">
+    <div style="height: 4vh; background: #1a1a1a;"></div>
+    <section id="darkSection" class="s2-section" style="position: sticky; top: 0; height: 100vh; background: #1a1a1a; overflow: hidden;">
+      <div class="s2-content flex flex-col px-6 md:px-10 lg:px-16" style="padding-top: clamp(30px, 4vw, 60px); padding-bottom: clamp(60px, 8vw, 120px);">
+        <div class="s2-inner-wrap">
+          <p class="s2-statement">
+            Every estate we present is hand-chosen<br />
+            through a frame of permanence, refinement,<br />
+            and timeless detail. Standards are not<br />
+            a flourish. It is our discipline.
+          </p>
+          <div class="s2-stats-row">
+            <div class="s2-stat">
+              <div class="s2-num" data-end="120" data-suffix="+">0+</div>
+              <div class="s2-label">Portfolio Holdings</div>
+            </div>
+            <div class="s2-stat">
+              <div class="s2-num" data-end="12" data-suffix="">0</div>
+              <div class="s2-label">Global Locations</div>
+            </div>
+            <div class="s2-stat">
+              <div class="s2-num" data-end="98" data-suffix="%">0%</div>
+              <div class="s2-label">Patron Loyalty Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ SECTION 6 — HOVER-EXPAND GALLERY ════════ -->
+  <section id="gallerySection" class="s3-gallery-section">
+    <div class="s3-ticker-wrap">
+      <div class="ticker-track">
+        <span>Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;</span>
+        <span>Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;&nbsp;Velar.&nbsp;&nbsp;</span>
+      </div>
+    </div>
+    <div class="s3-gallery-content">
+      <div class="gallery-expand-row">
+        <div class="gallery-expand-item"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260528_154759_4cdc8175-8261-497c-b688-9477c76545d4.mp4" autoplay loop muted playsinline></video></div>
+        <div class="gallery-expand-item"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260528_154751_39b1b9bb-2708-4211-b6a2-d39f93309e52.mp4" autoplay loop muted playsinline></video></div>
+        <div class="gallery-expand-item"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260528_154737_eba7900c-0313-483c-a30a-632c747ccc42.mp4" autoplay loop muted playsinline></video></div>
+        <div class="gallery-expand-item"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260602_144009_4348fe33-f885-4345-8e92-3fe1c2625d32.mp4" autoplay loop muted playsinline></video></div>
+        <div class="gallery-expand-item"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260602_145337_e44eaa8c-6bb1-4a6e-a70f-ed0231cbaccb.mp4" autoplay loop muted playsinline></video></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // ── Preloader typewriter + lift ──
+    var CHAR_INTERVAL = 140, TYPE_START = 600;
+    var LIFT_AT = TYPE_START + 6 * CHAR_INTERVAL + 700;
+    var letters = document.querySelectorAll('.type-letter');
+    var preloader = document.getElementById('preloader');
+    var heroText = document.getElementById('heroText');
+    var houseInner = document.getElementById('houseInner');
+    var liftDone = false;
+
+    letters.forEach(function (el, i) {
+      setTimeout(function () { el.classList.add('shown'); }, TYPE_START + i * CHAR_INTERVAL);
+    });
+    setTimeout(function () { document.getElementById('typeCursor').style.display = 'none'; }, LIFT_AT - 150);
+    setTimeout(function () {
+      // lift the overlay; house rises from below (1.5s, 0.4s delay)
+      preloader.style.transform = 'translateY(-100%)';
+      houseInner.style.transition = 'transform 1.5s cubic-bezier(0.45, 0, 0.15, 1) 0.4s';
+      houseInner.style.transform = 'translateY(0)';
+    }, LIFT_AT);
+    setTimeout(function () { heroText.classList.add('shown'); }, LIFT_AT + 1300);
+    setTimeout(function () {
+      liftDone = true;
+      preloader.style.transition = 'none';
+      houseInner.style.transition = 'none';
+      updateHousePosition();
+    }, LIFT_AT + 2100);
+
+    // ── Nav: hamburger + dark-section color ──
+    var burger = document.getElementById('burger');
+    var burgerLines = document.getElementById('burgerLines');
+    var burgerX = document.getElementById('burgerX');
+    var mobileMenu = document.getElementById('mobileMenu');
+    var nav = document.getElementById('nav');
+    var menuOpen = false;
+
+    function setMenu(open) {
+      menuOpen = open;
+      mobileMenu.classList.toggle('hidden', !open);
+      burgerLines.classList.toggle('hidden', open);
+      burgerX.classList.toggle('hidden', !open);
+      updateNavColor();
+    }
+    burger.addEventListener('click', function () { setMenu(!menuOpen); });
+    document.querySelectorAll('.mobile-link').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+
+    var darkSection = document.getElementById('darkWrap');
+    var gallerySection = document.getElementById('gallerySection');
+    function updateNavColor() {
+      var onDark = false;
+      if (!menuOpen) {
+        [darkSection, gallerySection].forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.top <= 0 && r.bottom > 0) onDark = true;
+        });
+      }
+      nav.style.color = onDark ? '#ffffff' : '#213138';
+    }
+
+    // ── Scroll-driven house animation ──
+    var houseWrap = document.getElementById('houseWrap');
+    var houseImg = document.getElementById('houseImg');
+    var hero = document.getElementById('hero');
+
+    function smoothstep(t) { return t * t * (3 - 2 * t); }
+    function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+    function updateHousePosition() {
+      if (!liftDone) return;
+      var vw = window.innerWidth, vh = window.innerHeight;
+      var baseW = Math.max(vw, 1400);
+      var heroRect = hero.getBoundingClientRect();
+      var darkRect = darkSection.getBoundingClientRect();
+      var imgH = houseImg.offsetHeight;
+      var heroH = heroRect.height;
+
+      var triggerPoint = -(heroH * 0.30);
+      var endPoint = heroRect.top - (darkRect.bottom - vh);
+      var progress = clamp((heroRect.top - triggerPoint) / (endPoint - triggerPoint), 0, 1);
+
+      if (progress <= 0) {
+        houseWrap.style.top = 'auto';
+        houseWrap.style.bottom = '0';
+        houseWrap.style.left = '50%';
+        houseWrap.style.transform = 'translateX(-50%)';
+        houseWrap.style.transformOrigin = '';
+        return;
+      }
+
+      var t = smoothstep(smoothstep(progress));
+      var startX = (vw - baseW) / 2;
+      var startY = vh - imgH;
+      var finalScale = 1.45;
+      var finalX = (vw - baseW * finalScale) / 2;
+      var mobileOffset = vw < 1024 ? -250 : 4;
+      var finalY = darkRect.bottom - imgH * finalScale + 500 + mobileOffset;
+
+      var currentX = startX + (finalX - startX) * t;
+      var currentY = startY + (finalY - startY) * t;
+      var currentScale = 1 + (finalScale - 1) * t;
+
+      houseWrap.style.top = '0';
+      houseWrap.style.bottom = 'auto';
+      houseWrap.style.left = '0';
+      houseWrap.style.transform = 'translate(' + currentX + 'px, ' + currentY + 'px) scale(' + currentScale + ')';
+      houseWrap.style.transformOrigin = 'top left';
+    }
+
+    window.addEventListener('scroll', function () { updateNavColor(); updateHousePosition(); }, { passive: true });
+    window.addEventListener('resize', updateHousePosition);
+
+    // ── CountUp stats ──
+    var counted = false;
+    var statsObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !counted) {
+          counted = true;
+          document.querySelectorAll('.s2-num').forEach(function (el) {
+            var end = parseInt(el.getAttribute('data-end'), 10);
+            var suffix = el.getAttribute('data-suffix');
+            var start = null;
+            function step(ts) {
+              if (start === null) start = ts;
+              var t = Math.min((ts - start) / 2000, 1);
+              var eased = 1 - Math.pow(1 - t, 3);
+              el.textContent = Math.round(eased * end) + suffix;
+              if (t < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          });
+          statsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    statsObserver.observe(document.querySelector('.s2-stats-row'));
+  </script>
+</body>
+</html>
