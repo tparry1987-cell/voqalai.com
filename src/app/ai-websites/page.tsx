@@ -26,6 +26,7 @@ const DEMO_BUILDS = [
   { vertical: "Bold animated headline", tint: "linear-gradient(135deg, #1a1a1a 0%, #2a1a4a 100%)", href: "/demos/fearless-vision.html" },
   { vertical: "Looping video canvas", tint: "linear-gradient(135deg, #1a1a1a 0%, #222222 100%)", href: "/demos/microvisuals.html" },
   { vertical: "Animated text hero", tint: "linear-gradient(135deg, #1a1a1a 0%, #1f2a3a 100%)", href: "/demos/vex.html" },
+  { vertical: "Cursor-reveal cyberpunk hero", tint: "linear-gradient(135deg, #1a1a1a 0%, #5a2222 100%)", href: "/demos/augment.html" },
 ];
 
 function Badges({ tone = "light" }: { tone?: "light" | "dark" }) {

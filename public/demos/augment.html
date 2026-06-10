@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUGMENT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+    @font-face {
+      font-family: 'Helvetica Neue Roman';
+      src: url('/fonts/HelveticaNeue-Roman.woff2') format('woff2'),
+           url('/fonts/HelveticaNeue-Roman.woff') format('woff');
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    * { font-family: 'JetBrains Mono', monospace; }
+    .font-helvetica-neue { font-family: 'JetBrains Mono', monospace; }
+
+    body { margin: 0; }
+
+    @keyframes kenBurns {
+      from { transform: scale(1.12); }
+      to { transform: scale(1); }
+    }
+    .ken-burns { animation: kenBurns 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+    @keyframes heroRise {
+      from { opacity: 0; transform: translateY(26px); filter: blur(8px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    .hero-rise {
+      opacity: 0;
+      animation: heroRise 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes navDrop {
+      from { opacity: 0; transform: translateY(-18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .nav-drop {
+      opacity: 0;
+      animation: navDrop 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+    }
+
+    @keyframes arcDraw { to { stroke-dashoffset: 0; } }
+    .arc-line {
+      stroke-dasharray: var(--len);
+      stroke-dashoffset: var(--len);
+      animation: arcDraw 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.4); opacity: 0; }
+      60% { transform: scale(1.25); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .arc-dot {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: popIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes pulseRing {
+      0% { transform: scale(1); opacity: 0.35; }
+      100% { transform: scale(1.45); opacity: 0; }
+    }
+    .arc-ring {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pulseRing 2.8s ease-in-out infinite;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .arc-text { opacity: 0; animation: fadeIn 0.7s ease forwards; }
+
+    /* CTA shine sweep */
+    .cta-shine { transform: translateX(-100%); transition: transform 700ms ease; }
+    .group:hover .cta-shine { transform: translateX(100%); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ken-burns, .hero-rise, .nav-drop, .arc-line, .arc-dot, .arc-ring, .arc-text {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        stroke-dashoffset: 0 !important;
+        filter: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen bg-white tracking-[-0.02em]" style="font-family: 'JetBrains Mono', monospace;">
+
+    <!-- ════════ NAVBAR ════════ -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between md:justify-center p-4 sm:p-5">
+      <!-- Desktop: one centered pill -->
+      <div class="nav-drop hidden md:flex bg-black/60 backdrop-blur-md rounded-full pl-3 pr-2 py-2 items-center gap-1">
+        <svg width="22" height="22" viewBox="0 0 256 256" fill="white" aria-hidden="true">
+          <path d="M 256 64 L 256 128 L 192.5 128 L 160 95 L 128 64 L 96 95 L 63.5 128 L 64 128 L 128 192 L 128 256 L 64.5 256 L 32 223 L 0 192 L 0 64 L 64 0 L 192 0 Z M 256 192 L 256 256 L 192.5 256 L 160 223 L 128 192 L 128 128 L 192 128 Z" />
+        </svg>
+        <button class="text-sm font-medium px-3 py-1.5 rounded-full text-white hover:bg-white/10">Module</button>
+        <button class="text-sm font-medium px-3 py-1.5 rounded-full text-gray-300 hover:bg-white/10 hover:text-white">Case Records</button>
+        <button class="text-sm font-medium px-3 py-1.5 rounded-full text-gray-300 hover:bg-white/10 hover:text-white">Biotech</button>
+        <button class="text-sm font-medium px-3 py-1.5 rounded-full text-gray-300 hover:bg-white/10 hover:text-white">Tiers</button>
+        <button class="text-sm font-medium px-3 py-1.5 rounded-full text-gray-300 hover:bg-white/10 hover:text-white">Live Demo</button>
+        <button class="bg-white text-gray-900 text-sm font-semibold px-5 py-1.5 rounded-full hover:bg-gray-100 ml-1">Connect</button>
+      </div>
+
+      <!-- Mobile: logo pill (left) + hamburger pill (right) -->
+      <div class="nav-drop md:hidden bg-black/60 backdrop-blur-md rounded-full p-2.5">
+        <svg width="22" height="22" viewBox="0 0 256 256" fill="white" aria-hidden="true">
+          <path d="M 256 64 L 256 128 L 192.5 128 L 160 95 L 128 64 L 96 95 L 63.5 128 L 64 128 L 128 192 L 128 256 L 64.5 256 L 32 223 L 0 192 L 0 64 L 64 0 L 192 0 Z M 256 192 L 256 256 L 192.5 256 L 160 223 L 128 192 L 128 128 L 192 128 Z" />
+        </svg>
+      </div>
+      <button id="menuToggle" aria-label="Menu" class="nav-drop md:hidden relative z-50 bg-black/60 backdrop-blur-md rounded-full p-2.5 text-white">
+        <!-- lucide Menu -->
+        <svg id="iconMenu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <!-- lucide X -->
+        <svg id="iconX" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+
+      <!-- Mobile dropdown -->
+      <div id="mobileMenu" class="hidden md:hidden fixed top-0 left-0 right-0 z-40 bg-white pt-16 pb-6 px-5 shadow-lg">
+        <a href="#" class="mobile-link block text-gray-800 py-3 border-b border-gray-100">Module</a>
+        <a href="#" class="mobile-link block text-gray-800 py-3 border-b border-gray-100">Case Records</a>
+        <a href="#" class="mobile-link block text-gray-800 py-3 border-b border-gray-100">Biotech</a>
+        <a href="#" class="mobile-link block text-gray-800 py-3 border-b border-gray-100">Tiers</a>
+        <a href="#" class="mobile-link block text-gray-800 py-3 border-b border-gray-100">Live Demo</a>
+        <a href="#" class="mobile-link inline-block mt-5 bg-gray-900 text-white text-sm font-semibold px-6 py-2.5 rounded-full">Connect</a>
+      </div>
+    </nav>
+
+    <!-- ════════ HERO ════════ -->
+    <section class="relative overflow-hidden" style="height: 100dvh;">
+
+      <!-- 1. Grid background -->
+      <svg id="gridBg" class="absolute inset-0 z-0 w-full h-full" style="opacity: 0.1;" aria-hidden="true">
+        <defs>
+          <pattern id="gridPattern" width="48" height="48" patternUnits="userSpaceOnUse">
+            <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#64748b" stroke-width="0.6" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#gridPattern)" />
+      </svg>
+
+      <!-- 2. Base image (Ken Burns) -->
+      <div class="ken-burns absolute inset-0 z-10 bg-center bg-cover"
+           style="background-image: url('https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_125121_afb71ce9-9c64-4c54-90b5-c89c0764c052.png&w=1920&q=85');"></div>
+
+      <!-- 3. Cursor spotlight reveal -->
+      <div id="revealLayer" class="absolute inset-0 z-30 bg-center bg-cover"
+           style="background-image: url('https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_135737_0da59642-725b-451a-997b-b0283d95a42a.png&w=1280&q=85'); mask-size: 100% 100%; -webkit-mask-size: 100% 100%;"></div>
+
+      <!-- 4. Stats arcs (desktop only, decorative) -->
+      <div class="absolute inset-y-0 right-0 z-50 pointer-events-none hidden sm:block">
+        <svg id="arcsSvg" viewBox="0 0 380 700" preserveAspectRatio="xMaxYMid meet" class="h-full w-auto"></svg>
+      </div>
+
+      <!-- 5. Hero text -->
+      <div class="absolute z-50 bottom-12 sm:bottom-16 md:bottom-24 left-5 sm:left-8 md:left-12 max-w-[300px] sm:max-w-md">
+        <p class="hero-rise text-[11px] sm:text-xs font-semibold tracking-[0.12em] text-white/90 mb-4" style="animation-delay: 0.15s;">
+          Gateway to your <span class="italic">augmented self</span>
+        </p>
+        <h1 class="hero-rise text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-[-0.08em] text-white mb-5" style="animation-delay: 0.3s;">
+          A window<br />of coming<br />enhancements
+        </h1>
+        <p class="hero-rise text-sm sm:text-base text-white/90 leading-relaxed mb-7" style="animation-delay: 0.5s;">
+          A future where carbon fiber, titanium, and human instinct align. Not machine. Not human. Something wonderfully poised between.
+        </p>
+        <div class="hero-rise" style="animation-delay: 0.7s;">
+          <button class="group relative overflow-hidden bg-white text-gray-900 text-sm font-semibold px-7 sm:px-8 py-3 sm:py-3.5 rounded-full shadow-lg shadow-black/20 transition-transform duration-300 hover:scale-[1.04] active:scale-95">
+            <span class="relative z-10">Reserve Now</span>
+            <span class="cta-shine absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // ── Mobile menu ──
+    var menuToggle = document.getElementById('menuToggle');
+    var mobileMenu = document.getElementById('mobileMenu');
+    var iconMenu = document.getElementById('iconMenu');
+    var iconX = document.getElementById('iconX');
+    function closeMenu() {
+      mobileMenu.classList.add('hidden');
+      iconMenu.classList.remove('hidden');
+      iconX.classList.add('hidden');
+    }
+    menuToggle.addEventListener('click', function () {
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        iconMenu.classList.add('hidden');
+        iconX.classList.remove('hidden');
+      } else {
+        closeMenu();
+      }
+    });
+    document.querySelectorAll('.mobile-link').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+
+    // ── Stats arcs (generated so geometry stays exact) ──
+    (function buildArcs() {
+      var NS = 'http://www.w3.org/2000/svg';
+      var svg = document.getElementById('arcsSvg');
+      var cx = -110, cy = 300;
+      var ARCS = [
+        { r: 330, a0: -92, a1: 16, dot: -46, num: '10', suffix: '+', label: 'YEARS REAL' },
+        { r: 395, a0: -56, a1: 60, dot: 2,   num: '40', suffix: '+', label: 'USE FORMS' },
+        { r: 460, a0: -14, a1: 72, dot: 44,  num: '95', suffix: '%', label: 'REPEAT MEMBERS' }
+      ];
+      var defs = document.createElementNS(NS, 'defs');
+      svg.appendChild(defs);
+      function pt(r, deg) {
+        var rad = deg * Math.PI / 180;
+        return [cx + r * Math.cos(rad), cy + r * Math.sin(rad)];
+      }
+      ARCS.forEach(function (a, i) {
+        var p0 = pt(a.r, a.a0), p1 = pt(a.r, a.a1), pd = pt(a.r, a.dot);
+        var len = a.r * (a.a1 - a.a0) * Math.PI / 180;
+        var lineDelay = 0.4 + i * 0.22;
+        var markDelay = lineDelay + 0.9;
+
+        // per-arc gradient, start point → end point, fading both ends
+        var grad = document.createElementNS(NS, 'linearGradient');
+        grad.setAttribute('id', 'arcGrad' + i);
+        grad.setAttribute('gradientUnits', 'userSpaceOnUse');
+        grad.setAttribute('x1', p0[0]); grad.setAttribute('y1', p0[1]);
+        grad.setAttribute('x2', p1[0]); grad.setAttribute('y2', p1[1]);
+        [[0, 0], [0.22, 0.5], [0.55, 0.5], [0.85, 0.1], [1, 0]].forEach(function (s) {
+          var stop = document.createElementNS(NS, 'stop');
+          stop.setAttribute('offset', (s[0] * 100) + '%');
+          stop.setAttribute('stop-color', '#ffffff');
+          stop.setAttribute('stop-opacity', s[1]);
+          grad.appendChild(stop);
+        });
+        defs.appendChild(grad);
+
+        var path = document.createElementNS(NS, 'path');
+        path.setAttribute('d', 'M ' + p0[0] + ' ' + p0[1] + ' A ' + a.r + ' ' + a.r + ' 0 0 1 ' + p1[0] + ' ' + p1[1]);
+        path.setAttribute('fill', 'none');
+        path.setAttribute('stroke', 'url(#arcGrad' + i + ')');
+        path.setAttribute('stroke-width', '1.1');
+        path.setAttribute('class', 'arc-line');
+        path.style.setProperty('--len', len);
+        path.style.animationDelay = lineDelay + 's';
+        svg.appendChild(path);
+
+        var dot = document.createElementNS(NS, 'circle');
+        dot.setAttribute('cx', pd[0]); dot.setAttribute('cy', pd[1]);
+        dot.setAttribute('r', '3.4');
+        dot.setAttribute('fill', '#ffffff');
+        dot.setAttribute('class', 'arc-dot');
+        dot.style.animationDelay = markDelay + 's';
+        svg.appendChild(dot);
+
+        var ring = document.createElementNS(NS, 'circle');
+        ring.setAttribute('cx', pd[0]); ring.setAttribute('cy', pd[1]);
+        ring.setAttribute('r', '7');
+        ring.setAttribute('fill', 'none');
+        ring.setAttribute('stroke', '#ffffff');
+        ring.setAttribute('stroke-opacity', '0.35');
+        ring.setAttribute('class', 'arc-ring');
+        ring.style.animationDelay = (markDelay + 0.3) + 's';
+        svg.appendChild(ring);
+
+        var num = document.createElementNS(NS, 'text');
+        num.setAttribute('x', pd[0] + 16); num.setAttribute('y', pd[1] + 4);
+        num.setAttribute('fill', '#ffffff');
+        num.setAttribute('font-size', '32');
+        num.setAttribute('class', 'arc-text');
+        num.style.animationDelay = (markDelay + 0.15) + 's';
+        num.textContent = a.num;
+        var tspan = document.createElementNS(NS, 'tspan');
+        tspan.setAttribute('font-size', '19');
+        tspan.setAttribute('dy', '-10');
+        tspan.setAttribute('letter-spacing', '-1');
+        tspan.textContent = a.suffix;
+        num.appendChild(tspan);
+        svg.appendChild(num);
+
+        var label = document.createElementNS(NS, 'text');
+        label.setAttribute('x', pd[0] + 18); label.setAttribute('y', pd[1] + 22);
+        label.setAttribute('fill', '#ffffff');
+        label.setAttribute('fill-opacity', '0.8');
+        label.setAttribute('font-size', '8.5');
+        label.setAttribute('font-weight', '600');
+        label.setAttribute('letter-spacing', '2');
+        label.setAttribute('class', 'arc-text');
+        label.style.animationDelay = (markDelay + 0.3) + 's';
+        label.textContent = a.label;
+        svg.appendChild(label);
+      });
+    })();
+
+    // ── Mouse-driven effects: one rAF loop ──
+    (function mouseLoop() {
+      var reveal = document.getElementById('revealLayer');
+      var pattern = document.getElementById('gridPattern');
+      var mouseX = -999, mouseY = -999;       // real cursor
+      var curX = -999, curY = -999;            // smoothed cursor (spotlight)
+      var gridX = 0, gridY = 0;                // smoothed grid offset
+      var targetGX = 0, targetGY = 0;
+
+      window.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX; mouseY = e.clientY;
+        targetGX = (e.clientX / window.innerWidth - 0.5) * 16;
+        targetGY = (e.clientY / window.innerHeight - 0.5) * 16;
+      });
+
+      function frame() {
+        // spotlight: lerp 0.1 toward cursor
+        curX += (mouseX - curX) * 0.1;
+        curY += (mouseY - curY) * 0.1;
+        var m = 'radial-gradient(circle 260px at ' + curX.toFixed(1) + 'px ' + curY.toFixed(1) + 'px, ' +
+          'rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.4) 75%, rgba(0,0,0,0.12) 88%, rgba(0,0,0,0) 100%)';
+        reveal.style.webkitMaskImage = m;
+        reveal.style.maskImage = m;
+
+        // grid parallax: lerp 0.06 toward target offset
+        gridX += (targetGX - gridX) * 0.06;
+        gridY += (targetGY - gridY) * 0.06;
+        pattern.setAttribute('x', gridX.toFixed(2));
+        pattern.setAttribute('y', gridY.toFixed(2));
+
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })();
+  </script>
+</body>
+</html>
