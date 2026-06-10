@@ -423,6 +423,41 @@ export default function Home() {
             );
           })}
         </div>
+
+        {/* Testimonial — Adrian Wilkinson, AW Real Estate */}
+        <div className="cog-services-head-row" style={{ display: "flex", gap: 40, alignItems: "center", marginTop: 72 }}>
+          <FadeUp delay={0.15} className="cog-services-head-col" style={{ flex: 1 }}>
+            <div style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--cog-copper-light)", fontWeight: 600, marginBottom: 18, textTransform: "uppercase" }}>
+              In his own words
+            </div>
+            <blockquote className="cog-h-display" style={{ fontSize: "clamp(22px, 2.6vw, 36px)", fontWeight: 600, lineHeight: 1.2, letterSpacing: "-0.01em", color: "#fff", margin: "0 0 20px", maxWidth: 600 }}>
+              &ldquo;The results speak for themselves. Tom was able to bring to life everything I needed in one place.&rdquo;
+            </blockquote>
+            <p style={{ fontSize: 14, lineHeight: 1.6, color: "rgba(255,255,255,0.7)", margin: "0 0 10px" }}>
+              Adrian Wilkinson — Adrian Wilkinson Luxury Real Estate
+            </p>
+            <a
+              href="https://www.awrealestate.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontSize: 12, letterSpacing: "0.04em", color: "var(--cog-copper-light)", borderBottom: "1px solid rgba(255,255,255,0.3)", paddingBottom: 2 }}
+            >
+              See his website and AI assistant live →
+            </a>
+          </FadeUp>
+          <FadeUp delay={0.3} className="cog-services-head-col" style={{ flexShrink: 0 }}>
+            <video
+              controls
+              preload="none"
+              playsInline
+              poster="/images/adrian-testimonial-poster.jpg"
+              style={{ width: 250, aspectRatio: "9 / 16", display: "block", borderRadius: 20, border: "1px solid rgba(255,255,255,0.15)", background: "#000", objectFit: "cover" }}
+            >
+              <source src="/videos/adrian-testimonial.mp4" type="video/mp4" />
+              <track kind="captions" srcLang="en" label="English" src="/videos/adrian-testimonial.vtt" default />
+            </video>
+          </FadeUp>
+        </div>
       </section>
 
       {/* ════════ SECTION 5 — CTA ════════ */}
