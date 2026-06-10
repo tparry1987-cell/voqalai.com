@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Step Into Wonder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&family=Imprima&family=Inter:wght@400;500;600;700;800&family=Mr+Dafoe&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #0a0608; scroll-behavior: auto; overflow-x: clip; }
+    html { scrollbar-gutter: stable; }
+    /* 'Helvetica Now Display' is a paid font; Inter is the spec fallback and renders here. */
+    body { font-family: 'Helvetica Now Display', 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    .ff-ui { font-family: 'Helvetica Now Display', 'Inter', sans-serif; }
+    .ff-script { font-family: 'Mr Dafoe', cursive; }
+    @keyframes bobUp { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div id="root" style="position: relative; background: #0a0608;">
+
+    <!-- 1. Fixed world background -->
+    <div style="position: fixed; inset: 0; overflow: hidden; z-index: 0;">
+      <div id="world" style="width: 100%; height: 100%; transform-origin: 50% 50%; will-change: transform;">
+        <img src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_231253_53c0854c-d13c-42c1-9fc0-17e87cd34091.png&w=1280&q=85" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+    </div>
+
+    <!-- 2. Fixed nav -->
+    <nav id="nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 26px 40px;">
+      <div class="ff-ui" style="display: inline-flex; align-items: baseline; color: #fff; letter-spacing: -0.02em;">
+        <span class="ff-script" id="brandAura" style="font-size: 36px;">Aura</span><span id="brandGate" style="font-weight: 500; font-size: 24px;">gate</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button id="watchBtn" style="background: #fff; color: #161616; font-weight: 600; border: none; border-radius: 999px; padding: 11px 22px; cursor: pointer; transition: background 0.25s ease;">Watch Demo</button>
+        <button id="burgerBtn" aria-label="Menu" style="width: 42px; height: 42px; border-radius: 999px; background: #fff; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.25s ease;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.6" stroke-linecap="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- 3. Intro track (pinned portal zoom) -->
+    <div id="intro" style="position: relative; z-index: 5; height: 160vh;">
+      <div style="position: sticky; top: 0; height: 100vh; overflow: hidden;">
+        <!-- Portal -->
+        <div id="portal" style="position: absolute; inset: 0; transform-origin: 52% 38%; will-change: transform, opacity;">
+          <img src="assets/auragate/portal.webp" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+
+        <!-- Scene 1 hero copy -->
+        <div id="scene1" class="absolute inset-x-0 bottom-0 flex flex-col md:flex-row md:items-end md:justify-between gap-12 md:gap-20" style="padding: 0 44px 52px;">
+          <div style="max-width: 560px; text-align: left;">
+            <h1 class="ff-ui" id="heroH1" style="font-weight: 500; color: #fff; line-height: 1.04; letter-spacing: -0.02em; font-size: clamp(40px, 4vw, 58px); margin: 0;">
+              <span class="ff-script" style="color: #9a9a9a; font-size: 1.15em; margin-right: 0.12em;">Discover</span> Living<br />Digital Worlds<br />Vivid, Alive, Endless
+            </h1>
+            <p class="ff-ui" style="font-weight: 400; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.5); max-width: 340px; margin-top: 18px;">
+              Experience immersive worlds with stories that blur the line between imagination, AI and living reality made for you.
+            </p>
+          </div>
+          <div id="heroCol2" style="display: flex; gap: 14px; align-items: flex-start;">
+            <span class="ff-script" style="font-size: 64px; color: #fff; line-height: 0.8;">A.</span>
+            <p class="ff-ui" style="font-weight: 400; font-size: 11px; color: rgba(255,255,255,0.5); max-width: 150px; margin: 0;">
+              A studio is a trusted partner in your journey through wonderland.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Section 2 — Real wonders + arc carousel -->
+    <div style="position: relative; z-index: 10;">
+      <section id="sec2" style="display: flex; flex-direction: column; align-items: center; padding-top: 14vh; padding-bottom: 60px;">
+        <h2 class="ff-ui" style="text-align: center; font-weight: 500; font-size: clamp(34px, 4vw, 52px); color: #fff; letter-spacing: -0.02em; line-height: 1.1; text-shadow: 0 2px 20px rgba(0,0,0,0.35); margin: 0;">
+          Real wonders.<br />Real worlds.
+        </h2>
+        <p class="ff-ui" style="text-align: center; font-weight: 500; font-size: 17px; max-width: 420px; color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,0.3); margin-top: 16px; padding: 0 22px;">
+          See how Auragate helps others, and find out what it can do for you.
+        </p>
+
+        <div id="carousel" style="position: relative; width: 100%; margin-top: 40px;"></div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer" style="position: relative; padding: 160px 44px 52px;">
+        <div id="footGrid" style="display: grid; gap: 40px; max-width: 1280px; margin: 0 auto;">
+          <div id="footBrand">
+            <div class="ff-ui" style="display: inline-flex; align-items: baseline; color: #fff; letter-spacing: -0.02em;">
+              <span class="ff-script" style="font-size: 30px;">Aura</span><span style="font-weight: 500; font-size: 20px;">gate</span>
+            </div>
+            <div style="color: rgba(255,255,255,0.55); font-size: 12px; margin-top: 12px;">© 2026 Auragate</div>
+          </div>
+          <div>
+            <div class="ff-ui" style="color: rgba(255,255,255,0.55); font-weight: 500; font-size: 13px; margin-bottom: 18px;">Explore</div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <a class="foot-link ff-ui" href="#" style="color: #fff; font-weight: 500; font-size: 14px;">How it works</a>
+              <a class="foot-link ff-ui" href="#" style="color: #fff; font-weight: 500; font-size: 14px;">Features</a>
+            </div>
+          </div>
+          <div>
+            <div class="ff-ui" style="color: rgba(255,255,255,0.55); font-weight: 500; font-size: 13px; margin-bottom: 18px;">Contact</div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <a class="foot-link ff-ui" href="#" style="color: #fff; font-weight: 500; font-size: 14px;">X (Twitter)</a>
+              <a class="foot-link ff-ui" href="#" style="color: #fff; font-weight: 500; font-size: 14px;">hello@auragate.com</a>
+            </div>
+          </div>
+          <div>
+            <div class="ff-ui" style="color: rgba(255,255,255,0.55); font-weight: 500; font-size: 13px; margin-bottom: 18px;">Legal</div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <a class="foot-link ff-ui" href="#" style="color: #fff; font-weight: 500; font-size: 14px;">Privacy Policy</a>
+              <a class="foot-link ff-ui" href="#" style="color: #fff; font-weight: 500; font-size: 14px;">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <style>
+    .foot-link { transition: opacity 0.2s ease; }
+    .foot-link:hover { opacity: 0.65; }
+    #watchBtn:hover { background: #e6e6e6; }
+    #burgerBtn:hover { background: #e6e6e6; }
+  </style>
+
+  <script>
+    var QUOTES = [
+      "It is amazing to see and feel the worlds I am stepping into each day.",
+      "I have been feeling much more alive inside these living worlds, even on the long days.",
+      "My wonder has been growing so fast that it is hard to believe the difference. Auragate gave me exactly the vision I needed.",
+      "The first two scenes felt alive. I tried everything we dreamed up and it worked.",
+      "The wonder of it all really moved me, it even brought a tear to my eyes every time.",
+      "I finally feel immersed, like the worlds were built just for me.",
+      "Stepping into it was effortless and the worlds have been unlike anything I dreamt."
+    ];
+
+    var isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+    function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function easeInOut(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+
+    // ── Scroll progress over pinned intro ──
+    var intro = document.getElementById('intro');
+    var world = document.getElementById('world');
+    var portal = document.getElementById('portal');
+    var scene1 = document.getElementById('scene1');
+    var scrollProgress = 0;
+
+    function readScroll() {
+      var denom = intro.offsetHeight - window.innerHeight;
+      scrollProgress = clamp(window.scrollY / (denom || 1), 0, 1);
+      // opacity transitions
+      var portalOpacity = scrollProgress <= 0.66 ? 1 : clamp(1 - (scrollProgress - 0.66) / 0.22, 0, 1);
+      portal.style.opacity = portalOpacity;
+      var scene1Opacity = clamp(1 - scrollProgress / 0.22, 0, 1);
+      scene1.style.opacity = scene1Opacity;
+      scene1.style.pointerEvents = scene1Opacity < 0.05 ? 'none' : 'auto';
+    }
+    window.addEventListener('scroll', readScroll, { passive: true });
+    window.addEventListener('resize', function () {
+      isMobile = window.matchMedia('(max-width: 767px)').matches;
+      readScroll();
+      renderCarousel();
+      applyResponsive();
+    });
+
+    // ── Mouse parallax + per-frame transforms ──
+    var rawX = 0, rawY = 0, mx = 0, my = 0;
+    window.addEventListener('mousemove', function (e) {
+      rawX = (e.clientX / window.innerWidth - 0.5) * 2;
+      rawY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    function frame() {
+      mx = lerp(mx, rawX, 0.07);
+      my = lerp(my, rawY, 0.07);
+      var rx = -mx, ry = -my;
+      var ep = easeInOut(scrollProgress);
+
+      var ws = lerp(1, 1.18, ep);
+      world.style.transform = 'scale(' + ws + ') translate(' + (rx * 6) + 'px, ' + (ry * 6) + 'px)';
+
+      var ps = lerp(1, 7.5, ep);
+      portal.style.transform = 'scale(' + ps + ') translate(' + (rx * 7) + 'px, ' + (ry * 7) + 'px)';
+
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+
+    // ── Scene 1 UI entrance ──
+    scene1.style.opacity = '0';
+    scene1.style.transform = 'translateY(24px)';
+    scene1.style.transition = 'opacity 1s ease, transform 1s ease';
+    scene1.style.transitionDelay = '0.3s';
+    setTimeout(function () {
+      scene1.style.opacity = '1';
+      scene1.style.transform = 'translateY(0)';
+      setTimeout(readScroll, 1100); // let scroll handler own opacity afterwards
+    }, 600);
+
+    // ── Arc card carousel ──
+    var carousel = document.getElementById('carousel');
+    var active = Math.floor(QUOTES.length / 2);
+    var total = QUOTES.length;
+    var half = Math.floor(total / 2);
+    var cards = [];
+
+    QUOTES.forEach(function (q, i) {
+      var card = document.createElement('div');
+      card.style.position = 'absolute';
+      card.style.left = '50%';
+      card.style.top = '0';
+      card.style.display = 'flex';
+      card.style.alignItems = 'center';
+      card.style.justifyContent = 'center';
+      card.style.transition = 'transform 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.55s ease';
+      var p = document.createElement('p');
+      p.className = 'ff-ui';
+      p.textContent = '“' + q + '”';
+      p.style.textAlign = 'center';
+      p.style.fontWeight = '500';
+      p.style.lineHeight = '1.5';
+      p.style.letterSpacing = '-0.01em';
+      p.style.margin = '0';
+      card.appendChild(p);
+      carousel.appendChild(card);
+      cards.push({ el: card, p: p });
+    });
+
+    function renderCarousel() {
+      var cardW = isMobile ? 230 : 300;
+      var cardH = isMobile ? 320 : 420;
+      var stepX = isMobile ? 170 : 295;
+      var dropY = isMobile ? 34 : 52;
+      var tilt = isMobile ? 7 : 8;
+      var containerH = isMobile ? 460 : 560;
+      var centerBump = isMobile ? 22 : 30;
+      var pad = isMobile ? 24 : 36;
+
+      carousel.style.height = containerH + 'px';
+
+      cards.forEach(function (c, i) {
+        var pos = i - active;
+        while (pos < -half) pos += total;
+        while (pos > half) pos -= total;
+        var abs = Math.abs(pos);
+        var isCenter = pos === 0;
+
+        var tx = pos * stepX;
+        var ty = abs * dropY + (isCenter ? centerBump : 0);
+        var rot = pos * tilt;
+
+        c.el.style.width = cardW + 'px';
+        c.el.style.height = cardH + 'px';
+        c.el.style.marginLeft = (-cardW / 2) + 'px';
+        c.el.style.padding = pad + 'px';
+        c.el.style.borderRadius = (isMobile ? 22 : 28) + 'px';
+        c.el.style.transform = 'translateX(' + tx + 'px) translateY(' + ty + 'px) rotate(' + rot + 'deg)';
+        c.el.style.opacity = isCenter ? 1 : Math.max(0, 0.6 - (abs - 1) * 0.2);
+        c.el.style.zIndex = 100 - abs;
+        c.el.style.pointerEvents = isCenter ? 'auto' : 'none';
+
+        c.p.style.fontSize = (isMobile ? 15 : 17) + 'px';
+
+        if (isCenter) {
+          c.el.style.background = 'rgb(247,251,255)';
+          c.el.style.border = '1px solid rgba(255,255,255,0.6)';
+          c.el.style.backdropFilter = '';
+          c.el.style.webkitBackdropFilter = '';
+          c.el.style.boxShadow = '0 8px 24px rgba(0,0,0,0.08), 0 0 50px rgba(255,255,255,0.55), 0 0 90px rgba(255,255,255,0.35)';
+          c.p.style.color = '#2c2420';
+        } else {
+          c.el.style.background = 'linear-gradient(135deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.24) 100%)';
+          c.el.style.backdropFilter = 'blur(18px) saturate(140%)';
+          c.el.style.webkitBackdropFilter = 'blur(18px) saturate(140%)';
+          c.el.style.border = '1px solid rgba(255,255,255,0.28)';
+          c.el.style.boxShadow = 'inset 0 1px 1px rgba(255,255,255,0.45)';
+          c.p.style.color = 'rgba(255,255,255,0.85)';
+        }
+      });
+    }
+
+    // Nav buttons
+    var navWrap = document.createElement('div');
+    navWrap.style.position = 'absolute';
+    navWrap.style.bottom = '-40px';
+    navWrap.style.left = '50%';
+    navWrap.style.transform = 'translateX(-50%)';
+    navWrap.style.display = 'flex';
+    navWrap.style.gap = '10px';
+    navWrap.style.zIndex = '200';
+
+    function mkBtn(dir) {
+      var b = document.createElement('button');
+      var sz = isMobile ? 42 : 46;
+      b.style.width = sz + 'px';
+      b.style.height = sz + 'px';
+      b.style.borderRadius = '999px';
+      b.style.border = 'none';
+      b.style.cursor = 'pointer';
+      b.style.display = 'flex';
+      b.style.alignItems = 'center';
+      b.style.justifyContent = 'center';
+      if (dir === -1) {
+        b.style.background = 'rgba(255,255,255,0.2)';
+        b.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(rgba(255,255,255,0.7) 0 0 6px) drop-shadow(rgba(255,255,255,0.4) 0 0 14px);"><path d="m15 18-6-6 6-6"/></svg>';
+      } else {
+        b.style.background = 'rgba(255,255,255,0.9)';
+        b.style.boxShadow = '0 6px 18px rgba(0,0,0,0.18)';
+        b.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2c2420" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>';
+      }
+      b.addEventListener('click', function () {
+        active = (active + dir + total) % total;
+        renderCarousel();
+      });
+      return b;
+    }
+    navWrap.appendChild(mkBtn(-1));
+    navWrap.appendChild(mkBtn(1));
+    carousel.appendChild(navWrap);
+
+    // ── Responsive layout bits ──
+    function applyResponsive() {
+      var nav = document.getElementById('nav');
+      nav.style.padding = isMobile ? '18px 20px' : '26px 40px';
+      document.getElementById('brandAura').style.fontSize = isMobile ? '30px' : '36px';
+      document.getElementById('brandGate').style.fontSize = isMobile ? '20px' : '24px';
+      document.getElementById('watchBtn').style.padding = isMobile ? '9px 16px' : '11px 22px';
+      var bb = document.getElementById('burgerBtn');
+      bb.style.width = isMobile ? '38px' : '42px';
+      bb.style.height = isMobile ? '38px' : '42px';
+
+      document.getElementById('heroCol2').style.display = isMobile ? 'none' : 'flex';
+      document.getElementById('heroH1').style.fontSize = isMobile ? 'clamp(30px,9vw,44px)' : 'clamp(40px,4vw,58px)';
+      scene1.style.padding = isMobile ? '0 22px 40px' : '0 44px 52px';
+
+      document.getElementById('sec2').style.paddingTop = isMobile ? '12vh' : '14vh';
+
+      var fg = document.getElementById('footGrid');
+      fg.style.gridTemplateColumns = isMobile ? '1fr 1fr' : '1.4fr 1fr 1fr 1fr';
+      fg.style.gap = isMobile ? '32px 20px' : '40px';
+      document.getElementById('footBrand').style.gridColumn = isMobile ? '1 / -1' : 'auto';
+      document.getElementById('footer').style.padding = isMobile ? '120px 22px 40px' : '160px 44px 52px';
+    }
+
+    applyResponsive();
+    renderCarousel();
+    readScroll();
+  </script>
+</body>
+</html>
