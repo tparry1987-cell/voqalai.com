@@ -1,7 +1,7 @@
 # Voqal AI — Pricing
 
 > Machine-readable pricing for AI agents and automated comparison tools.
-> Last updated: 2026-05-04. Source of truth: voqalai.com/pricing/. Currency: GBP.
+> Last updated: 2026-06-07. Source of truth: voqalai.com/pricing/. Currency: GBP.
 > Voqal AI Ltd · Companies House 17080303 · UK-based with global delivery.
 
 ## Product
@@ -36,6 +36,25 @@ For clients who want to own their Retell AI account and pay Retell directly for 
 | Premium | 4,997 | Advanced multi-flow, CRM + calendar + custom integrations, full training + docs + support framework, advanced call routing |
 
 **Optional ongoing maintenance:** £147/mo (monitoring, knowledge-base updates, priority support).
+
+## AI Websites — One-off builds
+
+Modern, fast, AI-ready websites with an AI chat agent trained on the client's own content. The website is the low-friction entry product; AI chat, voice, and automations layer on top.
+
+| Plan | Price (GBP one-off) | Includes |
+|---|---|---|
+| One-page | from 495 | Single page to get online fast, mobile-responsive, contact form / click-to-call |
+| Launch Lite | from 695 | 2 pages (home + contact) on a Voqal template, mobile-responsive, contact form, details/hours set up |
+| Launch | from 997 | Up to 3 pages, design tailored to brand, enquiry/contact form, click-to-call, basic SEO |
+| Standard *(most chosen)* | 2,497 | Up to 10 pages + blog/CMS, premium design & copywriting, booking & lead-capture, CRM integration, full on-page SEO |
+| Full-Stack | from 4,997 | Everything in Standard + membership/login & payments, custom backend & integrations, voice-ready & chat-ready, automation wired in |
+
+## AI Opportunity Audit — Paid diagnostic
+
+| Plan | Price (GBP) | Includes |
+|---|---|---|
+| Standard Audit | 497 | 60-minute audit call, slide-deck Opportunities Report (3-5 AI recommendations), quantified ROI, 90-day roadmap, credited 100% if you implement with us |
+| Strategic AI Audit | Bespoke | Multi-day engagement, stakeholder interviews, process mapping, custom mini PoC, quarterly check-ins for 6 months |
 
 ## Lead Reactivation — Pay per result
 

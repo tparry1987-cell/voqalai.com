@@ -113,6 +113,7 @@ export default function Home() {
       <video
         ref={heroVideoRef}
         className="hero-video"
+        aria-label="Voqal AI — practical AI voice agents and automation for everyday business"
         autoPlay
         muted
         loop
@@ -139,6 +140,7 @@ export default function Home() {
       <video
         ref={heroVideoMobileRef}
         className="hero-video-mobile"
+        aria-label="Voqal AI — practical AI voice agents and automation for everyday business"
         autoPlay
         muted
         loop
@@ -147,6 +149,7 @@ export default function Home() {
         controls={false}
         disablePictureInPicture
         controlsList="nodownload noplaybackrate noremoteplayback"
+        poster="/images/hero-video-mobile-poster.jpg"
         style={{
           position: "fixed",
           top: 0,
@@ -187,19 +190,13 @@ export default function Home() {
             The boring jobs that quietly lose you money. Handled by AI.
           </FadeUp>
 
-          <FadeUp as="p" delay={0.55} style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.85)", maxWidth: 540, margin: "0 0 24px" }}>
-            Answering calls. Chasing old leads. Booking the job. Updating the spreadsheet. We build the voice agents and automations that take care of the everyday things, so you don&apos;t have to.
+          <FadeUp as="p" delay={0.55} style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.85)", maxWidth: 540, margin: "0 0 44px" }}>
+            Answering calls. Chasing old leads. Booking the job. Updating the spreadsheet. We build the AI that takes care of them, so you don&apos;t have to.
           </FadeUp>
 
-          <FadeUp as="p" delay={0.7} className="cog-italic" style={{ fontSize: "clamp(18px, 1.6vw, 22px)", color: "var(--cog-copper-light)", lineHeight: 1.4, letterSpacing: "-0.005em", margin: "0 0 44px", maxWidth: 480 }}>
-            AI-native websites, built to win work, not just look good.
-            <br />
-            From AI curious to AI native.
-          </FadeUp>
-
-          <FadeUp delay={0.95}>
+          <FadeUp delay={0.75}>
             <div className="cog-hero-buttons" style={{ display: "flex", alignItems: "center", gap: 22, flexWrap: "wrap" }}>
-              <Link href="/book" className="cog-btn-ghost-light" style={{ paddingInline: 28 }}>
+              <Link href="/book" className="cog-btn-light" style={{ paddingInline: 28 }}>
                 Get my demo in 24 hours →
               </Link>
               <a
@@ -252,7 +249,7 @@ export default function Home() {
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="none"
                     controls={false}
                     disablePictureInPicture
                     controlsList="nodownload noplaybackrate noremoteplayback nofullscreen"

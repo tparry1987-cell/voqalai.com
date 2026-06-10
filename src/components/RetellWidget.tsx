@@ -54,7 +54,36 @@ export function RetellWidget() {
     }
     setTimeout(retellCustomize, 1000);
 
-    return () => { s.remove(); };
+    // The "Hi, I'm Aria!" popup renders as #retell-ai-message-modal inside
+    // Retell's shadow DOM, on its own schedule. Poll until it exists, then
+    // show it once per session and auto-dismiss 6s after it appears.
+    const popupSeen = sessionStorage.getItem("ariaPopupShown") === "1";
+    let waited = 0;
+    const popupPoll = setInterval(() => {
+      waited += 200;
+      if (waited > 20000) { clearInterval(popupPoll); return; }
+      let foundRoot: ShadowRoot | null = null;
+      document.querySelectorAll("div").forEach((el) => {
+        const sr = (el as HTMLElement & { shadowRoot?: ShadowRoot }).shadowRoot;
+        if (sr && sr.querySelector("#retell-ai-message-modal")) foundRoot = sr;
+      });
+      if (!foundRoot) return;
+      clearInterval(popupPoll);
+      const root = foundRoot as ShadowRoot;
+      const hidePopup = () => {
+        const style = document.createElement("style");
+        style.textContent = ".retell-ai-message-modal { display: none !important; }";
+        root.appendChild(style);
+      };
+      if (popupSeen) {
+        hidePopup();
+      } else {
+        sessionStorage.setItem("ariaPopupShown", "1");
+        setTimeout(hidePopup, 6000);
+      }
+    }, 200);
+
+    return () => { clearInterval(popupPoll); s.remove(); };
   }, []);
 
   return (
