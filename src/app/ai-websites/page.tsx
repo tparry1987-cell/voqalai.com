@@ -30,6 +30,7 @@ const DEMO_BUILDS = [
   { vertical: "Character carousel hero", tint: "linear-gradient(135deg, #1a1a1a 0%, #7a4530 100%)", href: "/demos/toonhub.html" },
   { vertical: "Luxury scroll-story hero", tint: "linear-gradient(135deg, #1a1a1a 0%, #213138 100%)", href: "/demos/velar.html" },
   { vertical: "Portal zoom + arc carousel", tint: "linear-gradient(135deg, #1a1a1a 0%, #3a3340 100%)", href: "/demos/auragate.html" },
+  { vertical: "Immersive scroll portal", tint: "linear-gradient(135deg, #1a1a1a 0%, #1f3a2a 100%)", href: "/reverie" },
 ];
 
 function Badges({ tone = "light" }: { tone?: "light" | "dark" }) {
