@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Voice Agent Setup — Voqal AI</title>
+<style>
+  @font-face { font-family: 'Instrument Serif'; src: url('/fonts/instrument-serif-regular.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'Instrument Serif'; src: url('/fonts/instrument-serif-italic.woff2') format('woff2'); font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Saira'; src: url('/fonts/saira-latin.woff2') format('woff2'); font-display: swap; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Saira', system-ui, sans-serif; background: #FAF8F5; color: #1A1A2E; line-height: 1.6; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+  .brand { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #db7c54; font-weight: 600; }
+  h1 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 42px; line-height: 1.15; margin: 16px 0 12px; }
+  h1 em { color: #db7c54; }
+  .intro { color: #55536b; font-size: 16px; max-width: 56ch; }
+  .intro strong { color: #1A1A2E; }
+  section { margin-top: 48px; }
+  .sec-label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #db7c54; font-weight: 600; border-top: 2px solid #1A1A2E; padding-top: 14px; }
+  h2 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 26px; margin: 6px 0 4px; }
+  .sec-hint { color: #55536b; font-size: 14px; margin-bottom: 20px; }
+  label { display: block; font-weight: 600; font-size: 15px; margin: 22px 0 6px; }
+  label .opt { font-weight: 400; color: #8a8694; font-size: 13px; }
+  .hint { font-size: 13px; color: #55536b; margin: -2px 0 8px; }
+  input[type=text], input[type=email], input[type=tel], input[type=url], input[type=number], select, textarea {
+    width: 100%; padding: 12px 14px; font: inherit; font-size: 15px; color: #1A1A2E;
+    background: #fff; border: 1px solid #d8d2c8; border-radius: 6px;
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid #db7c54; border-color: #db7c54; }
+  textarea { min-height: 110px; resize: vertical; }
+  textarea.tall { min-height: 170px; }
+  .checks { display: grid; gap: 8px; margin-top: 8px; }
+  .checks label, .radios label { display: flex; gap: 10px; align-items: baseline; font-weight: 400; margin: 0; font-size: 15px; cursor: pointer; }
+  .radios { display: grid; gap: 8px; margin-top: 8px; }
+  input[type=checkbox], input[type=radio] { accent-color: #db7c54; transform: translateY(1px); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+  button { margin-top: 40px; width: 100%; padding: 16px; font: inherit; font-size: 17px; font-weight: 600;
+    background: #1A1A2E; color: #FAF8F5; border: 0; border-radius: 8px; cursor: pointer; }
+  button:hover { background: #db7c54; }
+  .foot { margin-top: 18px; font-size: 13px; color: #8a8694; text-align: center; }
+  .hp { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">Voqal AI</div>
+  <h1>Let's set up your <em>voice agent</em></h1>
+  <p class="intro">This takes about <strong>15 minutes</strong> and it's the single biggest thing you can do to get your agent live fast. The more detail you give, the more your agent sounds like someone who actually works for you. We'll go through your answers together on the kickoff call.</p>
+
+  <form name="voice-intake" method="POST" action="/onboarding/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="voice-intake">
+    <input type="hidden" name="subject" value="New voice agent intake form">
+    <p class="hp"><label>Don't fill this in: <input name="bot-field"></label></p>
+
+    <section>
+      <div class="sec-label">Part 1 of 6</div>
+      <h2>Your business</h2>
+
+      <label for="business-name">Business name (as customers know it)</label>
+      <input type="text" id="business-name" name="business-name" required>
+
+      <label for="legal-name">Legal / registered name <span class="opt">— if different</span></label>
+      <input type="text" id="legal-name" name="legal-name">
+
+      <label for="contact-name">Your name</label>
+      <input type="text" id="contact-name" name="contact-name" required>
+
+      <div class="row">
+        <div>
+          <label for="email">Best email for you</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="mobile">Best mobile for you</label>
+          <input type="tel" id="mobile" name="mobile" required>
+        </div>
+      </div>
+
+      <label for="approval-contact">Who signs things off?</label>
+      <p class="hint">One named person all approvals and feedback come through. Usually you.</p>
+      <input type="text" id="approval-contact" name="approval-contact" required>
+
+      <label for="website">Your website <span class="opt">— if you have one</span></label>
+      <input type="url" id="website" name="website" placeholder="https://">
+    </section>
+
+    <section>
+      <div class="sec-label">Part 2 of 6</div>
+      <h2>Your phones today</h2>
+
+      <label for="phone-numbers">Phone number(s) customers call</label>
+      <input type="text" id="phone-numbers" name="phone-numbers" required>
+
+      <label for="phone-provider">Who provides your phone line?</label>
+      <p class="hint">BT, RingCentral, 8x8, a mobile SIM, "not sure" is fine too.</p>
+      <input type="text" id="phone-provider" name="phone-provider">
+
+      <label for="opening-hours">Opening hours</label>
+      <p class="hint">Include bank holidays and anything seasonal — the agent needs to know when you're closed.</p>
+      <textarea id="opening-hours" name="opening-hours" required></textarea>
+
+      <div class="row">
+        <div>
+          <label for="calls-per-day">Roughly how many calls a day?</label>
+          <input type="text" id="calls-per-day" name="calls-per-day">
+        </div>
+        <div>
+          <label for="missed-calls">How many do you reckon you miss?</label>
+          <p class="hint">A guess is fine — this is how we measure the agent is paying for itself.</p>
+          <input type="text" id="missed-calls" name="missed-calls">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-label">Part 3 of 6</div>
+      <h2>What people call about</h2>
+
+      <label>Tick everything that comes up</label>
+      <div class="checks">
+        <label><input type="checkbox" name="call-types" value="new-enquiries"> New enquiries / "how much for…"</label>
+        <label><input type="checkbox" name="call-types" value="bookings"> Booking appointments or jobs</label>
+        <label><input type="checkbox" name="call-types" value="quotes"> Quote requests</label>
+        <label><input type="checkbox" name="call-types" value="job-status"> Chasing an existing job or order</label>
+        <label><input type="checkbox" name="call-types" value="complaints"> Complaints</label>
+        <label><input type="checkbox" name="call-types" value="general"> General questions (hours, areas, prices)</label>
+        <label><input type="checkbox" name="call-types" value="suppliers"> Suppliers / sales calls</label>
+      </div>
+
+      <label for="transfer-rules">Which calls must reach a real person — and who?</label>
+      <p class="hint">For example: "Anything about an ongoing job goes to me. If I don't answer, take a message and text me." Include when they're available.</p>
+      <textarea id="transfer-rules" name="transfer-rules" required></textarea>
+
+      <label for="emergency">What counts as an emergency, and what should happen?</label>
+      <p class="hint">For example, a gas engineer: "Smell of gas → give the caller the National Gas emergency number 0800 111 999 and end the call." Be specific — we script this word for word.</p>
+      <textarea id="emergency" name="emergency" required></textarea>
+
+      <label for="out-of-hours">When you're closed, what should the agent do?</label>
+      <p class="hint">Take a message? Book them in for the next day? Text you for urgent things?</p>
+      <textarea id="out-of-hours" name="out-of-hours" required></textarea>
+    </section>
+
+    <section>
+      <div class="sec-label">Part 4 of 6</div>
+      <h2>What the agent needs to know</h2>
+      <p class="sec-hint">This section matters most. Your agent is only as good as the answers you give it.</p>
+
+      <label for="services">Your services, with rough prices if you give them out</label>
+      <p class="hint">One per line. "Boiler service — from £90" is perfect.</p>
+      <textarea id="services" name="services" class="tall" required></textarea>
+
+      <label for="faqs">The questions callers actually ask — and the right answers</label>
+      <p class="hint">Aim for 15–20. Write them how you'd say them on the phone. Things like "do you cover Stockport?", "are you Gas Safe?", "how soon can you come out?"</p>
+      <textarea id="faqs" name="faqs" class="tall" required></textarea>
+
+      <label for="never-say">Anything the agent must NEVER say or do?</label>
+      <p class="hint">Competitor names, guarantees you don't offer, prices you don't want quoted, advice it shouldn't give.</p>
+      <textarea id="never-say" name="never-say"></textarea>
+    </section>
+
+    <section>
+      <div class="sec-label">Part 5 of 6</div>
+      <h2>Bookings &amp; your tools</h2>
+
+      <label for="calendar-system">Where do your appointments live?</label>
+      <select id="calendar-system" name="calendar-system">
+        <option value="">Choose one…</option>
+        <option>Google Calendar</option>
+        <option>Outlook / Microsoft 365</option>
+        <option>Calendly</option>
+        <option>Cal.com</option>
+        <option>GoHighLevel</option>
+        <option>Paper diary / it's in my head</option>
+        <option>Something else (tell us below)</option>
+      </select>
+
+      <label for="booking-rules">How should bookings work?</label>
+      <p class="hint">How far ahead can people book? Same-day jobs? How long is a typical appointment? What's your cancellation policy?</p>
+      <textarea id="booking-rules" name="booking-rules"></textarea>
+
+      <label>How should customers get confirmations?</label>
+      <div class="radios">
+        <label><input type="radio" name="confirmations" value="sms"> Text message</label>
+        <label><input type="radio" name="confirmations" value="email"> Email</label>
+        <label><input type="radio" name="confirmations" value="both"> Both</label>
+      </div>
+
+      <label for="crm">Do you use a CRM or job system?</label>
+      <p class="hint">Jobber, ServiceM8, Tradify, HubSpot, a spreadsheet — and what should the agent record there?</p>
+      <input type="text" id="crm" name="crm">
+    </section>
+
+    <section>
+      <div class="sec-label">Part 6 of 6</div>
+      <h2>The agent's personality — and a couple of legal bits</h2>
+
+      <div class="row">
+        <div>
+          <label for="agent-name">What should the agent be called? <span class="opt">— or leave it to us</span></label>
+          <input type="text" id="agent-name" name="agent-name">
+        </div>
+        <div>
+          <label for="tone">How should it sound?</label>
+          <select id="tone" name="tone">
+            <option value="">Choose one…</option>
+            <option>Friendly and relaxed</option>
+            <option>Professional and polished</option>
+            <option>You decide for me</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Do you currently record calls and tell callers?</label>
+      <div class="radios">
+        <label><input type="radio" name="recording" value="yes"> Yes</label>
+        <label><input type="radio" name="recording" value="no"> No</label>
+        <label><input type="radio" name="recording" value="not-sure"> Not sure</label>
+      </div>
+
+      <label>Does your business have a privacy policy?</label>
+      <div class="radios">
+        <label><input type="radio" name="privacy-policy" value="yes"> Yes</label>
+        <label><input type="radio" name="privacy-policy" value="no"> No</label>
+        <label><input type="radio" name="privacy-policy" value="not-sure"> Not sure</label>
+      </div>
+
+      <label>Are you registered with the ICO (Information Commissioner's Office)?</label>
+      <p class="hint">Most businesses handling customer data should be — it's about £52 a year. Don't worry if you're not sure; we'll walk you through it.</p>
+      <div class="radios">
+        <label><input type="radio" name="ico-registered" value="yes"> Yes</label>
+        <label><input type="radio" name="ico-registered" value="no"> No</label>
+        <label><input type="radio" name="ico-registered" value="not-sure"> Not sure</label>
+      </div>
+
+      <label for="anything-else">Anything else we should know? <span class="opt">— optional</span></label>
+      <textarea id="anything-else" name="anything-else"></textarea>
+    </section>
+
+    <button type="submit">Send it over</button>
+    <p class="foot">Your answers come straight to us at Voqal AI and aren't shared with anyone else.<br>Questions? Email contact@voqalai.com or call 020 3996 0962.</p>
+  </form>
+</div>
+</body>
+</html>

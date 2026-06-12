@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Website Setup — Voqal AI</title>
+<style>
+  @font-face { font-family: 'Instrument Serif'; src: url('/fonts/instrument-serif-regular.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'Instrument Serif'; src: url('/fonts/instrument-serif-italic.woff2') format('woff2'); font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Saira'; src: url('/fonts/saira-latin.woff2') format('woff2'); font-display: swap; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Saira', system-ui, sans-serif; background: #FAF8F5; color: #1A1A2E; line-height: 1.6; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 96px; }
+  .brand { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #db7c54; font-weight: 600; }
+  h1 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 42px; line-height: 1.15; margin: 16px 0 12px; }
+  h1 em { color: #db7c54; }
+  .intro { color: #55536b; font-size: 16px; max-width: 56ch; }
+  .intro strong { color: #1A1A2E; }
+  section { margin-top: 48px; }
+  .sec-label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #db7c54; font-weight: 600; border-top: 2px solid #1A1A2E; padding-top: 14px; }
+  h2 { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 26px; margin: 6px 0 4px; }
+  .sec-hint { color: #55536b; font-size: 14px; margin-bottom: 20px; }
+  label { display: block; font-weight: 600; font-size: 15px; margin: 22px 0 6px; }
+  label .opt { font-weight: 400; color: #8a8694; font-size: 13px; }
+  .hint { font-size: 13px; color: #55536b; margin: -2px 0 8px; }
+  input[type=text], input[type=email], input[type=tel], input[type=url], select, textarea {
+    width: 100%; padding: 12px 14px; font: inherit; font-size: 15px; color: #1A1A2E;
+    background: #fff; border: 1px solid #d8d2c8; border-radius: 6px;
+  }
+  input[type=file] { font: inherit; font-size: 14px; padding: 10px 0; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid #db7c54; border-color: #db7c54; }
+  textarea { min-height: 110px; resize: vertical; }
+  textarea.tall { min-height: 170px; }
+  .checks, .radios { display: grid; gap: 8px; margin-top: 8px; }
+  .checks label, .radios label { display: flex; gap: 10px; align-items: baseline; font-weight: 400; margin: 0; font-size: 15px; cursor: pointer; }
+  input[type=checkbox], input[type=radio] { accent-color: #db7c54; transform: translateY(1px); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+  button { margin-top: 40px; width: 100%; padding: 16px; font: inherit; font-size: 17px; font-weight: 600;
+    background: #1A1A2E; color: #FAF8F5; border: 0; border-radius: 8px; cursor: pointer; }
+  button:hover { background: #db7c54; }
+  .foot { margin-top: 18px; font-size: 13px; color: #8a8694; text-align: center; }
+  .hp { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">Voqal AI</div>
+  <h1>Let's build your <em>website</em></h1>
+  <p class="intro">This takes about <strong>15 minutes</strong> and it's what gets your site live in days, not months. Don't overthink any of it — rough answers now beat perfect answers next week, and we write the words for you. We'll go through everything together on the kickoff call.</p>
+
+  <form name="website-intake" method="POST" action="/onboarding/thanks.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+    <input type="hidden" name="form-name" value="website-intake">
+    <input type="hidden" name="subject" value="New website intake form">
+    <p class="hp"><label>Don't fill this in: <input name="bot-field"></label></p>
+
+    <section>
+      <div class="sec-label">Part 1 of 7</div>
+      <h2>Your business</h2>
+
+      <label for="business-name">Business name (as customers know it)</label>
+      <input type="text" id="business-name" name="business-name" required>
+
+      <label>Are you a limited company or a sole trader?</label>
+      <p class="hint">This decides what legally has to appear in your website footer.</p>
+      <div class="radios">
+        <label><input type="radio" name="entity-type" value="ltd"> Limited company</label>
+        <label><input type="radio" name="entity-type" value="sole-trader"> Sole trader</label>
+        <label><input type="radio" name="entity-type" value="partnership"> Partnership / other</label>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="company-number">Company number <span class="opt">— if Ltd</span></label>
+          <input type="text" id="company-number" name="company-number">
+        </div>
+        <div>
+          <label for="vat-number">VAT number <span class="opt">— if registered</span></label>
+          <input type="text" id="vat-number" name="vat-number">
+        </div>
+      </div>
+
+      <label for="address">Business address</label>
+      <p class="hint">If your registered address is different from where you work, give us both.</p>
+      <textarea id="address" name="address" required></textarea>
+
+      <div class="row">
+        <div>
+          <label for="phone">Phone number for the site</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+          <label for="email">Email for the site &amp; for us to reach you</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+
+      <label for="opening-hours">Opening hours</label>
+      <input type="text" id="opening-hours" name="opening-hours" required>
+
+      <label for="years-trading">How long have you been trading?</label>
+      <input type="text" id="years-trading" name="years-trading">
+
+      <label for="approval-contact">Who signs things off?</label>
+      <p class="hint">One named person all approvals and feedback come through. Usually you.</p>
+      <input type="text" id="approval-contact" name="approval-contact" required>
+    </section>
+
+    <section>
+      <div class="sec-label">Part 2 of 7</div>
+      <h2>What you do</h2>
+
+      <label for="services">Your services</label>
+      <p class="hint">One per line, with a sentence about each if you can. These become the pages of your site.</p>
+      <textarea id="services" name="services" class="tall" required></textarea>
+
+      <label for="areas">Areas you cover</label>
+      <p class="hint">Towns, postcodes, or "within 20 miles of Stockport" — however you'd say it.</p>
+      <input type="text" id="areas" name="areas" required>
+
+      <label>Do you offer emergency / out-of-hours work?</label>
+      <div class="radios">
+        <label><input type="radio" name="emergency-cover" value="yes-24-7"> Yes — 24/7</label>
+        <label><input type="radio" name="emergency-cover" value="yes-sometimes"> Sometimes / by arrangement</label>
+        <label><input type="radio" name="emergency-cover" value="no"> No</label>
+      </div>
+
+      <label>Should the site show prices?</label>
+      <div class="radios">
+        <label><input type="radio" name="pricing-display" value="from-prices"> Yes — "from £X" guide prices</label>
+        <label><input type="radio" name="pricing-display" value="call-for-quote"> No — "call for a quote"</label>
+        <label><input type="radio" name="pricing-display" value="not-sure"> Not sure — advise me</label>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-label">Part 3 of 7</div>
+      <h2>Trust badges &amp; accreditations</h2>
+      <p class="sec-hint">These win you the job before anyone rings. Give us exact registration numbers — we check them against the official registers before they go live.</p>
+
+      <label for="accreditations">Accreditations and registration numbers</label>
+      <p class="hint">Gas Safe, NICEIC, NAPIT, FENSA, OFTEC, TrustMark, trade associations… one per line with the number.</p>
+      <textarea id="accreditations" name="accreditations"></textarea>
+
+      <label for="insurance">Public liability insurance cover <span class="opt">— e.g. "£2 million"</span></label>
+      <input type="text" id="insurance" name="insurance">
+
+      <label for="review-profiles">Where do your reviews live?</label>
+      <p class="hint">Paste links — Google, Checkatrade, Trustpilot, Facebook. We can pull your best ones from there.</p>
+      <textarea id="review-profiles" name="review-profiles"></textarea>
+
+      <label for="testimonials">Or paste 3–5 favourite reviews here <span class="opt">— optional</span></label>
+      <textarea id="testimonials" name="testimonials"></textarea>
+    </section>
+
+    <section>
+      <div class="sec-label">Part 4 of 7</div>
+      <h2>Your look</h2>
+
+      <label for="logo">Your logo</label>
+      <p class="hint">Best version you have. The original design file is ideal; a clear photo of your van works too.</p>
+      <input type="file" id="logo" name="logo" accept="image/*,.pdf,.svg,.ai,.eps">
+
+      <label for="colours">Brand colours <span class="opt">— if you have them</span></label>
+      <p class="hint">"Navy and yellow like the van" is plenty. Leave blank and we'll choose something that suits the trade.</p>
+      <input type="text" id="colours" name="colours">
+
+      <label for="photos-link">Photos of your work</label>
+      <p class="hint">5–10 job photos, plus one of you/the team and one of the van if you have them. Phone photos are fine — good light is all that matters. Paste a Google Drive, Dropbox or WeTransfer link here, or email them to contact@voqalai.com. No photos? No problem — we'll use quality placeholders you can swap any time, free.</p>
+      <input type="text" id="photos-link" name="photos-link" placeholder="Link to your photos, or 'emailing them' or 'no photos yet'">
+
+      <label for="liked-sites">Any websites you like the look of? <span class="opt">— optional</span></label>
+      <p class="hint">Competitors or anyone else. A line on what you like about them helps.</p>
+      <textarea id="liked-sites" name="liked-sites"></textarea>
+    </section>
+
+    <section>
+      <div class="sec-label">Part 5 of 7</div>
+      <h2>Your domain &amp; email</h2>
+      <p class="sec-hint">This is the technical bit — but it's just three questions, and "not sure" is an acceptable answer to all of them.</p>
+
+      <label>Do you have a web address (domain) already?</label>
+      <div class="radios">
+        <label><input type="radio" name="has-domain" value="yes"> Yes</label>
+        <label><input type="radio" name="has-domain" value="no"> No — I need one</label>
+        <label><input type="radio" name="has-domain" value="not-sure"> Not sure</label>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="domain-name">If yes — what is it?</label>
+          <input type="text" id="domain-name" name="domain-name" placeholder="yourbusiness.co.uk">
+        </div>
+        <div>
+          <label for="registrar">Where is it registered?</label>
+          <p class="hint">GoDaddy, 123-reg, Namecheap, Wix… check an old invoice email if unsure.</p>
+          <input type="text" id="registrar" name="registrar">
+        </div>
+      </div>
+
+      <label for="email-provider">Who provides your email?</label>
+      <p class="hint">Gmail, Outlook/Microsoft 365, BT, or an address @yourbusiness.co.uk? This one matters — it's how we make sure your email keeps working perfectly when the new site goes live.</p>
+      <input type="text" id="email-provider" name="email-provider" required>
+
+      <label for="existing-site">Existing website address <span class="opt">— if you have one</span></label>
+      <input type="url" id="existing-site" name="existing-site" placeholder="https://">
+    </section>
+
+    <section>
+      <div class="sec-label">Part 6 of 7</div>
+      <h2>Links &amp; tools</h2>
+
+      <label for="socials">Social media links <span class="opt">— optional</span></label>
+      <p class="hint">Facebook, Instagram, LinkedIn — whatever you actually use.</p>
+      <textarea id="socials" name="socials"></textarea>
+
+      <label for="gbp">Your Google Business Profile</label>
+      <p class="hint">The listing that shows on Google Maps. Paste a link, or just write your business name as it appears there. "Don't have one" is useful to know too.</p>
+      <input type="text" id="gbp" name="gbp">
+
+      <label for="booking-tool">Any booking or job system in use? <span class="opt">— optional</span></label>
+      <p class="hint">Calendly, Jobber, ServiceM8, Checkatrade booking — we can often build it into the site.</p>
+      <input type="text" id="booking-tool" name="booking-tool">
+    </section>
+
+    <section>
+      <div class="sec-label">Part 7 of 7</div>
+      <h2>The words on the site</h2>
+
+      <label>Who's writing the text?</label>
+      <div class="radios">
+        <label><input type="radio" name="content-readiness" value="voqal-writes" checked> Voqal writes it from my answers here — recommended</label>
+        <label><input type="radio" name="content-readiness" value="reuse-existing"> Reuse the text from my current site</label>
+        <label><input type="radio" name="content-readiness" value="already-written"> I've already written it</label>
+        <label><input type="radio" name="content-readiness" value="client-writes"> I'll write it during the project</label>
+      </div>
+
+      <label for="anything-else">Anything else we should know? <span class="opt">— optional</span></label>
+      <p class="hint">The thing that makes you different, a story worth telling, anything you definitely don't want on the site.</p>
+      <textarea id="anything-else" name="anything-else"></textarea>
+    </section>
+
+    <button type="submit">Send it over</button>
+    <p class="foot">Your answers come straight to us at Voqal AI and aren't shared with anyone else.<br>Questions? Email contact@voqalai.com or call 020 3996 0962.</p>
+  </form>
+</div>
+</body>
+</html>
